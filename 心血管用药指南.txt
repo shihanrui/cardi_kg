@@ -60,8 +60,6 @@ MATCH (dt:Drugtype {name:'抗凝血药'}),(d:Drug {name:'达比加群酯'}) CREA
 CREATE (:Drug {name:'利伐沙班'});
 MATCH (dt:Drugtype {name:'抗凝血药'}),(d:Drug {name:'利伐沙班'}) CREATE (dt)-[:Contains {reference: "心房颤动基层合理用药指南"}]->(d);
 
-
-
 CREATE (:Drugtype {name:'硝酸酯类药物'});
 CREATE (:Drug {name:'硝酸甘油'});
 MATCH (dt:Drugtype {name:'硝酸酯类药物'}),(d:Drug {name:'硝酸甘油'}) CREATE (dt)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(d);
@@ -95,6 +93,10 @@ CREATE (:Drug {name:'赖诺普利'});
 MATCH (dt:Drugtype {name:'ACEI/ARB'}),(d:Drug {name:'赖诺普利'}) CREATE (dt)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(d);
 CREATE (:Drug {name:'缬沙坦'});
 MATCH (dt:Drugtype {name:'ACEI/ARB'}),(d:Drug {name:'缬沙坦'}) CREATE (dt)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(d);
+
+CREATE (:Drugtype {name:'ARNI'});
+CREATE (:Drug {name:'沙库巴曲缬沙坦钠'});
+MATCH (dt:Drugtype {name:'ARNI'}),(d:Drug {name:'沙库巴曲缬沙坦钠'}) CREATE (dt)-[:Contains {reference: "慢性心力衰竭基层合理用药指南"}]->(d);
 
 CREATE (:Drugtype {name:'醛固酮受体拮抗剂'});
 CREATE (:Drug {name:'螺内酯'});
@@ -140,8 +142,50 @@ MATCH (dt:Drugtype {name:'钾通道阻滞剂'}),(d:Drug {name:'伊布利特'}) C
 CREATE (:Drug {name:'索他洛尔'});
 MATCH (dt:Drugtype {name:'钾通道阻滞剂'}),(d:Drug {name:'索他洛尔'}) CREATE (dt)-[:Contains {reference: "心房颤动基层合理用药指南"}]->(d);
 
+CREATE (:Drugtype {name:'利尿药'});
+CREATE (:Drug {name:'呋塞米'});
+MATCH (dt:Drugtype {name:'利尿药'}),(d:Drug {name:'呋塞米'}) CREATE (dt)-[:Contains {reference: "急性心力衰竭基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'托拉塞米'});
+MATCH (dt:Drugtype {name:'利尿药'}),(d:Drug {name:'托拉塞米'}) CREATE (dt)-[:Contains {reference: "急性心力衰竭基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'布美他尼'});
+MATCH (dt:Drugtype {name:'利尿药'}),(d:Drug {name:'布美他尼'}) CREATE (dt)-[:Contains {reference: "急性心力衰竭基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'氢氯噻嗪'});
+MATCH (dt:Drugtype {name:'利尿药'}),(d:Drug {name:'氢氯噻嗪'}) CREATE (dt)-[:Contains {reference: "慢性心力衰竭基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'吲达帕胺'});
+MATCH (dt:Drugtype {name:'利尿药'}),(d:Drug {name:'吲达帕胺'}) CREATE (dt)-[:Contains {reference: "慢性心力衰竭基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'氨苯蝶啶'});
+MATCH (dt:Drugtype {name:'利尿药'}),(d:Drug {name:'氨苯蝶啶'}) CREATE (dt)-[:Contains {reference: "慢性心力衰竭基层合理用药指南"}]->(d);
 
 
+
+CREATE (:Drugtype {name:'血管扩张药'});
+MATCH (dt:Drugtype {name:'血管扩张药'}),(d:Drug {name:'硝酸甘油'}) CREATE (dt)-[:Contains {reference: "急性心力衰竭基层合理用药指南"}]->(d);
+MATCH (dt:Drugtype {name:'血管扩张药'}),(d:Drug {name:'硝酸异山梨酯'}) CREATE (dt)-[:Contains {reference: "急性心力衰竭基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'硝普钠'});
+MATCH (dt:Drugtype {name:'血管扩张药'}),(d:Drug {name:'硝普钠'}) CREATE (dt)-[:Contains {reference: "急性心力衰竭基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'乌拉地尔'});
+MATCH (dt:Drugtype {name:'血管扩张药'}),(d:Drug {name:'乌拉地尔'}) CREATE (dt)-[:Contains {reference: "急性心力衰竭基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'重组人脑利钠肽'});
+MATCH (dt:Drugtype {name:'血管扩张药'}),(d:Drug {name:'重组人脑利钠肽'}) CREATE (dt)-[:Contains {reference: "急性心力衰竭基层合理用药指南"}]->(d);
+
+CREATE (:Drugtype {name:'正性肌力药'});
+CREATE (:Drug {name:'多巴胺'});
+MATCH (dt:Drugtype {name:'正性肌力药'}),(d:Drug {name:'多巴胺'}) CREATE (dt)-[:Contains {reference: "急性心力衰竭基层合理用药指南"}]->(d);
+MATCH (dt:Drugtype {name:'正性肌力药'}),(d:Drug {name:'去乙酰毛花苷'}) CREATE (dt)-[:Contains {reference: "急性心力衰竭基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'米力农'});
+MATCH (dt:Drugtype {name:'正性肌力药'}),(d:Drug {name:'米力农'}) CREATE (dt)-[:Contains {reference: "急性心力衰竭基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'左西孟旦'});
+MATCH (dt:Drugtype {name:'正性肌力药'}),(d:Drug {name:'左西孟旦'}) CREATE (dt)-[:Contains {reference: "急性心力衰竭基层合理用药指南"}]->(d);
+
+CREATE (:Drugtype {name:'血管收缩药'});
+CREATE (:Drug {name:'去甲肾上腺素'});
+MATCH (dt:Drugtype {name:'血管收缩药'}),(d:Drug {name:'去甲肾上腺素'}) CREATE (dt)-[:Contains {reference: "急性心力衰竭基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'肾上腺素'});
+MATCH (dt:Drugtype {name:'血管收缩药'}),(d:Drug {name:'肾上腺素'}) CREATE (dt)-[:Contains {reference: "急性心力衰竭基层合理用药指南"}]->(d);
+
+CREATE (:Drugtype {name:'窦房结If通道阻滞剂'});
+CREATE (:Drug {name:'伊伐布雷定'});
+MATCH (dt:Drugtype {name:'窦房结If通道阻滞剂'}),(d:Drug {name:'伊伐布雷定'}) CREATE (dt)-[:Contains {reference: "慢性心力衰竭基层合理用药指南"}]->(d);
 
 
 
@@ -193,4 +237,42 @@ MATCH (disease:Disease {name:"心房颤动"}),(drug:Drug {name:'利伐沙班'}) 
 MATCH (disease:Disease {name:"心房颤动"}),(drug:Drug {name:'肝素'}) CREATE (disease)-[:Recommend {reference: "心房颤动基层合理用药指南"}]->(drug);
 MATCH (disease:Disease {name:"心房颤动"}),(drug:Drug {name:'低分子肝素'}) CREATE (disease)-[:Recommend {reference: "心房颤动基层合理用药指南"}]->(drug);
 
+//急性心力衰竭
+MATCH (disease:Disease {name:"急性心力衰竭"}),(drug:Drug {name:'呋塞米'}) CREATE (disease)-[:Recommend {reference: "急性心力衰竭基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"急性心力衰竭"}),(drug:Drug {name:'硝酸甘油'}) CREATE (disease)-[:Recommend {reference: "急性心力衰竭基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"急性心力衰竭"}),(drug:Drug {name:'硝酸异山梨酯'}) CREATE (disease)-[:Recommend {reference: "急性心力衰竭基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"急性心力衰竭"}),(drug:Drug {name:'硝普钠'}) CREATE (disease)-[:Recommend {reference: "急性心力衰竭基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"急性心力衰竭"}),(drug:Drug {name:'多巴胺'}) CREATE (disease)-[:Recommend {reference: "急性心力衰竭基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"急性心力衰竭"}),(drug:Drug {name:'多巴酚丁胺'}) CREATE (disease)-[:Recommend {reference: "急性心力衰竭基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"急性心力衰竭"}),(drug:Drug {name:'去乙酰毛花苷'}) CREATE (disease)-[:Recommend {reference: "急性心力衰竭基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"急性心力衰竭"}),(drug:Drug {name:'去甲肾上腺素'}) CREATE (disease)-[:Recommend {reference: "急性心力衰竭基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"急性心力衰竭"}),(drug:Drug {name:'肾上腺素'}) CREATE (disease)-[:Recommend {reference: "急性心力衰竭基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"急性心力衰竭"}),(drug:Drug {name:'托拉塞米'}) CREATE (disease)-[:Alternate {reference: "急性心力衰竭基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"急性心力衰竭"}),(drug:Drug {name:'布美他尼'}) CREATE (disease)-[:Alternate {reference: "急性心力衰竭基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"急性心力衰竭"}),(drug:Drug {name:'重组人脑利钠肽'}) CREATE (disease)-[:Alternate {reference: "急性心力衰竭基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"急性心力衰竭"}),(drug:Drug {name:'米力农'}) CREATE (disease)-[:Alternate {reference: "急性心力衰竭基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"急性心力衰竭"}),(drug:Drug {name:'左西孟旦'}) CREATE (disease)-[:Alternate {reference: "急性心力衰竭基层合理用药指南"}]->(drug);
 
+//慢性心力衰竭
+MATCH (disease:Disease {name:"慢性心力衰竭"}),(drug:Drug {name:'呋塞米'}) CREATE (disease)-[:Recommend {reference: "慢性心力衰竭基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"慢性心力衰竭"}),(drug:Drug {name:'氢氯噻嗪'}) CREATE (disease)-[:Recommend {reference: "慢性心力衰竭基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"慢性心力衰竭"}),(drug:Drug {name:'吲达帕胺'}) CREATE (disease)-[:Recommend {reference: "慢性心力衰竭基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"慢性心力衰竭"}),(drug:Drug {name:'卡托普利'}) CREATE (disease)-[:Recommend {reference: "慢性心力衰竭基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"慢性心力衰竭"}),(drug:Drug {name:'依那普利'}) CREATE (disease)-[:Recommend {reference: "慢性心力衰竭基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"慢性心力衰竭"}),(drug:Drug {name:'赖诺普利'}) CREATE (disease)-[:Recommend {reference: "慢性心力衰竭基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"慢性心力衰竭"}),(drug:Drug {name:'缬沙坦'}) CREATE (disease)-[:Recommend {reference: "慢性心力衰竭基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"慢性心力衰竭"}),(drug:Drug {name:'沙库巴曲缬沙坦钠'}) CREATE (disease)-[:Recommend {reference: "慢性心力衰竭基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"慢性心力衰竭"}),(drug:Drug {name:'美托洛尔'}) CREATE (disease)-[:Recommend {reference: "慢性心力衰竭基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"慢性心力衰竭"}),(drug:Drug {name:'比索洛尔'}) CREATE (disease)-[:Recommend {reference: "慢性心力衰竭基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"慢性心力衰竭"}),(drug:Drug {name:'伊伐布雷定'}) CREATE (disease)-[:Recommend {reference: "慢性心力衰竭基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"慢性心力衰竭"}),(drug:Drug {name:'螺内酯'}) CREATE (disease)-[:Recommend {reference: "慢性心力衰竭基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"慢性心力衰竭"}),(drug:Drug {name:'地高辛'}) CREATE (disease)-[:Recommend {reference: "慢性心力衰竭基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"慢性心力衰竭"}),(drug:Drug {name:'氨苯蝶啶'}) CREATE (disease)-[:Alternate {reference: "慢性心力衰竭基层合理用药指南"}]->(drug);
+
+
+//早搏
+MATCH (disease:Disease {name:"早搏"}),(drug:Drug {name:'普萘洛尔'}) CREATE (disease)-[:Recommend {reference: "早搏基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"早搏"}),(drug:Drug {name:'美托洛尔'}) CREATE (disease)-[:Recommend {reference: "早搏基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"早搏"}),(drug:Drug {name:'阿替洛尔'}) CREATE (disease)-[:Recommend {reference: "早搏基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"早搏"}),(drug:Drug {name:'地尔硫䓬'}) CREATE (disease)-[:Recommend {reference: "早搏基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"早搏"}),(drug:Drug {name:'维拉帕米'}) CREATE (disease)-[:Recommend {reference: "早搏基层合理用药指南"}]->(drug);
