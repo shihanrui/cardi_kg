@@ -25,25 +25,14 @@ CREATE (:Disease {name:"血脂异常"});
 MATCH (u:Category {name:'冠心病'}), (r:Disease {name:'ST段抬高型心肌梗死'}) CREATE (u)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(r);
 
 
-//药物种类
+//药物种类及对应药物
 CREATE (:Drugtype {name:'镇痛药'});
-CREATE (:Drugtype {name:'溶栓药'});
-CREATE (:Drugtype {name:'抗血小板药'});
-CREATE (:Drugtype {name:'抗凝血药'});
-CREATE (:Drugtype {name:'硝酸酯类药物'});
-CREATE (:Drugtype {name:'钾通道开放药'});
-CREATE (:Drugtype {name:'β受体阻滞剂'});
-CREATE (:Drugtype {name:'ACEI/ARB'});
-CREATE (:Drugtype {name:'醛固酮受体拮抗剂'});
-CREATE (:Drugtype {name:'调脂药'});
-
-//镇痛药对应药物
 CREATE (:Drug {name:'哌替啶'});
 MATCH (dt:Drugtype {name:'镇痛药'}),(d:Drug {name:'哌替啶'}) CREATE (dt)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(d);
 CREATE (:Drug {name:'吗啡'});
 MATCH (dt:Drugtype {name:'镇痛药'}),(d:Drug {name:'吗啡'}) CREATE (dt)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(d);
 
-//溶栓药对应药物
+CREATE (:Drugtype {name:'溶栓药'});
 CREATE (:Drug {name:'尿激酶'});
 MATCH (dt:Drugtype {name:'溶栓药'}),(d:Drug {name:'尿激酶'}) CREATE (dt)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(d);
 CREATE (:Drug {name:'阿替普酶'});
@@ -51,7 +40,7 @@ MATCH (dt:Drugtype {name:'溶栓药'}),(d:Drug {name:'阿替普酶'}) CREATE (dt
 CREATE (:Drug {name:'瑞替普酶'});
 MATCH (dt:Drugtype {name:'溶栓药'}),(d:Drug {name:'瑞替普酶'}) CREATE (dt)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(d);
 
-//抗血小板药对应药物
+CREATE (:Drugtype {name:'抗血小板药'});
 CREATE (:Drug {name:'阿司匹林'});
 MATCH (dt:Drugtype {name:'抗血小板药'}),(d:Drug {name:'阿司匹林'}) CREATE (dt)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(d);
 CREATE (:Drug {name:'氯吡格雷'});
@@ -59,13 +48,21 @@ MATCH (dt:Drugtype {name:'抗血小板药'}),(d:Drug {name:'氯吡格雷'}) CREA
 CREATE (:Drug {name:'替格瑞洛'});
 MATCH (dt:Drugtype {name:'抗血小板药'}),(d:Drug {name:'替格瑞洛'}) CREATE (dt)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(d);
 
-//抗凝血药对应药物
+CREATE (:Drugtype {name:'抗凝血药'});
 CREATE (:Drug {name:'肝素'});
 MATCH (dt:Drugtype {name:'抗凝血药'}),(d:Drug {name:'肝素'}) CREATE (dt)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(d);
 CREATE (:Drug {name:'低分子量肝素'});
 MATCH (dt:Drugtype {name:'抗凝血药'}),(d:Drug {name:'低分子量肝素'}) CREATE (dt)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'华法林'});
+MATCH (dt:Drugtype {name:'抗凝血药'}),(d:Drug {name:'华法林'}) CREATE (dt)-[:Contains {reference: "心房颤动基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'达比加群酯'});
+MATCH (dt:Drugtype {name:'抗凝血药'}),(d:Drug {name:'达比加群酯'}) CREATE (dt)-[:Contains {reference: "心房颤动基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'利伐沙班'});
+MATCH (dt:Drugtype {name:'抗凝血药'}),(d:Drug {name:'利伐沙班'}) CREATE (dt)-[:Contains {reference: "心房颤动基层合理用药指南"}]->(d);
 
-//硝酸酯类药物对应药物
+
+
+CREATE (:Drugtype {name:'硝酸酯类药物'});
 CREATE (:Drug {name:'硝酸甘油'});
 MATCH (dt:Drugtype {name:'硝酸酯类药物'}),(d:Drug {name:'硝酸甘油'}) CREATE (dt)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(d);
 CREATE (:Drug {name:'硝酸异山梨酯'});
@@ -73,19 +70,23 @@ MATCH (dt:Drugtype {name:'硝酸酯类药物'}),(d:Drug {name:'硝酸异山梨�
 CREATE (:Drug {name:'单硝酸异山梨酯'});
 MATCH (dt:Drugtype {name:'硝酸酯类药物'}),(d:Drug {name:'单硝酸异山梨酯'}) CREATE (dt)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(d);
 
-//钾通道开放药对应药物
+CREATE (:Drugtype {name:'钾通道开放药'});
 CREATE (:Drug {name:'尼可地尔'});
 MATCH (dt:Drugtype {name:'钾通道开放药'}),(d:Drug {name:'尼可地尔'}) CREATE (dt)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(d);
 
-//β受体阻滞剂对应药物
+CREATE (:Drugtype {name:'β受体阻滞剂'});
 CREATE (:Drug {name:'阿替洛尔'});
 MATCH (dt:Drugtype {name:'β受体阻滞剂'}),(d:Drug {name:'阿替洛尔'}) CREATE (dt)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(d);
 CREATE (:Drug {name:'美托洛尔'});
 MATCH (dt:Drugtype {name:'β受体阻滞剂'}),(d:Drug {name:'美托洛尔'}) CREATE (dt)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(d);
 CREATE (:Drug {name:'比索洛尔'});
 MATCH (dt:Drugtype {name:'β受体阻滞剂'}),(d:Drug {name:'比索洛尔'}) CREATE (dt)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'艾司洛尔'});
+MATCH (dt:Drugtype {name:'β受体阻滞剂'}),(d:Drug {name:'艾司洛尔'}) CREATE (dt)-[:Contains {reference: "心房颤动基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'普萘洛尔'});
+MATCH (dt:Drugtype {name:'β受体阻滞剂'}),(d:Drug {name:'普萘洛尔'}) CREATE (dt)-[:Contains {reference: "心房颤动基层合理用药指南"}]->(d);
 
-//ACEI/ARB对应药物
+CREATE (:Drugtype {name:'ACEI/ARB'});
 CREATE (:Drug {name:'卡托普利'});
 MATCH (dt:Drugtype {name:'ACEI/ARB'}),(d:Drug {name:'卡托普利'}) CREATE (dt)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(d);
 CREATE (:Drug {name:'依那普利'});
@@ -95,12 +96,11 @@ MATCH (dt:Drugtype {name:'ACEI/ARB'}),(d:Drug {name:'赖诺普利'}) CREATE (dt)
 CREATE (:Drug {name:'缬沙坦'});
 MATCH (dt:Drugtype {name:'ACEI/ARB'}),(d:Drug {name:'缬沙坦'}) CREATE (dt)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(d);
 
-
-//醛固酮受体拮抗剂对应药物
+CREATE (:Drugtype {name:'醛固酮受体拮抗剂'});
 CREATE (:Drug {name:'螺内酯'});
 MATCH (dt:Drugtype {name:'醛固酮受体拮抗剂'}),(d:Drug {name:'螺内酯'}) CREATE (dt)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(d);
 
-//调脂药对应药物
+CREATE (:Drugtype {name:'调脂药'});
 CREATE (:Drug {name:'辛伐他汀'});
 MATCH (dt:Drugtype {name:'调脂药'}),(d:Drug {name:'辛伐他汀'}) CREATE (dt)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(d);
 CREATE (:Drug {name:'阿托伐他汀'});
@@ -111,6 +111,37 @@ CREATE (:Drug {name:'非诺贝特'});
 MATCH (dt:Drugtype {name:'调脂药'}),(d:Drug {name:'非诺贝特'}) CREATE (dt)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(d);
 CREATE (:Drug {name:'依折麦布'});
 MATCH (dt:Drugtype {name:'调脂药'}),(d:Drug {name:'依折麦布'}) CREATE (dt)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(d);
+
+CREATE (:Drugtype {name:'Ⅱ类(β受体阻滞剂)抗心律失常药'});
+CREATE (:Drug {name:'依折麦布'});
+MATCH (dt:Drugtype {name:'调脂药'}),(d:Drug {name:'依折麦布'}) CREATE (dt)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(d);
+
+CREATE (:Drugtype {name:'非二氢吡啶类钙拮抗剂'});
+CREATE (:Drug {name:'地尔硫䓬'});
+MATCH (dt:Drugtype {name:'非二氢吡啶类钙拮抗剂'}),(d:Drug {name:'地尔硫䓬'}) CREATE (dt)-[:Contains {reference: "心房颤动基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'维拉帕米'});
+MATCH (dt:Drugtype {name:'非二氢吡啶类钙拮抗剂'}),(d:Drug {name:'维拉帕米'}) CREATE (dt)-[:Contains {reference: "心房颤动基层合理用药指南"}]->(d);
+
+CREATE (:Drugtype {name:'洋地黄类抗心律失常药'});
+CREATE (:Drug {name:'去乙酰毛花苷'});
+MATCH (dt:Drugtype {name:'洋地黄类抗心律失常药'}),(d:Drug {name:'去乙酰毛花苷'}) CREATE (dt)-[:Contains {reference: "心房颤动基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'地高辛'});
+MATCH (dt:Drugtype {name:'洋地黄类抗心律失常药'}),(d:Drug {name:'地高辛'}) CREATE (dt)-[:Contains {reference: "心房颤动基层合理用药指南"}]->(d);
+
+CREATE (:Drugtype {name:'钠通道阻滞剂'});
+CREATE (:Drug {name:'普罗帕酮'});
+MATCH (dt:Drugtype {name:'钠通道阻滞剂'}),(d:Drug {name:'普罗帕酮'}) CREATE (dt)-[:Contains {reference: "心房颤动基层合理用药指南"}]->(d);
+
+CREATE (:Drugtype {name:'钾通道阻滞剂'});
+CREATE (:Drug {name:'胺碘酮'});
+MATCH (dt:Drugtype {name:'钾通道阻滞剂'}),(d:Drug {name:'胺碘酮'}) CREATE (dt)-[:Contains {reference: "心房颤动基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'伊布利特'});
+MATCH (dt:Drugtype {name:'钾通道阻滞剂'}),(d:Drug {name:'伊布利特'}) CREATE (dt)-[:Contains {reference: "心房颤动基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'索他洛尔'});
+MATCH (dt:Drugtype {name:'钾通道阻滞剂'}),(d:Drug {name:'索他洛尔'}) CREATE (dt)-[:Contains {reference: "心房颤动基层合理用药指南"}]->(d);
+
+
+
 
 
 
@@ -144,5 +175,22 @@ MATCH (disease:Disease {name:"ST段抬高型心肌梗死"}),(drug:Drug {name:'�
 MATCH (disease:Disease {name:"ST段抬高型心肌梗死"}),(drug:Drug {name:'非诺贝特'}) CREATE (disease)-[:Alternate {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(drug);
 MATCH (disease:Disease {name:"ST段抬高型心肌梗死"}),(drug:Drug {name:'依折麦布'}) CREATE (disease)-[:Alternate {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(drug);
 
+//心房颤动
+MATCH (disease:Disease {name:"心房颤动"}),(drug:Drug {name:'美托洛尔'}) CREATE (disease)-[:Recommend {reference: "心房颤动基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"心房颤动"}),(drug:Drug {name:'艾司洛尔'}) CREATE (disease)-[:Recommend {reference: "心房颤动基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"心房颤动"}),(drug:Drug {name:'普萘洛尔'}) CREATE (disease)-[:Recommend {reference: "心房颤动基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"心房颤动"}),(drug:Drug {name:'地尔硫䓬'}) CREATE (disease)-[:Recommend {reference: "心房颤动基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"心房颤动"}),(drug:Drug {name:'维拉帕米'}) CREATE (disease)-[:Recommend {reference: "心房颤动基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"心房颤动"}),(drug:Drug {name:'去乙酰毛花苷'}) CREATE (disease)-[:Recommend {reference: "心房颤动基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"心房颤动"}),(drug:Drug {name:'地高辛'}) CREATE (disease)-[:Recommend {reference: "心房颤动基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"心房颤动"}),(drug:Drug {name:'普罗帕酮'}) CREATE (disease)-[:Recommend {reference: "心房颤动基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"心房颤动"}),(drug:Drug {name:'胺碘酮'}) CREATE (disease)-[:Recommend {reference: "心房颤动基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"心房颤动"}),(drug:Drug {name:'伊布利特'}) CREATE (disease)-[:Recommend {reference: "心房颤动基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"心房颤动"}),(drug:Drug {name:'索他洛尔'}) CREATE (disease)-[:Recommend {reference: "心房颤动基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"心房颤动"}),(drug:Drug {name:'华法林'}) CREATE (disease)-[:Recommend {reference: "心房颤动基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"心房颤动"}),(drug:Drug {name:'达比加群酯'}) CREATE (disease)-[:Recommend {reference: "心房颤动基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"心房颤动"}),(drug:Drug {name:'利伐沙班'}) CREATE (disease)-[:Recommend {reference: "心房颤动基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"心房颤动"}),(drug:Drug {name:'肝素'}) CREATE (disease)-[:Recommend {reference: "心房颤动基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"心房颤动"}),(drug:Drug {name:'低分子肝素'}) CREATE (disease)-[:Recommend {reference: "心房颤动基层合理用药指南"}]->(drug);
 
 
