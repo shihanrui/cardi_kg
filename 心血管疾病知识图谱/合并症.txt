@@ -1,0 +1,13 @@
+//合并症
+MATCH (c:Category {name:'心力衰竭'}), (d2:Disease {name:'心房颤动'}) CREATE (c)-[:Combine {reference: "中国心力衰竭诊断和治疗指南2018"}]->(d2);
+MATCH (c:Category {name:'心力衰竭'}), (d2:Disease {name:'室性心律失常'}) CREATE (d1)-[:Combine {reference: "中国心力衰竭诊断和治疗指南2018"}]->(d2);
+MATCH (c:Category {name:'心力衰竭'}), (d2:Disease {name:'房室传导阻滞'}) CREATE (d1)-[:Combine {reference: "中国心力衰竭诊断和治疗指南2018"}]->(d2);
+MATCH (c:Category {name:'心力衰竭'}), (d2:Disease {name:'窦性心动过缓'}) CREATE (d1)-[:Combine {reference: "中国心力衰竭诊断和治疗指南2018"}]->(d2);
+MATCH (c1:Category {name:'心力衰竭'}), (c2:Category {name:'冠心病'}) CREATE (c1)-[:Combine {reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
+MATCH (c:Category {name:'心力衰竭'}), (d2:Disease {name:'高血压'}) CREATE (d1)-[:Combine {reference: "中国心力衰竭诊断和治疗指南2018"}]->(d2);
+MATCH (c1:Category {name:'心力衰竭'}), (c2:Disease {name:'糖尿病'}) CREATE (c1)-[:Combine {reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
+MATCH (c1:Category {name:'心力衰竭'}), (c2:Disease {name:'贫血'}) CREATE (c1)-[:Combine {reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
+MATCH (c1:Category {name:'心力衰竭'}), (c2:Disease {name:'肾功能不全'}) CREATE (c1)-[:Combine {reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
+MATCH (c1:Category {name:'心力衰竭'}), (c2:Disease {name:'肺部疾病'}) CREATE (c1)-[:Combine {reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
+MATCH (c1:Category {name:'心力衰竭'}), (c2:Disease {name:'睡眠呼吸暂停'}) CREATE (c1)-[:Combine {reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
+MATCH (c1:Category {name:'心力衰竭'}), (c2:Disease {name:'高原心脏病'}) CREATE (c1)-[:Combine {reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);

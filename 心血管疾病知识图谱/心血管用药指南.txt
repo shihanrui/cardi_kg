@@ -1,0 +1,895 @@
+MATCH (n) detach delete n;
+
+
+//心血管病分类
+CREATE (:Category {name:'冠心病'});
+CREATE (:Category {name:'心力衰竭'});
+
+//心血管病14个大类
+CREATE (:Disease {name: '室上性心动过速'});
+CREATE (:Disease {name:"稳定性冠心病"});
+CREATE (:Disease {name:"非ST段抬高型急性冠状动脉综合征"});
+CREATE (:Disease {name:"ST段抬高型心肌梗死"});
+CREATE (:Disease {name:"冠心病心脏康复"});
+CREATE (:Disease {name:"心脏骤停"});
+CREATE (:Disease {name:"早搏"});
+CREATE (:Disease {name:"胸痛"});
+CREATE (:Disease {name:"心房颤动"});
+CREATE (:Disease {name:"室性心动过速"});
+CREATE (:Disease {name:"慢性心力衰竭"});
+CREATE (:Disease {name:"急性心力衰竭"});
+CREATE (:Disease {name:"高血压"});
+CREATE (:Disease {name:"血脂异常"});
+
+//疾病大类与子类之间的关联
+MATCH (u:Category {name:'冠心病'}), (r:Disease {name:'ST段抬高型心肌梗死'}) CREATE (u)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(r);
+MATCH (u:Category {name:'心力衰竭'}), (r:Disease {name:'慢性心力衰竭'}) CREATE (u)-[:Contains {reference: "慢性心力衰竭基层合理用药指南"}]->(r);
+MATCH (u:Category {name:'心力衰竭'}), (r:Disease {name:'急性心力衰竭'}) CREATE (u)-[:Contains {reference: "急性心力衰竭基层合理用药指南"}]->(r);
+
+//病因分类 包括大类和小类关系
+CREATE (:causeType {name:"心肌病变"});
+CREATE (:causeType {name:"缺血性心脏病"});
+MATCH (c1:causeType {name:"心肌病变"}), (c2:causeType {name:"缺血性心脏病"}) CREATE (c1)-[:Includes_causetype{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
+CREATE (:causeType {name:"心脏毒性损伤"});
+MATCH (c1:causeType {name:"心肌病变"}), (c2:causeType {name:"心脏毒性损伤"}) CREATE (c1)-[:Includes_causetype{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
+CREATE (:causeType {name:"心脏毒性药物"});
+MATCH (c1:causeType {name:"心脏毒性损伤"}), (c2:causeType {name:"心脏毒性药物"}) CREATE (c1)-[:Includes_causetype{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
+CREATE (:causeType {name:"药物滥用"});
+MATCH (c1:causeType {name:"心脏毒性损伤"}), (c2:causeType {name:"药物滥用"}) CREATE (c1)-[:Includes_causetype{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
+CREATE (:causeType {name:"重金属中毒"});
+MATCH (c1:causeType {name:"心脏毒性损伤"}), (c2:causeType {name:"重金属中毒"}) CREATE (c1)-[:Includes_causetype{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
+CREATE (:causeType {name:"放射性心肌损伤"});
+MATCH (c1:causeType {name:"心脏毒性损伤"}), (c2:causeType {name:"放射性心肌损伤"}) CREATE (c1)-[:Includes_causetype{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
+CREATE (:causeType {name:"免疫及炎症介导的心肌损害"});
+MATCH (c1:causeType {name:"心肌病变"}), (c2:causeType {name:"免疫及炎症介导的心肌损害"}) CREATE (c1)-[:Includes_causetype{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
+CREATE (:causeType {name:"感染性疾病"});
+MATCH (c1:causeType {name:"免疫及炎症介导的心肌损害"}), (c2:causeType {name:"感染性疾病"}) CREATE (c1)-[:Includes_causetype{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
+CREATE (:causeType {name:"自身免疫性疾病"});
+MATCH (c1:causeType {name:"免疫及炎症介导的心肌损害"}), (c2:causeType {name:"自身免疫性疾病"}) CREATE (c1)-[:Includes_causetype{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
+CREATE (:causeType {name:"心肌浸润性病变"});
+MATCH (c1:causeType {name:"心肌病变"}), (c2:causeType {name:"心肌浸润性病变"}) CREATE (c1)-[:Includes_causetype{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
+CREATE (:causeType {name:"非恶性肿瘤相关"});
+MATCH (c1:causeType {name:"心肌浸润性病变"}), (c2:causeType {name:"非恶性肿瘤相关"}) CREATE (c1)-[:Includes_causetype{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
+CREATE (:causeType {name:"恶性肿瘤相关"});
+MATCH (c1:causeType {name:"心肌浸润性病变"}), (c2:causeType {name:"恶性肿瘤相关"}) CREATE (c1)-[:Includes_causetype{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
+CREATE (:causeType {name:"内分泌代谢性疾病"});
+MATCH (c1:causeType {name:"心肌病变"}), (c2:causeType {name:"内分泌代谢性疾病"}) CREATE (c1)-[:Includes_causetype{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
+CREATE (:causeType {name:"激素相关"});
+MATCH (c1:causeType {name:"内分泌代谢性疾病"}), (c2:causeType {name:"激素相关"}) CREATE (c1)-[:Includes_causetype{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
+CREATE (:causeType {name:"营养相关"});
+MATCH (c1:causeType {name:"内分泌代谢性疾病"}), (c2:causeType {name:"营养相关"}) CREATE (c1)-[:Includes_causetype{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
+CREATE (:causeType {name:"遗传学异常"});
+MATCH (c1:causeType {name:"心肌病变"}), (c2:causeType {name:"遗传学异常"}) CREATE (c1)-[:Includes_causetype{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
+CREATE (:causeType {name:"应激"});
+MATCH (c1:causeType {name:"心肌病变"}), (c2:causeType {name:"应激"}) CREATE (c1)-[:Includes_causetype{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
+CREATE (:causeType {name:"心脏负荷异常"});
+CREATE (:causeType {name:"高血压"});
+MATCH (c1:causeType {name:"心脏负荷异常"}), (c2:causeType {name:"高血压"}) CREATE (c1)-[:Includes_causetype{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
+CREATE (:causeType {name:"瓣膜和心脏结构异常"});
+MATCH (c1:causeType {name:"心脏负荷异常"}), (c2:causeType {name:"瓣膜和心脏结构异常"}) CREATE (c1)-[:Includes_causetype{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
+CREATE (:causeType {name:"心包及心内膜疾病"});
+MATCH (c1:causeType {name:"心脏负荷异常"}), (c2:causeType {name:"心包及心内膜疾病"}) CREATE (c1)-[:Includes_causetype{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
+CREATE (:causeType {name:"高心输出量状态"});
+MATCH (c1:causeType {name:"心脏负荷异常"}), (c2:causeType {name:"高心输出量状态"}) CREATE (c1)-[:Includes_causetype{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
+CREATE (:causeType {name:"容量负荷过度"});
+MATCH (c1:causeType {name:"心脏负荷异常"}), (c2:causeType {name:"容量负荷过度"}) CREATE (c1)-[:Includes_causetype{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
+CREATE (:causeType {name:"肺部疾病"});
+MATCH (c1:causeType {name:"心脏负荷异常"}), (c2:causeType {name:"肺部疾病"}) CREATE (c1)-[:Includes_causetype{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
+CREATE (:causeType {name:"心律失常"});
+CREATE (:causeType {name:"心动过速"});
+MATCH (c1:causeType {name:"心律失常"}), (c2:causeType {name:"心动过速"}) CREATE (c1)-[:Includes_causetype{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
+CREATE (:causeType {name:"心动过缓"});
+MATCH (c1:causeType {name:"心律失常"}), (c2:causeType {name:"心动过缓"}) CREATE (c1)-[:Includes_causetype{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
+
+//病因
+CREATE (:Cause {name:"心肌梗死"});
+CREATE (:Cause {name:"心肌瘢痕"});
+CREATE (:Cause {name:"心肌顿抑"});
+CREATE (:Cause {name:"冬眠"});
+MATCH (c1:Cause {name:"心肌梗死"}), (c2:Cause {name:"心肌瘢痕"}) CREATE (c1)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
+MATCH (c1:Cause {name:"心肌梗死"}), (c2:Cause {name:"心肌顿抑"}) CREATE (c1)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
+MATCH (c1:Cause {name:"心肌梗死"}), (c2:Cause {name:"冬眠"}) CREATE (c1)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
+CREATE (:Cause {name:"冠状动脉病变"});
+CREATE (:Cause {name:"冠状动脉微循环异常"});
+CREATE (:Cause {name:"内皮功能障碍"});
+MATCH (ct:causeType {name:"缺血性心脏病"}), (c:Cause {name:"心肌梗死"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"缺血性心脏病"}), (c:Cause {name:"冠状动脉病变"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"缺血性心脏病"}), (c:Cause {name:"冠状动脉微循环异常"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"缺血性心脏病"}), (c:Cause {name:"内皮功能障碍"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+CREATE (:Cause {name:"抗肿瘤药"});
+CREATE (:Cause {name:"蒽环类"});
+CREATE (:Cause {name:"曲妥珠单抗"});
+MATCH (c1:Cause {name:"抗肿瘤药"}), (c2:Cause {name:"蒽环类"}) CREATE (c1)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
+MATCH (c1:Cause {name:"抗肿瘤药"}), (c2:Cause {name:"曲妥珠单抗"}) CREATE (c1)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
+CREATE (:Cause {name:"抗抑郁药"});
+CREATE (:Cause {name:"抗心律失常药"});
+CREATE (:Cause {name:"非甾体类抗炎药"});
+CREATE (:Cause {name:"麻醉药"});
+MATCH (ct:causeType {name:"心脏毒性药物"}), (c:Cause {name:"抗肿瘤药"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"心脏毒性药物"}), (c:Cause {name:"抗抑郁药"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"心脏毒性药物"}), (c:Cause {name:"抗心律失常药"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"心脏毒性药物"}), (c:Cause {name:"非甾体类抗炎药"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"心脏毒性药物"}), (c:Cause {name:"麻醉药"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
+CREATE (:Cause {name:"酒精"});
+CREATE (:Cause {name:"可卡因"});
+CREATE (:Cause {name:"安非他命"});
+CREATE (:Cause {name:"合成代谢类固醇"});
+MATCH (ct:causeType {name:"药物滥用"}), (c:Cause {name:"酒精"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"药物滥用"}), (c:Cause {name:"可卡因"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"药物滥用"}), (c:Cause {name:"安非他命"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"药物滥用"}), (c:Cause {name:"合成代谢类固醇"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+CREATE (:Cause {name:"铜中毒"});
+CREATE (:Cause {name:"铁中毒"});
+CREATE (:Cause {name:"铅中毒"});
+CREATE (:Cause {name:"钴中毒"});
+MATCH (ct:causeType {name:"重金属中毒"}), (c:Cause {name:"铜中毒"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"重金属中毒"}), (c:Cause {name:"铁中毒"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"重金属中毒"}), (c:Cause {name:"铅中毒"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"重金属中毒"}), (c:Cause {name:"钴中毒"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+CREATE (:Cause {name:"细菌"});
+CREATE (:Cause {name:"病毒"});
+CREATE (:Cause {name:"真菌"});
+CREATE (:Cause {name:"寄生虫"});
+CREATE (:Cause {name:"Chagas病"});
+MATCH (c1:Cause {name:"寄生虫"}), (c2:Cause {name:"Chagas病"}) CREATE (c1)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
+CREATE (:Cause {name:"螺旋体"});
+CREATE (:Cause {name:"立克次氏体"});
+MATCH (ct:causeType {name:"感染性疾病"}), (c:Cause {name:"细菌"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"感染性疾病"}), (c:Cause {name:"病毒"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"感染性疾病"}), (c:Cause {name:"真菌"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"感染性疾病"}), (c:Cause {name:"寄生虫"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"感染性疾病"}), (c:Cause {name:"螺旋体"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"感染性疾病"}), (c:Cause {name:"立克次氏体"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+CREATE (:Cause {name:"巨细胞性心肌炎"});
+CREATE (:Cause {name:"自身免疫病"});
+CREATE (:Cause {name:"系统性红斑狼疮"});
+MATCH (c1:Cause {name:"自身免疫病"}), (c2:Cause {name:"系统性红斑狼疮"}) CREATE (c1)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
+CREATE (:Cause {name:"嗜酸性细胞学心肌炎"});
+CREATE (:Cause {name:"Churg-Strauss综合征"});
+MATCH (c1:Cause {name:"嗜酸性细胞学心肌炎"}), (c2:Cause {name:"Churg-Strauss综合征"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
+MATCH (ct:causeType {name:"自身免疫性疾病"}), (c:Cause {name:"巨细胞性心肌炎"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"自身免疫性疾病"}), (c:Cause {name:"自身免疫病"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"自身免疫性疾病"}), (c:Cause {name:"嗜酸性细胞学心肌炎"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+CREATE (:Cause {name:"系统性浸润性疾病"});
+CREATE (:Cause {name:"心肌淀粉样变"});
+MATCH (c1:Cause {name:"系统性浸润性疾病"}), (c2:Cause {name:"心肌淀粉样变"}) CREATE (c1)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
+CREATE (:Cause {name:"结节病"});
+MATCH (c1:Cause {name:"系统性浸润性疾病"}), (c2:Cause {name:"结节病"}) CREATE (c1)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
+CREATE (:Cause {name:"贮积性疾病"});
+CREATE (:Cause {name:"血色病"});
+MATCH (c1:Cause {name:"贮积性疾病"}), (c2:Cause {name:"血色病"}) CREATE (c1)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
+CREATE (:Cause {name:"糖原贮积病"});
+MATCH (c1:Cause {name:"贮积性疾病"}), (c2:Cause {name:"糖原贮积病"}) CREATE (c1)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
+MATCH (ct:causeType {name:"非恶性肿瘤相关"}), (c:Cause {name:"系统性浸润性疾病"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"非恶性肿瘤相关"}), (c:Cause {name:"贮积性疾病"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+CREATE (:Cause {name:"肿瘤转移"});
+CREATE (:Cause {name:"肿瘤浸润"});
+MATCH (ct:causeType {name:"恶性肿瘤相关"}), (c:Cause {name:"肿瘤转移"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"恶性肿瘤相关"}), (c:Cause {name:"肿瘤浸润"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+CREATE (:Cause {name:"糖尿病"});
+CREATE (:Cause {name:"甲状腺疾病"});
+CREATE (:Cause {name:"甲状旁腺疾病"});
+CREATE (:Cause {name:"肢端肥大症"});
+CREATE (:Cause {name:"生长激素缺乏"});
+CREATE (:Cause {name:"皮质醇增多症"});
+CREATE (:Cause {name:"醛固酮增多症"});
+CREATE (:Cause {name:"肾上腺皮质功能减退症"});
+CREATE (:Cause {name:"代谢综合征"});
+CREATE (:Cause {name:"嗜铬细胞瘤"});
+CREATE (:Cause {name:"妊娠"});
+CREATE (:Cause {name:"围产期"});
+MATCH (ct:causeType {name:"激素相关"}), (c:Cause {name:"糖尿病"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"激素相关"}), (c:Cause {name:"甲状腺疾病"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"激素相关"}), (c:Cause {name:"甲状旁腺疾病"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"激素相关"}), (c:Cause {name:"肢端肥大症"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"激素相关"}), (c:Cause {name:"生长激素缺乏"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"激素相关"}), (c:Cause {name:"皮质醇增多症"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"激素相关"}), (c:Cause {name:"醛固酮增多症"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"激素相关"}), (c:Cause {name:"肾上腺皮质功能减退症"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"激素相关"}), (c:Cause {name:"代谢综合征"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"激素相关"}), (c:Cause {name:"嗜铬细胞瘤"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"激素相关"}), (c:Cause {name:"妊娠"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"激素相关"}), (c:Cause {name:"围产期"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+CREATE (:Cause {name:"肥胖"});
+CREATE (:Cause {name:"缺乏维生素B1"});
+CREATE (:Cause {name:"缺乏L-肉毒碱"});
+CREATE (:Cause {name:"缺硒"});
+CREATE (:Cause {name:"缺铁"});
+CREATE (:Cause {name:"缺磷"});
+CREATE (:Cause {name:"缺钙"});
+CREATE (:Cause {name:"营养不良"});
+MATCH (ct:causeType {name:"营养相关"}), (c:Cause {name:"肥胖"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"营养相关"}), (c:Cause {name:"缺乏维生素B1"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"营养相关"}), (c:Cause {name:"缺乏L-肉毒碱"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"营养相关"}), (c:Cause {name:"缺硒"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"营养相关"}), (c:Cause {name:"缺铁"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"营养相关"}), (c:Cause {name:"缺磷"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"营养相关"}), (c:Cause {name:"缺钙"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"营养相关"}), (c:Cause {name:"营养不良"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+CREATE (:Cause {name:"遗传因素相关的肥厚型心机病"});
+CREATE (:Cause {name:"扩张型心肌病"});
+CREATE (:Cause {name:"限制型心肌病"});
+CREATE (:Cause {name:"致心律失常性右心室心肌病"});
+CREATE (:Cause {name:"左心室致密化不全"});
+CREATE (:Cause {name:"核纤层蛋白病"});
+CREATE (:Cause {name:"肌营养不良症"});
+MATCH (ct:causeType {name:"遗传学异常"}), (c:Cause {name:"遗传因素相关的肥厚型心机病"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"遗传学异常"}), (c:Cause {name:"扩张型心肌病"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"遗传学异常"}), (c:Cause {name:"限制型心肌病"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"遗传学异常"}), (c:Cause {name:"致心律失常性右心室心肌病"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"遗传学异常"}), (c:Cause {name:"左心室致密化不全"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"遗传学异常"}), (c:Cause {name:"核纤层蛋白病"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"遗传学异常"}), (c:Cause {name:"肌营养不良症"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+CREATE (:Cause {name:"应激性心肌病"});
+CREATE (:Cause {name:"原发性高血压"});
+CREATE (:Cause {name:"继发性高血压"});
+MATCH (ct:causeType {name:"高血压"}), (c:Cause {name:"原发性高血压"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"高血压"}), (c:Cause {name:"继发性高血压"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+CREATE (:Cause {name:"二尖瓣狭窄或关闭不全"});
+CREATE (:Cause {name:"三尖瓣狭窄或关闭不全"});
+CREATE (:Cause {name:"主动脉瓣狭窄或关闭不全"});
+CREATE (:Cause {name:"肺动脉瓣狭窄或关闭不全"});
+CREATE (:Cause {name:"先天性心脏病"});
+CREATE (:Cause {name:"先天性心内分流"});
+MATCH (ct:Cause {name:"先天性心脏病"}), (c2:Cause {name:"先天性心内分流"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
+CREATE (:Cause {name:"先天性心外分流"});
+MATCH (ct:Cause {name:"先天性心脏病"}), (c2:Cause {name:"先天性心外分流"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
+MATCH (ct:causeType {name:"瓣膜和心脏结构异常"}), (c:Cause {name:"二尖瓣狭窄或关闭不全"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"瓣膜和心脏结构异常"}), (c:Cause {name:"三尖瓣狭窄或关闭不全"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"瓣膜和心脏结构异常"}), (c:Cause {name:"主动脉瓣狭窄或关闭不全"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"瓣膜和心脏结构异常"}), (c:Cause {name:"肺动脉瓣狭窄或关闭不全"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"瓣膜和心脏结构异常"}), (c:Cause {name:"先天性心脏病"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+CREATE (:Cause {name:"缩窄性心包炎"});
+CREATE (:Cause {name:"心包积液"});
+CREATE (:Cause {name:"嗜酸性粒细胞增多症"});
+CREATE (:Cause {name:"心内膜纤维化"});
+MATCH (ct:causeType {name:"心包及心内膜疾病"}), (c:Cause {name:"缩窄性心包炎"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"心包及心内膜疾病"}), (c:Cause {name:"心包积液"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"心包及心内膜疾病"}), (c:Cause {name:"嗜酸性粒细胞增多症"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"心包及心内膜疾病"}), (c:Cause {name:"心内膜纤维化"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+CREATE (:Cause {name:"动静脉瘘"});
+CREATE (:Cause {name:"慢性贫血"});
+CREATE (:Cause {name:"甲状腺功能亢进症"});
+MATCH (ct:causeType {name:"高心输出量状态"}), (c:Cause {name:"心内膜纤维化"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"高心输出量状态"}), (c:Cause {name:"慢性贫血"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"高心输出量状态"}), (c:Cause {name:"甲状腺功能亢进症"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+CREATE (:Cause {name:"肾功能衰竭"});
+CREATE (:Cause {name:"输液过多过快"});
+MATCH (ct:causeType {name:"容量负荷过度"}), (c:Cause {name:"肾功能衰竭"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"容量负荷过度"}), (c:Cause {name:"输液过多过快"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+CREATE (:Cause {name:"肺源性心脏病"});
+CREATE (:Cause {name:"肺血管疾病"});
+MATCH (ct:causeType {name:"肺部疾病"}), (c:Cause {name:"肺源性心脏病"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"肺部疾病"}), (c:Cause {name:"肺血管疾病"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+CREATE (:Cause {name:"房性心动过速"});
+CREATE (:Cause {name:"房室结折返性心动过速"});
+CREATE (:Cause {name:"房室折返性心动过速"});
+CREATE (:Cause {name:"心房颤动"});
+CREATE (:Cause {name:"室性心律失常"});
+MATCH (ct:causeType {name:"心动过速"}), (c:Cause {name:"房性心动过速"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"心动过速"}), (c:Cause {name:"房室结折返性心动过速"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"心动过速"}), (c:Cause {name:"房室折返性心动过速"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"心动过速"}), (c:Cause {name:"心房颤动"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"心动过速"}), (c:Cause {name:"室性心律失常"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+CREATE (:Cause {name:"窦房结功能异常"});
+CREATE (:Cause {name:"传导系统异常"});
+MATCH (ct:causeType {name:"心动过缓"}), (c:Cause {name:"窦房结功能异常"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"心动过缓"}), (c:Cause {name:"传导系统异常"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+
+
+//病因及关联
+//心力衰竭
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"心肌梗死"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"冠状动脉病变"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"冠状动脉微循环异常"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"内皮功能障碍"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"抗肿瘤药"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"抗抑郁药"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"抗心律失常药"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"非甾体类抗炎药"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"麻醉药"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"酒精"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"可卡因"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"安非他命"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"合成代谢类固醇"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"铜中毒"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"铁中毒"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"铅中毒"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"钴中毒"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"细菌"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"病毒"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"真菌"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"寄生虫"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"螺旋体"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"立克次氏体"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"巨细胞性心肌炎"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"自身免疫病"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"嗜酸性细胞学心肌炎"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"系统性浸润性疾病"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"贮积性疾病"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"肿瘤转移"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"糖尿病"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"甲状腺疾病"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"甲状旁腺疾病"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"肢端肥大症"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"生长激素缺乏"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"皮质醇增多症"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"醛固酮增多症"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"肾上腺皮质功能减退症"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"代谢综合征"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"嗜铬细胞瘤"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"醛固酮增多症"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"妊娠"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"围产期"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"肥胖"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"缺乏维生素B1"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"缺乏L-肉毒碱"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"缺硒"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"缺铁"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"缺钙"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"缺磷"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"营养不良"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"遗传因素相关的肥厚型心机病"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"扩张型心肌病"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"限制型心肌病"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"致心律失常性右心室心肌病"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"左心室致密化不全"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"醛固酮增多症"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"核纤层蛋白病"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"肌营养不良症"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"应激性心肌病"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"原发性高血压"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"继发性高血压"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"二尖瓣狭窄或关闭不全"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"三尖瓣狭窄或关闭不全"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"主动脉瓣狭窄或关闭不全"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"肺动脉瓣狭窄或关闭不全"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"先天性心脏病"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"缩窄性心包炎"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"心包积液"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"嗜酸性粒细胞增多症"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"心内膜纤维化"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"动静脉瘘"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"慢性贫血"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"甲状腺功能亢进症"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"肾功能衰竭"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"输液过多过快"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"房性心动过速"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"房室折返性心动过速"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"房室结折返性心动过速"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"心房颤动"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"室性心律失常"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"窦房结功能异常"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"传导系统异常"}) CREATE (dt)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+
+//常规检查
+CREATE (:Routine {name:'心电图'});
+CREATE (:Routine {name:'X线胸片'});
+CREATE (:Routine {name:'生物标志物'});
+CREATE (:Routine {name:'超声心动图'});
+CREATE (:Routine {name:'实验室检查'});
+
+CREATE (:Routine {name:'血常规'});
+CREATE (:Routine {name:'血钠'});
+CREATE (:Routine {name:'血钾'});
+CREATE (:Routine {name:'血糖'});
+CREATE (:Routine {name:'尿素氮'});
+CREATE (:Routine {name:'肌酐'});
+CREATE (:Routine {name:'肾小球滤过率'});
+CREATE (:Routine {name:'肝酶'});
+CREATE (:Routine {name:'胆红素'});
+CREATE (:Routine {name:'血清铁'});
+CREATE (:Routine {name:'铁蛋白'});
+CREATE (:Routine {name:'总铁结合力'});
+CREATE (:Routine {name:'血脂'});
+CREATE (:Routine {name:'糖化血红蛋白'});
+CREATE (:Routine {name:'促甲状腺激素'});
+CREATE (:Routine {name:'利钠肽'});
+MATCH (r1:Routine {name:'实验室检查'}),(r2:Routine {name:'血常规'}}) CREATE (r1)-[:Includes_routine {reference: "慢性心力衰竭基层合理用药指南"}]->(r2);
+MATCH (r1:Routine {name:'实验室检查'}),(r2:Routine {name:'血钠'}}) CREATE (r1)-[:Includes_routine {reference: "慢性心力衰竭基层合理用药指南"}]->(r2);
+MATCH (r1:Routine {name:'实验室检查'}),(r2:Routine {name:'血钾'}}) CREATE (r1)-[:Includes_routine {reference: "慢性心力衰竭基层合理用药指南"}]->(r2);
+MATCH (r1:Routine {name:'实验室检查'}),(r2:Routine {name:'血糖'}}) CREATE (r1)-[:Includes_routine {reference: "慢性心力衰竭基层合理用药指南"}]->(r2);
+MATCH (r1:Routine {name:'实验室检查'}),(r2:Routine {name:'尿素氮'}}) CREATE (r1)-[:Includes_routine {reference: "慢性心力衰竭基层合理用药指南"}]->(r2);
+MATCH (r1:Routine {name:'实验室检查'}),(r2:Routine {name:'肌酐'}}) CREATE (r1)-[:Includes_routine {reference: "慢性心力衰竭基层合理用药指南"}]->(r2);
+MATCH (r1:Routine {name:'实验室检查'}),(r2:Routine {name:'肾小球滤过率'}}) CREATE (r1)-[:Includes_routine {reference: "慢性心力衰竭基层合理用药指南"}]->(r2);
+MATCH (r1:Routine {name:'实验室检查'}),(r2:Routine {name:'肝酶'}}) CREATE (r1)-[:Includes_routine {reference: "慢性心力衰竭基层合理用药指南"}]->(r2);
+MATCH (r1:Routine {name:'实验室检查'}),(r2:Routine {name:'胆红素'}}) CREATE (r1)-[:Includes_routine {reference: "慢性心力衰竭基层合理用药指南"}]->(r2);
+MATCH (r1:Routine {name:'实验室检查'}),(r2:Routine {name:'血清铁'}}) CREATE (r1)-[:Includes_routine {reference: "慢性心力衰竭基层合理用药指南"}]->(r2);
+MATCH (r1:Routine {name:'实验室检查'}),(r2:Routine {name:'铁蛋白'}}) CREATE (r1)-[:Includes_routine {reference: "慢性心力衰竭基层合理用药指南"}]->(r2);
+MATCH (r1:Routine {name:'实验室检查'}),(r2:Routine {name:'总铁结合力'}}) CREATE (r1)-[:Includes_routine {reference: "慢性心力衰竭基层合理用药指南"}]->(r2);
+MATCH (r1:Routine {name:'实验室检查'}),(r2:Routine {name:'血脂'}}) CREATE (r1)-[:Includes_routine {reference: "慢性心力衰竭基层合理用药指南"}]->(r2);
+MATCH (r1:Routine {name:'实验室检查'}),(r2:Routine {name:'糖化血红蛋白'}}) CREATE (r1)-[:Includes_routine {reference: "慢性心力衰竭基层合理用药指南"}]->(r2);
+MATCH (r1:Routine {name:'实验室检查'}),(r2:Routine {name:'促甲状腺激素'}}) CREATE (r1)-[:Includes_routine {reference: "慢性心力衰竭基层合理用药指南"}]->(r2);
+MATCH (r1:Routine {name:'实验室检查'}),(r2:Routine {name:'利钠肽'}}) CREATE (r1)-[:Includes_routine {reference: "慢性心力衰竭基层合理用药指南"}]->(r2);
+
+//病史
+CREATE (:History {name:'冠心病'});
+CREATE (:History {name:'高血压病'});
+CREATE (:History {name:'心力衰竭高危因素'});
+CREATE (:History {name:'使用利尿剂'});
+CREATE (:History {name:'端坐呼吸'});
+CREATE (:History {name:'夜间阵法性呼吸困难'});
+
+//体格检查
+CREATE (:Examination {name:'肺部啰音'});
+CREATE (:Examination {name:'肺部啰音'});
+CREATE (:Examination {name:'心脏杂音'});
+CREATE (:Examination {name:'颈静脉重樱'});
+CREATE (:Examination {name:'心尖搏动侧移动或弥散'});
+
+//心电图
+
+// 胸片
+
+//超声心动图
+
+
+//利钠肽水平
+
+
+//临床表现
+CREATE (:clinicalFeature {name:'呼吸困难'});
+CREATE (:clinicalFeature {name:'疲乏'});
+CREATE (:clinicalFeature {name:'液体潴留'});
+CREATE (:clinicalFeature {name:'肺循环瘀血'});
+CREATE (:clinicalFeature {name:'体循环瘀血'});
+CREATE (:clinicalFeature {name:'外周水肿'});
+MATCH (f1:clinicalFeature {name:'液体潴留'}),(f2:clinicalFeature {name:'肺循环瘀血'}) CREATE (f1)-[:Include {reference: "慢性心力衰竭基层合理用药指南"}]->(f2);
+MATCH (f1:clinicalFeature {name:'液体潴留'}),(f2:clinicalFeature {name:'体循环瘀血'}) CREATE (f1)-[:Include {reference: "慢性心力衰竭基层合理用药指南"}]->(f2);
+MATCH (f1:clinicalFeature {name:'液体潴留'}),(f2:clinicalFeature {name:'外周水肿'}) CREATE (f1)-[:Include {reference: "慢性心力衰竭基层合理用药指南"}]->(f2);
+
+
+//慢性心力衰竭临床表现
+MATCH (d:Disease {name:"慢性心力衰竭"}),(f:clinicalFeature {name:'呼吸困难'}) CREATE (d)-[:Manifest {reference: "慢性心力衰竭基层合理用药指南"}]->(f);
+MATCH (d:Disease {name:"慢性心力衰竭"}),(f:clinicalFeature {name:'疲乏'}) CREATE (d)-[:Manifest {reference: "慢性心力衰竭基层合理用药指南"}]->(f);
+MATCH (d:Disease {name:"慢性心力衰竭"}),(f:clinicalFeature {name:'肺循环瘀血'}) CREATE (d)-[:Manifest {reference: "慢性心力衰竭基层合理用药指南"}]->(f);
+MATCH (d:Disease {name:"慢性心力衰竭"}),(f:clinicalFeature {name:'体循环瘀血'}) CREATE (d)-[:Manifest {reference: "慢性心力衰竭基层合理用药指南"}]->(f);
+MATCH (d:Disease {name:"慢性心力衰竭"}),(f:clinicalFeature {name:'外周水肿'}) CREATE (d)-[:Manifest {reference: "慢性心力衰竭基层合理用药指南"}]->(f);
+
+
+//药物种类及对应药物
+CREATE (:Drugtype {name:'镇痛药'});
+CREATE (:Drug {name:'哌替啶'});
+MATCH (dt:Drugtype {name:'镇痛药'}),(d:Drug {name:'哌替啶'}) CREATE (dt)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'吗啡'});
+MATCH (dt:Drugtype {name:'镇痛药'}),(d:Drug {name:'吗啡'}) CREATE (dt)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(d);
+
+CREATE (:Drugtype {name:'溶栓药'});
+CREATE (:Drug {name:'尿激酶'});
+MATCH (dt:Drugtype {name:'溶栓药'}),(d:Drug {name:'尿激酶'}) CREATE (dt)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'阿替普酶'});
+MATCH (dt:Drugtype {name:'溶栓药'}),(d:Drug {name:'阿替普酶'}) CREATE (dt)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'瑞替普酶'});
+MATCH (dt:Drugtype {name:'溶栓药'}),(d:Drug {name:'瑞替普酶'}) CREATE (dt)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(d);
+
+CREATE (:Drugtype {name:'抗血小板药'});
+CREATE (:Drug {name:'阿司匹林'});
+MATCH (dt:Drugtype {name:'抗血小板药'}),(d:Drug {name:'阿司匹林'}) CREATE (dt)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'氯吡格雷'});
+MATCH (dt:Drugtype {name:'抗血小板药'}),(d:Drug {name:'氯吡格雷'}) CREATE (dt)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'替格瑞洛'});
+MATCH (dt:Drugtype {name:'抗血小板药'}),(d:Drug {name:'替格瑞洛'}) CREATE (dt)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(d);
+
+CREATE (:Drugtype {name:'抗凝血药'});
+CREATE (:Drug {name:'肝素'});
+MATCH (dt:Drugtype {name:'抗凝血药'}),(d:Drug {name:'肝素'}) CREATE (dt)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'低分子量肝素'});
+MATCH (dt:Drugtype {name:'抗凝血药'}),(d:Drug {name:'低分子量肝素'}) CREATE (dt)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'华法林'});
+MATCH (dt:Drugtype {name:'抗凝血药'}),(d:Drug {name:'华法林'}) CREATE (dt)-[:Contains {reference: "心房颤动基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'达比加群酯'});
+MATCH (dt:Drugtype {name:'抗凝血药'}),(d:Drug {name:'达比加群酯'}) CREATE (dt)-[:Contains {reference: "心房颤动基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'利伐沙班'});
+MATCH (dt:Drugtype {name:'抗凝血药'}),(d:Drug {name:'利伐沙班'}) CREATE (dt)-[:Contains {reference: "心房颤动基层合理用药指南"}]->(d);
+
+CREATE (:Drugtype {name:'硝酸酯类药物'});
+CREATE (:Drug {name:'硝酸甘油'});
+MATCH (dt:Drugtype {name:'硝酸酯类药物'}),(d:Drug {name:'硝酸甘油'}) CREATE (dt)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'硝酸异山梨酯'});
+MATCH (dt:Drugtype {name:'硝酸酯类药物'}),(d:Drug {name:'硝酸异山梨酯'}) CREATE (dt)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'单硝酸异山梨酯'});
+MATCH (dt:Drugtype {name:'硝酸酯类药物'}),(d:Drug {name:'单硝酸异山梨酯'}) CREATE (dt)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(d);
+
+CREATE (:Drugtype {name:'钾通道开放药'});
+CREATE (:Drug {name:'尼可地尔'});
+MATCH (dt:Drugtype {name:'钾通道开放药'}),(d:Drug {name:'尼可地尔'}) CREATE (dt)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(d);
+
+CREATE (:Drugtype {name:'β受体阻滞剂'});
+CREATE (:Drug {name:'阿替洛尔'});
+MATCH (dt:Drugtype {name:'β受体阻滞剂'}),(d:Drug {name:'阿替洛尔'}) CREATE (dt)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'美托洛尔'});
+MATCH (dt:Drugtype {name:'β受体阻滞剂'}),(d:Drug {name:'美托洛尔'}) CREATE (dt)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'比索洛尔'});
+MATCH (dt:Drugtype {name:'β受体阻滞剂'}),(d:Drug {name:'比索洛尔'}) CREATE (dt)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'艾司洛尔'});
+MATCH (dt:Drugtype {name:'β受体阻滞剂'}),(d:Drug {name:'艾司洛尔'}) CREATE (dt)-[:Contains {reference: "心房颤动基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'普萘洛尔'});
+MATCH (dt:Drugtype {name:'β受体阻滞剂'}),(d:Drug {name:'普萘洛尔'}) CREATE (dt)-[:Contains {reference: "心房颤动基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'拉贝洛尔'});
+MATCH (dt:Drugtype {name:'β受体阻滞剂'}),(d:Drug {name:'拉贝洛尔'}) CREATE (dt)-[:Contains {reference: "高血压基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'卡维地洛'});
+MATCH (dt:Drugtype {name:'β受体阻滞剂'}),(d:Drug {name:'卡维地洛'}) CREATE (dt)-[:Contains {reference: "冠心病心脏康复基层合理用药指南"}]->(d);
+
+CREATE (:Drugtype {name:'降压药'});
+MATCH (dt:Drugtype {name:'降压药'}),(d:Drug {name:'美托洛尔'}) CREATE (dt)-[:Contains {reference: "胸痛基层合理用药指南"}]->(d);
+MATCH (dt:Drugtype {name:'降压药'}),(d:Drug {name:'艾司洛尔'}) CREATE (dt)-[:Contains {reference: "胸痛基层合理用药指南"}]->(d);
+MATCH (dt:Drugtype {name:'降压药'}),(d:Drug {name:'乌拉地尔'}) CREATE (dt)-[:Contains {reference: "胸痛基层合理用药指南"}]->(d);
+MATCH (dt:Drugtype {name:'降压药'}),(d:Drug {name:'地尔硫䓬'}) CREATE (dt)-[:Contains {reference: "胸痛基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'硝普钠'});
+MATCH (dt:Drugtype {name:'降压药'}),(d:Drug {name:'硝普钠'}) CREATE (dt)-[:Contains {reference: "胸痛基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'酚妥拉明'});
+MATCH (dt:Drugtype {name:'降压药'}),(d:Drug {name:'酚妥拉明'}) CREATE (dt)-[:Contains {reference: "高血压基层合理用药指南"}]->(d);
+
+CREATE (:Drugtype {name:'ACEI/ARB'});
+CREATE (:Drug {name:'卡托普利'});
+MATCH (dt:Drugtype {name:'ACEI/ARB'}),(d:Drug {name:'卡托普利'}) CREATE (dt)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'依那普利'});
+MATCH (dt:Drugtype {name:'ACEI/ARB'}),(d:Drug {name:'依那普利'}) CREATE (dt)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'赖诺普利'});
+MATCH (dt:Drugtype {name:'ACEI/ARB'}),(d:Drug {name:'赖诺普利'}) CREATE (dt)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'缬沙坦'});
+MATCH (dt:Drugtype {name:'ACEI/ARB'}),(d:Drug {name:'缬沙坦'}) CREATE (dt)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(d);
+
+CREATE (:Drugtype {name:'ARNI'});
+CREATE (:Drug {name:'沙库巴曲缬沙坦钠'});
+MATCH (dt:Drugtype {name:'ARNI'}),(d:Drug {name:'沙库巴曲缬沙坦钠'}) CREATE (dt)-[:Contains {reference: "慢性心力衰竭基层合理用药指南"}]->(d);
+
+CREATE (:Drugtype {name:'醛固酮受体拮抗剂'});
+CREATE (:Drug {name:'螺内酯'});
+MATCH (dt:Drugtype {name:'醛固酮受体拮抗剂'}),(d:Drug {name:'螺内酯'}) CREATE (dt)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(d);
+
+CREATE (:Drugtype {name:'调脂药'});
+CREATE (:Drug {name:'辛伐他汀'});
+MATCH (dt:Drugtype {name:'调脂药'}),(d:Drug {name:'辛伐他汀'}) CREATE (dt)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'阿托伐他汀'});
+MATCH (dt:Drugtype {name:'调脂药'}),(d:Drug {name:'阿托伐他汀'}) CREATE (dt)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'瑞舒伐他汀'});
+MATCH (dt:Drugtype {name:'调脂药'}),(d:Drug {name:'瑞舒伐他汀'}) CREATE (dt)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'非诺贝特'});
+MATCH (dt:Drugtype {name:'调脂药'}),(d:Drug {name:'非诺贝特'}) CREATE (dt)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'依折麦布'});
+MATCH (dt:Drugtype {name:'调脂药'}),(d:Drug {name:'依折麦布'}) CREATE (dt)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(d);
+
+
+CREATE (:Drugtype {name:'非二氢吡啶类钙拮抗剂'});
+CREATE (:Drug {name:'地尔硫䓬'});
+MATCH (dt:Drugtype {name:'非二氢吡啶类钙拮抗剂'}),(d:Drug {name:'地尔硫䓬'}) CREATE (dt)-[:Contains {reference: "心房颤动基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'维拉帕米'});
+MATCH (dt:Drugtype {name:'非二氢吡啶类钙拮抗剂'}),(d:Drug {name:'维拉帕米'}) CREATE (dt)-[:Contains {reference: "心房颤动基层合理用药指南"}]->(d);
+
+CREATE (:Drugtype {name:'洋地黄类抗心律失常药'});
+CREATE (:Drug {name:'去乙酰毛花苷'});
+MATCH (dt:Drugtype {name:'洋地黄类抗心律失常药'}),(d:Drug {name:'去乙酰毛花苷'}) CREATE (dt)-[:Contains {reference: "心房颤动基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'地高辛'});
+MATCH (dt:Drugtype {name:'洋地黄类抗心律失常药'}),(d:Drug {name:'地高辛'}) CREATE (dt)-[:Contains {reference: "心房颤动基层合理用药指南"}]->(d);
+
+CREATE (:Drugtype {name:'其他类心律失常药'});
+CREATE (:Drug {name:'腺苷'});
+MATCH (dt:Drugtype {name:'其他类心律失常药'}),(d:Drug {name:'腺苷'}) CREATE (dt)-[:Contains {reference: "室上心心动过速基层合理用药指南"}]->(d);
+
+CREATE (:Drugtype {name:'钠通道阻滞剂'});
+CREATE (:Drug {name:'普罗帕酮'});
+MATCH (dt:Drugtype {name:'钠通道阻滞剂'}),(d:Drug {name:'普罗帕酮'}) CREATE (dt)-[:Contains {reference: "心房颤动基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'美西律'});
+MATCH (dt:Drugtype {name:'钠通道阻滞剂'}),(d:Drug {name:'美西律'}) CREATE (dt)-[:Contains {reference: "室性心动过速基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'利多卡因'});
+MATCH (dt:Drugtype {name:'钠通道阻滞剂'}),(d:Drug {name:'利多卡因'}) CREATE (dt)-[:Contains {reference: "室性心动过速基层合理用药指南"}]->(d);
+
+
+CREATE (:Drugtype {name:'钾通道阻滞剂'});
+CREATE (:Drug {name:'胺碘酮'});
+MATCH (dt:Drugtype {name:'钾通道阻滞剂'}),(d:Drug {name:'胺碘酮'}) CREATE (dt)-[:Contains {reference: "心房颤动基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'伊布利特'});
+MATCH (dt:Drugtype {name:'钾通道阻滞剂'}),(d:Drug {name:'伊布利特'}) CREATE (dt)-[:Contains {reference: "心房颤动基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'索他洛尔'});
+MATCH (dt:Drugtype {name:'钾通道阻滞剂'}),(d:Drug {name:'索他洛尔'}) CREATE (dt)-[:Contains {reference: "心房颤动基层合理用药指南"}]->(d);
+
+CREATE (:Drugtype {name:'钙通道阻滞剂'});
+CREATE (:Drug {name:'硝苯地平'});
+MATCH (dt:Drugtype {name:'钙通道阻滞剂'}),(d:Drug {name:'硝苯地平'}) CREATE (dt)-[:Contains {reference: "稳定性冠心病基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'氨氯地平'});
+MATCH (dt:Drugtype {name:'钙通道阻滞剂'}),(d:Drug {name:'氨氯地平'}) CREATE (dt)-[:Contains {reference: "稳定性冠心病基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'左旋氨氯地平'});
+MATCH (dt:Drugtype {name:'钙通道阻滞剂'}),(d:Drug {name:'左旋氨氯地平'}) CREATE (dt)-[:Contains {reference: "稳定性冠心病基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'非洛地平'});
+MATCH (dt:Drugtype {name:'钙通道阻滞剂'}),(d:Drug {name:'非洛地平'}) CREATE (dt)-[:Contains {reference: "稳定性冠心病基层合理用药指南"}]->(d);
+MATCH (dt:Drugtype {name:'钙通道阻滞剂'}),(d:Drug {name:'地尔硫䓬'}) CREATE (dt)-[:Contains {reference: "稳定性冠心病基层合理用药指南"}]->(d);
+MATCH (dt:Drugtype {name:'钙通道阻滞剂'}),(d:Drug {name:'维拉帕米'}) CREATE (dt)-[:Contains {reference: "稳定性冠心病基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'尼群地平'});
+MATCH (dt:Drugtype {name:'钙通道阻滞剂'}),(d:Drug {name:'尼群地平'}) CREATE (dt)-[:Contains {reference: "高血压基层合理用药指南"}]->(d);
+
+CREATE (:Drugtype {name:'利尿药'});
+CREATE (:Drug {name:'呋塞米'});
+MATCH (dt:Drugtype {name:'利尿药'}),(d:Drug {name:'呋塞米'}) CREATE (dt)-[:Contains {reference: "急性心力衰竭基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'托拉塞米'});
+MATCH (dt:Drugtype {name:'利尿药'}),(d:Drug {name:'托拉塞米'}) CREATE (dt)-[:Contains {reference: "急性心力衰竭基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'布美他尼'});
+MATCH (dt:Drugtype {name:'利尿药'}),(d:Drug {name:'布美他尼'}) CREATE (dt)-[:Contains {reference: "急性心力衰竭基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'氢氯噻嗪'});
+MATCH (dt:Drugtype {name:'利尿药'}),(d:Drug {name:'氢氯噻嗪'}) CREATE (dt)-[:Contains {reference: "慢性心力衰竭基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'吲达帕胺'});
+MATCH (dt:Drugtype {name:'利尿药'}),(d:Drug {name:'吲达帕胺'}) CREATE (dt)-[:Contains {reference: "慢性心力衰竭基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'氨苯蝶啶'});
+MATCH (dt:Drugtype {name:'利尿药'}),(d:Drug {name:'氨苯蝶啶'}) CREATE (dt)-[:Contains {reference: "慢性心力衰竭基层合理用药指南"}]->(d);
+
+CREATE (:Drugtype {name:'抗休克药'});
+CREATE (:Drug {name:'肾上腺素'});
+MATCH (dt:Drugtype {name:'抗休克药'}),(d:Drug {name:'肾上腺素'}) CREATE (dt)-[:Contains {reference: "心脏骤停基层合理用药指南"}]->(d);
+
+CREATE (:Drugtype {name:'酸碱平衡调节药'});
+CREATE (:Drug {name:'碳酸氢钠'});
+MATCH (dt:Drugtype {name:'酸碱平衡调节药'}),(d:Drug {name:'碳酸氢钠'}) CREATE (dt)-[:Contains {reference: "心脏骤停基层合理用药指南"}]->(d);
+
+CREATE (:Drugtype {name:'血管扩张药'});
+MATCH (dt:Drugtype {name:'血管扩张药'}),(d:Drug {name:'硝酸甘油'}) CREATE (dt)-[:Contains {reference: "急性心力衰竭基层合理用药指南"}]->(d);
+MATCH (dt:Drugtype {name:'血管扩张药'}),(d:Drug {name:'硝酸异山梨酯'}) CREATE (dt)-[:Contains {reference: "急性心力衰竭基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'硝普钠'});
+MATCH (dt:Drugtype {name:'血管扩张药'}),(d:Drug {name:'硝普钠'}) CREATE (dt)-[:Contains {reference: "急性心力衰竭基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'乌拉地尔'});
+MATCH (dt:Drugtype {name:'血管扩张药'}),(d:Drug {name:'乌拉地尔'}) CREATE (dt)-[:Contains {reference: "急性心力衰竭基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'重组人脑利钠肽'});
+MATCH (dt:Drugtype {name:'血管扩张药'}),(d:Drug {name:'重组人脑利钠肽'}) CREATE (dt)-[:Contains {reference: "急性心力衰竭基层合理用药指南"}]->(d);
+
+CREATE (:Drugtype {name:'正性肌力药'});
+CREATE (:Drug {name:'多巴胺'});
+MATCH (dt:Drugtype {name:'正性肌力药'}),(d:Drug {name:'多巴胺'}) CREATE (dt)-[:Contains {reference: "急性心力衰竭基层合理用药指南"}]->(d);
+MATCH (dt:Drugtype {name:'正性肌力药'}),(d:Drug {name:'去乙酰毛花苷'}) CREATE (dt)-[:Contains {reference: "急性心力衰竭基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'米力农'});
+MATCH (dt:Drugtype {name:'正性肌力药'}),(d:Drug {name:'米力农'}) CREATE (dt)-[:Contains {reference: "急性心力衰竭基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'左西孟旦'});
+MATCH (dt:Drugtype {name:'正性肌力药'}),(d:Drug {name:'左西孟旦'}) CREATE (dt)-[:Contains {reference: "急性心力衰竭基层合理用药指南"}]->(d);
+
+CREATE (:Drugtype {name:'血管收缩药'});
+CREATE (:Drug {name:'去甲肾上腺素'});
+MATCH (dt:Drugtype {name:'血管收缩药'}),(d:Drug {name:'去甲肾上腺素'}) CREATE (dt)-[:Contains {reference: "急性心力衰竭基层合理用药指南"}]->(d);
+CREATE (:Drug {name:'肾上腺素'});
+MATCH (dt:Drugtype {name:'血管收缩药'}),(d:Drug {name:'肾上腺素'}) CREATE (dt)-[:Contains {reference: "急性心力衰竭基层合理用药指南"}]->(d);
+
+CREATE (:Drugtype {name:'窦房结If通道阻滞剂'});
+CREATE (:Drug {name:'伊伐布雷定'});
+MATCH (dt:Drugtype {name:'窦房结If通道阻滞剂'}),(d:Drug {name:'伊伐布雷定'}) CREATE (dt)-[:Contains {reference: "慢性心力衰竭基层合理用药指南"}]->(d);
+
+
+
+//药物疾病关联
+//ST段抬高型心肌梗死
+MATCH (disease:Disease {name:"ST段抬高型心肌梗死"}),(drug:Drug {name:'哌替啶'}) CREATE (disease)-[:Recommend {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"ST段抬高型心肌梗死"}),(drug:Drug {name:'吗啡'}) CREATE (disease)-[:Recommend {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"ST段抬高型心肌梗死"}),(drug:Drug {name:'尿激酶'}) CREATE (disease)-[:Recommend {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"ST段抬高型心肌梗死"}),(drug:Drug {name:'阿替普酶'}) CREATE (disease)-[:Recommend {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"ST段抬高型心肌梗死"}),(drug:Drug {name:'瑞替普酶'}) CREATE (disease)-[:Recommend {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"ST段抬高型心肌梗死"}),(drug:Drug {name:'肝素'}) CREATE (disease)-[:Recommend {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"ST段抬高型心肌梗死"}),(drug:Drug {name:'低分子量肝素'}) CREATE (disease)-[:Recommend {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"ST段抬高型心肌梗死"}),(drug:Drug {name:'硝酸甘油'}) CREATE (disease)-[:Recommend {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"ST段抬高型心肌梗死"}),(drug:Drug {name:'硝酸异山梨酯'}) CREATE (disease)-[:Recommend {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"ST段抬高型心肌梗死"}),(drug:Drug {name:'单硝酸异山梨酯'}) CREATE (disease)-[:Alternate {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"ST段抬高型心肌梗死"}),(drug:Drug {name:'阿司匹林'}) CREATE (disease)-[:Recommend {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"ST段抬高型心肌梗死"}),(drug:Drug {name:'氯吡格雷'}) CREATE (disease)-[:Recommend {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"ST段抬高型心肌梗死"}),(drug:Drug {name:'替格瑞洛'}) CREATE (disease)-[:Alternate {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"ST段抬高型心肌梗死"}),(drug:Drug {name:'尼可地尔'}) CREATE (disease)-[:Recommend {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"ST段抬高型心肌梗死"}),(drug:Drug {name:'阿替洛尔'}) CREATE (disease)-[:Recommend {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"ST段抬高型心肌梗死"}),(drug:Drug {name:'美托洛尔'}) CREATE (disease)-[:Recommend {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"ST段抬高型心肌梗死"}),(drug:Drug {name:'比索洛尔'}) CREATE (disease)-[:Recommend {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"ST段抬高型心肌梗死"}),(drug:Drug {name:'卡托普利'}) CREATE (disease)-[:Recommend {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"ST段抬高型心肌梗死"}),(drug:Drug {name:'依那普利'}) CREATE (disease)-[:Recommend {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"ST段抬高型心肌梗死"}),(drug:Drug {name:'赖诺普利'}) CREATE (disease)-[:Recommend {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"ST段抬高型心肌梗死"}),(drug:Drug {name:'缬沙坦'}) CREATE (disease)-[:Recommend {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"ST段抬高型心肌梗死"}),(drug:Drug {name:'螺内酯'}) CREATE (disease)-[:Recommend {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"ST段抬高型心肌梗死"}),(drug:Drug {name:'辛伐他汀'}) CREATE (disease)-[:Recommend {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"ST段抬高型心肌梗死"}),(drug:Drug {name:'阿托伐他汀'}) CREATE (disease)-[:Recommend {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"ST段抬高型心肌梗死"}),(drug:Drug {name:'瑞舒伐他汀'}) CREATE (disease)-[:Recommend {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"ST段抬高型心肌梗死"}),(drug:Drug {name:'非诺贝特'}) CREATE (disease)-[:Alternate {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"ST段抬高型心肌梗死"}),(drug:Drug {name:'依折麦布'}) CREATE (disease)-[:Alternate {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(drug);
+
+//非ST段抬高型急性冠状动脉综合征
+MATCH (disease:Disease {name:"非ST段抬高型急性冠状动脉综合征"}),(drug:Drug {name:'硝酸甘油'}) CREATE (disease)-[:Recommend {reference: "非ST段抬高型急性冠状动脉综合征基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"非ST段抬高型急性冠状动脉综合征"}),(drug:Drug {name:'硝酸异山梨酯'}) CREATE (disease)-[:Recommend {reference: "非ST段抬高型急性冠状动脉综合征基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"非ST段抬高型急性冠状动脉综合征"}),(drug:Drug {name:'尼可地尔'}) CREATE (disease)-[:Recommend {reference: "非ST段抬高型急性冠状动脉综合征基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"非ST段抬高型急性冠状动脉综合征"}),(drug:Drug {name:'美托洛尔'}) CREATE (disease)-[:Recommend {reference: "非ST段抬高型急性冠状动脉综合征基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"非ST段抬高型急性冠状动脉综合征"}),(drug:Drug {name:'比索洛尔'}) CREATE (disease)-[:Recommend {reference: "非ST段抬高型急性冠状动脉综合征基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"非ST段抬高型急性冠状动脉综合征"}),(drug:Drug {name:'硝苯地平'}) CREATE (disease)-[:Recommend {reference: "非ST段抬高型急性冠状动脉综合征基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"非ST段抬高型急性冠状动脉综合征"}),(drug:Drug {name:'氨氯地平'}) CREATE (disease)-[:Recommend {reference: "非ST段抬高型急性冠状动脉综合征基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"非ST段抬高型急性冠状动脉综合征"}),(drug:Drug {name:'左旋氨氯地平'}) CREATE (disease)-[:Recommend {reference: "非ST段抬高型急性冠状动脉综合征基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"非ST段抬高型急性冠状动脉综合征"}),(drug:Drug {name:'非洛地平'}) CREATE (disease)-[:Recommend {reference: "非ST段抬高型急性冠状动脉综合征基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"非ST段抬高型急性冠状动脉综合征"}),(drug:Drug {name:'阿司匹林'}) CREATE (disease)-[:Recommend {reference: "非ST段抬高型急性冠状动脉综合征基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"非ST段抬高型急性冠状动脉综合征"}),(drug:Drug {name:'氯吡格雷'}) CREATE (disease)-[:Recommend {reference: "非ST段抬高型急性冠状动脉综合征基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"非ST段抬高型急性冠状动脉综合征"}),(drug:Drug {name:'肝素'}) CREATE (disease)-[:Recommend {reference: "非ST段抬高型急性冠状动脉综合征基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"非ST段抬高型急性冠状动脉综合征"}),(drug:Drug {name:'低分子肝素'}) CREATE (disease)-[:Recommend {reference: "非ST段抬高型急性冠状动脉综合征基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"非ST段抬高型急性冠状动脉综合征"}),(drug:Drug {name:'辛伐他汀'}) CREATE (disease)-[:Recommend {reference: "非ST段抬高型急性冠状动脉综合征基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"非ST段抬高型急性冠状动脉综合征"}),(drug:Drug {name:'阿托伐他汀'}) CREATE (disease)-[:Recommend {reference: "非ST段抬高型急性冠状动脉综合征基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"非ST段抬高型急性冠状动脉综合征"}),(drug:Drug {name:'瑞舒伐他汀'}) CREATE (disease)-[:Recommend {reference: "非ST段抬高型急性冠状动脉综合征基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"非ST段抬高型急性冠状动脉综合征"}),(drug:Drug {name:'卡托普利'}) CREATE (disease)-[:Recommend {reference: "非ST段抬高型急性冠状动脉综合征基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"非ST段抬高型急性冠状动脉综合征"}),(drug:Drug {name:'依那普利'}) CREATE (disease)-[:Recommend {reference: "非ST段抬高型急性冠状动脉综合征基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"非ST段抬高型急性冠状动脉综合征"}),(drug:Drug {name:'赖诺普利'}) CREATE (disease)-[:Recommend {reference: "非ST段抬高型急性冠状动脉综合征基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"非ST段抬高型急性冠状动脉综合征"}),(drug:Drug {name:'缬沙坦'}) CREATE (disease)-[:Recommend {reference: "非ST段抬高型急性冠状动脉综合征基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"非ST段抬高型急性冠状动脉综合征"}),(drug:Drug {name:'单硝酸异山梨酯'}) CREATE (disease)-[:Alternate {reference: "非ST段抬高型急性冠状动脉综合征基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"非ST段抬高型急性冠状动脉综合征"}),(drug:Drug {name:'阿替洛尔'}) CREATE (disease)-[:Alternate {reference: "非ST段抬高型急性冠状动脉综合征基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"非ST段抬高型急性冠状动脉综合征"}),(drug:Drug {name:'地尔硫䓬'}) CREATE (disease)-[:Alternate {reference: "非ST段抬高型急性冠状动脉综合征基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"非ST段抬高型急性冠状动脉综合征"}),(drug:Drug {name:'维拉帕米'}) CREATE (disease)-[:Alternate {reference: "非ST段抬高型急性冠状动脉综合征基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"非ST段抬高型急性冠状动脉综合征"}),(drug:Drug {name:'替格瑞洛'}) CREATE (disease)-[:Alternate {reference: "非ST段抬高型急性冠状动脉综合征基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"非ST段抬高型急性冠状动脉综合征"}),(drug:Drug {name:'非诺贝特'}) CREATE (disease)-[:Alternate {reference: "非ST段抬高型急性冠状动脉综合征基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"非ST段抬高型急性冠状动脉综合征"}),(drug:Drug {name:' 依折麦布'}) CREATE (disease)-[:Alternate {reference: "非ST段抬高型急性冠状动脉综合征基层合理用药指南"}]->(drug);
+
+//心房颤动
+MATCH (disease:Disease {name:"心房颤动"}),(drug:Drug {name:'美托洛尔'}) CREATE (disease)-[:Recommend {reference: "心房颤动基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"心房颤动"}),(drug:Drug {name:'艾司洛尔'}) CREATE (disease)-[:Recommend {reference: "心房颤动基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"心房颤动"}),(drug:Drug {name:'普萘洛尔'}) CREATE (disease)-[:Recommend {reference: "心房颤动基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"心房颤动"}),(drug:Drug {name:'地尔硫䓬'}) CREATE (disease)-[:Recommend {reference: "心房颤动基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"心房颤动"}),(drug:Drug {name:'维拉帕米'}) CREATE (disease)-[:Recommend {reference: "心房颤动基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"心房颤动"}),(drug:Drug {name:'去乙酰毛花苷'}) CREATE (disease)-[:Recommend {reference: "心房颤动基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"心房颤动"}),(drug:Drug {name:'地高辛'}) CREATE (disease)-[:Recommend {reference: "心房颤动基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"心房颤动"}),(drug:Drug {name:'普罗帕酮'}) CREATE (disease)-[:Recommend {reference: "心房颤动基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"心房颤动"}),(drug:Drug {name:'胺碘酮'}) CREATE (disease)-[:Recommend {reference: "心房颤动基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"心房颤动"}),(drug:Drug {name:'伊布利特'}) CREATE (disease)-[:Recommend {reference: "心房颤动基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"心房颤动"}),(drug:Drug {name:'索他洛尔'}) CREATE (disease)-[:Recommend {reference: "心房颤动基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"心房颤动"}),(drug:Drug {name:'华法林'}) CREATE (disease)-[:Recommend {reference: "心房颤动基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"心房颤动"}),(drug:Drug {name:'达比加群酯'}) CREATE (disease)-[:Recommend {reference: "心房颤动基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"心房颤动"}),(drug:Drug {name:'利伐沙班'}) CREATE (disease)-[:Recommend {reference: "心房颤动基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"心房颤动"}),(drug:Drug {name:'肝素'}) CREATE (disease)-[:Recommend {reference: "心房颤动基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"心房颤动"}),(drug:Drug {name:'低分子肝素'}) CREATE (disease)-[:Recommend {reference: "心房颤动基层合理用药指南"}]->(drug);
+
+//急性心力衰竭
+MATCH (disease:Disease {name:"急性心力衰竭"}),(drug:Drug {name:'呋塞米'}) CREATE (disease)-[:Recommend {reference: "急性心力衰竭基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"急性心力衰竭"}),(drug:Drug {name:'硝酸甘油'}) CREATE (disease)-[:Recommend {reference: "急性心力衰竭基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"急性心力衰竭"}),(drug:Drug {name:'硝酸异山梨酯'}) CREATE (disease)-[:Recommend {reference: "急性心力衰竭基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"急性心力衰竭"}),(drug:Drug {name:'硝普钠'}) CREATE (disease)-[:Recommend {reference: "急性心力衰竭基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"急性心力衰竭"}),(drug:Drug {name:'多巴胺'}) CREATE (disease)-[:Recommend {reference: "急性心力衰竭基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"急性心力衰竭"}),(drug:Drug {name:'多巴酚丁胺'}) CREATE (disease)-[:Recommend {reference: "急性心力衰竭基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"急性心力衰竭"}),(drug:Drug {name:'去乙酰毛花苷'}) CREATE (disease)-[:Recommend {reference: "急性心力衰竭基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"急性心力衰竭"}),(drug:Drug {name:'去甲肾上腺素'}) CREATE (disease)-[:Recommend {reference: "急性心力衰竭基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"急性心力衰竭"}),(drug:Drug {name:'肾上腺素'}) CREATE (disease)-[:Recommend {reference: "急性心力衰竭基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"急性心力衰竭"}),(drug:Drug {name:'托拉塞米'}) CREATE (disease)-[:Alternate {reference: "急性心力衰竭基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"急性心力衰竭"}),(drug:Drug {name:'布美他尼'}) CREATE (disease)-[:Alternate {reference: "急性心力衰竭基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"急性心力衰竭"}),(drug:Drug {name:'重组人脑利钠肽'}) CREATE (disease)-[:Alternate {reference: "急性心力衰竭基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"急性心力衰竭"}),(drug:Drug {name:'米力农'}) CREATE (disease)-[:Alternate {reference: "急性心力衰竭基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"急性心力衰竭"}),(drug:Drug {name:'左西孟旦'}) CREATE (disease)-[:Alternate {reference: "急性心力衰竭基层合理用药指南"}]->(drug);
+
+//慢性心力衰竭
+MATCH (disease:Disease {name:"慢性心力衰竭"}),(drug:Drug {name:'呋塞米'}) CREATE (disease)-[:Recommend {reference: "慢性心力衰竭基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"慢性心力衰竭"}),(drug:Drug {name:'氢氯噻嗪'}) CREATE (disease)-[:Recommend {reference: "慢性心力衰竭基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"慢性心力衰竭"}),(drug:Drug {name:'吲达帕胺'}) CREATE (disease)-[:Recommend {reference: "慢性心力衰竭基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"慢性心力衰竭"}),(drug:Drug {name:'卡托普利'}) CREATE (disease)-[:Recommend {reference: "慢性心力衰竭基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"慢性心力衰竭"}),(drug:Drug {name:'依那普利'}) CREATE (disease)-[:Recommend {reference: "慢性心力衰竭基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"慢性心力衰竭"}),(drug:Drug {name:'赖诺普利'}) CREATE (disease)-[:Recommend {reference: "慢性心力衰竭基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"慢性心力衰竭"}),(drug:Drug {name:'缬沙坦'}) CREATE (disease)-[:Recommend {reference: "慢性心力衰竭基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"慢性心力衰竭"}),(drug:Drug {name:'沙库巴曲缬沙坦钠'}) CREATE (disease)-[:Recommend {reference: "慢性心力衰竭基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"慢性心力衰竭"}),(drug:Drug {name:'美托洛尔'}) CREATE (disease)-[:Recommend {reference: "慢性心力衰竭基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"慢性心力衰竭"}),(drug:Drug {name:'比索洛尔'}) CREATE (disease)-[:Recommend {reference: "慢性心力衰竭基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"慢性心力衰竭"}),(drug:Drug {name:'伊伐布雷定'}) CREATE (disease)-[:Recommend {reference: "慢性心力衰竭基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"慢性心力衰竭"}),(drug:Drug {name:'螺内酯'}) CREATE (disease)-[:Recommend {reference: "慢性心力衰竭基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"慢性心力衰竭"}),(drug:Drug {name:'地高辛'}) CREATE (disease)-[:Recommend {reference: "慢性心力衰竭基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"慢性心力衰竭"}),(drug:Drug {name:'氨苯蝶啶'}) CREATE (disease)-[:Alternate {reference: "慢性心力衰竭基层合理用药指南"}]->(drug);
+
+//早搏
+MATCH (disease:Disease {name:"早搏"}),(drug:Drug {name:'普萘洛尔'}) CREATE (disease)-[:Recommend {reference: "早搏基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"早搏"}),(drug:Drug {name:'美托洛尔'}) CREATE (disease)-[:Recommend {reference: "早搏基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"早搏"}),(drug:Drug {name:'阿替洛尔'}) CREATE (disease)-[:Recommend {reference: "早搏基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"早搏"}),(drug:Drug {name:'地尔硫䓬'}) CREATE (disease)-[:Recommend {reference: "早搏基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"早搏"}),(drug:Drug {name:'维拉帕米'}) CREATE (disease)-[:Recommend {reference: "早搏基层合理用药指南"}]->(drug);
+
+//室上性心动过速
+MATCH (disease:Disease {name:"室上性心动过速"}),(drug:Drug {name:'维拉帕米'}) CREATE (disease)-[:Recommend {reference: "室上性心动过速基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"室上性心动过速"}),(drug:Drug {name:'地尔硫䓬'}) CREATE (disease)-[:Recommend {reference: "室上性心动过速基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"室上性心动过速"}),(drug:Drug {name:'普罗帕酮'}) CREATE (disease)-[:Recommend {reference: "室上性心动过速基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"室上性心动过速"}),(drug:Drug {name:'腺苷'}) CREATE (disease)-[:Recommend {reference: "室上性心动过速基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"室上性心动过速"}),(drug:Drug {name:'普萘洛尔'}) CREATE (disease)-[:Recommend {reference: "室上性心动过速基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"室上性心动过速"}),(drug:Drug {name:'美托洛尔'}) CREATE (disease)-[:Recommend {reference: "室上性心动过速基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"室上性心动过速"}),(drug:Drug {name:'阿替洛尔'}) CREATE (disease)-[:Recommend {reference: "室上性心动过速基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"室上性心动过速"}),(drug:Drug {name:'胺碘酮'}) CREATE (disease)-[:Recommend {reference: "室上性心动过速基层合理用药指南"}]->(drug);
+
+//室性心动过速
+MATCH (disease:Disease {name:"室性心动过速"}),(drug:Drug {name:'美西律'}) CREATE (disease)-[:Recommend {indication:"血液动力学稳定的室速和心室颤动/无脉室速 ",reference: "室性心动过速基层合理用药指南"} ]->(drug);
+MATCH (disease:Disease {name:"室性心动过速"}),(drug:Drug {name:'利多卡因'}) CREATE (disease)-[:Recommend {indication:"血液动力学稳定的室速和心室颤动/无脉室速 ",reference: "室性心动过速基层合理用药指南"} ]->(drug);
+MATCH (disease:Disease {name:"室性心动过速"}),(drug:Drug {name:'普罗帕酮'}) CREATE (disease)-[:Recommend {indication:"无器质性心脏病的单形性室速 ",reference: "室性心动过速基层合理用药指南"} ]->(drug);
+MATCH (disease:Disease {name:"室性心动过速"}),(drug:Drug {name:'普萘洛尔'}) CREATE (disease)-[:Recommend {indication:"非持续性室速、多形性室速、反复发作单形性室速 ",reference: "室性心动过速基层合理用药指南"} ]->(drug);
+MATCH (disease:Disease {name:"室性心动过速"}),(drug:Drug {name:'美托洛尔'}) CREATE (disease)-[:Recommend {indication:"非持续性室速、多形性室速、反复发作单形性室速 ",reference: "室性心动过速基层合理用药指南"} ]->(drug);
+MATCH (disease:Disease {name:"室性心动过速"}),(drug:Drug {name:'艾司洛尔'}) CREATE (disease)-[:Recommend {indication:"非持续性室速、多形性室速、反复发作单形性室速 ",reference: "室性心动过速基层合理用药指南"} ]->(drug);
+MATCH (disease:Disease {name:"室性心动过速"}),(drug:Drug {name:'索他罗尔'}) CREATE (disease)-[:Recommend {indication:"预防室速复发 ",reference: "室性心动过速基层合理用药指南"} ]->(drug);
+MATCH (disease:Disease {name:"室性心动过速"}),(drug:Drug {name:'胺碘酮'}) CREATE (disease)-[:Recommend {indication:"血液动力学稳定的单形室速，QT间期正常的多形性室速 ",reference: "室性心动过速基层合理用药指南"} ]->(drug);
+MATCH (disease:Disease {name:"室性心动过速"}),(drug:Drug {name:'维拉帕米'}) CREATE (disease)-[:Recommend {indication:"无器质性心脏病的单形性室速 ",reference: "室性心动过速基层合理用药指南"} ]->(drug);
+MATCH (disease:Disease {name:"室性心动过速"}),(drug:Drug {name:'地尔硫䓬'}) CREATE (disease)-[:Recommend {indication:"无器质性心脏病的单形性室速 ",reference: "室性心动过速基层合理用药指南"} ]->(drug);
+
+//稳定性冠心病
+MATCH (disease:Disease {name:"稳定性冠心病"}),(drug:Drug {name:'硝酸甘油'}) CREATE (disease)-[:Recommend {reference: "稳定性冠心病基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"稳定性冠心病"}),(drug:Drug {name:'硝酸异山梨酯'}) CREATE (disease)-[:Recommend {reference: "稳定性冠心病基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"稳定性冠心病"}),(drug:Drug {name:'尼可地尔'}) CREATE (disease)-[:Recommend {reference: "稳定性冠心病基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"稳定性冠心病"}),(drug:Drug {name:'阿替洛尔'}) CREATE (disease)-[:Recommend {reference: "稳定性冠心病基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"稳定性冠心病"}),(drug:Drug {name:'美托洛尔'}) CREATE (disease)-[:Recommend {reference: "稳定性冠心病基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"稳定性冠心病"}),(drug:Drug {name:'比索洛尔'}) CREATE (disease)-[:Recommend {reference: "稳定性冠心病基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"稳定性冠心病"}),(drug:Drug {name:'伊伐布雷定'}) CREATE (disease)-[:Recommend {reference: "稳定性冠心病基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"稳定性冠心病"}),(drug:Drug {name:'硝苯地平'}) CREATE (disease)-[:Recommend {reference: "稳定性冠心病基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"稳定性冠心病"}),(drug:Drug {name:'氨氯地平'}) CREATE (disease)-[:Recommend {reference: "稳定性冠心病基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"稳定性冠心病"}),(drug:Drug {name:'左旋氨氯地平'}) CREATE (disease)-[:Recommend {reference: "稳定性冠心病基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"稳定性冠心病"}),(drug:Drug {name:'非洛地平'}) CREATE (disease)-[:Recommend {reference: "稳定性冠心病基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"稳定性冠心病"}),(drug:Drug {name:'阿司匹林'}) CREATE (disease)-[:Recommend {reference: "稳定性冠心病基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"稳定性冠心病"}),(drug:Drug {name:'氯吡格雷'}) CREATE (disease)-[:Recommend {reference: "稳定性冠心病基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"稳定性冠心病"}),(drug:Drug {name:'辛伐他汀'}) CREATE (disease)-[:Recommend {reference: "稳定性冠心病基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"稳定性冠心病"}),(drug:Drug {name:'阿托伐他汀'}) CREATE (disease)-[:Recommend {reference: "稳定性冠心病基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"稳定性冠心病"}),(drug:Drug {name:'瑞舒伐他汀'}) CREATE (disease)-[:Recommend {reference: "稳定性冠心病基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"稳定性冠心病"}),(drug:Drug {name:'卡托普利'}) CREATE (disease)-[:Recommend {reference: "稳定性冠心病基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"稳定性冠心病"}),(drug:Drug {name:'依那普利 '}) CREATE (disease)-[:Recommend {reference: "稳定性冠心病基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"稳定性冠心病"}),(drug:Drug {name:'赖诺普利'}) CREATE (disease)-[:Recommend {reference: "稳定性冠心病基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"稳定性冠心病"}),(drug:Drug {name:' 缬沙坦'}) CREATE (disease)-[:Recommend {reference: "稳定性冠心病基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"稳定性冠心病"}),(drug:Drug {name:'单硝酸异山梨酯'}) CREATE (disease)-[:Alternate {reference: "稳定性冠心病基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"稳定性冠心病"}),(drug:Drug {name:'地尔硫䓬'}) CREATE (disease)-[:Alternate {reference: "稳定性冠心病基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"稳定性冠心病"}),(drug:Drug {name:'维拉帕米'}) CREATE (disease)-[:Alternate {reference: "稳定性冠心病基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"稳定性冠心病"}),(drug:Drug {name:'替格瑞洛'}) CREATE (disease)-[:Alternate {reference: "稳定性冠心病基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"稳定性冠心病"}),(drug:Drug {name:'非诺贝特 '}) CREATE (disease)-[:Alternate {reference: "稳定性冠心病基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"稳定性冠心病"}),(drug:Drug {name:'依折麦布'}) CREATE (disease)-[:Alternate {reference: "稳定性冠心病基层合理用药指南"}]->(drug);
+
+//胸痛
+MATCH (disease:Disease {name:"胸痛"}),(drug:Drug {name:'阿司匹林'}) CREATE (disease)-[:Recommend {reference: "胸痛基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"胸痛"}),(drug:Drug {name:'氯吡格雷 '}) CREATE (disease)-[:Recommend {reference: "胸痛基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"胸痛"}),(drug:Drug {name:'肝素'}) CREATE (disease)-[:Recommend {reference: "胸痛基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"胸痛"}),(drug:Drug {name:'低分子量肝素'}) CREATE (disease)-[:Recommend {reference: "胸痛基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"胸痛"}),(drug:Drug {name:'华法林'}) CREATE (disease)-[:Recommend {reference: "胸痛基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"胸痛"}),(drug:Drug {name:'吗啡'}) CREATE (disease)-[:Recommend {reference: "胸痛基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"胸痛"}),(drug:Drug {name:'哌替啶'}) CREATE (disease)-[:Recommend {reference: "胸痛基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"胸痛"}),(drug:Drug {name:'硝酸甘油 '}) CREATE (disease)-[:Recommend {reference: "胸痛基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"胸痛"}),(drug:Drug {name:'硝酸异山梨酯 '}) CREATE (disease)-[:Recommend {reference: "胸痛基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"胸痛"}),(drug:Drug {name:'尼可地尔 '}) CREATE (disease)-[:Recommend {reference: "胸痛基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"胸痛"}),(drug:Drug {name:'美托洛尔'}) CREATE (disease)-[:Recommend {reference: "胸痛基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"胸痛"}),(drug:Drug {name:'艾司洛尔'}) CREATE (disease)-[:Recommend {reference: "胸痛基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"胸痛"}),(drug:Drug {name:'替格瑞洛'}) CREATE (disease)-[:Alternate {reference: "胸痛基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"胸痛"}),(drug:Drug {name:'达比加群酯'}) CREATE (disease)-[:Alternate {reference: "胸痛基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"胸痛"}),(drug:Drug {name:'利伐沙班'}) CREATE (disease)-[:Alternate {reference: "胸痛基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"胸痛"}),(drug:Drug {name:'单硝酸异山梨酯'}) CREATE (disease)-[:Alternate {reference: "胸痛基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"胸痛"}),(drug:Drug {name:'乌拉地尔'}) CREATE (disease)-[:Alternate {reference: "胸痛基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"胸痛"}),(drug:Drug {name:'地尔硫䓬'}) CREATE (disease)-[:Alternate {reference: "胸痛基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"胸痛"}),(drug:Drug {name:'硝普钠'}) CREATE (disease)-[:Alternate {reference: "胸痛基层合理用药指南"}]->(drug);
+
+//高血压
+MATCH (disease:Disease {name:"高血压"}),(drug:Drug {name:'卡托普利'}) CREATE (disease)-[:Recommend {reference: "高血压基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"高血压"}),(drug:Drug {name:'依那普利'}) CREATE (disease)-[:Recommend {reference: "高血压基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"高血压"}),(drug:Drug {name:'赖诺普利'}) CREATE (disease)-[:Recommend {reference: "高血压基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"高血压"}),(drug:Drug {name:'缄沙坦'}) CREATE (disease)-[:Recommend {reference: "高血压基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"高血压"}),(drug:Drug {name:'尼群地平'}) CREATE (disease)-[:Recommend {reference: "高血压基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"高血压"}),(drug:Drug {name:'硝苯地平'}) CREATE (disease)-[:Recommend {reference: "高血压基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"高血压"}),(drug:Drug {name:'非洛地平'}) CREATE (disease)-[:Recommend {reference: "高血压基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"高血压"}),(drug:Drug {name:'氨氯地平'}) CREATE (disease)-[:Recommend {reference: "高血压基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"高血压"}),(drug:Drug {name:'比索洛尔'}) CREATE (disease)-[:Recommend {reference: "高血压基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"高血压"}),(drug:Drug {name:'拉贝洛尔'}) CREATE (disease)-[:Recommend {reference: "高血压基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"高血压"}),(drug:Drug {name:'氢氯噻嗪'}) CREATE (disease)-[:Recommend {reference: "高血压基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"高血压"}),(drug:Drug {name:'螺内酯'}) CREATE (disease)-[:Recommend {reference: "高血压基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"高血压"}),(drug:Drug {name:'乌拉地尔'}) CREATE (disease)-[:Recommend {reference: "高血压基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"高血压"}),(drug:Drug {name:'酚妥拉明'}) CREATE (disease)-[:Recommend {reference: "高血压基层合理用药指南"}]->(drug);
+
+//心脏骤停
+MATCH (disease:Disease {name:"心脏骤停"}),(drug:Drug {name:'肾上腺素'}) CREATE (disease)-[:Recommend {reference: "心脏骤停基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"心脏骤停"}),(drug:Drug {name:'胺碘酮'}) CREATE (disease)-[:Recommend {reference: "心脏骤停基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"心脏骤停"}),(drug:Drug {name:'利多卡因'}) CREATE (disease)-[:Recommend {reference: "心脏骤停基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"心脏骤停"}),(drug:Drug {name:'碳酸氢钠'}) CREATE (disease)-[:Recommend {reference: "心脏骤停基层合理用药指南"}]->(drug);
+
+//血脂异常
+MATCH (disease:Disease {name:"血脂异常"}),(drug:Drug {name:'辛伐他汀'}) CREATE (disease)-[:Recommend {reference: "血脂异常基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"血脂异常"}),(drug:Drug {name:'阿托伐他汀'}) CREATE (disease)-[:Recommend {reference: "血脂异常基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"血脂异常"}),(drug:Drug {name:'瑞舒伐他汀'}) CREATE (disease)-[:Recommend {reference: "血脂异常基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"血脂异常"}),(drug:Drug {name:'非诺贝特'}) CREATE (disease)-[:Recommend {reference: "血脂异常基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"血脂异常"}),(drug:Drug {name:'依折麦布'}) CREATE (disease)-[:Alternate {reference: "血脂异常基层合理用药指南"}]->(drug);
+
+//冠心病心脏康复
+MATCH (disease:Disease {name:"冠心病心脏康复"}),(drug:Drug {name:'辛伐他汀'}) CREATE (disease)-[:Recommend {reference: "冠心病心脏康复基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"冠心病心脏康复"}),(drug:Drug {name:'阿托伐他汀'}) CREATE (disease)-[:Recommend {reference: "冠心病心脏康复基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"冠心病心脏康复"}),(drug:Drug {name:'瑞舒伐他汀'}) CREATE (disease)-[:Recommend {reference: "冠心病心脏康复基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"冠心病心脏康复"}),(drug:Drug {name:'卡托普利'}) CREATE (disease)-[:Recommend {reference: "冠心病心脏康复基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"冠心病心脏康复"}),(drug:Drug {name:'依那普利'}) CREATE (disease)-[:Recommend {reference: "冠心病心脏康复基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"冠心病心脏康复"}),(drug:Drug {name:'赖诺普利'}) CREATE (disease)-[:Recommend {reference: "冠心病心脏康复基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"冠心病心脏康复"}),(drug:Drug {name:'缬沙坦'}) CREATE (disease)-[:Recommend {reference: "冠心病心脏康复基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"冠心病心脏康复"}),(drug:Drug {name:'美托洛尔'}) CREATE (disease)-[:Recommend {reference: "冠心病心脏康复基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"冠心病心脏康复"}),(drug:Drug {name:'比索洛尔'}) CREATE (disease)-[:Recommend {reference: "冠心病心脏康复基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"冠心病心脏康复"}),(drug:Drug {name:'伊伐布雷定'}) CREATE (disease)-[:Recommend {reference: "冠心病心脏康复基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"冠心病心脏康复"}),(drug:Drug {name:'阿司匹林'}) CREATE (disease)-[:Recommend {reference: "冠心病心脏康复基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"冠心病心脏康复"}),(drug:Drug {name:'氯吡格雷'}) CREATE (disease)-[:Recommend {reference: "冠心病心脏康复基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"冠心病心脏康复"}),(drug:Drug {name:'非诺贝特'}) CREATE (disease)-[:Alternate {reference: "冠心病心脏康复基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"冠心病心脏康复"}),(drug:Drug {name:'依折麦布'}) CREATE (disease)-[:Alternate {reference: "冠心病心脏康复基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"冠心病心脏康复"}),(drug:Drug {name:'非诺贝特'}) CREATE (disease)-[:Alternate {reference: "冠心病心脏康复基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"冠心病心脏康复"}),(drug:Drug {name:'卡维地洛'}) CREATE (disease)-[:Alternate {reference: "冠心病心脏康复基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"冠心病心脏康复"}),(drug:Drug {name:'替格瑞洛'}) CREATE (disease)-[:Alternate {reference: "冠心病心脏康复基层合理用药指南"}]->(drug);
+
+
+
+
+
+
+
+

@@ -1,0 +1,85 @@
+MATCH (n) detach delete n;
+
+
+//心血管病分类
+CREATE (:Category {name:'冠心病'});
+CREATE (:Category {name:'心力衰竭'});
+CREATE (:Category {name:'心率失常'});
+CREATE (:Category {name:'心脏瓣膜病'});
+
+
+//心血管病14个大类
+CREATE (:Disease {name:"室性心动过速"});
+CREATE (:Disease {name: '室上性心动过速'});
+CREATE (:Disease {name:"稳定性冠心病"});
+CREATE (:Disease {name:"非ST段抬高型急性冠状动脉综合征"});
+CREATE (:Disease {name:"ST段抬高型心肌梗死"});
+CREATE (:Disease {name:"冠心病心脏康复"});
+CREATE (:Disease {name:"心脏骤停"});
+CREATE (:Disease {name:"早搏"});
+CREATE (:Disease {name:"胸痛"});
+CREATE (:Disease {name:"心房颤动"});
+CREATE (:Disease {name:"慢性心力衰竭"});
+CREATE (:Disease {name:"急性心力衰竭"});
+CREATE (:Disease {name:"高血压"});
+CREATE (:Disease {name:"血脂异常"});
+
+
+CREATE (:Disease {name:"窦性心律失常"});
+CREATE (:Disease {name:"窦性心动过速"});
+CREATE (:Disease {name:"窦性心动过缓"});
+CREATE (:Disease {name:"窦性停搏"});
+CREATE (:Disease {name:"窦房传导阻滞"});
+CREATE (:Disease {name:"病态窦房结综合征"});
+MATCH (d1:Disease {name:"窦性心律失常"}), (d2:Disease {name:"窦性心动过速"}) CREATE (d1)-[:Includes_disease {reference: "内科学第九版 P182"}]->(d2);
+MATCH (d1:Disease {name:"窦性心律失常"}), (d2:Disease {name:"窦性心动过缓"}) CREATE (d1)-[:Includes_disease {reference: "内科学第九版 P182"}]->(d2);
+MATCH (d1:Disease {name:"窦性心律失常"}), (d2:Disease {name:"窦性停搏"}) CREATE (d1)-[:Includes_disease {reference: "内科学第九版 P183"}]->(d2);
+MATCH (d1:Disease {name:"窦性心律失常"}), (d2:Disease {name:"窦房传导阻滞"}) CREATE (d1)-[:Includes_disease {reference: "内科学第九版 P183"}]->(d2);
+MATCH (d1:Disease {name:"窦性心律失常"}), (d2:Disease {name:"病态窦房结综合征"}) CREATE (d1)-[:Includes_disease {reference: "内科学第九版 P183"}]->(d2);
+
+
+CREATE (:Disease {name:"房性心律失常"});
+CREATE (:Disease {name:"房性期前收缩"});
+CREATE (:Disease {name:"房性心动过速"});
+CREATE (:Disease {name:"心房扑动"});
+MATCH (d1:Disease {name:"房性心律失常"}), (d2:Disease {name:"房性期前收缩"}) CREATE (d1)-[:Includes_disease {reference: "内科学第九版 P185"}]->(d2);
+MATCH (d1:Disease {name:"房性心律失常"}), (d2:Disease {name:"房性心动过速"}) CREATE (d1)-[:Includes_disease {reference: "内科学第九版 P186"}]->(d2);
+MATCH (d1:Disease {name:"房性心律失常"}), (d2:Disease {name:"心房扑动"}) CREATE (d1)-[:Includes_disease {reference: "内科学第九版 P187"}]->(d2);
+MATCH (d1:Disease {name:"房性心律失常"}), (d2:Disease {name:"心房颤动"}) CREATE (d1)-[:Includes_disease {reference: "内科学第九版 P188"}]->(d2);
+
+CREATE (:Disease {name:"室性心律失常"});
+CREATE (:Disease {name:"室性期前收缩"});
+CREATE (:Disease {name:"心室扑动"});
+CREATE (:Disease {name:"心室颤动"});
+MATCH (d1:Disease {name:"室性心律失常"}), (d2:Disease {name:"室性期前收缩"}) CREATE (d1)-[:Includes_disease {reference: "内科学第九版 P196"}]->(d2);
+MATCH (d1:Disease {name:"室性心律失常"}), (d2:Disease {name:"心室扑动"}) CREATE (d1)-[:Includes_disease {reference: "内科学第九版 P200"}]->(d2);
+MATCH (d1:Disease {name:"室性心律失常"}), (d2:Disease {name:"心室颤动"}) CREATE (d1)-[:Includes_disease {reference: "内科学第九版 P200"}]->(d2);
+MATCH (d1:Disease {name:"室性心律失常"}), (d2:Disease {name:"室性心动过速"}) CREATE (d1)-[:Includes_disease {reference: "内科学第九版 P197"}]->(d2);
+
+CREATE (:Disease {name:"心脏传导阻滞"});
+CREATE (:Disease {name:"房室传导阻滞"});
+CREATE (:Disease {name:"室内传导阻滞"});
+MATCH (d1:Disease {name:"心脏传导阻滞"}), (d2:Disease {name:"心脏传导阻滞"}) CREATE (d1)-[:Includes_disease {reference: "内科学第九版 P203"}]->(d2);
+MATCH (d1:Disease {name:"心脏传导阻滞"}), (d2:Disease {name:"室内传导阻滞"}) CREATE (d1)-[:Includes_disease {reference: "内科学第九版 P204"}]->(d2);
+
+
+
+
+//疾病大类与子类之间的关联
+MATCH (u:Category {name:'冠心病'}), (r:Disease {name:'ST段抬高型心肌梗死'}) CREATE (u)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(r);
+MATCH (u:Category {name:'冠心病'}), (r:Disease {name:'非ST段抬高型急性冠状动脉综合征'}) CREATE (u)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(r);
+MATCH (u:Category {name:'冠心病'}), (r:Disease {name:'稳定性冠心病'}) CREATE (u)-[:Contains {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(r);
+MATCH (u:Category {name:'心力衰竭'}), (r:Disease {name:'慢性心力衰竭'}) CREATE (u)-[:Contains {reference: "慢性心力衰竭基层合理用药指南"}]->(r);
+MATCH (u:Category {name:'心力衰竭'}), (r:Disease {name:'急性心力衰竭'}) CREATE (u)-[:Contains {reference: "急性心力衰竭基层合理用药指南"}]->(r);
+MATCH (u:Category {name:'心率失常'}), (r:Disease {name:'心房颤动'}) CREATE (u)-[:Contains {reference: "急性心力衰竭基层合理用药指南"}]->(r);
+MATCH (u:Category {name:'心率失常'}), (r:Disease {name:'窦性心律失常'}) CREATE (u)-[:Contains {reference: "急性心力衰竭基层合理用药指南"}]->(r);
+MATCH (u:Category {name:'心率失常'}), (r:Disease {name:'房性心律失常'}) CREATE (u)-[:Contains {reference: "急性心力衰竭基层合理用药指南"}]->(r);
+MATCH (u:Category {name:'心率失常'}), (r:Disease {name:'室性心律失常'}) CREATE (u)-[:Contains {reference: "急性心力衰竭基层合理用药指南"}]->(r);
+
+//相关疾病
+CREATE (:Disease {name:"糖尿病"});
+CREATE (:Disease {name:"贫血"});
+CREATE (:Disease {name:"肾功能不全"});
+CREATE (:Disease {name:"肺部疾病"});
+CREATE (:Disease {name:"睡眠呼吸暂停"});
+CREATE (:Disease {name:"高原心脏病"});
