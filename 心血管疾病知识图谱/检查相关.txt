@@ -1,0 +1,114 @@
+
+//常规检查
+CREATE (:Routine {name:'心电图'});
+CREATE (:Routine {name:'X线胸片'});
+CREATE (:Routine {name:'生物标志物'});
+CREATE (:Routine {name:'利钠肽'});
+CREATE (:Routine {name:'心脏肌钙蛋白'});
+CREATE (:Routine {name:'可溶性ST2'});
+CREATE (:Routine {name:'半乳糖凝集素3'});
+CREATE (:Routine {name:'生长分化因子15'});
+MATCH (r1:Routine {name:'生物标志物'}),(r2:Routine {name:'利钠肽'}) CREATE (r1)-[:Includes_routine {reference: "中国心力衰竭诊断和治疗指南"}]->(r2);
+MATCH (r1:Routine {name:'生物标志物'}),(r2:Routine {name:'心脏肌钙蛋白'}) CREATE (r1)-[:Includes_routine {reference: "中国心力衰竭诊断和治疗指南"}]->(r2);
+MATCH (r1:Routine {name:'生物标志物'}),(r2:Routine {name:'可溶性ST2'}) CREATE (r1)-[:Includes_routine {reference: "中国心力衰竭诊断和治疗指南"}]->(r2);
+MATCH (r1:Routine {name:'生物标志物'}),(r2:Routine {name:'半乳糖凝集素3'}) CREATE (r1)-[:Includes_routine {reference: "中国心力衰竭诊断和治疗指南"}]->(r2);
+MATCH (r1:Routine {name:'生物标志物'}),(r2:Routine {name:'生长分化因子15'}) CREATE (r1)-[:Includes_routine {reference: "中国心力衰竭诊断和治疗指南"}]->(r2);
+
+
+CREATE (:Routine {name:'超声心动图'});
+CREATE (:Routine {name:'实验室检查'});
+CREATE (:Routine {name:'血常规'});
+CREATE (:Routine {name:'血钠'});
+CREATE (:Routine {name:'血钾'});
+CREATE (:Routine {name:'血糖'});
+CREATE (:Routine {name:'尿素氮'});
+CREATE (:Routine {name:'肌酐'});
+CREATE (:Routine {name:'肾小球滤过率'});
+CREATE (:Routine {name:'肝酶'});
+CREATE (:Routine {name:'胆红素'});
+CREATE (:Routine {name:'血清铁'});
+CREATE (:Routine {name:'铁蛋白'});
+CREATE (:Routine {name:'总铁结合力'});
+CREATE (:Routine {name:'血脂'});
+CREATE (:Routine {name:'糖化血红蛋白'});
+CREATE (:Routine {name:'促甲状腺激素'});
+MATCH (r1:Routine {name:'实验室检查'}),(r2:Routine {name:'血常规'}) CREATE (r1)-[:Includes_routine {reference: "中国心力衰竭诊断和治疗指南"}]->(r2);
+MATCH (r1:Routine {name:'实验室检查'}),(r2:Routine {name:'血钠'}) CREATE (r1)-[:Includes_routine {reference: "中国心力衰竭诊断和治疗指南"}]->(r2);
+MATCH (r1:Routine {name:'实验室检查'}),(r2:Routine {name:'血钾'}) CREATE (r1)-[:Includes_routine {reference: "中国心力衰竭诊断和治疗指南"}]->(r2);
+MATCH (r1:Routine {name:'实验室检查'}),(r2:Routine {name:'血糖'}) CREATE (r1)-[:Includes_routine {reference: "中国心力衰竭诊断和治疗指南"}]->(r2);
+MATCH (r1:Routine {name:'实验室检查'}),(r2:Routine {name:'尿素氮'}) CREATE (r1)-[:Includes_routine {reference: "中国心力衰竭诊断和治疗指南"}]->(r2);
+MATCH (r1:Routine {name:'实验室检查'}),(r2:Routine {name:'肌酐'}) CREATE (r1)-[:Includes_routine {reference: "中国心力衰竭诊断和治疗指南"}]->(r2);
+MATCH (r1:Routine {name:'实验室检查'}),(r2:Routine {name:'肾小球滤过率'}) CREATE (r1)-[:Includes_routine {reference: "中国心力衰竭诊断和治疗指南"}]->(r2);
+MATCH (r1:Routine {name:'实验室检查'}),(r2:Routine {name:'肝酶'}) CREATE (r1)-[:Includes_routine {reference: "中国心力衰竭诊断和治疗指南"}]->(r2);
+MATCH (r1:Routine {name:'实验室检查'}),(r2:Routine {name:'胆红素'}) CREATE (r1)-[:Includes_routine {reference: "中国心力衰竭诊断和治疗指南"}]->(r2);
+MATCH (r1:Routine {name:'实验室检查'}),(r2:Routine {name:'血清铁'}) CREATE (r1)-[:Includes_routine {reference: "中国心力衰竭诊断和治疗指南"}]->(r2);
+MATCH (r1:Routine {name:'实验室检查'}),(r2:Routine {name:'铁蛋白'}) CREATE (r1)-[:Includes_routine {reference: "中国心力衰竭诊断和治疗指南"}]->(r2);
+MATCH (r1:Routine {name:'实验室检查'}),(r2:Routine {name:'总铁结合力'}) CREATE (r1)-[:Includes_routine {reference: "中国心力衰竭诊断和治疗指南"}]->(r2);
+MATCH (r1:Routine {name:'实验室检查'}),(r2:Routine {name:'血脂'}) CREATE (r1)-[:Includes_routine {reference: "中国心力衰竭诊断和治疗指南"}]->(r2);
+MATCH (r1:Routine {name:'实验室检查'}),(r2:Routine {name:'糖化血红蛋白'}) CREATE (r1)-[:Includes_routine {reference: "中国心力衰竭诊断和治疗指南"}]->(r2);
+MATCH (r1:Routine {name:'实验室检查'}),(r2:Routine {name:'促甲状腺激素'}) CREATE (r1)-[:Includes_routine {reference: "中国心力衰竭诊断和治疗指南"}]->(r2);
+MATCH (r1:Routine {name:'实验室检查'}),(r2:Routine {name:'利钠肽'}) CREATE (r1)-[:Includes_routine {reference: "中国心力衰竭诊断和治疗指南"}]->(r2);
+
+
+//特殊检查
+CREATE (:Special {name:'心脏磁共振'});
+CREATE (:Special {name:'冠状动脉造影'});
+CREATE (:Special {name:'心脏CT'});
+CREATE (:Special {name:'负荷超声心动图'});
+CREATE (:Special {name:'核素心室造影及核素心肌灌注和／或代谢显像'});
+CREATE (:Special {name:'心肺运动试验'});
+CREATE (:Special {name:'6min步行试验'});
+CREATE (:Special {name:'有创血流动力学检查'});
+CREATE (:Special {name:'心肌活检'});
+CREATE (:Special {name:'基因检测'});
+CREATE (:Special {name:'生活质量评估'});
+
+
+//检查关联
+MATCH (u:Category {namBe:'心力衰竭'}), (r:Routine {name:'心电图'}) CREATE (u)-[:Examine {reference: "中国心力衰竭诊断和治疗指南"}]->(r);
+MATCH (u:Category {name:'心力衰竭'}), (r:Routine {name:'X线胸片'}) CREATE (u)-[:Examine {reference: "中国心力衰竭诊断和治疗指南"}]->(r);
+MATCH (u:Category {name:'心力衰竭'}), (r:Routine {name:'利钠肽'}) CREATE (u)-[:Examine {reference: "中国心力衰竭诊断和治疗指南"}]->(r);
+MATCH (u:Category {name:'心力衰竭'}), (r:Routine {name:'心脏肌钙蛋白'}) CREATE (u)-[:Examine {reference: "中国心力衰竭诊断和治疗指南"}]->(r);
+MATCH (u:Category {name:'心力衰竭'}), (r:Routine {name:'超声心动图'}) CREATE (u)-[:Examine {reference: "中国心力衰竭诊断和治疗指南"}]->(r);
+MATCH (u:Category {name:'心力衰竭'}), (r:Routine {name:'血常规'}) CREATE (u)-[:Examine {reference: "中国心力衰竭诊断和治疗指南"}]->(r);
+MATCH (u:Category {name:'心力衰竭'}), (r:Routine {name:'血钠'}) CREATE (u)-[:Examine {reference: "中国心力衰竭诊断和治疗指南"}]->(r);
+MATCH (u:Category {name:'心力衰竭'}), (r:Routine {name:'血钾'}) CREATE (u)-[:Examine {reference: "中国心力衰竭诊断和治疗指南"}]->(r);
+MATCH (u:Category {name:'心力衰竭'}), (r:Routine {name:'血糖'}) CREATE (u)-[:Examine {reference: "中国心力衰竭诊断和治疗指南"}]->(r);
+MATCH (u:Category {name:'心力衰竭'}), (r:Routine {name:'尿素氮'}) CREATE (u)-[:Examine {reference: "中国心力衰竭诊断和治疗指南"}]->(r);
+MATCH (u:Category {name:'心力衰竭'}), (r:Routine {name:'肌酐'}) CREATE (u)-[:Examine {reference: "中国心力衰竭诊断和治疗指南"}]->(r);
+MATCH (u:Category {name:'心力衰竭'}), (r:Routine {name:'肾小球滤过率'}) CREATE (u)-[:Examine {reference: "中国心力衰竭诊断和治疗指南"}]->(r);
+MATCH (u:Category {name:'心力衰竭'}), (r:Routine {name:'肝酶'}) CREATE (u)-[:Examine {reference: "中国心力衰竭诊断和治疗指南"}]->(r);
+MATCH (u:Category {name:'心力衰竭'}), (r:Routine {name:'胆红素'}) CREATE (u)-[:Examine {reference: "中国心力衰竭诊断和治疗指南"}]->(r);
+MATCH (u:Category {name:'心力衰竭'}), (r:Routine {name:'血清铁'}) CREATE (u)-[:Examine {reference: "中国心力衰竭诊断和治疗指南"}]->(r);
+MATCH (u:Category {name:'心力衰竭'}), (r:Routine {name:'铁蛋白'}) CREATE (u)-[:Examine {reference: "中国心力衰竭诊断和治疗指南"}]->(r);
+MATCH (u:Category {name:'心力衰竭'}), (r:Routine {name:'总铁结合力'}) CREATE (u)-[:Examine {reference: "中国心力衰竭诊断和治疗指南"}]->(r);
+MATCH (u:Category {name:'心力衰竭'}), (r:Routine {name:'血脂'}) CREATE (u)-[:Examine {reference: "中国心力衰竭诊断和治疗指南"}]->(r);
+MATCH (u:Category {name:'心力衰竭'}), (r:Routine {name:'糖化血红蛋白'}) CREATE (u)-[:Examine {reference: "中国心力衰竭诊断和治疗指南"}]->(r);
+MATCH (u:Category {name:'心力衰竭'}), (r:Routine {name:'促甲状腺激素'}) CREATE (u)-[:Examine {reference: "中国心力衰竭诊断和治疗指南"}]->(r);
+MATCH (u:Category {name:'心力衰竭'}), (r:Routine {name:'心脏磁共振'}) CREATE (u)-[:Examine {reference: "中国心力衰竭诊断和治疗指南"}]->(r);
+MATCH (u:Category {name:'心力衰竭'}), (r:Special {name:'冠状动脉造影'}) CREATE (u)-[:Examine {reference: "中国心力衰竭诊断和治疗指南"}]->(r);
+MATCH (u:Category {name:'心力衰竭'}), (r:Special {name:'心脏CT'}) CREATE (u)-[:Examine {reference: "中国心力衰竭诊断和治疗指南"}]->(r);
+MATCH (u:Category {name:'心力衰竭'}), (r:Special {name:'负荷超声心动图'}) CREATE (u)-[:Examine {reference: "中国心力衰竭诊断和治疗指南"}]->(r);
+MATCH (u:Category {name:'心力衰竭'}), (r:Special {name:'核素心室造影及核素心肌灌注和／或代谢显像'}) CREATE (u)-[:Examine {reference: "中国心力衰竭诊断和治疗指南"}]->(r);
+MATCH (u:Category {name:'心力衰竭'}), (r:Special {name:'心肺运动试验'}) CREATE (u)-[:Examine {reference: "中国心力衰竭诊断和治疗指南"}]->(r);
+MATCH (u:Category {name:'心力衰竭'}), (r:Special {name:'6min步行试验'}) CREATE (u)-[:Examine {reference: "中国心力衰竭诊断和治疗指南"}]->(r);
+MATCH (u:Category {name:'心力衰竭'}), (r:Special {name:'有创血流动力学检查'}) CREATE (u)-[:Examine {reference: "中国心力衰竭诊断和治疗指南"}]->(r);
+MATCH (u:Category {name:'心力衰竭'}), (r:Special {name:'心肌活检'}) CREATE (u)-[:Examine {reference: "中国心力衰竭诊断和治疗指南"}]->(r);
+MATCH (u:Category {name:'心力衰竭'}), (r:Special {name:'基因检测'}) CREATE (u)-[:Examine {reference: "中国心力衰竭诊断和治疗指南"}]->(r);
+MATCH (u:Category {name:'心力衰竭'}), (r:Special {name:'生活质量评估'}) CREATE (u)-[:Examine {reference: "中国心力衰竭诊断和治疗指南"}]->(r);
+
+MATCH (u:Category {namBe:'二尖瓣狭窄'}), (r:Routine {name:'X线胸片'}) CREATE (u)-[:Examine {reference: "内科学第九版"}]->(r);
+MATCH (u:Category {namBe:'二尖瓣狭窄'}), (r:Routine {name:'心电图'}) CREATE (u)-[:Examine {reference: "内科学第九版"}]->(r);
+MATCH (u:Category {namBe:'二尖瓣狭窄'}), (r:Routine {name:'超声心动图'}) CREATE (u)-[:Examine {reference: "内科学第九版"}]->(r);
+
+
+MATCH (u:Category {namBe:'二尖瓣关闭不全'}), (r:Routine {name:'X线胸片'}) CREATE (u)-[:Examine {reference: "内科学第九版"}]->(r);
+MATCH (u:Category {namBe:'二尖瓣关闭不全'}), (r:Routine {name:'心电图'}) CREATE (u)-[:Examine {reference: "内科学第九版"}]->(r);
+MATCH (u:Category {namBe:'二尖瓣关闭不全'}), (r:Routine {name:'超声心动图'}) CREATE (u)-[:Examine {reference: "内科学第九版"}]->(r);
+
+MATCH (u:Category {namBe:'主动脉瓣狭窄'}), (r:Routine {name:'X线胸片'}) CREATE (u)-[:Examine {reference: "内科学第九版"}]->(r);
+MATCH (u:Category {namBe:'主动脉瓣狭窄'}), (r:Routine {name:'心电图'}) CREATE (u)-[:Examine {reference: "内科学第九版"}]->(r);
+MATCH (u:Category {namBe:'主动脉瓣狭窄'}), (r:Routine {name:'超声心动图'}) CREATE (u)-[:Examine {reference: "内科学第九版"}]->(r);
+MATCH (u:Category {namBe:'主动脉瓣关闭不全'}), (r:Routine {name:'X线胸片'}) CREATE (u)-[:Examine {reference: "内科学第九版"}]->(r);
+MATCH (u:Category {namBe:'主动脉瓣关闭不全'}), (r:Routine {name:'心电图'}) CREATE (u)-[:Examine {reference: "内科学第九版"}]->(r);
+MATCH (u:Category {namBe:'主动脉瓣关闭不全'}), (r:Routine {name:'超声心动图'}) CREATE (u)-[:Examine {reference: "内科学第九版"}]->(r);
