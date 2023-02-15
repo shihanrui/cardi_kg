@@ -1,0 +1,8 @@
+
+
+//心衰鉴别诊断
+
+MATCH (d1:Disease {name: "慢性心力衰竭"}),(d2:Disease {name: "支气管哮喘"}) CREATE (d1)-[:Discriminate {reference:"内科学第九版"}]->(d2);
+MATCH (d1:Disease {name: "慢性心力衰竭"}),(d2:Disease {name: "心包积液"}) CREATE (d1)-[:Discriminate {reference:"内科学第九版"}]->(d2);
+MATCH (d1:Disease {name: "慢性心力衰竭"}),(d2:Disease {name: "窄缩性心包炎"}) CREATE (d1)-[:Discriminate {reference:"内科学第九版"}]->(d2);
+MATCH (d1:Disease {name: "慢性心力衰竭"}),(d2:Disease {name: "肝硬化腹腔积液伴下肢水肿"}) CREATE (d1)-[:Discriminate {reference:"内科学第九版"}]->(d2);

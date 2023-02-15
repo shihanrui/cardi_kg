@@ -1,0 +1,21 @@
+//病理
+
+CREATE (:Pathology {name:"左心室代偿功能不全"});
+MATCH (p:Pathology {name:"左心室代偿功能不全"}), (d:Disease {name:"左心衰竭"}) CREATE (p)-[:Leadto {reference:"内科学第九版"}]->(d);
+
+CREATE (:Pathology {name:"Frank-Starling机制"});
+CREATE (:Pathology {name:"神经体液机制"});
+CREATE (:Pathology {name:"交感神经兴奋性增强"});
+CREATE (:Pathology {name:"体液因子改变"});
+CREATE (:Pathology {name:"RAAS激活"});
+CREATE (:Pathology {name:"精氨酸加压素升高"});
+CREATE (:Pathology {name:"利钠肽升高"});
+MATCH (p1:Pathology {name:"体液因子改变"}), (p2:Pathology {name:"精氨酸加压素升高"}) CREATE (p1)-[:Includes_pathology {reference:"内科学第九版"}]->(p2);
+MATCH (p1:Pathology {name:"体液因子改变"}), (p2:Pathology {name:"利钠肽升高"}) CREATE (p1)-[:Includes_pathology {reference:"内科学第九版"}]->(p2);
+CREATE (:Pathology {name:"心室重塑"});
+MATCH (p:Pathology {name:"Frank-Starling机制"}), (c:Category {name:"心力衰竭"}) CREATE (p)-[:Leadto {reference:"内科学第九版"}]->(c);
+MATCH (p:Pathology {name:"交感神经兴奋性增强"}), (c:Category {name:"心力衰竭"}) CREATE (p)-[:Leadto {reference:"内科学第九版"}]->(c);
+MATCH (p:Pathology {name:"心室重塑"}), (c:Category {name:"心力衰竭"}) CREATE (p)-[:Leadto {reference:"内科学第九版"}]->(c);
+MATCH (p:Pathology {name:"RAAS激活"}), (c:Category {name:"心力衰竭"}) CREATE (p)-[:Leadto {reference:"内科学第九版"}]->(c);
+MATCH (p:Pathology {name:"精氨酸加压素升高"}), (c:Category {name:"心力衰竭"}) CREATE (p)-[:Leadto {reference:"内科学第九版"}]->(c);
+MATCH (p:Pathology {name:"利钠肽升高"}), (c:Category {name:"心力衰竭"}) CREATE (p)-[:Leadto {reference:"内科学第九版"}]->(c);

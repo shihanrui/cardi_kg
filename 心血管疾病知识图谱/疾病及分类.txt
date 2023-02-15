@@ -32,6 +32,18 @@ CREATE (:Disease {name:"血脂异常"});
 CREATE (:Disease {name:"心血管神经症"});
 
 
+CREATE (:Disease {name:"左心衰竭"});
+CREATE (:Disease {name:"右心衰竭"});
+CREATE (:Disease {name:"全心衰竭"});
+MATCH (u:Disease {name:"慢性心力衰竭"}), (r:Disease {name:'左心衰竭'}) CREATE (u)-[:Includes_disease {reference: "内科学第九版"}]->(r);
+MATCH (u:Disease {name:"慢性心力衰竭"}), (r:Disease {name:'右心衰竭'}) CREATE (u)-[:Includes_disease {reference: "内科学第九版"}]->(r);
+MATCH (u:Disease {name:"慢性心力衰竭"}), (r:Disease {name:'全心衰竭'}) CREATE (u)-[:Includes_disease {reference: "内科学第九版"}]->(r);
+
+CREATE (:Disease {name:"急性左心衰竭"});
+CREATE (:Disease {name:"急性右心衰竭"});
+MATCH (u:Disease {name:"急性心力衰竭"}), (r:Disease {name:'急性左心衰竭'}) CREATE (u)-[:Includes_disease {reference: "内科学第九版"}]->(r);
+MATCH (u:Disease {name:"急性心力衰竭"}), (r:Disease {name:'急性右心衰竭'}) CREATE (u)-[:Includes_disease {reference: "内科学第九版"}]->(r);
+
 CREATE (:Disease {name:"窦性心律失常"});
 CREATE (:Disease {name:"窦性心动过速"});
 CREATE (:Disease {name:"窦性心动过缓"});
@@ -124,7 +136,8 @@ CREATE (:Disease {name:"睡眠呼吸暂停"});
 CREATE (:Disease {name:"高原心脏病"});
 
 //鉴别诊断疾病
-
+CREATE (:Disease {name:"支气管哮喘"});
+CREATE (:Disease {name:"肝硬化腹腔积液伴下肢水肿"});
 CREATE (:Disease {name:"肺栓塞"});
 CREATE (:Disease {name:"气胸"});
 CREATE (:Disease {name:"消化性溃疡"});

@@ -72,11 +72,14 @@ MATCH (f1:clinicalFeature {name:'呼吸困难'}), (f2:clinicalFeature {name:'劳
 MATCH (f1:clinicalFeature {name:'呼吸困难'}), (f2:clinicalFeature {name:'夜间阵发性呼吸困难'}) CREATE (f1)-[:Includes_clinicalfeature {reference: "中国心力衰竭诊断和治疗指南"}]->(f2);
 MATCH (f1:clinicalFeature {name:'呼吸困难'}), (f2:clinicalFeature {name:'端坐呼吸'}) CREATE (f1)-[:Includes_clinicalfeature {reference: "中国心力衰竭诊断和治疗指南"}]->(f2);
 
+CREATE (:clinicalFeature {name:'咳嗽'});
+CREATE (:clinicalFeature {name:'咳痰'});
 CREATE (:clinicalFeature {name:'疲乏'});
 CREATE (:History {name:'运动耐力下降'});
 CREATE (:History {name:'心率增加'});
 CREATE (:clinicalFeature {name:'液体潴留'});
 CREATE (:clinicalFeature {name:'肺循环瘀血'});
+CREATE (:clinicalFeature {name:'心排血量降低'});
 CREATE (:clinicalFeature {name:'体循环瘀血'});
 CREATE (:clinicalFeature {name:'外周水肿'});
 MATCH (f1:clinicalFeature {name:'液体潴留'}),(f2:clinicalFeature {name:'肺循环瘀血'}) CREATE (f1)-[:Includes_clinicalfeature {reference: "慢性心力衰竭基层合理用药指南"}]->(f2);
@@ -140,6 +143,7 @@ CREATE (:clinicalFeature {name:'发热'});
 CREATE (:clinicalFeature {name:'胸膜刺激性疼痛'});
 CREATE (:clinicalFeature {name:'肩部放射痛，前倾坐位时减轻'});
 CREATE (:clinicalFeature {name:'心悸'});
+CREATE (:clinicalFeature {name:'心慌'});
 CREATE (:clinicalFeature {name:'头晕'});
 CREATE (:clinicalFeature {name:'黑朦'});
 CREATE (:clinicalFeature {name:'心绞痛'});
@@ -255,6 +259,7 @@ CREATE (:Examination {name:'舒张早期奔马律'});
 CREATE (:Examination {name:'舒张中期奔马律'});
 CREATE (:Examination {name:'心尖部奔马律'});
 CREATE (:Examination {name:'第三心音'});
+CREATE (:Examination {name:'第四心音奔马律'});
 CREATE (:Examination {name:'P2亢进'});
 CREATE (:Examination {name:'P2分裂'});
 CREATE (:Examination {name:'心尖区第一心音强度恒定'});
@@ -266,10 +271,12 @@ CREATE (:Examination {name:'期前收缩'});
 CREATE (:Examination {name:'心尖区亢进的第一心音'});
 CREATE (:Examination {name:'开瓣音'});
 CREATE (:Examination {name:'心尖区舒张中晚期低调的隆隆样杂音，呈递增型'});
+CREATE (:Examination {name:'反流性杂音'});
+CREATE (:Examination {name:'肺动脉瓣区第二心音亢进'});
 
 
 //视诊
-CREATE (:Examination {name:'双颧绀红 '});
+CREATE (:Examination {name:'双颧绀红'});
 
 
 //叩诊
@@ -277,6 +284,9 @@ CREATE (:Examination {name:'腿反射活跃'});
 
 //触诊
 CREATE (:Examination {name:'收缩期抬举样搏动'});
+CREATE (:Examination {name:'凹陷性水肿'});
+CREATE (:Examination {name:'胸腔积液'});
+
 
 
 // 心电图
@@ -315,7 +325,8 @@ CREATE (:Examination {name:'BNP≥35ng/L'});
 CREATE (:Examination {name:'cTn升高'});
 CREATE (:Examination {name:'cTn回落'});
 CREATE (:Examination {name:'hs-cTn水平高'});
-
+CREATE (:Examination {name:'血尿素氮升高'});
+CREATE (:Examination {name:'肌酐升高'});
 // 胸片
 CREATE (:Examination {name:'肺淤血'});
 CREATE (:Examination {name:'肺水肿'});
@@ -373,8 +384,49 @@ MATCH (d:Disease {name:"急性心力衰竭"}), (e:Examination {name:'肺部哮�
 MATCH (d:Disease {name:"急性心力衰竭"}), (e:Examination {name:'低血压'}) CREATE (d)<-[:Suspect {reference: "中国心力衰竭诊断和治疗指南"}]-(e);
 MATCH (d:Disease {name:"急性心力衰竭"}), (e:Examination {name:'组织低灌注'}) CREATE (d)<-[:Suspect {reference: "中国心力衰竭诊断和治疗指南"}]-(e);
 
+//左心衰竭
+MATCH (d:Disease {name:"左心衰竭"}),(f:clinicalFeature {name:'肺循环瘀血'}) CREATE (d)<-[:Suspect {reference: "内科学第九版"}]-(f);
+MATCH (d:Disease {name:"左心衰竭"}),(f:clinicalFeature {name:'心排血量降低'}) CREATE (d)<-[:Suspect {reference: "内科学第九版"}]-(f);
+MATCH (d:Disease {name:"左心衰竭"}),(f:clinicalFeature {name:'劳力性呼吸困难'}) CREATE (d)<-[:Suspect {reference: "内科学第九版"}]-(f);
+MATCH (d:Disease {name:"左心衰竭"}),(f:clinicalFeature {name:'端坐呼吸'}) CREATE (d)<-[:Suspect {reference: "内科学第九版"}]-(f);
+MATCH (d:Disease {name:"左心衰竭"}),(f:clinicalFeature {name:'夜间阵发性呼吸困难'}) CREATE (d)<-[:Suspect {reference: "内科学第九版"}]-(f);
+MATCH (d:Disease {name:"左心衰竭"}),(f:clinicalFeature {name:'肺水肿'}) CREATE (d)<-[:Suspect {reference: "内科学第九版"}]-(f);
+MATCH (d:Disease {name:"左心衰竭"}),(f:clinicalFeature {name:'咳嗽'}) CREATE (d)<-[:Suspect {reference: "内科学第九版"}]-(f);
+MATCH (d:Disease {name:"左心衰竭"}),(f:clinicalFeature {name:'咳痰'}) CREATE (d)<-[:Suspect {reference: "内科学第九版"}]-(f);
+MATCH (d:Disease {name:"左心衰竭"}),(f:clinicalFeature {name:'咯血'}) CREATE (d)<-[:Suspect {reference: "内科学第九版"}]-(f);
+MATCH (d:Disease {name:"左心衰竭"}),(f:clinicalFeature {name:'疲乏'}) CREATE (d)<-[:Suspect {reference: "内科学第九版"}]-(f);
+MATCH (d:Disease {name:"左心衰竭"}),(f:clinicalFeature {name:'运动耐力下降'}) CREATE (d)<-[:Suspect {reference: "内科学第九版"}]-(f);
+MATCH (d:Disease {name:"左心衰竭"}),(f:clinicalFeature {name:'头晕'}) CREATE (d)<-[:Suspect {reference: "内科学第九版"}]-(f);
+MATCH (d:Disease {name:"左心衰竭"}),(f:clinicalFeature {name:'心慌'}) CREATE (d)<-[:Suspect {reference: "内科学第九版"}]-(f);
+MATCH (d:Disease {name:"左心衰竭"}),(f:clinicalFeature {name:'少尿'}) CREATE (d)<-[:Suspect {reference: "内科学第九版"}]-(f);
+MATCH (d:Disease {name:"急性心力衰竭"}), (e:Examination {name:'血尿素氮升高'}) CREATE (d)<-[:Suspect {reference: "内科学第九版"}]-(e);
+MATCH (d:Disease {name:"急性心力衰竭"}), (e:Examination {name:'肌酐升高'}) CREATE (d)<-[:Suspect {reference: "内科学第九版"}]-(e);
+MATCH (d:Disease {name:"急性心力衰竭"}), (e:Examination {name:'肺部湿啰音'}) CREATE (d)<-[:Suspect {reference: "内科学第九版"}]-(e);
+MATCH (d:Disease {name:"急性心力衰竭"}), (e:Examination {name:'心脏扩大'}) CREATE (d)<-[:Suspect {reference: "内科学第九版"}]-(e);
+MATCH (d:Disease {name:"急性心力衰竭"}), (e:Examination {name:'反流性杂音'}) CREATE (d)<-[:Suspect {reference: "内科学第九版"}]-(e);
+MATCH (d:Disease {name:"急性心力衰竭"}), (e:Examination {name:'肺动脉瓣区第二心音亢进'}) CREATE (d)<-[:Suspect {reference: "内科学第九版"}]-(e);
+MATCH (d:Disease {name:"急性心力衰竭"}), (e:Examination {name:'第三心音'}) CREATE (d)<-[:Suspect {reference: "内科学第九版"}]-(e);
+MATCH (d:Disease {name:"急性心力衰竭"}), (e:Examination {name:'第四心音奔马律'}) CREATE (d)<-[:Suspect {reference: "内科学第九版"}]-(e);
+
+//右心衰竭
+MATCH (d:Disease {name:"右心衰竭"}),(f:clinicalFeature {name:'体循环瘀血'}) CREATE (d)<-[:Suspect {reference: "内科学第九版"}]-(f);
+MATCH (d:Disease {name:"右心衰竭"}),(f:clinicalFeature {name:'腹胀'}) CREATE (d)<-[:Suspect {reference: "内科学第九版"}]-(f);
+MATCH (d:Disease {name:"右心衰竭"}),(f:clinicalFeature {name:'食欲缺乏'}) CREATE (d)<-[:Suspect {reference: "内科学第九版"}]-(f);
+MATCH (d:Disease {name:"右心衰竭"}),(f:clinicalFeature {name:'恶心'}) CREATE (d)<-[:Suspect {reference: "内科学第九版"}]-(f);
+MATCH (d:Disease {name:"右心衰竭"}),(f:clinicalFeature {name:'呕吐'}) CREATE (d)<-[:Suspect {reference: "内科学第九版"}]-(f);
+MATCH (d:Disease {name:"右心衰竭"}),(f:clinicalFeature {name:'劳力性呼吸困难'}) CREATE (d)<-[:Suspect {reference: "内科学第九版"}]-(f);
+MATCH (d:Disease {name:"右心衰竭"}), (e:Examination {name:'凹陷性水肿'}) CREATE (d)<-[:Suspect {reference: "内科学第九版"}]-(e);
+MATCH (d:Disease {name:"右心衰竭"}), (e:Examination {name:'胸腔积液'}) CREATE (d)<-[:Suspect {reference: "内科学第九版"}]-(e);
+MATCH (d:Disease {name:"右心衰竭"}), (e:Examination {name:'颈静脉异常搏动'}) CREATE (d)<-[:Suspect {reference: "内科学第九版"}]-(e);
+MATCH (d:Disease {name:"右心衰竭"}), (e:Examination {name:'颈静脉充盈'}) CREATE (d)<-[:Suspect {reference: "内科学第九版"}]-(e);
+MATCH (d:Disease {name:"右心衰竭"}), (e:Examination {name:'颈静脉怒张'}) CREATE (d)<-[:Suspect {reference: "内科学第九版"}]-(e);
+MATCH (d:Disease {name:"右心衰竭"}), (e:Examination {name:'肝颈静脉回流征阳性'}) CREATE (d)<-[:Suspect {reference: "内科学第九版"}]-(e);
+MATCH (d:Disease {name:"右心衰竭"}), (e:Examination {name:'肝肿大'}) CREATE (d)<-[:Suspect {reference: "内科学第九版"}]-(e);
+MATCH (d:Disease {name:"右心衰竭"}), (e:Examination {name:'反流性杂音'}) CREATE (d)<-[:Suspect {reference: "内科学第九版"}]-(e);
 
 
+//全心衰竭
+MATCH (d:Disease {name:"全心衰竭"}),(f:clinicalFeature {name:'心排血量降低'}) CREATE (d)<-[:Suspect {reference: "内科学第九版"}]-(f);
 
 //ST段抬高型心肌梗死
 MATCH (d:Disease {name:"ST段抬高型心肌梗死"}), (h:History {name:'高血压'}) CREATE (d)<-[:Suspect {reference: "ST段抬高型心肌梗死基层诊疗指南(2019年)"}]-(h);
