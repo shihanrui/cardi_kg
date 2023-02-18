@@ -2,6 +2,8 @@
 //常规检查
 CREATE (:Routine {name:'心电图'});
 CREATE (:Routine {name:'X线胸片'});
+
+
 CREATE (:Routine {name:'生物标志物'});
 CREATE (:Routine {name:'利钠肽'});
 CREATE (:Routine {name:'心脏肌钙蛋白'});
@@ -64,7 +66,8 @@ CREATE (:Special {name:'生活质量评估'});
 CREATE (:Special {name:'心肺运动试验'});
 CREATE (:Special {name:'最大耗氧量'});
 CREATE (:Special {name:'无氧阈值'});
-MATCH (s1:Special {name:'心肺运动试验'}),(s2:Special {name:'最大耗氧量'}) CREATE (s1)-[:Includes_special reference:"内科学第九版"]->(s2);
+MATCH (s1:Special {name:'心肺运动试验'}),(s2:Special {name:'最大耗氧量'}) CREATE (s1)-[:Includes_special {reference:"内科学第九版"}]->(s2);
+MATCH (s1:Special {name:'心肺运动试验'}),(s2:Special {name:'无氧阈值'}) CREATE (s1)-[:Includes_special {reference:"内科学第九版"}]->(s2);
 
 //检查关联
 MATCH (u:Category {name:'心力衰竭'}), (r:Routine {name:'心电图'}) CREATE (u)-[:Examine {reference: "中国心力衰竭诊断和治疗指南"}]->(r);
@@ -87,12 +90,13 @@ MATCH (u:Category {name:'心力衰竭'}), (r:Routine {name:'总铁结合力'}) C
 MATCH (u:Category {name:'心力衰竭'}), (r:Routine {name:'血脂'}) CREATE (u)-[:Examine {reference: "中国心力衰竭诊断和治疗指南"}]->(r);
 MATCH (u:Category {name:'心力衰竭'}), (r:Routine {name:'糖化血红蛋白'}) CREATE (u)-[:Examine {reference: "中国心力衰竭诊断和治疗指南"}]->(r);
 MATCH (u:Category {name:'心力衰竭'}), (r:Routine {name:'促甲状腺激素'}) CREATE (u)-[:Examine {reference: "中国心力衰竭诊断和治疗指南"}]->(r);
-MATCH (u:Category {name:'心力衰竭'}), (r:Routine {name:'心脏磁共振'}) CREATE (u)-[:Examine {reference: "中国心力衰竭诊断和治疗指南"}]->(r);
+MATCH (u:Category {name:'心力衰竭'}), (s:Special {name:'心脏磁共振'}) CREATE (u)-[:Examine {reference: "中国心力衰竭诊断和治疗指南"}]->(s);
 MATCH (u:Category {name:'心力衰竭'}), (r:Special {name:'冠状动脉造影'}) CREATE (u)-[:Examine {reference: "中国心力衰竭诊断和治疗指南"}]->(r);
 MATCH (u:Category {name:'心力衰竭'}), (r:Special {name:'心脏CT'}) CREATE (u)-[:Examine {reference: "中国心力衰竭诊断和治疗指南"}]->(r);
 MATCH (u:Category {name:'心力衰竭'}), (r:Special {name:'负荷超声心动图'}) CREATE (u)-[:Examine {reference: "中国心力衰竭诊断和治疗指南"}]->(r);
 MATCH (u:Category {name:'心力衰竭'}), (r:Special {name:'核素心室造影及核素心肌灌注和／或代谢显像'}) CREATE (u)-[:Examine {reference: "中国心力衰竭诊断和治疗指南"}]->(r);
-MATCH (u:Category {name:'心力衰竭'}), (r:Special {name:'心肺运动试验'}) CREATE (u)-[:Examine {reference: "中国心力衰竭诊断和治疗指南"}]->(r);
+MATCH (u:Category {name:'心力衰竭'}), (r:Special {name:'最大耗氧量'}) CREATE (u)-[:Examine {reference: "中国心力衰竭诊断和治疗指南"}]->(r);
+MATCH (u:Category {name:'心力衰竭'}), (r:Special {name:'无氧阈值'}) CREATE (u)-[:Examine {reference: "中国心力衰竭诊断和治疗指南"}]->(r);
 MATCH (u:Category {name:'心力衰竭'}), (r:Special {name:'6min步行试验'}) CREATE (u)-[:Examine {reference: "中国心力衰竭诊断和治疗指南"}]->(r);
 MATCH (u:Category {name:'心力衰竭'}), (r:Special {name:'有创血流动力学检查'}) CREATE (u)-[:Examine {reference: "中国心力衰竭诊断和治疗指南"}]->(r);
 MATCH (u:Category {name:'心力衰竭'}), (r:Special {name:'心肌活检'}) CREATE (u)-[:Examine {reference: "中国心力衰竭诊断和治疗指南"}]->(r);

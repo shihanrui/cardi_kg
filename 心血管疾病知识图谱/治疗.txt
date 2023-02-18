@@ -221,6 +221,9 @@ MATCH (dt:Drugtype {name:'苯二氮䓬类抗焦虑药物'}),(d:Drug {name:'氟�
 MATCH (dt:Drugtype {name:'苯二氮䓬类抗焦虑药物'}),(d:Drug {name:'舍曲林'}) CREATE (dt)-[:Includes_drug {reference: "内科学第九版"}]->(d);
 MATCH (dt:Drugtype {name:'苯二氮䓬类抗焦虑药物'}),(d:Drug {name:'5-羟色胺'}) CREATE (dt)-[:Includes_drug {reference: "内科学第九版"}]->(d);
 
+//呼吸系统药物
+CREATE (:Drug {name:'氨茶碱'});
+
 
 //药物疾病关联
 //ST段抬高型心肌梗死
@@ -314,6 +317,8 @@ MATCH (disease:Disease {name:"急性心力衰竭"}),(drug:Drug {name:'布美他�
 MATCH (disease:Disease {name:"急性心力衰竭"}),(drug:Drug {name:'重组人脑利钠肽'}) CREATE (disease)-[:Alternate {reference: "急性心力衰竭基层合理用药指南"}]->(drug);
 MATCH (disease:Disease {name:"急性心力衰竭"}),(drug:Drug {name:'米力农'}) CREATE (disease)-[:Alternate {reference: "急性心力衰竭基层合理用药指南"}]->(drug);
 MATCH (disease:Disease {name:"急性心力衰竭"}),(drug:Drug {name:'左西孟旦'}) CREATE (disease)-[:Alternate {reference: "急性心力衰竭基层合理用药指南"}]->(drug);
+MATCH (disease:Disease {name:"急性心力衰竭"}),(drug:Drug {name:'氨茶碱'}) CREATE (disease)-[:Recommend {reference: "内科学第九版"}]->(drug);
+
 
 //慢性心力衰竭
 MATCH (disease:Disease {name:"慢性心力衰竭"}),(drug:Drug {name:'呋塞米'}) CREATE (disease)-[:Recommend {reference: "慢性心力衰竭基层合理用药指南"}]->(drug);
@@ -471,12 +476,26 @@ MATCH (disease:Disease {name:"心血管神经症"}),(drug:Drug {name:'舍曲林'
 
 
 //非药物治疗
-CREATE (:TREAT {name:"机械通气"})；
-CREATE (:TREAT {name:"连续性肾脏代替治疗"})；
-CREATE (:TREAT {name:"机械辅助循环支持装置"})；
-CREATE (:TREAT {name:"主动脉内球襄反搏"})；
-CREATE (:TREAT {name:"体外膜式氧合"})；
-CREATE (:TREAT {name:"可植入式电动左心室辅助泵lmpella"})；
-MATCH (t1:TREAT {name:"机械辅助循环支持装置"}),(t2:TREAT {name:"主动脉内球襄反搏"}) CREATE (t1)-[:Includes_treat {reference:"内科学第九版"}]->(t1);
-MATCH (t1:TREAT {name:"机械辅助循环支持装置"}),(t2:TREAT {name:"体外膜式氧合"}) CREATE (t1)-[:Includes_treat {reference:"内科学第九版"}]->(t1);
-MATCH (t1:TREAT {name:"机械辅助循环支持装置"}),(t2:TREAT {name:"可植入式电动左心室辅助泵lmpella"}) CREATE (t1)-[:Includes_treat {reference:"内科学第九版"}]->(t1);
+CREATE (:Treat {name:"机械通气"});
+CREATE (:Treat {name:"连续性肾脏代替治疗"});
+CREATE (:Treat {name:"机械辅助循环支持装置"});
+CREATE (:Treat {name:"主动脉内球囊反搏"});
+CREATE (:Treat {name:"体外膜式氧合"});
+CREATE (:Treat {name:"可植入式电动左心室辅助泵lmpella"});
+MATCH (t1:Treat {name:"机械辅助循环支持装置"}),(t2:Treat {name:"主动脉内球襄反搏"}) CREATE (t1)-[:Includes_treat {reference:"内科学第九版"}]->(t2);
+MATCH (t1:Treat {name:"机械辅助循环支持装置"}),(t2:Treat {name:"体外膜式氧合"}) CREATE (t1)-[:Includes_treat {reference:"内科学第九版"}]->(t2);
+MATCH (t1:Treat {name:"机械辅助循环支持装置"}),(t2:Treat {name:"可植入式电动左心室辅助泵lmpella"}) CREATE (t1)-[:Includes_treat {reference:"内科学第九版"}]->(t2);
+MATCH (t1:Treat {name:"机械通气"}),(d:Disease {name:"急性左心衰竭"}) CREATE (t1)-[:Cure {reference:"内科学第九版"}]->(d);
+MATCH (t1:Treat {name:"连续性肾脏代替治疗"}),(d:Disease {name:"急性左心衰竭"}) CREATE (t1)-[:Cure {reference:"内科学第九版"}]->(d);
+MATCH (t1:Treat {name:"主动脉内球囊反搏"}),(d:Disease {name:"急性左心衰竭"}) CREATE (t1)-[:Cure {reference:"内科学第九版"}]->(d);
+MATCH (t1:Treat {name:"体外膜式氧合"}),(d:Disease {name:"急性左心衰竭"}) CREATE (t1)-[:Cure {reference:"内科学第九版"}]->(d);
+MATCH (t1:Treat {name:"可植入式电动左心室辅助泵lmpella"}),(d:Disease {name:"急性左心衰竭"}) CREATE (t1)-[:Cure {reference:"内科学第九版"}]->(d);
+
+CREATE (:Treat {name:"心脏再同步化治疗（CRT）"});
+CREATE (:Treat {name:"植入型心律转复除颤器（ICD）"});
+CREATE (:Treat {name:"左室辅助装置（LVAD）"});
+CREATE (:Treat {name:"心脏移植"});
+MATCH (t1:Treat {name:"心脏再同步化治疗（CRT）"}),(d:Disease {name:"慢性心力衰竭"}) CREATE (t1)-[:Cure {reference:"内科学第九版"}]->(d);
+MATCH (t1:Treat {name:"植入型心律转复除颤器（ICD）"}),(d:Disease {name:"慢性心力衰竭"}) CREATE (t1)-[:Cure {reference:"内科学第九版"}]->(d);
+MATCH (t1:Treat {name:"心脏移植"}),(d:Disease {name:"慢性心力衰竭"}) CREATE (t1)-[:Cure {reference:"内科学第九版"}]->(d);
+MATCH (t1:Treat {name:"左室辅助装置（LVAD）"}),(d:Disease {name:"慢性心力衰竭"}) CREATE (t1)-[:Cure {reference:"内科学第九版"}]->(d);

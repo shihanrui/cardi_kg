@@ -11,11 +11,11 @@ CREATE (:Category {name:'心包疾病'});
 CREATE (:Category {name:'肿瘤心脏病'});
 CREATE (:Category {name:'感染性心内膜炎'});
 CREATE (:Category {name:'主动脉疾病和周围血管病'});
-
+CREATE (:Category {name:'先天性心血管疾病'});
 
 
 //心血管病14个大类
-CREATE (:Disease {name:"室性心动过速"});
+
 CREATE (:Disease {name: '室上性心动过速'});
 CREATE (:Disease {name:"稳定性冠心病"});
 CREATE (:Disease {name:"非ST段抬高型急性冠状动脉综合征"});
@@ -24,7 +24,6 @@ CREATE (:Disease {name:"冠心病心脏康复"});
 CREATE (:Disease {name:"心脏骤停"});
 CREATE (:Disease {name:"早搏"});
 CREATE (:Disease {name:"胸痛"});
-CREATE (:Disease {name:"心房颤动"});
 CREATE (:Disease {name:"慢性心力衰竭"});
 CREATE (:Disease {name:"急性心力衰竭"});
 CREATE (:Disease {name:"高血压"});
@@ -61,6 +60,7 @@ CREATE (:Disease {name:"房性心律失常"});
 CREATE (:Disease {name:"房性期前收缩"});
 CREATE (:Disease {name:"房性心动过速"});
 CREATE (:Disease {name:"心房扑动"});
+CREATE (:Disease {name:"心房颤动"});
 MATCH (d1:Disease {name:"房性心律失常"}), (d2:Disease {name:"房性期前收缩"}) CREATE (d1)-[:Includes_disease {reference: "内科学第九版 P185"}]->(d2);
 MATCH (d1:Disease {name:"房性心律失常"}), (d2:Disease {name:"房性心动过速"}) CREATE (d1)-[:Includes_disease {reference: "内科学第九版 P186"}]->(d2);
 MATCH (d1:Disease {name:"房性心律失常"}), (d2:Disease {name:"心房扑动"}) CREATE (d1)-[:Includes_disease {reference: "内科学第九版 P187"}]->(d2);
@@ -70,6 +70,7 @@ CREATE (:Disease {name:"室性心律失常"});
 CREATE (:Disease {name:"室性期前收缩"});
 CREATE (:Disease {name:"心室扑动"});
 CREATE (:Disease {name:"心室颤动"});
+CREATE (:Disease {name:"室性心动过速"});
 MATCH (d1:Disease {name:"室性心律失常"}), (d2:Disease {name:"室性期前收缩"}) CREATE (d1)-[:Includes_disease {reference: "内科学第九版 P196"}]->(d2);
 MATCH (d1:Disease {name:"室性心律失常"}), (d2:Disease {name:"心室扑动"}) CREATE (d1)-[:Includes_disease {reference: "内科学第九版 P200"}]->(d2);
 MATCH (d1:Disease {name:"室性心律失常"}), (d2:Disease {name:"心室颤动"}) CREATE (d1)-[:Includes_disease {reference: "内科学第九版 P200"}]->(d2);
@@ -102,6 +103,27 @@ CREATE (:Disease {name:'人工瓣膜和静脉药瘾者心内膜炎'});
 CREATE (:Disease {name:'主动脉夹层'});
 CREATE (:Disease {name:'静脉血栓症'});
 
+//心肌疾病
+CREATE (:Disease {name:'扩张型心肌病'});
+CREATE (:Disease {name:'肥厚型心肌病'});
+CREATE (:Disease {name:'限制型心肌病'});
+CREATE (:Disease {name:'心肌炎'});
+
+//成人常见性先天性心血管病
+CREATE (:Disease {name:'房间隔缺损'});
+CREATE (:Disease {name:'卵圆孔未闭'});
+CREATE (:Disease {name:'室间隔缺损'});
+CREATE (:Disease {name:'二叶主动脉瓣'});
+CREATE (:Disease {name:'肺动脉瓣狭窄'});
+CREATE (:Disease {name:'三尖瓣下移'});
+CREATE (:Disease {name:'动脉导管未闭'});
+CREATE (:Disease {name:'主动脉缩窄'});
+CREATE (:Disease {name:'主动脉窦瘤'});
+CREATE (:Disease {name:'冠状动脉瘘'});
+CREATE (:Disease {name:'法洛四联症'});
+
+
+
 
 //疾病大类与子类之间的关联
 MATCH (u:Category {name:'冠心病'}), (r:Disease {name:'ST段抬高型心肌梗死'}) CREATE (u)-[:Includes_disease {reference: "ST段抬高型心肌梗死基层合理用药指南"}]->(r);
@@ -113,17 +135,35 @@ MATCH (u:Category {name:'心律失常'}), (r:Disease {name:'心房颤动'}) CREA
 MATCH (u:Category {name:'心律失常'}), (r:Disease {name:'窦性心律失常'}) CREATE (u)-[:Includes_disease {reference: "内科学第九版"}]->(r);
 MATCH (u:Category {name:'心律失常'}), (r:Disease {name:'房性心律失常'}) CREATE (u)-[:Includes_disease {reference: "内科学第九版"}]->(r);
 MATCH (u:Category {name:'心律失常'}), (r:Disease {name:'室性心律失常'}) CREATE (u)-[:Includes_disease {reference: "内科学第九版"}]->(r);
+MATCH (u:Category {name:'心律失常'}), (r:Disease {name:'心脏传导阻滞'}) CREATE (u)-[:Includes_disease {reference: "内科学第九版"}]->(r);
 MATCH (u:Category {name:'心脏瓣膜病'}), (r:Disease {name:'二尖瓣狭窄'}) CREATE (u)-[:Includes_disease {reference: "内科学第九版"}]->(r);
 MATCH (u:Category {name:'心脏瓣膜病'}), (r:Disease {name:'二尖瓣关闭不全'}) CREATE (u)-[:Includes_disease {reference: "内科学第九版"}]->(r);
 MATCH (u:Category {name:'心脏瓣膜病'}), (r:Disease {name:'主动脉瓣狭窄'}) CREATE (u)-[:Includes_disease {reference: "内科学第九版"}]->(r);
 MATCH (u:Category {name:'心脏瓣膜病'}), (r:Disease {name:'主动脉瓣关闭不全'}) CREATE (u)-[:Includes_disease {reference: "内科学第九版"}]->(r);
+MATCH (u:Category {name:'心脏瓣膜病'}), (r:Disease {name:'多瓣膜病'}) CREATE (u)-[:Includes_disease {reference: "内科学第九版"}]->(r);
 MATCH (u:Category {name:'心包疾病'}), (r:Disease {name:'急性心包炎'}) CREATE (u)-[:Includes_disease {reference: "内科学第九版"}]->(r);
 MATCH (u:Category {name:'心包疾病'}), (r:Disease {name:'心包积液'}) CREATE (u)-[:Includes_disease {reference: "内科学第九版"}]->(r);
 MATCH (u:Category {name:'心包疾病'}), (r:Disease {name:'心脏压塞'}) CREATE (u)-[:Includes_disease {reference: "内科学第九版"}]->(r);
 MATCH (u:Category {name:'心包疾病'}), (r:Disease {name:'窄缩性心包炎'}) CREATE (u)-[:Includes_disease {reference: "内科学第九版"}]->(r);
-MATCH (u:Category {name:'心内膜炎'}), (r:Disease {name:'自体瓣膜心内膜炎'}) CREATE (u)-[:Includes_disease {reference: "内科学第九版"}]->(r);
+MATCH (u:Category {name:'感染性心内膜炎'}), (r:Disease {name:'自体瓣膜心内膜炎'}) CREATE (u)-[:Includes_disease {reference: "内科学第九版"}]->(r);
+MATCH (u:Category {name:'感染性心内膜炎'}), (r:Disease {name:'人工瓣膜和静脉药瘾者心内膜炎'}) CREATE (u)-[:Includes_disease {reference: "内科学第九版"}]->(r);
 MATCH (u:Category {name:'主动脉疾病和周围血管病'}), (r:Disease {name:'主动脉夹层'}) CREATE (u)-[:Includes_disease {reference: "内科学第九版"}]->(r);
 MATCH (u:Category {name:'主动脉疾病和周围血管病'}), (r:Disease {name:'静脉血栓症'}) CREATE (u)-[:Includes_disease {reference: "内科学第九版"}]->(r);
+MATCH (u:Category {name:'心肌疾病'}), (r:Disease {name:'扩张型心肌病'}) CREATE (u)-[:Includes_disease {reference: "内科学第九版"}]->(r);
+MATCH (u:Category {name:'心肌疾病'}), (r:Disease {name:'肥厚型心肌病'}) CREATE (u)-[:Includes_disease {reference: "内科学第九版"}]->(r);
+MATCH (u:Category {name:'心肌疾病'}), (r:Disease {name:'限制型心肌病'}) CREATE (u)-[:Includes_disease {reference: "内科学第九版"}]->(r);
+MATCH (u:Category {name:'心肌疾病'}), (r:Disease {name:'心肌炎'}) CREATE (u)-[:Includes_disease {reference: "内科学第九版"}]->(r);
+MATCH (u:Category {name:'先天性心血管疾病'}), (r:Disease {name:'房间隔缺损'}) CREATE (u)-[:Includes_disease {reference: "内科学第九版"}]->(r);
+MATCH (u:Category {name:'先天性心血管疾病'}), (r:Disease {name:'卵圆孔未闭'}) CREATE (u)-[:Includes_disease {reference: "内科学第九版"}]->(r);
+MATCH (u:Category {name:'先天性心血管疾病'}), (r:Disease {name:'室间隔缺损'}) CREATE (u)-[:Includes_disease {reference: "内科学第九版"}]->(r);
+MATCH (u:Category {name:'先天性心血管疾病'}), (r:Disease {name:'二叶主动脉瓣'}) CREATE (u)-[:Includes_disease {reference: "内科学第九版"}]->(r);
+MATCH (u:Category {name:'先天性心血管疾病'}), (r:Disease {name:'肺动脉瓣狭窄'}) CREATE (u)-[:Includes_disease {reference: "内科学第九版"}]->(r);
+MATCH (u:Category {name:'先天性心血管疾病'}), (r:Disease {name:'三尖瓣下移'}) CREATE (u)-[:Includes_disease {reference: "内科学第九版"}]->(r);
+MATCH (u:Category {name:'先天性心血管疾病'}), (r:Disease {name:'动脉导管未闭'}) CREATE (u)-[:Includes_disease {reference: "内科学第九版"}]->(r);
+MATCH (u:Category {name:'先天性心血管疾病'}), (r:Disease {name:'主动脉缩窄'}) CREATE (u)-[:Includes_disease {reference: "内科学第九版"}]->(r);
+MATCH (u:Category {name:'先天性心血管疾病'}), (r:Disease {name:'主动脉窦瘤'}) CREATE (u)-[:Includes_disease {reference: "内科学第九版"}]->(r);
+MATCH (u:Category {name:'先天性心血管疾病'}), (r:Disease {name:'冠状动脉瘘'}) CREATE (u)-[:Includes_disease {reference: "内科学第九版"}]->(r);
+MATCH (u:Category {name:'先天性心血管疾病'}), (r:Disease {name:'法洛四联症'}) CREATE (u)-[:Includes_disease {reference: "内科学第九版"}]->(r);
 
 
 

@@ -5,18 +5,29 @@ CREATE (:Stage {name:"B期：前临床心衰阶段"});
 CREATE (:Stage {name:"C期：临床心衰阶段"});
 CREATE (:Stage {name:"D期：难治性终末期心衰阶段"});
 
-MATCH (s:Stage {name:"A期：前心衰阶段"}),(crefe:Disease {name:"慢性心力衰竭"}rence) CREATE (s)<-[:Includes_stage {reference:"内科学第九版"}]-(c);
-MATCH (s:Stage {name:"B期：前临床心衰阶段"}),(crefe:Disease {name:"慢性心力衰竭"}rence) CREATE (s)<-[:Includes_stage {reference:"内科学第九版"}]-(c);
-MATCH (s:Stage {name:"C期：临床心衰阶段"}),(crefe:Disease {name:"慢性心力衰竭"}rence) CREATE (s)<-[:Includes_stage {reference:"内科学第九版"}]-(c);
-MATCH (s:Stage {name:"D期：难治性终末期心衰阶段"}),(crefe:Disease {name:"慢性心力衰竭"}rence) CREATE (s)<-[:Includes_stage {reference:"内科学第九版"}]-(c);
+MATCH (s:Stage {name:"A期：前心衰阶段"}),(c:Disease {name:"慢性心力衰竭"}) CREATE (s)<-[:Includes_stage {reference:"内科学第九版"}]-(c);
+MATCH (s:Stage {name:"B期：前临床心衰阶段"}),(c:Disease {name:"慢性心力衰竭"}) CREATE (s)<-[:Includes_stage {reference:"内科学第九版"}]-(c);
+MATCH (s:Stage {name:"C期：临床心衰阶段"}),(c:Disease {name:"慢性心力衰竭"}) CREATE (s)<-[:Includes_stage {reference:"内科学第九版"}]-(c);
+MATCH (s:Stage {name:"D期：难治性终末期心衰阶段"}),(c:Disease {name:"慢性心力衰竭"}) CREATE (s)<-[:Includes_stage {reference:"内科学第九版"}]-(c);
 
-//心理衰竭分级
+//慢性心理衰竭分级
 CREATE (:Grade {name:"Ⅰ级", criteria:"心脏病病人日常活动不受限制"});
 CREATE (:Grade {name:"Ⅱ级", criteria:"心脏病病人体力活动轻度受限"});
 CREATE (:Grade {name:"Ⅲ级", criteria:"心脏病病人体力活动明显受限"});
 CREATE (:Grade {name:"Ⅳ级", criteria:"心脏病病人不能从事任何体力活动"});
 
-MATCH (g:Grade {name:"Ⅰ级", criteria:"心脏病病人日常活动不受限制"}),(crefe:Disease {name:"慢性心力衰竭"}rence) CREATE (g)<-[:Includes_grade {reference:"内科学第九版"}]-(c);
-MATCH (g:Grade {name:"Ⅱ级", criteria:"心脏病病人体力活动轻度受限"}),(crefe:Disease {name:"慢性心力衰竭"}rence) CREATE (g)<-[:Includes_grade {reference:"内科学第九版"}]-(c);
-MATCH (g:Grade {name:"Ⅲ级", criteria:"心脏病病人体力活动明显受限"}),(crefe:Disease {name:"慢性心力衰竭"}rence) CREATE (g)<-[:Includes_grade {reference:"内科学第九版"}]-(c);
-MATCH (g:Grade {name:"Ⅳ级", criteria:"心脏病病人不能从事任何体力活动"}),(crefe:Disease {name:"慢性心力衰竭"}rence) CREATE (g)<-[:Includes_grade {reference:"内科学第九版"}]-(c);
+MATCH (g:Grade {name:"Ⅰ级", criteria:"心脏病病人日常活动不受限制"}),(c:Disease {name:"慢性心力衰竭"}) CREATE (g)<-[:Includes_grade {reference:"内科学第九版"}]-(c);
+MATCH (g:Grade {name:"Ⅱ级", criteria:"心脏病病人体力活动轻度受限"}),(c:Disease {name:"慢性心力衰竭"}) CREATE (g)<-[:Includes_grade {reference:"内科学第九版"}]-(c);
+MATCH (g:Grade {name:"Ⅲ级", criteria:"心脏病病人体力活动明显受限"}),(c:Disease {name:"慢性心力衰竭"}) CREATE (g)<-[:Includes_grade {reference:"内科学第九版"}]-(c);
+MATCH (g:Grade {name:"Ⅳ级", criteria:"心脏病病人不能从事任何体力活动"}),(c:Disease {name:"慢性心力衰竭"}) CREATE (g)<-[:Includes_grade {reference:"内科学第九版"}]-(c);
+
+//急性心力衰竭分级
+CREATE (:Grade {name:"Ⅰ级", criteria:"无心力衰竭的临床症状与体征"});
+CREATE (:Grade {name:"Ⅱ级", criteria:"有心力衰竭的临床症状与体征"});
+CREATE (:Grade {name:"Ⅲ级", criteria:"严重的心力衰竭的临床症状与体征"});
+CREATE (:Grade {name:"Ⅳ级", criteria:"心源性休克"});
+
+MATCH (g:Grade {name:"Ⅰ级", criteria:"无心力衰竭的临床症状与体征"}),(c:Disease {name:"急性心力衰竭"}) CREATE (g)<-[:Includes_grade {reference:"内科学第九版"}]-(c);
+MATCH (g:Grade {name:"Ⅱ级", criteria:"有心力衰竭的临床症状与体征"}),(c:Disease {name:"急性心力衰竭"}) CREATE (g)<-[:Includes_grade {reference:"内科学第九版"}]-(c);
+MATCH (g:Grade {name:"Ⅲ级", criteria:"严重的心力衰竭的临床症状与体征"}),(c:Disease {name:"急性心力衰竭"}) CREATE (g)<-[:Includes_grade {reference:"内科学第九版"}]-(c);
+MATCH (g:Grade {name:"Ⅳ级", criteria:"心源性休克"}),(c:Disease {name:"急性心力衰竭"}) CREATE (g)<-[:Includes_grade {reference:"内科学第九版"}]-(c);

@@ -1,10 +1,7 @@
 
 //病因分类 包括大类和小类关系
-CREATE (:causeType {name:"心肌病变"});
 CREATE (:causeType {name:"缺血性心脏病"});
-MATCH (c1:causeType {name:"心肌病变"}), (c2:causeType {name:"缺血性心脏病"}) CREATE (c1)-[:Includes_causetype{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
 CREATE (:causeType {name:"心脏毒性损伤"});
-MATCH (c1:causeType {name:"心肌病变"}), (c2:causeType {name:"心脏毒性损伤"}) CREATE (c1)-[:Includes_causetype{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
 CREATE (:causeType {name:"心脏毒性药物"});
 MATCH (c1:causeType {name:"心脏毒性损伤"}), (c2:causeType {name:"心脏毒性药物"}) CREATE (c1)-[:Includes_causetype{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
 CREATE (:causeType {name:"药物滥用"});
@@ -14,27 +11,22 @@ MATCH (c1:causeType {name:"心脏毒性损伤"}), (c2:causeType {name:"重金属
 CREATE (:causeType {name:"放射性心肌损伤"});
 MATCH (c1:causeType {name:"心脏毒性损伤"}), (c2:causeType {name:"放射性心肌损伤"}) CREATE (c1)-[:Includes_causetype{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
 CREATE (:causeType {name:"免疫及炎症介导的心肌损害"});
-MATCH (c1:causeType {name:"心肌病变"}), (c2:causeType {name:"免疫及炎症介导的心肌损害"}) CREATE (c1)-[:Includes_causetype{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
 CREATE (:causeType {name:"感染性疾病"});
 MATCH (c1:causeType {name:"免疫及炎症介导的心肌损害"}), (c2:causeType {name:"感染性疾病"}) CREATE (c1)-[:Includes_causetype{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
 CREATE (:causeType {name:"自身免疫性疾病"});
 MATCH (c1:causeType {name:"免疫及炎症介导的心肌损害"}), (c2:causeType {name:"自身免疫性疾病"}) CREATE (c1)-[:Includes_causetype{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
 CREATE (:causeType {name:"心肌浸润性病变"});
-MATCH (c1:causeType {name:"心肌病变"}), (c2:causeType {name:"心肌浸润性病变"}) CREATE (c1)-[:Includes_causetype{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
 CREATE (:causeType {name:"非恶性肿瘤相关"});
 MATCH (c1:causeType {name:"心肌浸润性病变"}), (c2:causeType {name:"非恶性肿瘤相关"}) CREATE (c1)-[:Includes_causetype{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
 CREATE (:causeType {name:"恶性肿瘤相关"});
 MATCH (c1:causeType {name:"心肌浸润性病变"}), (c2:causeType {name:"恶性肿瘤相关"}) CREATE (c1)-[:Includes_causetype{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
 CREATE (:causeType {name:"内分泌代谢性疾病"});
-MATCH (c1:causeType {name:"心肌病变"}), (c2:causeType {name:"内分泌代谢性疾病"}) CREATE (c1)-[:Includes_causetype{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
 CREATE (:causeType {name:"激素相关"});
 MATCH (c1:causeType {name:"内分泌代谢性疾病"}), (c2:causeType {name:"激素相关"}) CREATE (c1)-[:Includes_causetype{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
 CREATE (:causeType {name:"营养相关"});
 MATCH (c1:causeType {name:"内分泌代谢性疾病"}), (c2:causeType {name:"营养相关"}) CREATE (c1)-[:Includes_causetype{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
 CREATE (:causeType {name:"遗传学异常"});
-MATCH (c1:causeType {name:"心肌病变"}), (c2:causeType {name:"遗传学异常"}) CREATE (c1)-[:Includes_causetype{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
 CREATE (:causeType {name:"应激"});
-MATCH (c1:causeType {name:"心肌病变"}), (c2:causeType {name:"应激"}) CREATE (c1)-[:Includes_causetype{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
 CREATE (:causeType {name:"心脏负荷异常"});
 CREATE (:causeType {name:"高血压"});
 MATCH (c1:causeType {name:"心脏负荷异常"}), (c2:causeType {name:"高血压"}) CREATE (c1)-[:Includes_causetype{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c2);
@@ -186,14 +178,14 @@ MATCH (ct:causeType {name:"营养相关"}), (c:Cause {name:"缺铁"}) CREATE (ct
 MATCH (ct:causeType {name:"营养相关"}), (c:Cause {name:"缺磷"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
 MATCH (ct:causeType {name:"营养相关"}), (c:Cause {name:"缺钙"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
 MATCH (ct:causeType {name:"营养相关"}), (c:Cause {name:"营养不良"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
-CREATE (:Cause {name:"遗传因素相关的肥厚型心机病"});
+CREATE (:Cause {name:"肥厚型心机病"});
 CREATE (:Cause {name:"扩张型心肌病"});
 CREATE (:Cause {name:"限制型心肌病"});
 CREATE (:Cause {name:"致心律失常性右心室心肌病"});
 CREATE (:Cause {name:"左心室致密化不全"});
 CREATE (:Cause {name:"核纤层蛋白病"});
 CREATE (:Cause {name:"肌营养不良症"});
-MATCH (ct:causeType {name:"遗传学异常"}), (c:Cause {name:"遗传因素相关的肥厚型心机病"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
+MATCH (ct:causeType {name:"遗传学异常"}), (c:Cause {name:"肥厚型心机病"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
 MATCH (ct:causeType {name:"遗传学异常"}), (c:Cause {name:"扩张型心肌病"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
 MATCH (ct:causeType {name:"遗传学异常"}), (c:Cause {name:"限制型心肌病"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
 MATCH (ct:causeType {name:"遗传学异常"}), (c:Cause {name:"致心律失常性右心室心肌病"}) CREATE (ct)-[:Includes_cause{reference: "中国心力衰竭诊断和治疗指南2018"}]->(c);
@@ -261,7 +253,6 @@ CREATE (:Cause {name:"肥厚型心肌病"});
 CREATE (:Cause {name:"主动脉瓣狭窄"});
 CREATE (:Cause {name:"严重二尖瓣反流"});
 CREATE (:Cause {name:"心力衰竭"});
-CREATE (:Cause {name:"心肌梗死"});
 CREATE (:Cause {name:"洋地黄类"});
 CREATE (:Cause {name:"奎尼丁"});
 CREATE (:Cause {name:"拟交感胺药物"});
@@ -328,7 +319,7 @@ MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"缺铁"}) CREATE (dc)
 MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"缺钙"}) CREATE (dc)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
 MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"缺磷"}) CREATE (dc)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
 MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"营养不良"}) CREATE (dc)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
-MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"遗传因素相关的肥厚型心机病"}) CREATE (dc)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"肥厚型心机病"}) CREATE (dc)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
 MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"扩张型心肌病"}) CREATE (dc)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
 MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"限制型心肌病"}) CREATE (dc)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
 MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"致心律失常性右心室心肌病"}) CREATE (dc)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
@@ -360,6 +351,7 @@ MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"心房颤动"}) CREAT
 MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"室性心律失常"}) CREATE (dc)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
 MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"窦房结功能异常"}) CREATE (dc)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
 MATCH (dc:Category {name:"心力衰竭"}), (c:Cause {name:"传导系统异常"}) CREATE (dc)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
+MATCH (dc:Category {name:"心力衰竭"}), (c:causeType {name:"放射性心肌损伤"}) CREATE (dc)<-[:Cause{reference: "中国心力衰竭诊断和治疗指南2018"}]-(c);
 
 
 //
