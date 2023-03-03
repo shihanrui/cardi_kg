@@ -10,15 +10,19 @@ CREATE (:disease_category {name:"急性冠状动脉综合征",english_name:"ACS"
 MATCH (dc1:disease_category {name:"冠状动脉粥样硬化性心脏病"}),(dc2:disease_category {name:"慢性心肌缺血综合征"}) CREATE (dc1)-[:Include_disease_category {referrence:"内科学第九版"}]->(dc2);
 MATCH (dc1:disease_category {name:"冠状动脉粥样硬化性心脏病"}),(dc2:disease_category {name:"急性冠状动脉综合征"}) CREATE (dc1)-[:Include_disease_category {referrence:"内科学第九版"}]->(dc2);
 
+CREATE (:disease {name:"动脉粥样硬化"});
+CREATE (:disease {name:"猝死"});
+CREATE (:disease {name:"冠状动脉痉挛",classification:"血管闭塞型",synonym:"变异型心绞痛"});
+CREATE (:disease {name:"冠状动脉痉挛",classification:"非血管闭塞型"});
+CREATE (:disease {name:"心肌桥"});
+CREATE (:disease {name:"X综合征"});
 CREATE (:disease {name:"稳定型心绞痛",synonym:"劳力性心绞痛"});
 CREATE (:disease {name:"隐匿型冠心病",synonym:"无症状冠心病",definition:"没有心绞痛的临床症状，但有心肌缺血的客观证据（心电活动、心肌血流灌注及心肌代谢等异常）的冠心病"});
-
 CREATE (:disease {name:"缺血性心肌病",english_name:"ICM",definition:"冠心病的一种特殊类型或晚期阶段。指由冠状动脉粥样硬化引起长期心肌缺血，导致心肌弥漫性纤维化，产生与原发性扩张型心肌病类似的临床表现。"});
 CREATE (:disease {name:"不稳定型心绞痛",english_name:"UA",symptom_name:"心绞痛"});
 CREATE (:disease {name:"继发型心绞痛",english_name:"secondary UA"});
-CREATE (:disease {name:"变异型心绞痛",english_name:"variant angina pectories"});
 MATCH (d1:disease {name:"不稳定型心绞痛"}), (d2:disease {name:"继发型心绞痛"}) CREATE (d1)-[:include_disease {referrence:"内科学第九版"}]->(d2);
-MATCH (d1:disease {name:"不稳定型心绞痛"}), (d2:disease {name:"变异型心绞痛"}) CREATE (d1)-[:include_disease {referrence:"内科学第九版"}]->(d2);
+MATCH (d1:disease {name:"不稳定型心绞痛"}), (d2:disease {synonym:"变异型心绞痛"}) CREATE (d1)-[:include_disease {referrence:"内科学第九版"}]->(d2);
 CREATE (:disease {name:"非ST段抬高型心肌梗死",english_name:"NSTEMI",symptom_name:"心肌梗死",symptom_english_name:"MI"});
 CREATE (:disease {name:"非ST段抬高型急性冠脉综合征",english_name:"NSTEACS",definition:"由于动脉粥样斑块破裂或糜烂，伴有不同程度的表面血栓形成、血管痉挛以及血管栓塞所导致的一组临床症状"});
 MATCH (d1:disease {name:"非ST段抬高型急性冠脉综合征"}), (d2:disease {name:"非ST段抬高型心肌梗死"}) CREATE (d1)-[:include_disease {referrence:"内科学第九版"}]->(d2);
@@ -27,11 +31,8 @@ CREATE (:disease {name:"ST段抬高型心肌梗死",english_name:"STEMI",symptom
 CREATE (:disease {name:"冠状动脉非阻塞性心肌梗死",english_name:"MINOCA"});
 MATCH (d1:disease {name:"ST段抬高型心肌梗死"}), (d2:disease {name:"冠状动脉非阻塞性心肌梗死"}) CREATE (d1)-[:include_disease {referrence:"内科学第九版"}]->(d2);
 
-CREATE (:disease {name:"猝死"});
-CREATE (:disease {name:"冠状动脉痉挛"});
-CREATE (:disease {name:"心肌桥"});
-CREATE (:disease {name:"X综合征"});
-MATCH (dc:disease_category {name:"冠状动脉粥样硬化性心脏病"}),(d:disease {name:"冠状动脉痉挛"}) CREATE (dc)-[:include_disease {referrence:"内科学第九版"}]->(d);
+
+MATCH (dc:disease_category {name:"冠状动脉粥样硬化性心脏病"}),(d:disease {name:"冠状动脉痉挛",classification:"非血管闭塞型"}) CREATE (dc)-[:include_disease {referrence:"内科学第九版"}]->(d);
 MATCH (dc:disease_category {name:"冠状动脉粥样硬化性心脏病"}),(d:disease {name:"心肌桥"}) CREATE (dc)-[:include_disease {referrence:"内科学第九版"}]->(d);
 MATCH (dc:disease_category {name:"冠状动脉粥样硬化性心脏病"}),(d:disease {name:"X综合征"}) CREATE (dc)-[:include_disease {referrence:"内科学第九版"}]->(d);
 MATCH (dc:disease_category {name:"慢性心肌缺血综合征"}),(d:disease {name:"稳定型心绞痛"}) CREATE (dc)-[:include_disease {referrence:"内科学第九版"}]->(d);
@@ -49,50 +50,52 @@ MATCH (d1:disease {name:"缺血性心肌病"}), (d2:disease {name:"限制型缺�
 
 
 //危险因素
-CREATE (:risk_factor {age:"40"});
-CREATE (:risk_factor {age:"绝经期前"});
-CREATE (:risk_factor {biomarker:"LDL-C"});
-CREATE (:risk_factor {sex:"男性"});
-CREATE (:risk_factor {sex:"女性"});
+CREATE (:risk_factor {factor:"年齡>40"});
+CREATE (:risk_factor {factor:"年齡>70"});
+CREATE (:risk_factor {factor:"男性"});
 
-CREATE (:risk_factor {disease:"高血压"});
-CREATE (:risk_factor {disease:"糖尿病"});
-CREATE (:risk_factor {habit:"吸烟"});
-CREATE (:risk_factor {habit:"高热量饮食"});
-CREATE (:risk_factor {habit:"高动物脂肪饮食"});
-CREATE (:risk_factor {habit:"高胆固醇饮食"});
-CREATE (:risk_factor {habit:"高糖饮食"});
-CREATE (:risk_factor {habit:"口服避孕药"});
-CREATE (:risk_factor {habit:"酒精"});
-CREATE (:risk_factor {habit:"毒品"});
+CREATE (:risk_factor {factor:"35~84岁男性"});
+CREATE (:risk_factor {factor:"35~84岁女性"});
 
-CREATE (:risk_factor {familiy_history:"一级亲属男性<55岁发病"});
-CREATE (:risk_factor {familiy_history:"一级亲属女性<65岁发病"});
-CREATE (:risk_factor {sign:"肥胖"});
-CREATE (:risk_factor {sign:"糖耐量异常"});
-CREATE (:risk_factor {sign:"A型性格"});
-MATCH (d:disease_category {abbreviation:"冠心病"}),(r:risk_factor {age:"40"}) CREATE (d)<-[:risk {referrence:"内科学第九版"}]-(r);
-MATCH (d:disease_category {abbreviation:"冠心病"}),(r:risk_factor {biomarker:"LDL-C"}) CREATE (d)<-[:risk {referrence:"内科学第九版"}]-(r);
-MATCH (d:disease_category {abbreviation:"冠心病"}),(r:risk_factor {sex:"男性"}) CREATE (d)<-[:risk {referrence:"内科学第九版"}]-(r);
-MATCH (d:disease_category {abbreviation:"冠心病"}),(r:risk_factor {disease:"高血压"}) CREATE (d)<-[:risk {referrence:"内科学第九版"}]-(r);
-MATCH (d:disease_category {abbreviation:"冠心病"}),(r:risk_factor {disease:"糖尿病"}) CREATE (d)<-[:risk {referrence:"内科学第九版"}]-(r);
-MATCH (d:disease_category {abbreviation:"冠心病"}),(r:risk_factor {habit:"吸烟"}) CREATE (d)<-[:risk {referrence:"内科学第九版"}]-(r);
-MATCH (d:disease_category {abbreviation:"冠心病"}),(r:risk_factor {habit:"高热量饮食"}) CREATE (d)<-[:risk {referrence:"内科学第九版"}]-(r);
-MATCH (d:disease_category {abbreviation:"冠心病"}),(r:risk_factor {habit:"高动物脂肪饮食"}) CREATE (d)<-[:risk {referrence:"内科学第九版"}]-(r);
-MATCH (d:disease_category {abbreviation:"冠心病"}),(r:risk_factor {habit:"高胆固醇饮食"}) CREATE (d)<-[:risk {referrence:"内科学第九版"}]-(r);
-MATCH (d:disease_category {abbreviation:"冠心病"}),(r:risk_factor {habit:"高糖饮食"}) CREATE (d)<-[:risk {referrence:"内科学第九版"}]-(r);
-MATCH (d:disease_category {abbreviation:"冠心病"}),(r:risk_factor {habit:"口服避孕药"}) CREATE (d)<-[:risk {referrence:"内科学第九版"}]-(r);
-MATCH (d:disease_category {abbreviation:"冠心病"}),(r:risk_factor {familiy_history:"一级亲属男性<55岁发病"}) CREATE (d)<-[:risk {referrence:"内科学第九版"}]-(r);
-MATCH (d:disease_category {abbreviation:"冠心病"}),(r:risk_factor {familiy_history:"一级亲属女性<65岁发病"}) CREATE (d)<-[:risk {referrence:"内科学第九版"}]-(r);
-MATCH (d:disease_category {abbreviation:"冠心病"}),(r:risk_factor {sign:"肥胖"}) CREATE (d)<-[:risk {referrence:"内科学第九版"}]-(r);
-MATCH (d:disease_category {abbreviation:"冠心病"}),(r:risk_factor {sign:"糖耐量异常"}) CREATE (d)<-[:risk {referrence:"内科学第九版"}]-(r);
-MATCH (d:disease_category {abbreviation:"冠心病"}),(r:risk_factor {sign:"A型性格"}) CREATE (d)<-[:risk {referrence:"内科学第九版"}]-(r);
-MATCH (d:disease {name:"冠状动脉痉挛"}),(r:risk_factor {habit:"吸烟"}) CREATE (d)<-[:risk {referrence:"内科学第九版"}]-(r);
-MATCH (d:disease {name:"冠状动脉痉挛"}),(r:risk_factor {habit:"毒品"}) CREATE (d)<-[:risk {referrence:"内科学第九版"}]-(r);
-MATCH (d:disease {name:"冠状动脉痉挛"}),(r:risk_factor {habit:"酒精"}) CREATE (d)<-[:risk {referrence:"内科学第九版"}]-(r);
-MATCH (d:disease {name:"X综合征"}),(r:risk_factor {sex:"女性"}) CREATE (d)<-[:risk {referrence:"内科学第九版"}]-(r);
-MATCH (d:disease {name:"X综合征"}),(r:risk_factor {sex:"女性"}) CREATE (d)<-[:risk {referrence:"内科学第九版"}]-(r);
-MATCH (d:disease {name:"X综合征"}),(r:risk_factor {age:"绝经期前"}) CREATE (d)<-[:risk {referrence:"内科学第九版"}]-(r);
+CREATE (:risk_factor {factor:"绝经期前女性"});
+CREATE (:risk_factor {factor:"血脂异常"});
+CREATE (:risk_factor {factor:"男性"});
+CREATE (:risk_factor {factor:"高血压"});
+CREATE (:risk_factor {factor:"糖尿病"});
+CREATE (:risk_factor {factor:"吸烟"});
+CREATE (:risk_factor {factor:"高热量饮食"});
+CREATE (:risk_factor {factor:"高动物脂肪饮食"});
+CREATE (:risk_factor {factor:"高胆固醇饮食"});
+CREATE (:risk_factor {factor:"高糖饮食"});
+
+
+
+CREATE (:risk_factor {factor:"一级亲属男性<55岁发病"});
+CREATE (:risk_factor {factor:"一级亲属女性<65岁发病"});
+CREATE (:risk_factor {factor:"肥胖"});
+CREATE (:risk_factor {factor:"糖耐量异常"});
+CREATE (:risk_factor {factor:"A型性格"});
+MATCH (d:disease {name:"动脉粥样硬化"}),(r:risk_factor {factor:"年齡>40"}) CREATE (d)<-[:risk {referrence:"内科学第九版"}]-(r);
+MATCH (d:disease {name:"动脉粥样硬化"}),(r:risk_factor {factor:"血脂异常"}) CREATE (d)<-[:risk {referrence:"内科学第九版"}]-(r);
+MATCH (d:disease {name:"动脉粥样硬化"}),(r:risk_factor {factor:"男性"}) CREATE (d)<-[:risk {referrence:"内科学第九版"}]-(r);
+MATCH (d:disease {name:"动脉粥样硬化"}),(r:risk_factor {factor:"高血压"}) CREATE (d)<-[:risk {referrence:"内科学第九版"}]-(r);
+MATCH (d:disease {name:"动脉粥样硬化"}),(r:risk_factor {factor:"糖尿病"}) CREATE (d)<-[:risk {referrence:"内科学第九版"}]-(r);
+MATCH (d:disease {name:"动脉粥样硬化"}),(r:risk_factor {factor:"吸烟"}) CREATE (d)<-[:risk {referrence:"内科学第九版"}]-(r);
+MATCH (d:disease {name:"动脉粥样硬化"}),(r:risk_factor {factor:"高热量饮食"}) CREATE (d)<-[:risk {referrence:"内科学第九版"}]-(r);
+MATCH (d:disease {name:"动脉粥样硬化"}),(r:risk_factor {factor:"高动物脂肪饮食"}) CREATE (d)<-[:risk {referrence:"内科学第九版"}]-(r);
+MATCH (d:disease {name:"动脉粥样硬化"}),(r:risk_factor {factor:"高胆固醇饮食"}) CREATE (d)<-[:risk {referrence:"内科学第九版"}]-(r);
+MATCH (d:disease {name:"动脉粥样硬化"}),(r:risk_factor {factor:"高糖饮食"}) CREATE (d)<-[:risk {referrence:"内科学第九版"}]-(r);
+MATCH (d:disease {name:"动脉粥样硬化"}),(r:risk_factor {habit:"口服避孕药"}) CREATE (d)<-[:risk {referrence:"内科学第九版"}]-(r);
+MATCH (d:disease {name:"动脉粥样硬化"}),(r:risk_factor {factor:"一级亲属男性<55岁发病"}) CREATE (d)<-[:risk {referrence:"内科学第九版"}]-(r);
+MATCH (d:disease {name:"动脉粥样硬化"}),(r:risk_factor {factor:"一级亲属女性<65岁发病"}) CREATE (d)<-[:risk {referrence:"内科学第九版"}]-(r);
+MATCH (d:disease {name:"动脉粥样硬化"}),(r:risk_factor {factor:"肥胖"}) CREATE (d)<-[:risk {referrence:"内科学第九版"}]-(r);
+MATCH (d:disease {name:"动脉粥样硬化"}),(r:risk_factor {factor:"糖耐量异常"}) CREATE (d)<-[:risk {referrence:"内科学第九版"}]-(r);
+MATCH (d:disease {name:"动脉粥样硬化"}),(r:risk_factor {factor:"A型性格"}) CREATE (d)<-[:risk {referrence:"内科学第九版"}]-(r);
+
+MATCH (d:disease {english_name:"STEMI"}),(r:risk_factor {factor:"35~84岁男性"}) CREATE (d)<-[:risk {attack:"71%",referrence:"内科学第九版"}]-(r);
+MATCH (d:disease {english_name:"STEMI"}),(r:risk_factor {factor:"35~84岁女性"}) CREATE (d)<-[:risk {attack:"22%",referrence:"内科学第九版"}]-(r);
+MATCH (d:disease {name:"冠状动脉痉挛"}),(r:risk_factor {factor:"吸烟"}) CREATE (d)<-[:risk {referrence:"内科学第九版"}]-(r);
+MATCH (d:disease {name:"X综合征"}),(r:risk_factor {factor:"绝经期前女性"}) CREATE (d)<-[:risk {referrence:"内科学第九版"}]-(r);
 
 
 
@@ -101,7 +104,7 @@ CREATE (:cause {name:"体力劳动"});
 CREATE (:cause {name:"情绪激动",eg:"愤怒、焦急、过度兴奋"});
 CREATE (:cause {name:"饱食"});
 CREATE (:cause {name:"受寒"});
-CREATE (:cause {name:"吸烟"})
+CREATE (:cause {name:"吸烟"});
 CREATE (:cause {name:"心动过速"});
 CREATE (:cause {name:"晨起6时至12时"});
 CREATE (:cause {name:"血压剧升"});
@@ -192,8 +195,7 @@ MATCH (m1:mechanism {description:"心肌缺氧"}),(m2:mechanism {description:"�
 MATCH (m1:mechanism {description:"心肌缺氧"}),(m2:mechanism {description:"心肌弥漫性纤维化"}) CREATE (m1)-[:mechanism_subsequence {referrence:"内科学第九版"}]->(m2);
 MATCH (m1:mechanism {description:"心肌缺氧"}),(m2:mechanism {description:"心肌瘢痕"}) CREATE (m1)-[:mechanism_subsequence {referrence:"内科学第九版"}]->(m2);
 
-CREATE (:mechanism {description:"不稳定粥样硬化斑块破裂"});
-CREATE (:mechanism {description:"不稳定粥样硬化斑块糜烂"});
+CREATE (:mechanism {description:"不稳定粥样硬化斑块破裂、糜烂"});
 CREATE (:mechanism {description:"血小板聚集"});
 CREATE (:mechanism {description:"并发血栓形成"});
 CREATE (:mechanism {description:"冠状动脉痉挛收缩"});
@@ -202,16 +204,12 @@ CREATE (:mechanism {description:"心肌供氧减少"});
 CREATE (:mechanism {description:"心肌缺血加重"});
 CREATE (:mechanism {description:"灶性心肌坏死"});
 CREATE (:mechanism {description:"心内膜下心肌坏死"});
-MATCH (m1:mechanism {description:"冠脉粥样硬化"}),(m2:mechanism {description:"不稳定粥样硬化斑块破裂"}) CREATE (m1)-[:mechanism_subsequence {referrence:"内科学第九版"}]->(m2);
+MATCH (m1:mechanism {description:"冠脉粥样硬化"}),(m2:mechanism {description:"不稳定粥样硬化斑块破裂、糜烂"}) CREATE (m1)-[:mechanism_subsequence {referrence:"内科学第九版"}]->(m2);
 MATCH (m1:mechanism {description:"冠脉粥样硬化"}),(m2:mechanism {description:"不稳定粥样硬化斑块糜烂"}) CREATE (m1)-[:mechanism_subsequence {referrence:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"不稳定粥样硬化斑块破裂"}),(m2:mechanism {description:"血小板聚集"}) CREATE (m1)-[:mechanism_subsequence {referrence:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"不稳定粥样硬化斑块破裂"}),(m2:mechanism {description:"并发血栓形成"}) CREATE (m1)-[:mechanism_subsequence {referrence:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"不稳定粥样硬化斑块破裂"}),(m2:mechanism {description:"冠状动脉痉挛收缩"}) CREATE (m1)-[:mechanism_subsequence {referrence:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"不稳定粥样硬化斑块破裂"}),(m2:mechanism {description:"微血管栓塞"}) CREATE (m1)-[:mechanism_subsequence {referrence:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"不稳定粥样硬化斑块糜烂"}),(m2:mechanism {description:"血小板聚集"}) CREATE (m1)-[:mechanism_subsequence {referrence:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"不稳定粥样硬化斑块糜烂"}),(m2:mechanism {description:"并发血栓形成"}) CREATE (m1)-[:mechanism_subsequence {referrence:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"不稳定粥样硬化斑块糜烂"}),(m2:mechanism {description:"冠状动脉痉挛收缩"}) CREATE (m1)-[:mechanism_subsequence {referrence:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"不稳定粥样硬化斑块糜烂"}),(m2:mechanism {description:"微血管栓塞"}) CREATE (m1)-[:mechanism_subsequence {referrence:"内科学第九版"}]->(m2);
+MATCH (m1:mechanism {description:"不稳定粥样硬化斑块破裂、糜烂"}),(m2:mechanism {description:"血小板聚集"}) CREATE (m1)-[:mechanism_subsequence {referrence:"内科学第九版"}]->(m2);
+MATCH (m1:mechanism {description:"不稳定粥样硬化斑块破裂、糜烂"}),(m2:mechanism {description:"并发血栓形成"}) CREATE (m1)-[:mechanism_subsequence {referrence:"内科学第九版"}]->(m2);
+MATCH (m1:mechanism {description:"不稳定粥样硬化斑块破裂、糜烂"}),(m2:mechanism {description:"冠状动脉痉挛收缩"}) CREATE (m1)-[:mechanism_subsequence {referrence:"内科学第九版"}]->(m2);
+MATCH (m1:mechanism {description:"不稳定粥样硬化斑块破裂、糜烂"}),(m2:mechanism {description:"微血管栓塞"}) CREATE (m1)-[:mechanism_subsequence {referrence:"内科学第九版"}]->(m2);
 MATCH (m1:mechanism {description:"血小板聚集"}),(m2:mechanism {description:"心肌供氧减少"}) CREATE (m1)-[:mechanism_subsequence {referrence:"内科学第九版"}]->(m2);
 MATCH (m1:mechanism {description:"并发血栓形成"}),(m2:mechanism {description:"心肌供氧减少"}) CREATE (m1)-[:mechanism_subsequence {referrence:"内科学第九版"}]->(m2);
 MATCH (m1:mechanism {description:"冠状动脉痉挛收缩"}),(m2:mechanism {description:"心肌供氧减少"}) CREATE (m1)-[:mechanism_subsequence {referrence:"内科学第九版"}]->(m2);
@@ -226,28 +224,17 @@ MATCH (m1:mechanism {description:"心肌供氧减少"}),(m2:mechanism {descripti
 MATCH (m1:mechanism {description:"心肌供氧减少"}),(m2:mechanism {description:"心内膜下心肌坏死"}) CREATE (m1)-[:mechanism_subsequence {referrence:"内科学第九版"}]->(m2);
 
 CREATE (:mechanism {description:"血管管腔闭塞",duration:"≥20~30min"});
-MATCH (m:mechanism {description:"不稳定粥样硬化斑块破裂"}),(c:cause {name:"晨起6时至12时"}) CREATE (c)-[:induce {referrence:"内科学第九版"}]->(m);
-MATCH (m:mechanism {description:"不稳定粥样硬化斑块破裂"}),(c:cause {name:"饱食"}) CREATE (c)-[:induce {referrence:"内科学第九版"}]->(m);
-MATCH (m:mechanism {description:"不稳定粥样硬化斑块破裂"}),(c:cause {name:"体力劳动"}) CREATE (c)-[:induce {referrence:"内科学第九版"}]->(m);
-MATCH (m:mechanism {description:"不稳定粥样硬化斑块破裂"}),(c:cause {name:"情绪激动"}) CREATE (c)-[:induce {referrence:"内科学第九版"}]->(m);
-MATCH (m:mechanism {description:"不稳定粥样硬化斑块破裂"}),(c:cause {name:"血压剧升"}) CREATE (c)-[:induce {referrence:"内科学第九版"}]->(m);
-MATCH (m:mechanism {description:"不稳定粥样硬化斑块破裂"}),(c:cause {name:"用力排便"}) CREATE (c)-[:induce {referrence:"内科学第九版"}]->(m);
-MATCH (m:mechanism {description:"不稳定粥样硬化斑块破裂"}),(c:cause {name:"休克"}) CREATE (c)-[:induce {referrence:"内科学第九版"}]->(m);
-MATCH (m:mechanism {description:"不稳定粥样硬化斑块破裂"}),(c:cause {name:"脱水"}) CREATE (c)-[:induce {referrence:"内科学第九版"}]->(m);
-MATCH (m:mechanism {description:"不稳定粥样硬化斑块破裂"}),(c:cause {name:"出血"}) CREATE (c)-[:induce {referrence:"内科学第九版"}]->(m);
-MATCH (m:mechanism {description:"不稳定粥样硬化斑块破裂"}),(c:cause {name:"外科手术"}) CREATE (c)-[:induce {referrence:"内科学第九版"}]->(m);
-MATCH (m:mechanism {description:"不稳定粥样硬化斑块破裂"}),(c:cause {name:"心律失常"}) CREATE (c)-[:induce {referrence:"内科学第九版"}]->(m);
-MATCH (m:mechanism {description:"不稳定粥样硬化斑块溃烂"}),(c:cause {name:"晨起6时至12时"}) CREATE (c)-[:induce {referrence:"内科学第九版"}]->(m);
-MATCH (m:mechanism {description:"不稳定粥样硬化斑块溃烂"}),(c:cause {name:"饱食"}) CREATE (c)-[:induce {referrence:"内科学第九版"}]->(m);
-MATCH (m:mechanism {description:"不稳定粥样硬化斑块溃烂"}),(c:cause {name:"体力劳动"}) CREATE (c)-[:induce {referrence:"内科学第九版"}]->(m);
-MATCH (m:mechanism {description:"不稳定粥样硬化斑块溃烂"}),(c:cause {name:"情绪激动"}) CREATE (c)-[:induce {referrence:"内科学第九版"}]->(m);
-MATCH (m:mechanism {description:"不稳定粥样硬化斑块溃烂"}),(c:cause {name:"血压剧升"}) CREATE (c)-[:induce {referrence:"内科学第九版"}]->(m);
-MATCH (m:mechanism {description:"不稳定粥样硬化斑块溃烂"}),(c:cause {name:"用力排便"}) CREATE (c)-[:induce {referrence:"内科学第九版"}]->(m);
-MATCH (m:mechanism {description:"不稳定粥样硬化斑块溃烂"}),(c:cause {name:"休克"}) CREATE (c)-[:induce {referrence:"内科学第九版"}]->(m);
-MATCH (m:mechanism {description:"不稳定粥样硬化斑块溃烂"}),(c:cause {name:"脱水"}) CREATE (c)-[:induce {referrence:"内科学第九版"}]->(m);
-MATCH (m:mechanism {description:"不稳定粥样硬化斑块溃烂"}),(c:cause {name:"出血"}) CREATE (c)-[:induce {referrence:"内科学第九版"}]->(m);
-MATCH (m:mechanism {description:"不稳定粥样硬化斑块溃烂"}),(c:cause {name:"外科手术"}) CREATE (c)-[:induce {referrence:"内科学第九版"}]->(m);
-MATCH (m:mechanism {description:"不稳定粥样硬化斑块溃烂"}),(c:cause {name:"心律失常"}) CREATE (c)-[:induce {referrence:"内科学第九版"}]->(m);
+MATCH (m:mechanism {description:"不稳定粥样硬化斑块破裂、糜烂"}),(c:cause {name:"晨起6时至12时"}) CREATE (c)-[:induce {referrence:"内科学第九版"}]->(m);
+MATCH (m:mechanism {description:"不稳定粥样硬化斑块破裂、糜烂"}),(c:cause {name:"饱食"}) CREATE (c)-[:induce {referrence:"内科学第九版"}]->(m);
+MATCH (m:mechanism {description:"不稳定粥样硬化斑块破裂、糜烂"}),(c:cause {name:"体力劳动"}) CREATE (c)-[:induce {referrence:"内科学第九版"}]->(m);
+MATCH (m:mechanism {description:"不稳定粥样硬化斑块破裂、糜烂"}),(c:cause {name:"情绪激动"}) CREATE (c)-[:induce {referrence:"内科学第九版"}]->(m);
+MATCH (m:mechanism {description:"不稳定粥样硬化斑块破裂、糜烂"}),(c:cause {name:"血压剧升"}) CREATE (c)-[:induce {referrence:"内科学第九版"}]->(m);
+MATCH (m:mechanism {description:"不稳定粥样硬化斑块破裂、糜烂"}),(c:cause {name:"用力排便"}) CREATE (c)-[:induce {referrence:"内科学第九版"}]->(m);
+MATCH (m:mechanism {description:"不稳定粥样硬化斑块破裂、糜烂"}),(c:cause {name:"休克"}) CREATE (c)-[:induce {referrence:"内科学第九版"}]->(m);
+MATCH (m:mechanism {description:"不稳定粥样硬化斑块破裂、糜烂"}),(c:cause {name:"脱水"}) CREATE (c)-[:induce {referrence:"内科学第九版"}]->(m);
+MATCH (m:mechanism {description:"不稳定粥样硬化斑块破裂、糜烂"}),(c:cause {name:"出血"}) CREATE (c)-[:induce {referrence:"内科学第九版"}]->(m);
+MATCH (m:mechanism {description:"不稳定粥样硬化斑块破裂、糜烂"}),(c:cause {name:"外科手术"}) CREATE (c)-[:induce {referrence:"内科学第九版"}]->(m);
+MATCH (m:mechanism {description:"不稳定粥样硬化斑块破裂、糜烂"}),(c:cause {name:"心律失常"}) CREATE (c)-[:induce {referrence:"内科学第九版"}]->(m);
 
 MATCH (m1:mechanism {description:"并发血栓形成"}),(m2:mechanism {description:"血管管腔闭塞"}) CREATE (m1)-[:mechanism_subsequence {referrence:"内科学第九版"}]->(m2);
 
@@ -327,7 +314,6 @@ MATCH (d:disease {name:"缺血性心肌病"}),(p:pathology {description:"心肌�
 MATCH (d:disease {name:"缺血性心肌病"}),(p:pathology {description:"心肌细胞减少、坏死"}) CREATE (d)-[:pathology_explaination {referrence:"内科学第九版"}]->(p);
 MATCH (d:disease {name:"缺血性心肌病"}),(p:pathology {description:"心肌纤维化"}) CREATE (d)-[:pathology_explaination {referrence:"内科学第九版"}]->(p);
 MATCH (d:disease {name:"缺血性心肌病"}),(p:pathology {description:"心肌瘢痕"}) CREATE (d)-[:pathology_explaination {referrence:"内科学第九版"}]->(p);
-MATCH (d:disease {name:"变异型心绞痛"}),(p:pathology {description:"冠状动脉痉挛"}) CREATE (d)-[:pathology_explaination {referrence:"内科学第九版"}]->(p);
 MATCH (d:disease {english_name:"NSTEMI"}),(p:pathology {description:"心肌严重的持续性缺血"}) CREATE (d)-[:pathology_explaination {referrence:"内科学第九版"}]->(p);
 MATCH (d:disease {english_name:"NSTEACS"}),(p:pathology {description:"不稳定粥样硬化斑块破裂或糜烂"}) CREATE (d)-[:pathology_explaination {referrence:"内科学第九版"}]->(p);
 MATCH (d:disease {english_name:"NSTEACS"}),(p:pathology {description:"血栓形成"}) CREATE (d)-[:pathology_explaination {referrence:"内科学第九版"}]->(p);
@@ -412,6 +398,7 @@ CREATE (:symptom {characteristic:"心绞痛"});
 CREATE (:symptom {characteristic:"服用硝酸甘油缓解"});
 CREATE (:symptom {characteristic:"服用硝酸甘油不缓解"});
 MATCH (s1:symptom {characteristic:"心绞痛"}),(s2:symptom {characteristic:"服用硝酸甘油缓解"}) CREATE (s1)-[:include_characteristic {referrence:"内科学第九版"}]->(s2);
+CREATE (:symptom {characteristic:"自行缓解"});
 
 CREATE (:symptom {characteristic:"心律增快"});
 CREATE (:symptom {characteristic:"血压增高"});
@@ -458,6 +445,8 @@ CREATE (:symptom {characteristic:"肠胀气"});
 CREATE (:symptom {characteristic:"呃逆"});
 CREATE (:symptom {characteristic:"晕厥"});
 CREATE (:symptom {characteristic:"低血压"});
+CREATE (:symptom {characteristic:"猝死"});
+CREATE (:symptom {characteristic:"心肌梗死"});
 
 
 MATCH (s1:symptom {characteristic:"心力衰竭"}),(s2:symptom {characteristic:"劳力性呼吸困难"}) CREATE (s1)-[:include_characteristic {referrence:"内科学第九版"}]->(s2);
@@ -484,10 +473,10 @@ MATCH (s1:symptom {characteristic:"心律失常"}),(s2:ECG {characteristic:"束�
 
 CREATE (:symptom {characteristic:"血栓和栓塞"});
 CREATE (:symptom {characteristic:"肺水肿"});
-CREATE (:symptom {characteristic:"静息型心绞痛"});
+CREATE (:disease:symptom {characteristic:"静息型心绞痛"});
 MATCH (s1:symptom {characteristic:"静息型心绞痛"}),(s2:duration {time:">20min"}) CREATE (s1)-[:include_characteristic {referrence:"内科学第九版"}]->(s2);
-CREATE (:symptom {characteristic:"初发型心绞痛"});
-CREATE (:symptom {characteristic:"恶化型心绞痛"});
+CREATE (:disease:symptom {characteristic:"初发型心绞痛"});
+CREATE (:disease:symptom {characteristic:"恶化型心绞痛"});
 MATCH (s1:symptom {characteristic:"静息型心绞痛"}),(s2:symptom {characteristic:"心绞痛"}) CREATE (s1)-[:include_characteristic {condition:"发作于休息时",referrence:"内科学第九版"}]->(s2);
 MATCH (s1:symptom {characteristic:"初发型心绞痛"}),(s2:symptom {characteristic:"心绞痛"}) CREATE (s1)-[:include_characteristic {condition:"发作于休息时",referrence:"内科学第九版"}]->(s2);
 MATCH (s1:symptom {characteristic:"恶化型心绞痛"}),(s2:symptom {characteristic:"心绞痛"}) CREATE (s1)-[:include_characteristic {condition:"在稳定型心绞痛基础上增强至少Ⅰ级",CCS:"≥Ⅲ级",referrence:"内科学第九版"}]->(s2);
@@ -523,7 +512,7 @@ MATCH (d:disease {name:"限制型缺血性心肌病"}),(s:symptom {characteristi
 MATCH (d:disease {english_name:"NSTEACS"}),(s:symptom {characteristic:"静息型心绞痛"}) CREATE (d)-[:patient_show {referrence:"内科学第九版"}]->(s);
 MATCH (d:disease {english_name:"NSTEACS"}),(s:symptom {characteristic:"初发型心绞痛"}) CREATE (d)-[:patient_show {referrence:"内科学第九版"}]->(s);
 MATCH (d:disease {english_name:"NSTEACS"}),(s:symptom {characteristic:"恶化型心绞痛"}) CREATE (d)-[:patient_show {referrence:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"变异型心绞痛"}),(s:symptom {characteristic:"静息型心绞痛"}) CREATE (d)-[:patient_show {referrence:"内科学第九版"}]->(s);
+MATCH (d:disease {synonym:"变异型心绞痛"}),(s:symptom {characteristic:"静息型心绞痛"}) CREATE (d)-[:patient_show {referrence:"内科学第九版"}]->(s);
 MATCH (d:disease {english_name:"NSTEACS"}),(s:symptom {characteristic:"出汗"}) CREATE (d)-[:patient_show {referrence:"内科学第九版"}]->(s);
 MATCH (d:disease {english_name:"NSTEACS"}),(s:symptom {characteristic:"恶心"}) CREATE (d)-[:patient_show {referrence:"内科学第九版"}]->(s);
 MATCH (d:disease {english_name:"NSTEACS"}),(s:symptom {characteristic:"呕吐"}) CREATE (d)-[:patient_show {referrence:"内科学第九版"}]->(s);
@@ -559,7 +548,14 @@ MATCH (d:disease {english_name:"STEMI"}),(s:symptom {characteristic:"心力衰�
 MATCH (d:disease {english_name:"STEMI"}),(s:symptom {characteristic:"低血压"}) CREATE (d)-[:patient_show {referrence:"内科学第九版"}]->(s);
 MATCH (d:disease {name:"冠状动脉痉挛"}),(s:symptom {characteristic:"晕厥"}) CREATE (d)-[:patient_show {referrence:"内科学第九版"}]->(s);
 MATCH (d:disease {name:"冠状动脉痉挛"}),(s:symptom {characteristic:"心律失常"}) CREATE (d)-[:patient_show {referrence:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"冠状动脉痉挛"}),(s:symptom {characteristic:"静息型心绞痛"}) CREATE (d)-[:patient_show {condtion:"血管闭塞",referrence:"内科学第九版"}]->(s);
+MATCH (d:disease {name:"冠状动脉痉挛",classification:"血管闭塞型"}),(s:symptom {characteristic:"静息型心绞痛"}) CREATE (d)-[:patient_show {referrence:"内科学第九版"}]->(s);
+MATCH (d:disease {name:"冠状动脉痉挛"}),(s:symptom {characteristic:"心肌梗死"}) CREATE (d)-[:patient_show {condtion:"冠状动脉持续严重痉挛",referrence:"内科学第九版"}]->(s);
+MATCH (d:disease {name:"冠状动脉痉挛"}),(s:symptom {characteristic:"猝死"}) CREATE (d)-[:patient_show {condtion:"冠状动脉持续严重痉挛",referrence:"内科学第九版"}]->(s);
+MATCH (d:disease {name:"冠状动脉痉挛"}),(s:symptom {characteristic:"自行缓解"}) CREATE (d)-[:patient_show {referrence:"内科学第九版"}]->(s);
+MATCH (d:disease {name:"心肌桥"}),(s:symptom {characteristic:"心绞痛"}) CREATE (d)-[:patient_show {referrence:"内科学第九版"}]->(s);
+MATCH (d:disease {name:"心肌桥"}),(s:symptom {characteristic:"心律失常"}) CREATE (d)-[:patient_show {referrence:"内科学第九版"}]->(s);
+MATCH (d:disease {name:"心肌桥"}),(s:symptom {characteristic:"猝死"}) CREATE (d)-[:patient_show {referrence:"内科学第九版"}]->(s);
+MATCH (d:disease {name:"心肌桥"}),(s:symptom {characteristic:"心肌梗死"}) CREATE (d)-[:patient_show {referrence:"内科学第九版"}]->(s);
 
 MATCH (d:disease {name:"X综合征"}),(s:symptom {characteristic:"心绞痛"}) CREATE (d)-[:patient_show {referrence:"内科学第九版"}]->(s);
 
@@ -640,7 +636,7 @@ CREATE (:regular_test {name:"血脂"});
 CREATE (:regular_test {name:"血常规"});
 CREATE (:regular_test {name:"甲状腺功能"});
 CREATE (:regular_test {name:"心电图",english_name:"ECG"});
-CREATE (:regular_test {name:"心电图负荷试验"});
+CREATE (:regular_test {name:"运动负荷试验"});
 CREATE (:regular_test {name:"心电图连续动态监测",synonym:"Holter检查"});
 CREATE (:special_test {name:"多层螺旋CT冠状动脉成像",english_name:"CTA"});
 CREATE (:special_test {name:"超声心动图"});
@@ -653,6 +649,11 @@ CREATE (:special_test {name:"冠脉超声成像",english_name:"IVUS",type:"有�
 CREATE (:special_test {name:"冠脉内光学相干断层显像",english_name:"OCT",type:"有创性检查"});
 CREATE (:special_test {name:"冠脉血流储备分数测定",english_name:"FFR",type:"有创性检查"});
 CREATE (:special_test {name:"定量冠脉血流分数",english_name:"QFR",type:"有创性检查"});
+CREATE (:special_test {name:"乙酰胆碱激发试验"});
+CREATE (:special_test {name:"麦角新碱激发试验"});
+CREATE (:special_test {name:"心房调搏术"});
+CREATE (:special_test {name:"血管内超声及多普勒血流测定"});
+
 //核素相关
 CREATE (:nuclide {name:"201_Tl"});
 CREATE (:nuclide {name:"99m_TC-MIBI"});
@@ -667,18 +668,18 @@ MATCH (n:nuclide {name:"11_T"}),(st:special_test {name:"正电子发射断层心
 MATCH (n:nuclide {name:"13_N"}),(st:special_test {name:"正电子发射断层心肌显像"}) CREATE (st)-[:use_nuclide {referrence:"内科学第九版"}]->(n);
 MATCH (n:nuclide {name:"18_F"}),(st:special_test {name:"正电子发射断层心肌显像"}) CREATE (st)-[:use_nuclide {referrence:"内科学第九版"}]->(n);
 
-MATCH (d:disease {name:"不稳定型心绞痛"}),(rt:regular_test {name:"心电图负荷试验"}) CREATE (d)-[:prohibit_test {referrence:"内科学第九版"}]->(rt);
-// MATCH (d:disease {name:"心力衰竭"}),(rt:regular_test {name:"心电图负荷试验"}) CREATE (d)-[:prohibit_test {referrence:"内科学第九版"}]->(rt);
-// MATCH (d:disease {name:"心肌梗死急性期"}),(rt:regular_test {name:"心电图负荷试验"}) CREATE (d)-[:prohibit_test {referrence:"内科学第九版"}]->(rt);
-// MATCH (d:disease {name:"严重心律失常"}),(rt:regular_test {name:"心电图负荷试验"}) CREATE (d)-[:prohibit_test {referrence:"内科学第九版"}]->(rt);
-// MATCH (d:disease {name:"急性疾病"}),(rt:regular_test {name:"心电图负荷试验"}) CREATE (d)-[:prohibit_test {referrence:"内科学第九版"}]->(rt);
+MATCH (d:disease {name:"不稳定型心绞痛"}),(rt:regular_test {name:"运动负荷试验"}) CREATE (d)-[:prohibit_test {referrence:"内科学第九版"}]->(rt);
+// MATCH (d:disease {name:"心力衰竭"}),(rt:regular_test {name:"运动负荷试验"}) CREATE (d)-[:prohibit_test {referrence:"内科学第九版"}]->(rt);
+// MATCH (d:disease {name:"心肌梗死急性期"}),(rt:regular_test {name:"运动负荷试验"}) CREATE (d)-[:prohibit_test {referrence:"内科学第九版"}]->(rt);
+// MATCH (d:disease {name:"严重心律失常"}),(rt:regular_test {name:"运动负荷试验"}) CREATE (d)-[:prohibit_test {referrence:"内科学第九版"}]->(rt);
+// MATCH (d:disease {name:"急性疾病"}),(rt:regular_test {name:"运动负荷试验"}) CREATE (d)-[:prohibit_test {referrence:"内科学第九版"}]->(rt);
 
 MATCH (d:disease {name:"稳定型心绞痛"}),(rt:regular_test {name:"血糖"}) CREATE (d)-[:test {referrence:"内科学第九版"}]->(rt);
 MATCH (d:disease {name:"稳定型心绞痛"}),(rt:regular_test {name:"血脂"}) CREATE (d)-[:test {referrence:"内科学第九版"}]->(rt);
 MATCH (d:disease {name:"稳定型心绞痛"}),(rt:regular_test {name:"血常规"}) CREATE (d)-[:examine {attention:"贫血",referrence:"内科学第九版"}]->(rt);
 MATCH (d:disease {name:"稳定型心绞痛"}),(rt:regular_test {name:"甲状腺功能"}) CREATE (d)-[:examine {referrence:"内科学第九版"}]->(rt);
 MATCH (d:disease {name:"稳定型心绞痛"}),(rt:regular_test {name:"心电图"}) CREATE (d)-[:examine {referrence:"内科学第九版"}]->(rt);
-MATCH (d:disease {name:"稳定型心绞痛"}),(rt:regular_test {name:"心电图负荷试验"}) CREATE (d)-[:examine {referrence:"内科学第九版"}]->(rt);
+MATCH (d:disease {name:"稳定型心绞痛"}),(rt:regular_test {name:"运动负荷试验"}) CREATE (d)-[:examine {referrence:"内科学第九版"}]->(rt);
 MATCH (d:disease {name:"稳定型心绞痛"}),(rt:regular_test {name:"心电图连续动态监测"}) CREATE (d)-[:examine {referrence:"内科学第九版"}]->(rt);
 MATCH (d:disease {name:"稳定型心绞痛"}),(rt:special_test {name:"多层螺旋CT冠状动脉成像"}) CREATE (d)-[:examine {referrence:"内科学第九版"}]->(rt);
 MATCH (d:disease {name:"稳定型心绞痛"}),(rt:special_test {name:"超声心动图"}) CREATE (d)-[:examine {referrence:"内科学第九版"}]->(rt);
@@ -695,6 +696,11 @@ MATCH (d:disease {english_name:"STEMI"}),(rt:special_test {name:"超声心动图
 MATCH (d:disease {english_name:"STEMI"}),(rt:special_test {name:"正电子发射断层心肌显像"}) CREATE (d)-[:examine {referrence:"内科学第九版"}]->(rt);
 MATCH (d:disease {english_name:"STEMI"}),(rt:special_test {name:"单光子发射计算机断层显像"}) CREATE (d)-[:examine {referrence:"内科学第九版"}]->(rt);
 MATCH (d:disease {english_name:"STEMI"}),(rt:regular_test {name:"血常规"}) CREATE (d)-[:examine {referrence:"内科学第九版"}]->(rt);
+MATCH (d:disease {name:"冠状动脉痉挛"}),(rt:special_test {name:"乙酰胆碱激发试验"}) CREATE (d)-[:examine {referrence:"内科学第九版"}]->(rt);
+MATCH (d:disease {name:"冠状动脉痉挛"}),(rt:special_test {name:"麦角新碱激发试验"}) CREATE (d)-[:examine {referrence:"内科学第九版"}]->(rt);
+MATCH (d:disease {name:"X综合征"}),(rt:regular_test {name:"运动负荷试验"}) CREATE (d)-[:examine {referrence:"内科学第九版"}]->(rt);
+MATCH (d:disease {name:"X综合征"}),(rt:regular_test {name:"心房调搏术"}) CREATE (d)-[:examine {referrence:"内科学第九版"}]->(rt);
+MATCH (d:disease {name:"X综合征"}),(rt:regular_test {name:"血管内超声及多普勒血流测定"}) CREATE (d)-[:examine {referrence:"内科学第九版"}]->(rt);
 
 //血常规
 CREATE (:blood_test {characteristic:"白细胞计数增高"});
@@ -703,13 +709,13 @@ MATCH (d:disease {english_name:"STEMI"}),(bt:blood_test {characteristic:"白细�
 MATCH (d:disease {english_name:"STEMI"}),(bt:blood_test {characteristic:"红细胞沉降率增快"})CREATE (d)-[:examine {blood_test_show:"内科学第九版"}]->(bt);
 
 //心电图检查
-//导联
 CREATE (:ECG {characteristic:"ST段抬高呈弓背向上型",lead:"面向坏死区周围心肌损伤区的导联"});
 CREATE (:ECG {characteristic:"宽而深的Q波",lead:"面向透壁心肌坏死区的导联"});
 CREATE (:ECG {characteristic:"T波倒置",lead:"面向损伤区缺血区的导联"});
 CREATE (:ECG {characteristic:"R波增高",lead:"背向心肌梗死区的导联"});
 CREATE (:ECG {characteristic:"ST段压低",lead:"背向心肌梗死区的导联"});
 CREATE (:ECG {characteristic:"T波直立并增高",lead:"背向心肌梗死区的导联"});
+CREATE (:ECG {characteristic:"非特异性ST段-T波改变"});
 
 CREATE (:ECG {status:"静息",characteristic:"正常"});
 CREATE (:ECG {status:"静息",hint:"陈旧性心肌梗死的改变"});
@@ -732,6 +738,7 @@ CREATE (:ECG {status:"静息",characteristic:"ST-T改变",duration:"≥12h"});
 MATCH (e1:ECG {status:"静息",characteristic:"心肌坏死"}), (e2:ECG {status:"静息",characteristic:"Q波形成"}) CREATE (e1)-[:include_characteristic {referrence:"内科学第九版"}]->(e2);
 CREATE (:ECG {status:"静息",characteristic:"一过性ST段改变"});
 CREATE (:ECG {status:"静息",characteristic:"一过性ST段抬高"});
+CREATE (:ECG {status:"静息",characteristic:"T波改变"});
 
 MATCH (e:ECG {status:"静息",characteristic:"正常"}), (d:disease {name:"稳定型心绞痛"}) CREATE (d)-[:ecg_show {frequency_probability:"50%", referrence:"内科学第九版"}]->(e);
 MATCH (e:ECG {status:"静息",hint:"陈旧性心肌梗死的改变"}), (d:disease {name:"稳定型心绞痛"}) CREATE (d)-[:ecg_show {frequency_probability:"probable", referrence:"内科学第九版"}]->(e);
@@ -741,13 +748,14 @@ MATCH (e:ECG {status:"静息",hint:"束支传导阻滞"}), (d:disease {name:"稳
 MATCH (e:ECG {status:"静息",hint:"室性期前收缩"}), (d:disease {name:"稳定型心绞痛"}) CREATE (d)-[:ecg_show {frequency_probability:"often", referrence:"内科学第九版"}]->(e);
 MATCH (e:ECG {status:"静息",hint:"房性期前收缩"}), (d:disease {name:"稳定型心绞痛"}) CREATE (d)-[:ecg_show {frequency_probability:"often", referrence:"内科学第九版"}]->(e);
 MATCH (e:ECG {status:"静息",characteristic:"心肌坏死"}), (d:disease {name:"缺血性心肌病"}) CREATE (d)-[:ecg_show {referrence:"内科学第九版"}]->(e);
-MATCH (e:ECG {status:"静息",characteristic:"一过性ST段改变"}), (d:disease {name:"变异型心绞痛"}) CREATE (d)-[:ecg_show {referrence:"内科学第九版"}]->(e);
 MATCH (e:ECG {status:"静息",characteristic:"正常"}), (d:disease {name:"X综合征"}) CREATE (d)-[:ecg_show {frequency_probability:"probable", referrence:"内科学第九版"}]->(e);
 MATCH (e:ECG {status:"静息",characteristic:"非特异性ST段和T波异常"}), (d:disease {name:"X综合征"}) CREATE (d)-[:ecg_show {frequency_probability:"probable", referrence:"内科学第九版"}]->(e);
 MATCH (d:disease {english_name:"STEMI"}),(ecg:ECG {characteristic:"一过性ST段改变"}) CREATE (d)-[:ecg_omen_show {referrence:"内科学第九版"}]->(ecg);
 MATCH (d:disease {english_name:"STEMI"}),(ecg:ECG {characteristic:"T波假性正常化"}) CREATE (d)-[:ecg_omen_show {referrence:"内科学第九版"}]->(ecg);
-MATCH (d:disease {name:"冠状动脉痉挛"}),(ecg:ECG {characteristic:"一过性ST段抬高"}) CREATE (d)-[:ecg_show {condition:"血管闭塞",referrence:"内科学第九版"}]->(ecg);
-MATCH (d:disease {name:"隐匿型冠心病"}),(ecg:ECG {hint:"心肌缺血"}) CREATE (d)-[:ecg_show {frequency_probability:"probable",referrence:"内科学第九版"}]->(ecg);
+MATCH (d:disease {name:"冠状动脉痉挛",classification:"血管闭塞型"}),(ecg:ECG {characteristic:"一过性ST段抬高"}) CREATE (d)-[:ecg_show {referrence:"内科学第九版"}]->(ecg);
+MATCH (e:ECG {status:"静息",characteristic:"ST段压低"}), (d:disease {name:"冠状动脉痉挛",classification:"非血管闭塞型"}) CREATE (d)-[:ecg_show {referrence:"内科学第九版"}]->(e);
+MMATCH (e:ECG {status:"静息",characteristic:"T波改变"}), (d:disease {name:"冠状动脉痉挛",classification:"非血管闭塞型"}) CREATE (d)-[:ecg_show {referrence:"内科学第九版"}]->(e);
+ATCH (d:disease {name:"隐匿型冠心病"}),(ecg:ECG {hint:"心肌缺血"}) CREATE (d)-[:ecg_show {frequency_probability:"probable",referrence:"内科学第九版"}]->(ecg);
 MATCH (e:ECG {status:"静息",characteristic:"ST-T改变",duration:"≥12h"}), (d:disease {english_name:"NSTEMI"}) CREATE (d)-[:ecg_show {referrence:"内科学第九版"}]->(e);
 MATCH (e:ECG {characteristic:"ST段抬高呈弓背向上型",lead:"面向坏死区周围心肌损伤区的导联"}), (d:disease {english_name:"STEMI"}) CREATE (d)-[:ecg_show {referrence:"内科学第九版"}]->(e);
 MATCH (e:ECG {characteristic:"宽而深的Q波",lead:"面向透壁心肌坏死区的导联"}), (d:disease {english_name:"STEMI"}) CREATE (d)-[:ecg_show {referrence:"内科学第九版"}]->(e);
@@ -755,6 +763,8 @@ MATCH (e:ECG {characteristic:"T波倒置",lead:"面向损伤区缺血区的导�
 MATCH (e:ECG {characteristic:"R波增高",lead:"背向心肌梗死区的导联"}), (d:disease {english_name:"STEMI"}) CREATE (d)-[:ecg_show {referrence:"内科学第九版"}]->(e);
 MATCH (e:ECG {characteristic:"ST段压低",lead:"背向心肌梗死区的导联"}), (d:disease {english_name:"STEMI"}) CREATE (d)-[:ecg_show {referrence:"内科学第九版"}]->(e);
 MATCH (e:ECG {characteristic:"T波直立并增高",lead:"背向心肌梗死区的导联"}), (d:disease {english_name:"STEMI"}) CREATE (d)-[:ecg_show {referrence:"内科学第九版"}]->(e);
+MATCH (e:ECG {characteristic:"正常"}), (d:disease {name:"X综合征"}) CREATE (d)-[:ecg_show {referrence:"内科学第九版"}]->(e);
+MATCH (e:ECG {characteristic:"非特异性ST-T改变"}), (d:disease {name:"X综合征"}) CREATE (d)-[:ecg_show {referrence:"内科学第九版"}]->(e);
 
 CREATE (:ECG {status:"心绞痛发作",characteristic:"ST段压低",range:"≥0.1mV",cause:"心肌缺血",location:"心内膜下",lead:"Ⅰ"});
 CREATE (:ECG {status:"心绞痛发作",characteristic:"ST段压低",range:"≥0.1mV",cause:"心肌缺血",location:"心内膜下",lead:"Ⅱ"});
@@ -794,7 +804,7 @@ CREATE (:ECG {status:"运动后",characteristic:"T波倒置",lead:"V4"});
 CREATE (:ECG {status:"运动后",characteristic:"T波倒置",lead:"V5"});
 CREATE (:ECG {status:"运动后",characteristic:"T波倒置",lead:"V6"});
 CREATE (:ECG {status:"运动时",hint:"心肌缺血"});
-
+CREATE (:ECG {status:"运动平板试验",characteristic:"ST段下移"});
 MATCH (s:symptom {characteristic:"运动试验阳性"}), (e2:ECG {status:"运动时",characteristic:"ST段压低"}) CREATE (s)-[:include_characteristic {referrence:"内科学第九版"}]->(e2);
 MATCH (s:symptom {characteristic:"运动试验阳性"}), (e2:ECG {status:"运动时",characteristic:"ST段水平型"}) CREATE (s)-[:include_characteristic {referrence:"内科学第九版"}]->(e2);
 MATCH (s:symptom {characteristic:"运动试验阳性"}), (e2:ECG {status:"运动后",characteristic:"ST段压低"}) CREATE (s)-[:include_characteristic {referrence:"内科学第九版"}]->(e2);
@@ -807,8 +817,8 @@ MATCH (e1:ECG {status:"运动",characteristic:"心肌坏死"}), (e2:ECG {status:
 MATCH (s:symptom {characteristic:"运动试验阳性"}), (d:disease {name:"稳定型心绞痛"}) CREATE (d)-[:ecg_show {referrence:"内科学第九版"}]->(s);
 MATCH (e:ECG {status:"运动时",hint:"心肌缺血"}), (d:disease {name:"隐匿型冠心病"}) CREATE (d)-[:ecg_show {frequency_probability:"probable",referrence:"内科学第九版"}]->(e);
 MATCH (e:ECG {status:"运动",characteristic:"心肌坏死"}), (d:disease {name:"缺血性心肌病"}) CREATE (d)-[:ecg_show {referrence:"内科学第九版"}]->(e);
-MATCH (e:ECG {status:"运动",characteristic:"阳性"}), (d:disease {name:"X综合征"}) CREATE (d)-[:ecg_show {frequency_probability:"20%",referrence:"内科学第九版"}]->(e);
-MATCH (e:ECG {status:"运动",characteristic:"ST段下移"}), (d:disease {name:"X综合征"}) CREATE (d)-[:ecg_show {frequency_probability:"20%",referrence:"内科学第九版"}]->(e);
+MATCH (e:ECG {status:"运动平板试验",characteristic:"ST段下移"}), (d:disease {name:"X综合征"}) CREATE (d)-[:ecg_show {referrence:"内科学第九版"}]->(e);
+MATCH (s:symptom {characteristic:"运动试验阳性"}), (d:disease {name:"X综合征"}) CREATE (d)-[:ecg_show {frequency_probability:"20%",referrence:"内科学第九版"}]->(s);
 
 CREATE (:ECG {status:"连续监测",characteristic:"ST-T改变"});
 CREATE (:ECG {status:"连续监测",characteristic:"心律失常"});
@@ -837,6 +847,7 @@ CREATE (:radiography {characteristic:"无异常",type:"冠状动脉造影"});
 CREATE (:radiography {characteristic:"冠脉粥样硬化",type:"冠状动脉造影"});
 CREATE (:radiography {description:"多支冠状动脉病变",type:"冠状动脉造影"});
 CREATE (:radiography {description:"单支冠状动脉病变",type:"冠状动脉造影"});
+CREATE (:radiography {characteristic:"动脉粥样硬化斑块"});
 
 MATCH (d:disease {name:"稳定型心绞痛"}),(cag:radiography {description:"左冠脉主干狭窄",type:"冠状动脉造影"}) CREATE (d)-[:radiology_show {frequency_probability:"5~10%",referrence:"内科学第九版"}]->(cag);
 MATCH (d:disease {name:"稳定型心绞痛"}),(cag:radiography {description:"无显著狭窄",type:"冠状动脉造影"}) CREATE (d)-[:radiology_show {frequency_probability:"15%",referrence:"内科学第九版"}]->(cag);
@@ -850,6 +861,7 @@ MATCH (d:disease {name:"冠状动脉痉挛"}),(cag:radiography {characteristic:"
 MATCH (d:disease {english_name:"UA"}),(cag:radiography {characteristic:"多支冠状动脉病变",type:"冠状动脉造影"}) CREATE (d)-[:radiology_show {condition:" 有长期稳定型心绞痛基础",referrence:"内科学第九版"}]->(cag);
 MATCH (d:disease {english_name:"UA"}),(cag:radiography {characteristic:"单支冠状动脉病变",type:"冠状动脉造影"}) CREATE (d)-[:radiology_show {condition:" 新发型心绞痛",referrence:"内科学第九版"}]->(cag);
 MATCH (d:disease {english_name:"UA"}),(cag:radiography {characteristic:"无异常",type:"冠状动脉造影"}) CREATE (d)-[:radiology_show {condition:" 新发型心绞痛",referrence:"内科学第九版"}]->(cag);
+MATCH (d:disease {name:"心肌桥"}),(cag:radiography {characteristic:"动脉粥样硬化斑块"}) CREATE (d)-[:radiology_show {referrence:"内科学第九版"}]->(cag);
 
 //血管内超声 多普勒
 CREATE (:radiography {characteristic:"冠状动脉内膜增厚",type:"血管内超声及多普勒血流测定"});
