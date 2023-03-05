@@ -43,6 +43,22 @@ MATCH (d1:disease {name:"冠状动脉痉挛"}), (d2:disease {name:"冠状动脉�
 CREATE (:disease {name:"心肌桥"});
 CREATE (:disease {name:"X综合征"});
 
+CREATE (:disease {name:"心肌梗死"});
+CREATE (:disease {name:"1型心肌梗死",definition:"由冠状动脉粥样硬化斑块急性破裂或侵蚀，血小板激活，继发冠状动脉血栓性阻塞，引起心肌缺血、损伤或坏死。须具备心肌损伤和至少一项心肌缺血的临床证据。"});
+CREATE (:disease {name:"2型心肌梗死",definition:"与冠状动脉粥样斑块急性破裂或侵蚀、血栓形成无关，为心肌供氧和需氧之间失平衡所致。"});
+CREATE (:disease {name:"3型心肌梗死",definition:"指心脏性死亡伴心肌缺血症状和新发生缺血性心电图改变或心室颤动,但死亡发生于获得生物标志物的血样本或在明确心脏生物标志物增高之前，尸检证实为心肌梗死。"});
+CREATE (:disease {name:"4a型心肌梗死",definition:"经皮冠状动脉介入治疗相关心肌梗死。"});
+CREATE (:disease {name:"4b型心肌梗死",definition:"冠状动脉内支架或支撑物血栓形成相关心肌梗死。"});
+CREATE (:disease {name:"4c型心肌梗死",definition:"再狭窄相关心肌梗死。"});
+CREATE (:disease {name:"5型心肌梗死",definition:"为冠状动脉旁路移植术相关的心肌梗死。"});
+MATCH (d1:disease {name:"心肌梗死"}), (d2:disease {name:"1型心肌梗死"}) CREATE (d1)-[:include_disease {referrence:"急性ST段抬高型心肌梗死诊断和治疗指南(2019)"}]->(d2);
+MATCH (d1:disease {name:"心肌梗死"}), (d2:disease {name:"2型心肌梗死"}) CREATE (d1)-[:include_disease {referrence:"急性ST段抬高型心肌梗死诊断和治疗指南(2019)"}]->(d2);
+MATCH (d1:disease {name:"心肌梗死"}), (d2:disease {name:"3型心肌梗死"}) CREATE (d1)-[:include_disease {referrence:"急性ST段抬高型心肌梗死诊断和治疗指南(2019)"}]->(d2);
+MATCH (d1:disease {name:"心肌梗死"}), (d2:disease {name:"4a型心肌梗死"}) CREATE (d1)-[:include_disease {referrence:"急性ST段抬高型心肌梗死诊断和治疗指南(2019)"}]->(d2);
+MATCH (d1:disease {name:"心肌梗死"}), (d2:disease {name:"4b型心肌梗死"}) CREATE (d1)-[:include_disease {referrence:"急性ST段抬高型心肌梗死诊断和治疗指南(2019)"}]->(d2);
+MATCH (d1:disease {name:"心肌梗死"}), (d2:disease {name:"4c型心肌梗死"}) CREATE (d1)-[:include_disease {referrence:"急性ST段抬高型心肌梗死诊断和治疗指南(2019)"}]->(d2);
+MATCH (d1:disease {name:"心肌梗死"}), (d2:disease {name:"5型心肌梗死"}) CREATE (d1)-[:include_disease {referrence:"急性ST段抬高型心肌梗死诊断和治疗指南(2019)"}]->(d2);
+
 //危险因素
 CREATE (:risk_factor {factor:"年齡>40"});
 CREATE (:risk_factor {factor:"男性"});
@@ -292,17 +308,7 @@ MATCH  (d:disease {name:"缺血性心肌病"}),(h:history {characteristic:"冠�
 MATCH  (d:disease {name:"缺血性心肌病"}),(h:history {characteristic:"急性冠脉综合征"}) CREATE (d)-[:history_show {referrence:"内科学第九版"}]->(h);
 MATCH  (d:disease {name:"缺血性心肌病"}),(h:history {characteristic:"血管重建病史"}) CREATE (d)-[:history_show {referrence:"内科学第九版"}]->(h);
 
-//视诊inspection
-CREATE (:inspection {characteristic:"颈静脉充盈或怒张"});
-//触诊palpation
-CREATE (:palpation {characteristic:"肝大"});
-CREATE (:palpation {characteristic:"肝压痛"});
-CREATE (:palpation {characteristic:"肝颈静脉回流征阳性"});
-//叩诊percussion
-CREATE (:percussion {characteristic:"心界扩大"});
-//听诊auscultation
-CREATE (:auscultation {characteristic:"两肺底散在湿啰音"});
-//嗅诊olfactory
+
 
 //心音
 CREATE (:heart_sound {characteristic:"第四心音奔马律"});
@@ -341,7 +347,17 @@ MATCH (d:disease {english_name:"NSTEACS"}),(hs:heart_sound {characteristic:"心�
 MATCH (d:disease {english_name:"NSTEACS"}),(hs:heart_sound {characteristic:"胸骨左缘3~4肋间收缩期杂音伴震颤"}) CREATE (d)-[:patient_show {referrence:"内科学第九版"}]->(hs);
 
 
-
+//视诊symptom
+CREATE (:symptom {characteristic:"颈静脉充盈或怒张"});
+//触诊symptom
+CREATE (:symptom {characteristic:"肝大"});
+CREATE (:symptom {characteristic:"肝压痛"});
+CREATE (:symptom {characteristic:"肝颈静脉回流征阳性"});
+//叩诊symptom
+CREATE (:symptom {characteristic:"心界扩大"});
+//听诊symptom
+CREATE (:symptom {characteristic:"两肺底散在湿啰音"});
+//嗅诊olfactory
 
 //症状symptom
 CREATE (:symptom {characteristic:"无心绞痛"});
@@ -411,15 +427,15 @@ MATCH (s1:symptom {characteristic:"心力衰竭"}),(s2:symptom {characteristic:"
 MATCH (s1:symptom {characteristic:"心力衰竭"}),(s2:symptom {characteristic:"虚弱"}) CREATE (s1)-[:include_characteristic {referrence:"内科学第九版"}]->(s2);
 MATCH (s1:symptom {characteristic:"心力衰竭"}),(s2:heart_sound {characteristic:"第一心音减弱"}) CREATE (s1)-[:include_characteristic {referrence:"内科学第九版"}]->(s2);
 MATCH (s1:symptom {characteristic:"心力衰竭"}),(s2:heart_sound {characteristic:"舒张中晚期奔马律"}) CREATE (s1)-[:include_characteristic {referrence:"内科学第九版"}]->(s2);
-MATCH (s1:symptom {characteristic:"心力衰竭"}),(s2:auscultation {characteristic:"两肺底散在湿啰音"}) CREATE (s1)-[:include_characteristic {referrence:"内科学第九版"}]->(s2);
+MATCH (s1:symptom {characteristic:"心力衰竭"}),(s2:symptom {characteristic:"两肺底散在湿啰音"}) CREATE (s1)-[:include_characteristic {referrence:"内科学第九版"}]->(s2);
 MATCH (s1:symptom {characteristic:"心力衰竭"}),(s2:symptom {characteristic:"食欲缺乏"}) CREATE (s1)-[:include_characteristic {referrence:"内科学第九版"}]->(s2);
 MATCH (s1:symptom {characteristic:"心力衰竭"}),(s2:symptom {characteristic:"周围性水肿"}) CREATE (s1)-[:include_characteristic {referrence:"内科学第九版"}]->(s2);
 MATCH (s1:symptom {characteristic:"心力衰竭"}),(s2:symptom {characteristic:"右上腹闷胀感"}) CREATE (s1)-[:include_characteristic {referrence:"内科学第九版"}]->(s2);
-MATCH (s1:symptom {characteristic:"心力衰竭"}),(s2:inspection {characteristic:"颈静脉充盈或怒张"}) CREATE (s1)-[:include_characteristic {referrence:"内科学第九版"}]->(s2);
-MATCH (s1:symptom {characteristic:"心力衰竭"}),(s2:percussion {characteristic:"心界扩大"}) CREATE (s1)-[:include_characteristic {referrence:"内科学第九版"}]->(s2);
-MATCH (s1:symptom {characteristic:"心力衰竭"}),(s2:palpation {characteristic:"肝大"}) CREATE (s1)-[:include_characteristic {referrence:"内科学第九版"}]->(s2);
-MATCH (s1:symptom {characteristic:"心力衰竭"}),(s2:palpation {characteristic:"肝压痛"}) CREATE (s1)-[:include_characteristic {referrence:"内科学第九版"}]->(s2);
-MATCH (s1:symptom {characteristic:"心力衰竭"}),(s2:palpation {characteristic:"肝颈静脉回流征阳性"}) CREATE (s1)-[:include_characteristic {referrence:"内科学第九版"}]->(s2);
+MATCH (s1:symptom {characteristic:"心力衰竭"}),(s2:symptom {characteristic:"颈静脉充盈或怒张"}) CREATE (s1)-[:include_characteristic {referrence:"内科学第九版"}]->(s2);
+MATCH (s1:symptom {characteristic:"心力衰竭"}),(s2:symptom {characteristic:"心界扩大"}) CREATE (s1)-[:include_characteristic {referrence:"内科学第九版"}]->(s2);
+MATCH (s1:symptom {characteristic:"心力衰竭"}),(s2:symptom {characteristic:"肝大"}) CREATE (s1)-[:include_characteristic {referrence:"内科学第九版"}]->(s2);
+MATCH (s1:symptom {characteristic:"心力衰竭"}),(s2:symptom {characteristic:"肝压痛"}) CREATE (s1)-[:include_characteristic {referrence:"内科学第九版"}]->(s2);
+MATCH (s1:symptom {characteristic:"心力衰竭"}),(s2:symptom {characteristic:"肝颈静脉回流征阳性"}) CREATE (s1)-[:include_characteristic {referrence:"内科学第九版"}]->(s2);
 
 CREATE (:symptom {characteristic:"心律失常"});
 MATCH (s1:symptom {characteristic:"心律失常"}),(s2:ECG {characteristic:"心房颤动"}) CREATE (s1)-[:include_characteristic {referrence:"内科学第九版"}]->(s2);
@@ -429,7 +445,6 @@ MATCH (s1:symptom {characteristic:"心律失常"}),(s2:ECG {characteristic:"束�
 CREATE (:symptom {characteristic:"血栓和栓塞"});
 CREATE (:symptom {characteristic:"肺水肿"});
 CREATE (:disease:symptom {characteristic:"静息型心绞痛"});
-MATCH (s1:symptom {characteristic:"静息型心绞痛"}),(s2:duration {time:">20min"}) CREATE (s1)-[:include_characteristic {referrence:"内科学第九版"}]->(s2);
 CREATE (:disease:symptom {characteristic:"初发型心绞痛"});
 CREATE (:disease:symptom {characteristic:"恶化型心绞痛"});
 MATCH (s1:symptom {characteristic:"静息型心绞痛"}),(s2:symptom {characteristic:"心绞痛"}) CREATE (s1)-[:include_characteristic {condition:"发作于休息时",referrence:"内科学第九版"}]->(s2);
@@ -557,18 +572,17 @@ MATCH (d:disease {english_name:"STEMI"}),(l:radiating_pain_location {name:"背�
 
 
 
-//常规检查
+//辅助检查
 CREATE (:examination {name:"心肌肌钙蛋白I",english_name:"cTnI",type:"心肌损伤标志物"});
 CREATE (:examination {name:"心肌肌钙蛋白T",english_name:"cTnT",type:"心肌损伤标志物"});
 CREATE (:examination {name:"肌酸激酶",english_name:"CK",type:"心肌损伤标志物"});
 CREATE (:examination {name:"肌酸激酶同工酶",english_name:"CK-MB",type:"心肌损伤标志物"});
 CREATE (:examination {name:"肌红蛋白",type:"心肌损伤标志物"});
 
-
-CREATE (:examination {name:"血糖"});
-CREATE (:examination {name:"血脂"});
-CREATE (:examination {name:"血常规"});
-CREATE (:examination {name:"甲状腺功能"});
+CREATE (:examination {name:"血糖",type:"实验室检查"});
+CREATE (:examination {name:"血脂",type:"实验室检查"});
+CREATE (:examination {name:"血常规",type:"实验室检查"});
+CREATE (:examination {name:"甲状腺功能",type:"实验室检查"});
 CREATE (:examination {name:"心电图",english_name:"ECG"});
 CREATE (:examination {name:"运动负荷试验"});
 CREATE (:examination {name:"心电图连续动态监测",synonym:"Holter检查"});
@@ -578,7 +592,7 @@ CREATE (:examination {name:"核素心肌显像及负荷试验",type:"放射性�
 CREATE (:examination {name:"放射性核素心腔造影",type:"放射性核素检查"});
 CREATE (:examination {name:"正电子发射断层心肌显像",english_name:"PET",type:"放射性核素检查"});
 CREATE (:examination {name:"单光子发射计算机断层显像",english_name:"SPECT",type:"放射性核素检查"});
-CREATE (:examination {name:"冠状动脉造影",abbreviation:"冠脉造影",english_name:"CAG",type:"有创性检查"});
+CREATE (:examination {name:"冠状动脉造影",english_name:"CAG",type:"有创性检查"});
 CREATE (:examination {name:"冠脉超声成像",english_name:"IVUS",type:"有创性检查"});
 CREATE (:examination {name:"冠脉内光学相干断层显像",english_name:"OCT",type:"有创性检查"});
 CREATE (:examination {name:"冠脉血流储备分数测定",english_name:"FFR",type:"有创性检查"});
@@ -694,8 +708,8 @@ MATCH (d:disease {english_name:"STEMI"}),(ecg:ECG {characteristic:"一过性ST�
 MATCH (d:disease {english_name:"STEMI"}),(ecg:ECG {characteristic:"T波假性正常化"}) CREATE (d)-[:ecg_omen_show {referrence:"内科学第九版"}]->(ecg);
 MATCH (d:disease {name:"冠状动脉痉挛",classification:"血管闭塞型"}),(ecg:ECG {characteristic:"一过性ST段抬高"}) CREATE (d)-[:ecg_show {referrence:"内科学第九版"}]->(ecg);
 MATCH (e:ECG {status:"静息",characteristic:"ST段压低"}), (d:disease {name:"冠状动脉痉挛",classification:"非血管闭塞型"}) CREATE (d)-[:ecg_show {referrence:"内科学第九版"}]->(e);
-MMATCH (e:ECG {status:"静息",characteristic:"T波改变"}), (d:disease {name:"冠状动脉痉挛",classification:"非血管闭塞型"}) CREATE (d)-[:ecg_show {referrence:"内科学第九版"}]->(e);
-ATCH (d:disease {name:"隐匿型冠心病"}),(ecg:ECG {characteristic:"心肌缺血"}) CREATE (d)-[:ecg_show {frequency_probability:"probable",referrence:"内科学第九版"}]->(ecg);
+MATCH (e:ECG {status:"静息",characteristic:"T波改变"}), (d:disease {name:"冠状动脉痉挛",classification:"非血管闭塞型"}) CREATE (d)-[:ecg_show {referrence:"内科学第九版"}]->(e);
+MATCH (d:disease {name:"隐匿型冠心病"}),(ecg:ECG {characteristic:"心肌缺血"}) CREATE (d)-[:ecg_show {frequency_probability:"probable",referrence:"内科学第九版"}]->(ecg);
 MATCH (e:ECG {status:"静息",characteristic:"ST-T改变",duration:"≥12h"}), (d:disease {english_name:"NSTEMI"}) CREATE (d)-[:ecg_show {referrence:"内科学第九版"}]->(e);
 MATCH (e:ECG {characteristic:"ST段抬高呈弓背向上型",lead:"面向坏死区周围心肌损伤区的导联"}), (d:disease {english_name:"STEMI"}) CREATE (d)-[:ecg_show {referrence:"内科学第九版"}]->(e);
 MATCH (e:ECG {characteristic:"宽而深的Q波",lead:"面向透壁心肌坏死区的导联"}), (d:disease {english_name:"STEMI"}) CREATE (d)-[:ecg_show {referrence:"内科学第九版"}]->(e);
@@ -732,11 +746,11 @@ CREATE (:ECG {status:"运动后",characteristic:"ST段压低",range:"≥0.1mV",l
 CREATE (:ECG {status:"运动后",characteristic:"ST段压低",range:"≥0.1mV",lead:"Ⅱ"});
 CREATE (:ECG {status:"运动后",characteristic:"ST段压低",range:"≥0.1mV",lead:"Ⅲ"});
 CREATE (:ECG {status:"运动后",characteristic:"ST段压低",range:"≥0.1mV",lead:"aVF"});
-CREATE (:ECG {status:"运动后",characteristic:"ST段压低",range:"≥0.1mV",lead:"V3});
-CREATE (:ECG {status:"运动后",characteristic:"ST段压低",range:"≥0.1mV",lead:"V4});
-CREATE (:ECG {status:"运动后",characteristic:"ST段压低",range:"≥0.1mV",lead:"V5});
-CREATE (:ECG {status:"运动后",characteristic:"ST段压低",range:"≥0.1mV",lead:"V6});
-CREATE (:ECG {status:"运动后",characteristic:"T波倒置",lead:"Ⅰ});
+CREATE (:ECG {status:"运动后",characteristic:"ST段压低",range:"≥0.1mV",lead:"V3"});
+CREATE (:ECG {status:"运动后",characteristic:"ST段压低",range:"≥0.1mV",lead:"V4"});
+CREATE (:ECG {status:"运动后",characteristic:"ST段压低",range:"≥0.1mV",lead:"V5"});
+CREATE (:ECG {status:"运动后",characteristic:"ST段压低",range:"≥0.1mV",lead:"V6"});
+CREATE (:ECG {status:"运动后",characteristic:"T波倒置",lead:"Ⅰ"});
 CREATE (:ECG {status:"运动后",characteristic:"T波倒置",lead:"Ⅱ"});
 CREATE (:ECG {status:"运动后",characteristic:"T波倒置",lead:"Ⅲ"});
 CREATE (:ECG {status:"运动后",characteristic:"T波倒置",lead:"V3"});
@@ -852,6 +866,21 @@ MATCH (d:disease {name:"不稳定型心绞痛"}),(g:grade {name:"A", referrence:
 MATCH (d:disease {name:"不稳定型心绞痛"}),(g:grade {name:"B", referrence:"Braunwald分级"}) CREATE (d)-[:clinical_setting_classification {referrence:"内科学第九版"}]->(g);
 MATCH (d:disease {name:"不稳定型心绞痛"}),(g:grade {name:"C", referrence:"Braunwald分级"}) CREATE (d)-[:clinical_setting_classification {referrence:"内科学第九版"}]->(g);
 
+//心肌梗死分型
+
+//心梗引起心力衰竭分级
+CREATE (:grade {name:"Ⅰ级", criterion:"尚无明显心力衰竭",referrence:"Killip分级"});
+CREATE (:grade {name:"Ⅱ级", criterion:"有左心衰竭，肺部啰音<50%肺野",referrence:"Killip分级"});
+CREATE (:grade {name:"Ⅲ级", criterion:"有急性肺水肿，全肺大、小、干、湿啰音",referrence:"Killip分级"});
+CREATE (:grade {name:"Ⅳ级", criterion:"有心源性休克等不同程度或阶段的血流动力学变化",referrence:"Killip分级"});
+MATCH (d:disease {english_name:"STEMI"}),(g:grade {referrence:"Killip分级"}) CREATE (d)-[:severe_classification {referrence:"内科学第九版"}]->(g);
+
+//分类
+CREATE (:classification {name:"Ⅰ类", criterion:"无肺淤血和周围灌注不足；肺毛细血管楔压（PCWP）和心排血指数（CI）正常",referrence:"Forrester分类"});
+CREATE (:classification {name:"Ⅱ类", criterion:"单有肺淤血；PCWP（>18mmHg），CI正常[>2.2L/ (min·m2)]",referrence:"Forrester分类"});
+CREATE (:classification {name:"Ⅲ类", criterion:"单有周围灌注不足；PCWP正常（<18mmHg），CI降低[<2.2L/ (min·m2)]，主要与血容量不足或心动过缓有关",referrence:"Forrester分类"});
+CREATE (:classification {name:"Ⅳ类", criterion:"合并有肺淤血和周围灌注不足；PCWP增高（>18mmHg），CI降低[<2.2L/ (min·m2)]",referrence:"Forrester分类"});
+MATCH (d:disease {english_name:"STEMI"}),(g:classification {referrence:"Forrester分类"}) CREATE (d)-[:severe_classification {referrence:"内科学第九版"}]->(g);
 
 //鉴别诊断
 CREATE (d:disease {name:"心脏神经症"});
@@ -979,10 +1008,10 @@ MATCH (ds:disease {english_name:"STEMI"}),(dg:drug {name:"比索洛尔"}) CREATE
 MATCH (ds:disease {english_name:"STEMI"}),(dg:drug {name:"艾司洛尔"}) CREATE (ds)<-[:cure {effect:"解除疼痛",referrence:"内科学第九版"}]-(dg);
 
 
-CREATE (:drug {type:"正性肌力药",familiy:"硝酸酯类药",name:"单硝酸异山梨酯"});
-CREATE (:drug {type:"正性肌力药",familiy:"硝酸酯类药",name:"硝酸甘油"});
-CREATE (:drug {type:"正性肌力药",familiy:"硝酸酯类药",name:"硝酸异山梨酯"});
-CREATE (:drug {type:"正性肌力药",familiy:"硝酸酯类药",name:"5-单硝酸异山梨酯"});
+CREATE (:drug {type:"正性肌力药",family:"硝酸酯类药",name:"单硝酸异山梨酯"});
+CREATE (:drug {type:"正性肌力药",family:"硝酸酯类药",name:"硝酸甘油"});
+CREATE (:drug {type:"正性肌力药",family:"硝酸酯类药",name:"硝酸异山梨酯"});
+CREATE (:drug {type:"正性肌力药",family:"硝酸酯类药",name:"5-单硝酸异山梨酯"});
 CREATE (:drug {type:"正性肌力药",name:"多巴胺"});
 
 CREATE (:side_effect {description:"头痛"});
@@ -1014,46 +1043,46 @@ CREATE (:contraindication {condition:"硝酸甘油过敏"});
 CREATE (:contraindication {condition:"下壁MI"});
 CREATE (:contraindication {condition:"可疑右室MI"});
 CREATE (:contraindication {condition:"收缩压<90mmHg"});
-MATCH (d:drug {familiy:"硝酸酯类药"}),(c:contraindication {condition:"下壁MI"}) CREATE (d)<-[:prohibit {referrence:"内科学第九版"}]-(c);
-MATCH (d:drug {familiy:"硝酸酯类药"}),(c:contraindication {condition:"可疑右室MI"}) CREATE (d)<-[:prohibit {referrence:"内科学第九版"}]-(c);
-MATCH (d:drug {familiy:"硝酸酯类药"}),(c:contraindication {condition:"收缩压<90mmHg"}) CREATE (d)<-[:prohibit {referrence:"内科学第九版"}]-(c);
-MATCH (d:drug {familiy:"硝酸酯类药"}),(c:contraindication {condition:"心肌梗死早期"}) CREATE (d)<-[:use_with_care {referrence:"ST段抬高型心肌梗死基层合理用药指南"}]-(c);
-MATCH (d:drug {familiy:"硝酸酯类药"}),(c:contraindication {condition:"严重低血压"}) CREATE (d)<-[:use_with_care {referrence:"ST段抬高型心肌梗死基层合理用药指南"}]-(c);
-MATCH (d:drug {familiy:"硝酸酯类药"}),(c:contraindication {condition:"心动过速"}) CREATE (d)<-[:use_with_care {referrence:"ST段抬高型心肌梗死基层合理用药指南"}]-(c);
-MATCH (d:drug {familiy:"硝酸酯类药"}),(c:contraindication {condition:"严重贫血"}) CREATE (d)<-[:use_with_care {referrence:"ST段抬高型心肌梗死基层合理用药指南"}]-(c);
-MATCH (d:drug {familiy:"硝酸酯类药"}),(c:contraindication {condition:"青光眼"}) CREATE (d)<-[:use_with_care {referrence:"ST段抬高型心肌梗死基层合理用药指南"}]-(c);
-MATCH (d:drug {familiy:"硝酸酯类药"}),(c:contraindication {condition:"颅内压增高"}) CREATE (d)<-[:use_with_care {referrence:"ST段抬高型心肌梗死基层合理用药指南"}]-(c);
-MATCH (d:drug {familiy:"硝酸酯类药"}),(c:contraindication {condition:"硝酸甘油过敏"}) CREATE (d)<-[:use_with_care {referrence:"ST段抬高型心肌梗死基层合理用药指南"}]-(c);
+MATCH (d:drug {family:"硝酸酯类药"}),(c:contraindication {condition:"下壁MI"}) CREATE (d)<-[:prohibit {referrence:"内科学第九版"}]-(c);
+MATCH (d:drug {family:"硝酸酯类药"}),(c:contraindication {condition:"可疑右室MI"}) CREATE (d)<-[:prohibit {referrence:"内科学第九版"}]-(c);
+MATCH (d:drug {family:"硝酸酯类药"}),(c:contraindication {condition:"收缩压<90mmHg"}) CREATE (d)<-[:prohibit {referrence:"内科学第九版"}]-(c);
+MATCH (d:drug {family:"硝酸酯类药"}),(c:contraindication {condition:"心肌梗死早期"}) CREATE (d)<-[:use_with_care {referrence:"ST段抬高型心肌梗死基层合理用药指南"}]-(c);
+MATCH (d:drug {family:"硝酸酯类药"}),(c:contraindication {condition:"严重低血压"}) CREATE (d)<-[:use_with_care {referrence:"ST段抬高型心肌梗死基层合理用药指南"}]-(c);
+MATCH (d:drug {family:"硝酸酯类药"}),(c:contraindication {condition:"心动过速"}) CREATE (d)<-[:use_with_care {referrence:"ST段抬高型心肌梗死基层合理用药指南"}]-(c);
+MATCH (d:drug {family:"硝酸酯类药"}),(c:contraindication {condition:"严重贫血"}) CREATE (d)<-[:use_with_care {referrence:"ST段抬高型心肌梗死基层合理用药指南"}]-(c);
+MATCH (d:drug {family:"硝酸酯类药"}),(c:contraindication {condition:"青光眼"}) CREATE (d)<-[:use_with_care {referrence:"ST段抬高型心肌梗死基层合理用药指南"}]-(c);
+MATCH (d:drug {family:"硝酸酯类药"}),(c:contraindication {condition:"颅内压增高"}) CREATE (d)<-[:use_with_care {referrence:"ST段抬高型心肌梗死基层合理用药指南"}]-(c);
+MATCH (d:drug {family:"硝酸酯类药"}),(c:contraindication {condition:"硝酸甘油过敏"}) CREATE (d)<-[:use_with_care {referrence:"ST段抬高型心肌梗死基层合理用药指南"}]-(c);
 
 
 
-MATCH (d:drug {familiy:"硝酸酯类药"}),(se:side_effect {description:"头痛"}) CREATE (d)-[:drug_side_effect {referrence:"内科学第九版"}]->(se);
-MATCH (d:drug {familiy:"硝酸酯类药"}),(se:side_effect {description:"面色潮红"}) CREATE (d)-[:drug_side_effect {referrence:"内科学第九版"}]->(se);
-MATCH (d:drug {familiy:"硝酸酯类药"}),(se:side_effect {description:"心律反射加快"}) CREATE (d)-[:drug_side_effect {referrence:"内科学第九版"}]->(se);
-MATCH (d:drug {familiy:"硝酸酯类药"}),(se:side_effect {description:"直立性低血压"}) CREATE (d)-[:drug_side_effect {referrence:"内科学第九版"}]->(se);
-MATCH (d:drug {familiy:"硝酸酯类药"}),(se:side_effect {description:"眩晕"}) CREATE (d)-[:drug_side_effect {referrence:"ST段抬高型心肌梗死基层合理用药指南"}]->(se);
-MATCH (d:drug {familiy:"硝酸酯类药"}),(se:side_effect {description:"虚弱"}) CREATE (d)-[:drug_side_effect {referrence:"ST段抬高型心肌梗死基层合理用药指南"}]->(se);
-MATCH (d:drug {familiy:"硝酸酯类药"}),(se:side_effect {description:"心悸"}) CREATE (d)-[:drug_side_effect {referrence:"ST段抬高型心肌梗死基层合理用药指南"}]->(se);
-MATCH (d:drug {familiy:"硝酸酯类药"}),(se:side_effect {description:"心动过速"}) CREATE (d)-[:drug_side_effect {referrence:"ST段抬高型心肌梗死基层合理用药指南"}]->(se);
-MATCH (d:drug {familiy:"硝酸酯类药"}),(se:side_effect {description:"口干"}) CREATE (d)-[:drug_side_effect {referrence:"ST段抬高型心肌梗死基层合理用药指南"}]->(se);
-MATCH (d:drug {familiy:"硝酸酯类药"}),(se:side_effect {description:"恶心"}) CREATE (d)-[:drug_side_effect {referrence:"ST段抬高型心肌梗死基层合理用药指南"}]->(se);
-MATCH (d:drug {familiy:"硝酸酯类药"}),(se:side_effect {description:"呕吐"}) CREATE (d)-[:drug_side_effect {referrence:"ST段抬高型心肌梗死基层合理用药指南"}]->(se);
-MATCH (d:drug {familiy:"硝酸酯类药"}),(se:side_effect {description:"虚弱"}) CREATE (d)-[:drug_side_effect {referrence:"ST段抬高型心肌梗死基层合理用药指南"}]->(se);
-MATCH (d:drug {familiy:"硝酸酯类药"}),(se:side_effect {description:"苍白"}) CREATE (d)-[:drug_side_effect {referrence:"ST段抬高型心肌梗死基层合理用药指南"}]->(se);
-MATCH (d:drug {familiy:"硝酸酯类药"}),(se:side_effect {description:"虚脱"}) CREATE (d)-[:drug_side_effect {referrence:"ST段抬高型心肌梗死基层合理用药指南"}]->(se);
-MATCH (d:drug {familiy:"硝酸酯类药"}),(se:side_effect {description:"晕厥"}) CREATE (d)-[:drug_side_effect {referrence:"ST段抬高型心肌梗死基层合理用药指南"}]->(se);
-MATCH (d:drug {familiy:"硝酸酯类药"}),(se:side_effect {description:"心动过缓"}) CREATE (d)-[:drug_side_effect {referrence:"ST段抬高型心肌梗死基层合理用药指南"}]->(se);
-MATCH (d:drug {familiy:"硝酸酯类药"}),(se:side_effect {description:"心绞痛加重"}) CREATE (d)-[:drug_side_effect {referrence:"ST段抬高型心肌梗死基层合理用药指南"}]->(se);
-MATCH (d:drug {familiy:"硝酸酯类药"}),(se:side_effect {description:"药疹"}) CREATE (d)-[:drug_side_effect {referrence:"ST段抬高型心肌梗死基层合理用药指南"}]->(se);
-MATCH (d:drug {familiy:"硝酸酯类药"}),(se:side_effect {description:"剥脱性皮炎"}) CREATE (d)-[:drug_side_effect {referrence:"ST段抬高型心肌梗死基层合理用药指南"}]->(se);
+MATCH (d:drug {family:"硝酸酯类药"}),(se:side_effect {description:"头痛"}) CREATE (d)-[:drug_side_effect {referrence:"内科学第九版"}]->(se);
+MATCH (d:drug {family:"硝酸酯类药"}),(se:side_effect {description:"面色潮红"}) CREATE (d)-[:drug_side_effect {referrence:"内科学第九版"}]->(se);
+MATCH (d:drug {family:"硝酸酯类药"}),(se:side_effect {description:"心律反射加快"}) CREATE (d)-[:drug_side_effect {referrence:"内科学第九版"}]->(se);
+MATCH (d:drug {family:"硝酸酯类药"}),(se:side_effect {description:"直立性低血压"}) CREATE (d)-[:drug_side_effect {referrence:"内科学第九版"}]->(se);
+MATCH (d:drug {family:"硝酸酯类药"}),(se:side_effect {description:"眩晕"}) CREATE (d)-[:drug_side_effect {referrence:"ST段抬高型心肌梗死基层合理用药指南"}]->(se);
+MATCH (d:drug {family:"硝酸酯类药"}),(se:side_effect {description:"虚弱"}) CREATE (d)-[:drug_side_effect {referrence:"ST段抬高型心肌梗死基层合理用药指南"}]->(se);
+MATCH (d:drug {family:"硝酸酯类药"}),(se:side_effect {description:"心悸"}) CREATE (d)-[:drug_side_effect {referrence:"ST段抬高型心肌梗死基层合理用药指南"}]->(se);
+MATCH (d:drug {family:"硝酸酯类药"}),(se:side_effect {description:"心动过速"}) CREATE (d)-[:drug_side_effect {referrence:"ST段抬高型心肌梗死基层合理用药指南"}]->(se);
+MATCH (d:drug {family:"硝酸酯类药"}),(se:side_effect {description:"口干"}) CREATE (d)-[:drug_side_effect {referrence:"ST段抬高型心肌梗死基层合理用药指南"}]->(se);
+MATCH (d:drug {family:"硝酸酯类药"}),(se:side_effect {description:"恶心"}) CREATE (d)-[:drug_side_effect {referrence:"ST段抬高型心肌梗死基层合理用药指南"}]->(se);
+MATCH (d:drug {family:"硝酸酯类药"}),(se:side_effect {description:"呕吐"}) CREATE (d)-[:drug_side_effect {referrence:"ST段抬高型心肌梗死基层合理用药指南"}]->(se);
+MATCH (d:drug {family:"硝酸酯类药"}),(se:side_effect {description:"虚弱"}) CREATE (d)-[:drug_side_effect {referrence:"ST段抬高型心肌梗死基层合理用药指南"}]->(se);
+MATCH (d:drug {family:"硝酸酯类药"}),(se:side_effect {description:"苍白"}) CREATE (d)-[:drug_side_effect {referrence:"ST段抬高型心肌梗死基层合理用药指南"}]->(se);
+MATCH (d:drug {family:"硝酸酯类药"}),(se:side_effect {description:"虚脱"}) CREATE (d)-[:drug_side_effect {referrence:"ST段抬高型心肌梗死基层合理用药指南"}]->(se);
+MATCH (d:drug {family:"硝酸酯类药"}),(se:side_effect {description:"晕厥"}) CREATE (d)-[:drug_side_effect {referrence:"ST段抬高型心肌梗死基层合理用药指南"}]->(se);
+MATCH (d:drug {family:"硝酸酯类药"}),(se:side_effect {description:"心动过缓"}) CREATE (d)-[:drug_side_effect {referrence:"ST段抬高型心肌梗死基层合理用药指南"}]->(se);
+MATCH (d:drug {family:"硝酸酯类药"}),(se:side_effect {description:"心绞痛加重"}) CREATE (d)-[:drug_side_effect {referrence:"ST段抬高型心肌梗死基层合理用药指南"}]->(se);
+MATCH (d:drug {family:"硝酸酯类药"}),(se:side_effect {description:"药疹"}) CREATE (d)-[:drug_side_effect {referrence:"ST段抬高型心肌梗死基层合理用药指南"}]->(se);
+MATCH (d:drug {family:"硝酸酯类药"}),(se:side_effect {description:"剥脱性皮炎"}) CREATE (d)-[:drug_side_effect {referrence:"ST段抬高型心肌梗死基层合理用药指南"}]->(se);
 
 MATCH (ds:disease {name:"稳定型心绞痛"}),(dg:drug {name:"单硝酸异山梨酯"}) CREATE (ds)<-[:cure {period:"缓解期",type:"普通片",dosage:"5~20mg",frequency:"每日2次口服",effect:"改善缺血、减轻症状",referrence:"内科学第九版"}]-(dg);
 MATCH (ds:disease {name:"稳定型心绞痛"}),(dg:drug {name:"单硝酸异山梨酯"}) CREATE (ds)<-[:cure {period:"缓解期",type:"缓释片",dosage:"40~60mg",frequency:"每日1次口服",effect:"改善缺血、减轻症状",referrence:"内科学第九版"}]-(dg);
 MATCH (ds:disease {name:"稳定型心绞痛"}),(dg:drug {name:"硝酸甘油"}) CREATE (ds)<-[:cure {period:"发作期",dosage:"0.5mg",usag:"舌下含化",onset_time:"1~2min",actuation_duaration:"0.5h",referrence:"内科学第九版"}]-(dg);
 MATCH (ds:disease {name:"稳定型心绞痛"}),(dg:drug {name:"硝酸异山梨酯"}) CREATE (ds)<-[:cure {period:"发作期",dosage:"5~10mg",usag:"舌下含化",onset_time:"2~5min",actuation_duaration:"2~3h",referrence:"内科学第九版"}]-(dg);
-MATCH (ds:disease {name:"X综合征"}),(dg:drug {familiy:"硝酸酯类药"}) CREATE (ds)<-[:cure {effect:"改善少部分病人症状，总体效果不佳",referrence:"内科学第九版"}]-(dg);
+MATCH (ds:disease {name:"X综合征"}),(dg:drug {family:"硝酸酯类药"}) CREATE (ds)<-[:cure {effect:"改善少部分病人症状，总体效果不佳",referrence:"内科学第九版"}]-(dg);
 MATCH (ds:disease {name:"心肌桥"}),(dg:drug {type:"正性肌力药"}) CREATE (ds)<-[:prohibit_drug {referrence:"内科学第九版"}]-(dg);
-MATCH (ds:disease {name:"冠状动脉痉挛"}),(dg:drug {familiy:"硝酸酯类药"}) CREATE (ds)<-[:cure {effect:"主要治疗手段",referrence:"内科学第九版"}]-(dg);
+MATCH (ds:disease {name:"冠状动脉痉挛"}),(dg:drug {family:"硝酸酯类药"}) CREATE (ds)<-[:cure {effect:"主要治疗手段",referrence:"内科学第九版"}]-(dg);
 MATCH (ds:disease {english_name:"NSTEACS"}),(dg:drug {name:"硝酸甘油"}) CREATE (ds)<-[:cure {period:"心绞痛发作期",type:"静脉滴注",dosage:"5~10μg/min,每5~10分钟增加10μg/min，<200μg/min",effect:"抗心肌缺血",referrence:"内科学第九版"}]-(dg);
 MATCH (ds:disease {english_name:"NSTEACS"}),(dg:drug {name:"硝酸异山梨酯"}) CREATE (ds)<-[:cure {period:"心绞痛消失后12~24h",usage:"口服",effect:"抗心肌缺血",referrence:"内科学第九版"}]-(dg);
 MATCH (ds:disease {english_name:"NSTEACS"}),(dg:drug {name:"5-单硝酸异山梨酯"}) CREATE (ds)<-[:cure {period:"心绞痛消失后12~24h",usage:"口服",effect:"抗心肌缺血",referrence:"内科学第九版"}]-(dg);
@@ -1110,16 +1139,21 @@ MATCH (ds:disease {name:"稳定型心绞痛"}),(dg:drug {name:"雷诺嗪"}) CREA
 MATCH (ds:disease {name:"X综合征"}),(dg:drug {name:"曲美他嗪"}) CREATE (ds)<-[:cure {effect:"改善少部分病人症状，总体效果不佳",referrence:"内科学第九版"}]-(dg);
 MATCH (ds:disease {english_name:"STEMI"}),(dg:drug {name:"尼可地尔"}) CREATE (ds)<-[:cure {referrence:"内科学第九版"}]-(dg);
 
-
 CREATE (:drug {type:"抗血小板药物",name:"阿司匹林",family:"环氧化酶（COX）抑制剂"});
 CREATE (:drug {type:"抗血小板药物",name:"吲哚布芬",family:"环氧化酶（COX）抑制剂"});
 CREATE (:drug {type:"抗血小板药物",name:"氯吡格雷",family:"P2Y12受体拮抗剂"});
 CREATE (:drug {type:"抗血小板药物",name:"替格瑞洛",family:"P2Y12受体拮抗剂"});
+CREATE (:drug {type:"抗血小板药物",name:"西洛他唑",family:"环核昔酸磷酸二酷酶抑制剂"});
+CREATE (:drug {type:"抗血小板药物",name:"双嘧达莫",family:"环核昔酸磷酸二酷酶抑制剂"});
+CREATE (:drug {type:"抗血小板药物",name:"替罗非班",family:"血小板糖蛋白受体拮抗剂"});
+CREATE (:drug {type:"抗血小板药物",name:"依替非巴肽",family:"血小板糖蛋白受体拮抗剂"});
 
 CREATE (:side_effect {description:"胃肠道出血"});
 CREATE (:side_effect {description:"阿司匹林过敏"});
 MATCH (d:drug {name:"阿司匹林"}),(se:side_effect {description:"胃肠道出血"}) CREATE (d)-[:drug_side_effect {referrence:"内科学第九版"}]->(se);
 MATCH (d:drug {name:"阿司匹林"}),(se:side_effect {description:"阿司匹林过敏"}) CREATE (d)-[:drug_side_effect {referrence:"内科学第九版"}]->(se);
+CREATE (:side_effect {description:"灌装动脉窃血"});
+MATCH (d:drug {name:"双嘧达莫"}),(se:side_effect {description:"灌装动脉窃血"}) CREATE (d)-[:drug_side_effect {referrence:"内科学第九版"}]->(se);
 
 MATCH (ds:disease {name:"稳定型心绞痛"}),(dg:drug {name:"阿司匹林"}) CREATE (ds)<-[:cure {period:"缓解期",dosage:"75~150mg",frequency:"每日1次",condition:"无禁忌症",effect:"预防心肌梗死、改善预后",referrence:"内科学第九版"}]-(dg);
 MATCH (ds:disease {name:"稳定型心绞痛"}),(dg:drug {name:"吲哚布芬"}) CREATE (ds)<-[:cure {period:"缓解期",dosage:"100mg",frequency:"每日2次",condition:"阿司匹林不耐受",effect:"预防心肌梗死、改善预后",referrence:"内科学第九版"}]-(dg);
@@ -1127,7 +1161,16 @@ MATCH (ds:disease {name:"稳定型心绞痛"}),(dg:drug {name:"氯吡格雷"}) C
 MATCH (ds:disease {name:"稳定型心绞痛"}),(dg:drug {name:"替格瑞洛"}) CREATE (ds)<-[:cure {period:"缓解期",effect:"预防心肌梗死、改善预后",referrence:"内科学第九版"}]-(dg);
 MATCH (ds:disease {english_name:"STEMI"}),(dg:drug {name:"氯吡格雷"}) CREATE (ds)<-[:cure {referrence:"内科学第九版"}]-(dg);
 MATCH (ds:disease {english_name:"STEMI"}),(dg:drug {name:"阿司匹林"}) CREATE (ds)<-[:cure {referrence:"内科学第九版"}]-(dg);
-
+MATCH (ds:disease {english_name:"NSTEACS"}),(dg:drug {name:"阿司匹林"}) CREATE (ds)<-[:cure {usage:"口服",dosage:"150~300mg",frequency:"初次服用",effect:"抗血小板治疗",dreferrence:"内科学第九版"}]-(dg);
+MATCH (ds:disease {english_name:"NSTEACS"}),(dg:drug {name:"阿司匹林"}) CREATE (ds)<-[:cure {usage:"口服",dosage:"75~100mg",frequency:"每日服用",effect:"抗血小板治疗",referrence:"内科学第九版"}]-(dg);
+MATCH (ds:disease {english_name:"NSTEACS"}),(dg:drug {name:"吲哚布芬"}) CREATE (ds)<-[:cure {dosage:"100mg",frequency:"每日2次",condition:"阿司匹林不耐受",effect:"抗血小板治疗",referrence:"内科学第九版"}]-(dg);
+MATCH (ds:disease {english_name:"NSTEACS"}),(dg:drug {name:"氯吡格雷"}) CREATE (ds)<-[:cure {usage:"口服",dosage:"300~600mg",frequency:"初次服用",effect:"抗血小板治疗",referrence:"内科学第九版"}]-(dg);
+MATCH (ds:disease {english_name:"NSTEACS"}),(dg:drug {name:"氯吡格雷"}) CREATE (ds)<-[:cure {usage:"口服",dosage:"75mg",frequency:"每日服用",effect:"抗血小板治疗",referrence:"内科学第九版"}]-(dg);
+MATCH (ds:disease {english_name:"NSTEACS"}),(dg:drug {name:"替格瑞洛"}) CREATE (ds)<-[:cure {usage:"口服",dosage:"180mg",frequency:"初次服用",effect:"抗血小板治疗",referrence:"内科学第九版"}]-(dg);
+MATCH (ds:disease {english_name:"NSTEACS"}),(dg:drug {name:"替格瑞洛"}) CREATE (ds)<-[:cure {usage:"口服",dosage:"90mg",frequency:"每日2次",effect:"抗血小板治疗",referrence:"内科学第九版"}]-(dg);
+MATCH (ds:disease {english_name:"NSTEACS"}),(dg:drug {name:"西洛他唑"}) CREATE (ds)<-[:cure {condition:"阿司匹林不耐受",effect:"抗血小板治疗",referrence:"内科学第九版"}]-(dg);
+MATCH (ds:disease {english_name:"NSTEACS"}),(dg:drug {name:"西洛他唑"}) CREATE (ds)<-[:cure {condition:"阿司匹林不耐受",effect:"抗血小板治疗",referrence:"内科学第九版"}]-(dg);
+MATCH (ds:disease {english_name:"NSTEACS"}),(dg:family:"血小板糖蛋白受体拮抗剂") CREATE (ds)<-[:cure {condition:"接受PCI的病人或中高危患者",effect:"抗血小板治疗",referrence:"内科学第九版"}]-(dg);
 
 
 CREATE (:drug {type:"调脂药",name:"辛伐他汀",family:"他汀类药物"});
@@ -1142,6 +1185,25 @@ CREATE (:side_effect {description:"肝脏损害"});
 CREATE (:side_effect {description:"肌病"});
 MATCH (d:drug {family:"他汀类药物"}),(se:side_effect {description:"肝脏损害"}) CREATE (d)-[:drug_side_effect {referrence:"内科学第九版"}]->(se);
 MATCH (d:drug {family:"他汀类药物"}),(se:side_effect {description:"肌病"}) CREATE (d)-[:drug_side_effect {referrence:"内科学第九版"}]->(se);
+CREATE (:contraindication {condition:"肝肾功能不全"});
+CREATE (:contraindication {condition:"胆囊疾病史"});
+CREATE (:contraindication {condition:"胆石症"});
+CREATE (:contraindication {condition:"原发性胆汁性肝硬化"});
+CREATE (:contraindication {condition:"不明原因肝功能持续异常"});
+CREATE (:contraindication {condition:"哺乳期妇女"});
+CREATE (:contraindication {condition:"儿童"});
+CREATE (:contraindication {condition:"活动性肝病"});
+CREATE (:contraindication {condition:"不明原因的血清转氨酶持续升高者"});
+
+MATCH (d:drug {name:"非诺贝特"}),(c:contraindication {condition:"肝肾功能不全"}) CREATE (d)<-[:prohibit {referrence:"ST段抬高型心肌梗死基层合理用药指南"}]-(c);
+MATCH (d:drug {name:"非诺贝特"}),(c:contraindication {condition:"胆囊疾病史"}) CREATE (d)<-[:prohibit {referrence:"ST段抬高型心肌梗死基层合理用药指南"}]-(c);
+MATCH (d:drug {name:"非诺贝特"}),(c:contraindication {condition:"胆石症"}) CREATE (d)<-[:prohibit {referrence:"ST段抬高型心肌梗死基层合理用药指南"}]-(c);
+MATCH (d:drug {name:"非诺贝特"}),(c:contraindication {condition:"原发性胆汁性肝硬化"}) CREATE (d)<-[:prohibit {referrence:"ST段抬高型心肌梗死基层合理用药指南"}]-(c);
+MATCH (d:drug {name:"非诺贝特"}),(c:contraindication {condition:"不明原因肝功能持续异常"}) CREATE (d)<-[:prohibit {referrence:"ST段抬高型心肌梗死基层合理用药指南"}]-(c);
+MATCH (d:drug {name:"非诺贝特"}),(c:contraindication {condition:"哺乳期妇女"}) CREATE (d)<-[:prohibit {referrence:"ST段抬高型心肌梗死基层合理用药指南"}]-(c);
+MATCH (d:drug {name:"非诺贝特"}),(c:contraindication {condition:"儿童"}) CREATE (d)<-[:prohibit {referrence:"ST段抬高型心肌梗死基层合理用药指南"}]-(c);
+MATCH (d:drug {name:"依折麦布"}),(c:contraindication {condition:"活动性肝病"}) CREATE (d)<-[:prohibit {referrence:"ST段抬高型心肌梗死基层合理用药指南"}]-(c);
+MATCH (d:drug {name:"依折麦布"}),(c:contraindication {condition:"不明原因的血清转氨酶持续升高者"}) CREATE (d)<-[:prohibit {referrence:"ST段抬高型心肌梗死基层合理用药指南"}]-(c);
 
 MATCH (ds:disease {name:"稳定型心绞痛"}),(dg:drug {name:"辛伐他汀"}) CREATE (ds)<-[:cure {period:"缓解期",dosage:"20~40mg",frequency:"每晚一次",effect:"预防心肌梗死、改善预后",referrence:"内科学第九版"}]-(dg);
 MATCH (ds:disease {name:"稳定型心绞痛"}),(dg:drug {name:"阿托伐他汀"}) CREATE (ds)<-[:cure {period:"缓解期",dosage:"10~80mg",frequency:"每日一次",effect:"预防心肌梗死、改善预后",referrence:"内科学第九版"}]-(dg);
@@ -1156,6 +1218,7 @@ MATCH (ds:disease {english_name:"STEMI"}),(dg:drug {name:"阿托伐他汀"}) CRE
 MATCH (ds:disease {english_name:"STEMI"}),(dg:drug {name:"瑞舒伐他汀"}) CREATE (ds)<-[:cure {referrence:"内科学第九版"}]-(dg);
 MATCH (ds:disease {english_name:"STEMI"}),(dg:drug {name:"依折麦布"}) CREATE (ds)<-[:cure {referrence:"内科学第九版"}]-(dg);
 MATCH (ds:disease {english_name:"STEMI"}),(dg:drug {name:"非诺贝特"}) CREATE (ds)<-[:cure {referrence:"内科学第九版"}]-(dg);
+MATCH (ds:disease {english_name:"NSTEACS"}),(dg:drug {family:"他汀类药物"}) CREATE (ds)<-[:cure {referrence:"内科学第九版"}]-(dg);
 
 
 CREATE (:drug {type:"ACEI",name:"卡托普利"});
@@ -1164,7 +1227,15 @@ CREATE (:drug {type:"ACEI",name:"培哚普利"});
 CREATE (:drug {type:"ACEI",name:"雷米普利"});
 CREATE (:drug {type:"ACEI",name:"贝那普利"});
 CREATE (:drug {type:"ACEI",name:"赖诺普利"});
-CREATE (:drug {type:"ACEI",name:"缬沙坦"});
+CREATE (:drug {type:"ARB",name:"缬沙坦"});
+CREATE (:contraindication {condition:"低血压"});
+CREATE (:contraindication {condition:"肾衰竭"});
+CREATE (:contraindication {condition:"双侧动脉狭窄"});
+CREATE (:contraindication {condition:"过敏"});
+MATCH (d:drug {type:"ACEI"}),(c:contraindication {condition:"低血压"}) CREATE (d)<-[:prohibit {referrence:"内科学第九版"}]-(c);
+MATCH (d:drug {type:"ACEI"}),(c:contraindication {condition:"肾衰竭"}) CREATE (d)<-[:prohibit {referrence:"内科学第九版"}]-(c);
+MATCH (d:drug {type:"ACEI"}),(c:contraindication {condition:"双侧动脉狭窄"}) CREATE (d)<-[:prohibit {referrence:"内科学第九版"}]-(c);
+MATCH (d:drug {type:"ACEI"}),(c:contraindication {condition:"过敏"}) CREATE (d)<-[:prohibit {referrence:"内科学第九版"}]-(c);
 
 MATCH (ds:disease {name:"稳定型心绞痛"}),(dg:drug {name:"卡托普利"}) CREATE (ds)<-[:cure {period:"缓解期",dosage:"12.5~50mg",frequency:"每日3次",condition:"稳定型心绞痛病人合并高血压、糖尿病、心力衰竭或左心室收缩功能不全的高危病人",referrence:"内科学第九版"}]-(dg);
 MATCH (ds:disease {name:"稳定型心绞痛"}),(dg:drug {name:"依那普利"}) CREATE (ds)<-[:cure {period:"缓解期",dosage:"5~10mg",frequency:"每日2次",condition:"稳定型心绞痛病人合并高血压、糖尿病、心力衰竭或左心室收缩功能不全的高危病人",referrence:"内科学第九版"}]-(dg);
@@ -1177,32 +1248,55 @@ MATCH (ds:disease {english_name:"STEMI"}),(dg:drug {name:"赖诺普利"}) CREATE
 MATCH (ds:disease {english_name:"STEMI"}),(dg:drug {name:"缬沙坦"}) CREATE (ds)<-[:cure {referrence:"内科学第九版"}]-(dg);
 MATCH (ds:disease {english_name:"STEMI"}),(dg:drug {name:"卡托普利"}) CREATE (ds)<-[:cure {referrence:"内科学第九版"}]-(dg);
 MATCH (ds:disease {english_name:"STEMI"}),(dg:drug {name:"依那普利"}) CREATE (ds)<-[:cure {referrence:"内科学第九版"}]-(dg);
+MATCH (ds:disease {english_name:"NSTEACS"}),(dg:drug {type:"ACEI"}) CREATE (ds)<-[:cure {usage:"口服",referrence:"内科学第九版"}]-(dg);
+MATCH (ds:disease {english_name:"NSTEACS"}),(dg:drug {type:"ARB"}) CREATE (ds)<-[:cure {condition:"ACEI不耐受",referrence:"内科学第九版"}]-(dg);
 
 CREATE (:drug {type:"抗凝药",name:"普通肝素"});
-CREATE (:drug {type:"抗凝药",name:"低分子量肝素"});
-CREATE (:drug {type:"抗凝药",name:"黄达肝葵钠"});
-CREATE (:drug {type:"抗凝药",name:"比伐卢定"});
-MATCH (ds:disease {english_name:"NSTEACS"}),(dg:drug {name:"普通肝素"}) CREATE (ds)<-[:cure {effect:"抗凝治疗",referrence:"内科学第九版"}]-(dg);
-MATCH (ds:disease {english_name:"NSTEACS"}),(dg:drug {name:"低分子量肝素"}) CREATE (ds)<-[:cure {effect:"抗凝治疗",referrence:"内科学第九版"}]-(dg);
-MATCH (ds:disease {english_name:"NSTEACS"}),(dg:drug {name:"黄达肝葵钠"}) CREATE (ds)<-[:cure {effect:"抗凝治疗",referrence:"内科学第九版"}]-(dg);
-MATCH (ds:disease {english_name:"NSTEACS"}),(dg:drug {name:"比伐卢定"}) CREATE (ds)<-[:cure {effect:"抗凝治疗",referrence:"内科学第九版"}]-(dg);
-MATCH (ds:disease {english_name:"STEMI"}),(dg:drug {name:"普通肝素"}) CREATE (ds)<-[:cure {effect:"抗凝治疗",referrence:"内科学第九版"}]-(dg);
-MATCH (ds:disease {english_name:"STEMI"}),(dg:drug {name:"低分子量肝素"}) CREATE (ds)<-[:cure {effect:"抗凝治疗",referrence:"内科学第九版"}]-(dg);
+CREATE (:drug {type:"抗凝药",name:"依诺肝素",family:"低分子量肝素"});
+CREATE (:drug {type:"抗凝药",name:"达肝素",family:"低分子量肝素"});
+CREATE (:drug {type:"抗凝药",name:"那曲肝素",family:"低分子量肝素"});
 
-CREATE (:drug {type:"溶栓药",name:"尿激酶",familiy:"非特异性溶栓药"});
-CREATE (:drug {type:"溶栓药",name:"链激酶",familiy:"非特异性溶栓药"});
-CREATE (:drug {type:"溶栓药",name:"阿替普酶",familiy:"特异性纤溶酶原激活剂"});
-CREATE (:drug {type:"溶栓药",name:"瑞替普酶",familiy:"特异性纤溶酶原激活剂"});
-CREATE (:drug {type:"溶栓药",name:"奈替普酶",familiy:"特异性纤溶酶原激活剂"});
+CREATE (:drug {type:"抗凝药",name:"磺达肝葵钠"});
+CREATE (:drug {type:"抗凝药",name:"比伐卢定"});
+MATCH (ds:disease {english_name:"NSTEACS"}),(dg:drug {name:"普通肝素"}) CREATE (ds)<-[:cure {usage:"静脉注射",dosage:"90~85U/kg",frequency:"初次使用",effect:"抗凝治疗",referrence:"内科学第九版"}]-(dg);
+MATCH (ds:disease {english_name:"NSTEACS"}),(dg:drug {name:"普通肝素"}) CREATE (ds)<-[:cure {usage:"静脉注射",dosage:"15~18U/(kg·h)",effect:"抗凝治疗",referrence:"内科学第九版"}]-(dg);
+MATCH (ds:disease {english_name:"NSTEACS"}),(dg:drug {family:"低分子量肝素"}) CREATE (ds)<-[:cure {effect:"抗凝治疗",referrence:"内科学第九版"}]-(dg);
+MATCH (ds:disease {english_name:"NSTEACS"}),(dg:drug {name:"磺达肝葵钠"}) CREATE (ds)<-[:cure {usage:"皮下注射",dosage:"2.5mg",frequency:"每日一次",effect:"抗凝治疗",referrence:"内科学第九版"}]-(dg);
+MATCH (ds:disease {english_name:"NSTEACS"}),(dg:drug {name:"比伐卢定"}) CREATE (ds)<-[:cure {usage:"静脉推注",dosage:"0.75mg/kg",frequency:"一次",effect:"抗凝治疗",referrence:"内科学第九版"}]-(dg);
+MATCH (ds:disease {english_name:"NSTEACS"}),(dg:drug {name:"比伐卢定"}) CREATE (ds)<-[:cure {usage:"静脉滴珠",dosage:"1.75mg/(kg·h)",frequency:"至术后3~4小时",effect:"抗凝治疗",referrence:"内科学第九版"}]-(dg);
+MATCH (ds:disease {english_name:"STEMI"}),(dg:drug {name:"普通肝素"}) CREATE (ds)<-[:cure {effect:"抗凝治疗",referrence:"内科学第九版"}]-(dg);
+MATCH (ds:disease {english_name:"STEMI"}),(dg:drug {family:"低分子量肝素"}) CREATE (ds)<-[:cure {effect:"抗凝治疗",referrence:"内科学第九版"}]-(dg);
+
+CREATE (:drug {type:"溶栓药",name:"尿激酶",family:"非特异性溶栓药"});
+CREATE (:drug {type:"溶栓药",name:"链激酶",family:"非特异性溶栓药"});
+CREATE (:drug {type:"溶栓药",name:"阿替普酶",family:"特异性纤溶酶原激活剂"});
+CREATE (:drug {type:"溶栓药",name:"瑞替普酶",family:"特异性纤溶酶原激活剂"});
+CREATE (:drug {type:"溶栓药",name:"奈替普酶",family:"特异性纤溶酶原激活剂"});
 CREATE (:side_effect {description:"出血风险增加"});
-MATCH (d:drug {familiy:"非特异性溶栓药"}),(se:side_effect {description:"出血风险增加"}) CREATE (d)-[:drug_side_effect {referrence:"内科学第九版"}]->(se);
+MATCH (d:drug {family:"非特异性溶栓药"}),(se:side_effect {description:"出血风险增加"}) CREATE (d)-[:drug_side_effect {referrence:"内科学第九版"}]->(se);
 
 MATCH (ds:disease {english_name:"STEMI"}),(dg:drug {name:"尿激酶"}) CREATE (ds)<-[:cure {effect:"抗凝治疗",referrence:"内科学第九版"}]-(dg);
 MATCH (ds:disease {english_name:"STEMI"}),(dg:drug {name:"阿替普酶"}) CREATE (ds)<-[:cure {effect:"抗凝治疗",referrence:"内科学第九版"}]-(dg);
 MATCH (ds:disease {english_name:"STEMI"}),(dg:drug {name:"瑞替普酶"}) CREATE (ds)<-[:cure {effect:"抗凝治疗",referrence:"内科学第九版"}]-(dg);
 
 CREATE (:drug {type:"醛固酮受体拮抗剂",name:"螺内酯"});
-MATCH (ds:disease {english_name:"STEMI"}),(dg:drug {name:"螺内酯"}) CREATE (ds)<-[:cure {dosage:"2~4mg",usage:"静脉注射",frequency:"5~10min后重复",effect:"解除疼痛",referrence:"内科学第九版"}]-(dg);
+CREATE (:contraindication {condition:"高钾血症"});
+CREATE (:contraindication {condition:"低钠血症"});
+MATCH (d:drug {name:"螺内酯"}),(c:contraindication {condition:"高钾血症"}) CREATE (d)<-[:prohibit {referrence:"内科学第九版"}]-(c);
+MATCH (d:drug {name:"螺内酯"}),(c:contraindication {condition:"低钠血症"}) CREATE (d)<-[:prohibit {referrence:"内科学第九版"}]-(c);
+CREATE (:side_effect {description:"高钾血症"});
+CREATE (:side_effect {description:"胃肠道反应"});
+CREATE (:side_effect {description:"低钠血症"});
+CREATE (:side_effect {description:"女子毛发增多、月经失调"});
+CREATE (:side_effect {description:"男子乳房发育、阳痿、性功能低下"});
+CREATE (:side_effect {description:"行走不协调"});
+MATCH (d:drug {name:"螺内酯"}),(se:side_effect {description:"高钾血症"}) CREATE (d)-[:drug_side_effect {referrence:"内科学第九版"}]->(se);
+MATCH (d:drug {name:"螺内酯"}),(se:side_effect {description:"胃肠道反应"}) CREATE (d)-[:drug_side_effect {referrence:"内科学第九版"}]->(se);
+MATCH (d:drug {name:"螺内酯"}),(se:side_effect {description:"低钠血症"}) CREATE (d)-[:drug_side_effect {referrence:"内科学第九版"}]->(se);
+MATCH (d:drug {name:"螺内酯"}),(se:side_effect {description:"女子毛发增多、月经失调"}) CREATE (d)-[:drug_side_effect {referrence:"内科学第九版"}]->(se);
+MATCH (d:drug {name:"螺内酯"}),(se:side_effect {description:"男子乳房发育、阳痿、性功能低下"}) CREATE (d)-[:drug_side_effect {referrence:"内科学第九版"}]->(se);
+MATCH (d:drug {name:"螺内酯"}),(se:side_effect {description:"行走不协调"}) CREATE (d)-[:drug_side_effect {referrence:"内科学第九版"}]->(se);
+MATCH (d:drug {name:"螺内酯"}),(se:side_effect {description:"头痛"}) CREATE (d)-[:drug_side_effect {referrence:"内科学第九版"}]->(se);
 
 CREATE (:drug {type:"镇痛药",name:"吗啡"});
 CREATE (:drug {type:"镇痛药",name:"哌替啶"});
@@ -1216,7 +1310,7 @@ MATCH (ds:disease {english_name:"STEMI"}),(dg:drug {name:"哌替啶"}) CREATE (d
 CREATE (:treatment {name:"休息"});
 CREATE (:treatment {name:"戒烟"});
 CREATE (:treatment {name:"戒酒"});
-
+CREATE (:treatment {name:"溶栓疗法"});
 CREATE (:treatment {name:"经皮冠状动脉介入治疗",english_name:"PCI"});
 CREATE (:treatment {name:"冠状动脉旁路移植术",english_name:"CABG"});
 CREATE (:side_effect {description:"围术期死亡率为1%-4%"});
@@ -1229,5 +1323,9 @@ MATCH (ds:disease {name:"稳定型心绞痛"}),(t:treatment {english_name:"CABG"
 MATCH (ds:disease {name:"稳定型心绞痛"}),(t:treatment {name:"休息"}) CREATE (t)-[:cure {period:"发作期",referrence:"内科学第九版"}]->(d);
 MATCH (ds:disease {name:"冠状动脉痉挛"}),(t:treatment {name:"戒烟"}) CREATE (t)-[:cure {referrence:"内科学第九版"}]->(d);
 MATCH (ds:disease {name:"冠状动脉痉挛"}),(t:treatment {name:"戒酒"}) CREATE (t)-[:cure {referrence:"内科学第九版"}]->(d);
+MATCH (ds:disease {english_name:"NSTEACS"}),(t:treatment {name:"休息"}) CREATE (t)-[:cure {referrence:"内科学第九版"}]->(d);
 MATCH (ds:disease {english_name:"NSTEACS"}),(t:treatment {english_name:"PCI"}) CREATE (t)-[:cure {referrence:"内科学第九版"}]->(d);
 MATCH (ds:disease {english_name:"NSTEACS"}),(t:treatment {english_name:"CABG"}) CREATE (t)-[:cure {condition:"病变严重、有多支血管病变的症状严重和左心室功能不全的病人",referrence:"内科学第九版"}]->(d);
+MATCH (ds:disease {english_name:"STEMI"}),(t:treatment {english_name:"CABG"}) CREATE (t)-[:cure {condition:"病变严重、有多支血管病变的症状严重和左心室功能不全的病人",referrence:"内科学第九版"}]->(d);
+MATCH (ds:disease {english_name:"STEMI"}),(t:treatment {english_name:"PCI"}) CREATE (t)-[:cure {referrence:"内科学第九版"}]->(d);
+MATCH (ds:disease {name:"STEMI"}),(t:treatment {name:"溶栓疗法"}) CREATE (t)-[:cure {referrence:"内科学第九版"}]->(d);
