@@ -1,9 +1,9 @@
 MATCH (n) detach delete n;
 
-//冠状动脉粥样硬化性心脏病、冠心病、缺血性心脏病等同
-CREATE (:disease {name:"冠状动脉粥样硬化性心脏病",abbreviation:"冠心病",synonym:"缺血性心脏病",english_name:"CHD",definition:"指冠状动脉（冠脉）发生粥样硬化引起管腔狭窄或闭，导致心肌缺血缺氧或坏死而引起的心脏病。"});
 
-//冠心病包含慢性心肌缺血综合征（又称慢性冠脉疾病）和急性冠状动脉综合征
+//一、疾病分类
+//1.1 冠心病
+CREATE (:disease {name:"冠状动脉粥样硬化性心脏病",abbreviation:"冠心病",synonym:"缺血性心脏病",english_name:"CHD",definition:"指冠状动脉（冠脉）发生粥样硬化引起管腔狭窄或闭，导致心肌缺血缺氧或坏死而引起的心脏病。"});
 CREATE (:disease {name:"慢性心肌缺血综合征",enlish_name:"CIS/CAD",synonym:"慢性冠脉疾病"});
 CREATE (:disease {name:"急性冠状动脉综合征",english_name:"ACS",abbreviation:"急性冠脉综合征",definition:"一组由急性心肌缺血引起的临床综合征"});
 MATCH (dc1:disease {name:"冠状动脉粥样硬化性心脏病"}),(dc2:disease {name:"慢性心肌缺血综合征"}) CREATE (dc1)-[:include_disease {reference:"内科学第九版"}]->(dc2);
@@ -49,9 +49,7 @@ MATCH (d1:disease {name:"不稳定型心绞痛"}), (d2:disease {name:"静息型�
 MATCH (d1:disease {name:"不稳定型心绞痛"}), (d2:disease {name:"初发型心绞痛"}) CREATE (d1)-[:include_disease {reference:"内科学第九版"}]->(d2);
 MATCH (d1:disease {name:"不稳定型心绞痛"}), (d2:disease {name:"恶化型心绞痛"}) CREATE (d1)-[:include_disease {reference:"内科学第九版"}]->(d2);
 
-
-
-//心衰大类
+//1.2 心衰
 CREATE (:disease {name:"心力衰竭",abbreviation:"心衰",definition:"是各种心脏结构或功能性疾病导致心室充盈和（或）射血功能受损，心排血量不能满足机体组织代谢需要，以肺循环和（或）体循环淤血，器官、组织血液灌注不足为临床表现的一组综合征"});
 CREATE (:disease {name:"左心衰竭"});
 CREATE (:disease {name:"右心衰竭"});
@@ -81,25 +79,56 @@ MATCH (dc:disease {name:"慢性心力衰竭"}),(d:disease {name:"全心衰竭"})
 // MATCH (dc:disease {name:"急性心力衰竭"}),(d:disease {name:"射血分数保留性心衰"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
 // MATCH (dc:disease {name:"急性心力衰竭"}),(d:disease {name:"中间范围射血分数心衰"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
 
+//1.3 心脏瓣膜病
 CREATE (:disease {name:"心脏瓣膜病",definition:"由多种原因引起的心脏瓣膜狭窄或（和）关闭不全所致的心脏疾病"});
+//1.3.1 二尖瓣狭窄
 CREATE (:disease {name:"二尖瓣狭窄",english_name:"MS"});
-CREATE (:disease {name:"急性二尖瓣关闭不全"});
-CREATE (:disease {name:"慢性二尖瓣关闭不全"});
+MATCH (dc:disease {name:"心脏瓣膜病"}),(d:disease {name:"二尖瓣狭窄"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
+//1.3.2 二尖瓣关闭不全
 CREATE (:disease {name:"二尖瓣关闭不全",english_name:"MI/MR"});
-CREATE (:disease {name:"主动脉瓣狭窄"});
-CREATE (:disease {name:"主动脉瓣关闭不全"});
-CREATE (:disease {name:"多瓣膜病"});
-MATCH (dc:disease {name:"二尖瓣关闭不全"}),(d:disease {name:"急性二尖瓣关闭不全"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
-MATCH (dc:disease {name:"二尖瓣关闭不全"}),(d:disease {name:"慢性二尖瓣关闭不全"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
-MATCH (dc:disease {name:"心脏瓣膜病"}),(d:disease {name:"二尖瓣狭窄"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
-MATCH (dc:disease {name:"心脏瓣膜病"}),(d:disease {name:"二尖瓣狭窄"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
 MATCH (dc:disease {name:"心脏瓣膜病"}),(d:disease {name:"二尖瓣关闭不全"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
+//1.3.2.1 急性二尖瓣关闭不全
+CREATE (:disease {name:"急性二尖瓣关闭不全"});
+MATCH (dc:disease {name:"二尖瓣关闭不全"}),(d:disease {name:"急性二尖瓣关闭不全"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
+//1.3.2.2 慢性二尖瓣关闭不全
+CREATE (:disease {name:"慢性二尖瓣关闭不全"});
+MATCH (dc:disease {name:"二尖瓣关闭不全"}),(d:disease {name:"慢性二尖瓣关闭不全"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
+//1.3.3 主动脉瓣狭窄
+CREATE (:disease {name:"主动脉瓣狭窄"});
 MATCH (dc:disease {name:"心脏瓣膜病"}),(d:disease {name:"主动脉瓣狭窄"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
+//1.3.4 主动脉瓣关闭不全
+CREATE (:disease {name:"主动脉瓣关闭不全",english_name:"AI"});
 MATCH (dc:disease {name:"心脏瓣膜病"}),(d:disease {name:"主动脉瓣关闭不全"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
+//1.3.4.1 急性主动脉瓣关闭不全
+CREATE (:disease {name:"急性主动脉瓣关闭不全"});
+MATCH (dc:disease {name:"主动脉瓣关闭不全"}),(d:disease {name:"急性主动脉瓣关闭不全"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
+//1.3.4.2 慢性主动脉瓣关闭不全
+CREATE (:disease {name:"慢性主动脉瓣关闭不全"});
+MATCH (dc:disease {name:"主动脉瓣关闭不全"}),(d:disease {name:"慢性主动脉瓣关闭不全"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
+//1.3.5 多瓣膜病
+CREATE (:disease {name:"多瓣膜病",synonym:"联合瓣膜病",definition:"两个或两个以上瓣膜病变同时存在"});
 MATCH (dc:disease {name:"心脏瓣膜病"}),(d:disease {name:"多瓣膜病"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
+//1.3.5.1 二尖瓣狭窄伴主动脉瓣关闭不全
+CREATE (:disease {name:"二尖瓣狭窄伴主动脉瓣关闭不全"});
+MATCH (dc:disease {name:"多瓣膜病"}),(d:disease {name:"二尖瓣狭窄伴主动脉瓣关闭不全"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
+//1.3.5.2 二尖瓣狭窄伴主动脉瓣狭窄
+CREATE (:disease {name:"二尖瓣狭窄伴主动脉瓣狭窄"});
+MATCH (dc:disease {name:"多瓣膜病"}),(d:disease {name:"二尖瓣狭窄伴主动脉瓣狭窄"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
+//1.3.5.3 主动脉瓣狭窄伴二尖瓣关闭不全
+CREATE (:disease {name:"主动脉瓣狭窄伴二尖瓣关闭不全"});
+MATCH (dc:disease {name:"多瓣膜病"}),(d:disease {name:"主动脉瓣狭窄伴二尖瓣关闭不全"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
+//1.3.5.4 二尖瓣关闭不全伴主动脉瓣关闭不全
+CREATE (:disease {name:"二尖瓣关闭不全伴主动脉瓣关闭不全"});
+MATCH (dc:disease {name:"多瓣膜病"}),(d:disease {name:"二尖瓣关闭不全伴主动脉瓣关闭不全"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
+//1.3.5.5 二尖瓣狭窄伴三尖瓣和（或）肺动脉瓣关闭不全
+CREATE (:disease {name:"二尖瓣狭窄伴三尖瓣和（或）肺动脉瓣关闭不全"});
+MATCH (dc:disease {name:"多瓣膜病"}),(d:disease {name:"二尖瓣狭窄伴三尖瓣和（或）肺动脉瓣关闭不全"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
+//1.3.6 风湿性心脏病
 CREATE (:disease {name:"风湿性心脏病",abbreviation:"风心病",english_name:"RHD",definition:"风湿性炎症导致的瓣膜损害"});
 MATCH (dc:disease {name:"心脏瓣膜病"}),(d:disease {name:"风湿性心脏病"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
 
+
+//1.4 心律失常
 CREATE (:disease {name:"心律失常"});
 CREATE (:disease {name:"窦性心律失常"});
 CREATE (:disease {name:"房性心律失常"});
@@ -112,7 +141,7 @@ MATCH (dc:disease {name:"心律失常"}),(d:disease {name:"房室交界区性心
 MATCH (dc:disease {name:"心律失常"}),(d:disease {name:"室性心律失常"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
 MATCH (dc:disease {name:"心律失常"}),(d:disease {name:"心脏传导阻滞"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
 
-
+//1.5 心包疾病
 CREATE (:disease {name:"心包疾病",definition:"是由感染、肿瘤、代谢性疾病、尿毒症、自身免疫病、外伤等引起的心包病理性改变"});
 CREATE (:disease {name:"急性心包炎"});
 CREATE (:disease {name:"心包积液"});
@@ -155,9 +184,8 @@ MATCH (dc:disease {name:"周围血管病"}),(d:disease {name:"闭塞性周围动
 
 CREATE (:disease {name:"心血管神经症"});
 
-
-
-//危险因素
+//二、风险因子
+//2.1  冠心病
 CREATE (:risk_factor {factor:"年齡>40"});
 CREATE (:risk_factor {factor:"男性"});
 CREATE (:risk_factor {factor:"血脂异常"});
@@ -170,30 +198,32 @@ CREATE (:risk_factor {factor:"A型性格"});
 CREATE (:risk_factor {factor:"口服避孕药"});
 CREATE (:risk_factor {factor:"高热量饮食"});
 CREATE (:risk_factor {factor:"绝经期前女性"});
-MATCH (d:disease {name:"冠状动脉粥样硬化性心脏病"}),(r:risk_factor {factor:"年齡>40"}) CREATE (d)<-[:risk {reference:"内科学第九版"}]-(r);
-MATCH (d:disease {name:"冠状动脉粥样硬化性心脏病"}),(r:risk_factor {factor:"血脂异常"}) CREATE (d)<-[:risk {reference:"内科学第九版"}]-(r);
-MATCH (d:disease {name:"冠状动脉粥样硬化性心脏病"}),(r:risk_factor {factor:"男性"}) CREATE (d)<-[:risk {reference:"内科学第九版"}]-(r);
-MATCH (d:disease {name:"冠状动脉粥样硬化性心脏病"}),(r:risk_factor {factor:"高血压"}) CREATE (d)<-[:risk {reference:"内科学第九版"}]-(r);
-MATCH (d:disease {name:"冠状动脉粥样硬化性心脏病"}),(r:risk_factor {factor:"糖尿病"}) CREATE (d)<-[:risk {reference:"内科学第九版"}]-(r);
-MATCH (d:disease {name:"冠状动脉粥样硬化性心脏病"}),(r:risk_factor {factor:"吸烟"}) CREATE (d)<-[:risk {reference:"内科学第九版"}]-(r);
-MATCH (d:disease {name:"冠状动脉粥样硬化性心脏病"}),(r:risk_factor {factor:"高热量饮食"}) CREATE (d)<-[:risk {reference:"内科学第九版"}]-(r);
-MATCH (d:disease {name:"冠状动脉粥样硬化性心脏病"}),(r:risk_factor {factor:"口服避孕药"}) CREATE (d)<-[:risk {reference:"内科学第九版"}]-(r);
-MATCH (d:disease {name:"冠状动脉粥样硬化性心脏病"}),(r:risk_factor {factor:"家族史"}) CREATE (d)<-[:risk {reference:"内科学第九版"}]-(r);
-MATCH (d:disease {name:"冠状动脉粥样硬化性心脏病"}),(r:risk_factor {factor:"肥胖"}) CREATE (d)<-[:risk {reference:"内科学第九版"}]-(r);
-MATCH (d:disease {name:"冠状动脉粥样硬化性心脏病"}),(r:risk_factor {factor:"糖耐量异常"}) CREATE (d)<-[:risk {reference:"内科学第九版"}]-(r);
-MATCH (d:disease {name:"冠状动脉粥样硬化性心脏病"}),(r:risk_factor {factor:"A型性格"}) CREATE (d)<-[:risk {reference:"内科学第九版"}]-(r);
-MATCH (d:disease {name:"冠状动脉痉挛"}),(r:risk_factor {factor:"吸烟"}) CREATE (d)<-[:risk {reference:"内科学第九版"}]-(r);
-MATCH (d:disease {name:"X综合征"}),(r:risk_factor {factor:"绝经期前女性"}) CREATE (d)<-[:risk {reference:"内科学第九版"}]-(r);
-
+MATCH (d:disease {name:"冠状动脉粥样硬化性心脏病"}),(r:risk_factor {factor:"年齡>40"}) CREATE (d)<-[:disease_risk_factor {reference:"内科学第九版"}]-(r);
+MATCH (d:disease {name:"冠状动脉粥样硬化性心脏病"}),(r:risk_factor {factor:"血脂异常"}) CREATE (d)<-[:disease_risk_factor {reference:"内科学第九版"}]-(r);
+MATCH (d:disease {name:"冠状动脉粥样硬化性心脏病"}),(r:risk_factor {factor:"男性"}) CREATE (d)<-[:disease_risk_factor {reference:"内科学第九版"}]-(r);
+MATCH (d:disease {name:"冠状动脉粥样硬化性心脏病"}),(r:risk_factor {factor:"高血压"}) CREATE (d)<-[:disease_risk_factor {reference:"内科学第九版"}]-(r);
+MATCH (d:disease {name:"冠状动脉粥样硬化性心脏病"}),(r:risk_factor {factor:"糖尿病"}) CREATE (d)<-[:disease_risk_factor {reference:"内科学第九版"}]-(r);
+MATCH (d:disease {name:"冠状动脉粥样硬化性心脏病"}),(r:risk_factor {factor:"吸烟"}) CREATE (d)<-[:disease_risk_factor {reference:"内科学第九版"}]-(r);
+MATCH (d:disease {name:"冠状动脉粥样硬化性心脏病"}),(r:risk_factor {factor:"高热量饮食"}) CREATE (d)<-[:disease_risk_factor {reference:"内科学第九版"}]-(r);
+MATCH (d:disease {name:"冠状动脉粥样硬化性心脏病"}),(r:risk_factor {factor:"口服避孕药"}) CREATE (d)<-[:disease_risk_factor {reference:"内科学第九版"}]-(r);
+MATCH (d:disease {name:"冠状动脉粥样硬化性心脏病"}),(r:risk_factor {factor:"家族史"}) CREATE (d)<-[:disease_risk_factor {reference:"内科学第九版"}]-(r);
+MATCH (d:disease {name:"冠状动脉粥样硬化性心脏病"}),(r:risk_factor {factor:"肥胖"}) CREATE (d)<-[:disease_risk_factor {reference:"内科学第九版"}]-(r);
+MATCH (d:disease {name:"冠状动脉粥样硬化性心脏病"}),(r:risk_factor {factor:"糖耐量异常"}) CREATE (d)<-[:disease_risk_factor {reference:"内科学第九版"}]-(r);
+MATCH (d:disease {name:"冠状动脉粥样硬化性心脏病"}),(r:risk_factor {factor:"A型性格"}) CREATE (d)<-[:disease_risk_factor {reference:"内科学第九版"}]-(r);
+MATCH (d:disease {name:"冠状动脉痉挛"}),(r:risk_factor {factor:"吸烟"}) CREATE (d)<-[:disease_risk_factor {reference:"内科学第九版"}]-(r);
+MATCH (d:disease {name:"X综合征"}),(r:risk_factor {factor:"绝经期前女性"}) CREATE (d)<-[:disease_risk_factor {reference:"内科学第九版"}]-(r);
+//2.2  心衰
 CREATE (:risk_factor {factor:"年齡>70"});
-MATCH (d:disease {name:"心力衰竭"}),(r:risk_factor {factor:"年齡>70"}) CREATE (d)<-[:risk {reference:"内科学第九版"}]-(r);
+MATCH (d:disease {name:"心力衰竭"}),(r:risk_factor {factor:"年齡>70"}) CREATE (d)<-[:disease_risk_factor {reference:"内科学第九版"}]-(r);
 
+//2.3  心脏瓣膜病
 CREATE (:risk_factor {factor:"年龄40~50岁"});
 CREATE (:risk_factor {factor:"女性"});
-MATCH (d:disease {name:"二尖瓣狭窄"}),(r:risk_factor {factor:"年龄40~50岁"}) CREATE (d)<-[:risk {reference:"内科学第九版"}]-(r);
-MATCH (d:disease {name:"二尖瓣狭窄"}),(r:risk_factor {factor:"女性"}) CREATE (d)<-[:risk {reference:"内科学第九版"}]-(r);
+MATCH (d:disease {name:"二尖瓣狭窄"}),(r:risk_factor {factor:"年龄40~50岁"}) CREATE (d)<-[:disease_risk_factor {reference:"内科学第九版"}]-(r);
+MATCH (d:disease {name:"二尖瓣狭窄"}),(r:risk_factor {factor:"女性"}) CREATE (d)<-[:disease_risk_factor {reference:"内科学第九版"}]-(r);
 
-//病因cause
+//三、病因
+//3.2 心衰
 CREATE (:cause {name:"心肌梗死"});
 CREATE (:cause {name:"慢性心肌缺血"});
 CREATE (:cause {name:"心肌炎"});
@@ -252,6 +282,7 @@ MATCH (d:disease {name:"心力衰竭"}),(c:cause {name:"限制性心肌病"}) CR
 MATCH (d:disease {name:"心力衰竭"}),(c:cause {name:"窄缩性心包炎"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
 MATCH (d:disease {name:"心力衰竭"}),(c:cause {name:"肺动脉瓣狭窄"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
 
+//3.3 心脏瓣膜病
 CREATE (:cause {name:"炎症"});
 CREATE (:cause {name:"黏液样变性"});
 CREATE (:cause {name:"先天性畸形"});
@@ -263,8 +294,8 @@ MATCH (d:disease {name:"心脏瓣膜病"}),(c:cause {name:"黏液样变性"}) CR
 MATCH (d:disease {name:"心脏瓣膜病"}),(c:cause {name:"先天性畸形"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
 MATCH (d:disease {name:"心脏瓣膜病"}),(c:cause {name:"缺血性坏死"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
 MATCH (d:disease {name:"心脏瓣膜病"}),(c:cause {name:"创伤"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
-MATCH (d:disease {name:"心脏瓣膜病"}),(c:cause {name:"风湿热"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
-
+MATCH (d:disease {name:"心脏瓣膜病"}),(c:cause {name:"风湿热"}) CREATE (c)<-[:disease_cause {comment:"主要病因",reference:"内科学第九版"}]-(d);
+//3.3.1 二尖瓣狭窄
 CREATE (:cause {name:"先天性发育异常"});
 CREATE (:cause {name:"瓣环钙化"});
 CREATE (:cause {name:"老年性退行性改变"});
@@ -272,6 +303,7 @@ CREATE (:cause {name:"风湿关节炎"});
 CREATE (:cause {name:"系统性红斑狼疮"});
 CREATE (:cause {name:"硬皮病"});
 CREATE (:cause {name:"Coxsackie病毒"});
+MATCH (d:disease {name:"二尖瓣狭窄"}),(c:cause {name:"风湿热"}) CREATE (c)<-[:disease_cause {comment:"主要病因",reference:"内科学第九版"}]-(d);
 MATCH (d:disease {name:"二尖瓣狭窄"}),(c:cause {name:"先天性发育异常"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
 MATCH (d:disease {name:"二尖瓣狭窄"}),(c:cause {name:"瓣环钙化"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
 MATCH (d:disease {name:"二尖瓣狭窄"}),(c:cause {name:"老年性退行性改变"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
@@ -279,12 +311,29 @@ MATCH (d:disease {name:"二尖瓣狭窄"}),(c:cause {name:"风湿关节炎"}) CR
 MATCH (d:disease {name:"二尖瓣狭窄"}),(c:cause {name:"系统性红斑狼疮"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
 MATCH (d:disease {name:"二尖瓣狭窄"}),(c:cause {name:"硬皮病"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
 MATCH (d:disease {name:"二尖瓣狭窄"}),(c:cause {name:"Coxsackie病毒"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
-
+//3.3.2.1 急性二尖瓣关闭不全
+CREATE (:cause {name:"感染性心内膜炎"});
+CREATE (:cause {name:"外伤"});
+CREATE (:cause {name:"人工瓣瓣周漏"});
+CREATE (:cause {name:"原发性腱索断裂"});
+CREATE (:cause {name:"继发性腱索断裂"});
+CREATE (:cause {name:"感染性心内膜炎或慢性瓣膜病变"});
+CREATE (:cause {name:"心肌梗死并发乳头肌功能不全或断裂"});
+CREATE (:cause {name:"创伤所致腿索或乳头肌断裂"});
+MATCH (d:disease {name:"急性二尖瓣关闭不全"}),(c:cause {name:"感染性心内膜炎"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
+MATCH (d:disease {name:"急性二尖瓣关闭不全"}),(c:cause {name:"外伤"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
+MATCH (d:disease {name:"急性二尖瓣关闭不全"}),(c:cause {name:"人工瓣瓣周漏"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
+MATCH (d:disease {name:"急性二尖瓣关闭不全"}),(c:cause {name:"原发性腱索断裂"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
+MATCH (d:disease {name:"急性二尖瓣关闭不全"}),(c:cause {name:"继发性腱索断裂"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
+MATCH (d:disease {name:"急性二尖瓣关闭不全"}),(c:cause {name:"感染性心内膜炎或慢性瓣膜病变"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
+MATCH (d:disease {name:"急性二尖瓣关闭不全"}),(c:cause {name:"心肌梗死并发乳头肌功能不全或断裂"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
+MATCH (d:disease {name:"急性二尖瓣关闭不全"}),(c:cause {name:"创伤所致腿索或乳头肌断裂"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
+//3.3.2.2 慢性二尖瓣关闭不全
 CREATE (:cause {name:"扩张性心肌病"});
 CREATE (:cause {name:"冠心病"});
 CREATE (:cause {name:"梗阻性肥厚型心肌病"});
 CREATE (:cause {name:"乳头肌功能不全"});
-CREATE (:cause {name:"瓣膜脱垂"});
+CREATE (:cause {name:"瓣膜脱垂（腱索或乳头肌过长）"});
 CREATE (:cause {name:"结缔组织病"});
 CREATE (:cause {name:"先天性心脏病"});
 CREATE (:cause {name:"瓣环钙化"});
@@ -294,35 +343,96 @@ MATCH (d:disease {name:"慢性二尖瓣关闭不全"}),(c:cause {name:"扩张性
 MATCH (d:disease {name:"慢性二尖瓣关闭不全"}),(c:cause {name:"冠心病"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
 MATCH (d:disease {name:"慢性二尖瓣关闭不全"}),(c:cause {name:"梗阻性肥厚型心肌病"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
 MATCH (d:disease {name:"慢性二尖瓣关闭不全"}),(c:cause {name:"乳头肌功能不全"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
-MATCH (d:disease {name:"慢性二尖瓣关闭不全"}),(c:cause {name:"瓣膜脱垂"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
+MATCH (d:disease {name:"慢性二尖瓣关闭不全"}),(c:cause {name:"瓣膜脱垂（腱索或乳头肌过长）"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
 MATCH (d:disease {name:"慢性二尖瓣关闭不全"}),(c:cause {name:"结缔组织病"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
 MATCH (d:disease {name:"慢性二尖瓣关闭不全"}),(c:cause {name:"先天性心脏病"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
 MATCH (d:disease {name:"慢性二尖瓣关闭不全"}),(c:cause {name:"瓣叶-瓣环黏液样变性"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
 MATCH (d:disease {name:"慢性二尖瓣关闭不全"}),(c:cause {name:"瓣环钙化"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
 MATCH (d:disease {name:"慢性二尖瓣关闭不全"}),(c:cause {name:"风湿性损害"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
+//3.3.3 主动脉瓣狭窄
+CREATE (:cause {name:"先天性病变"});
+CREATE (:cause {name:"退行性病变"});
+CREATE (:cause {name:"炎症性病变"});
+MATCH (d:disease {name:"主动脉瓣狭窄"}),(c:cause {name:"先天性病变"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
+MATCH (d:disease {name:"主动脉瓣狭窄"}),(c:cause {name:"退行性病变"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
+MATCH (d:disease {name:"主动脉瓣狭窄"}),(c:cause {name:"炎症性病变"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
+//3.3.4.1 急性主动脉瓣关闭不全
+CREATE (:cause {name:"人工瓣膜撕裂"});
+CREATE (:cause {name:"胸部创伤致升主动脉根部、瓣叶支持结构和瓣叶破损或瓣叶脱垂"});
+CREATE (:cause {name:"主动脉夹层血肿使主动脉瓣环扩大，瓣叶或瓣环被夹层血肿撕裂"});
+MATCH (d:disease {name:"急性主动脉瓣关闭不全"}),(c:cause {name:"感染性心内膜炎"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
+MATCH (d:disease {name:"急性主动脉瓣关闭不全"}),(c:cause {name:"胸部创伤致升主动脉根部、瓣叶支持结构和瓣叶破损或瓣叶脱垂"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
+MATCH (d:disease {name:"急性主动脉瓣关闭不全"}),(c:cause {name:"主动脉夹层血肿使主动脉瓣环扩大，瓣叶或瓣环被夹层血肿撕裂"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
+MATCH (d:disease {name:"急性主动脉瓣关闭不全"}),(c:cause {name:"人工瓣膜撕裂"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
+//3.3.4.1 慢性主动脉瓣关闭不全
+CREATE (:cause {name:"风湿性心脏病合并主动脉瓣狭窄"});
+CREATE (:cause {name:"风湿性心脏病合并二尖瓣病变"});
+CREATE (:cause {name:"二叶式主动脉瓣穿孔"});
+CREATE (:cause {name:"主动脉瓣穿孔"});
+CREATE (:cause {name:"室间隔缺损伴主动脉瓣脱垂"});
+CREATE (:cause {name:"老年退行性钙化性主动脉瓣狭窄"});
+CREATE (:cause {name:"主动脉瓣黏液样变性"});
+CREATE (:cause {name:"Marfan综合征"});
+CREATE (:cause {name:"梅毒性主动脉炎"});
+CREATE (:cause {name:"高血压性主动脉环扩张"});
+CREATE (:cause {name:"特发性升主动脉扩张"});
+CREATE (:cause {name:"主动脉夹层形成"});
+CREATE (:cause {name:"强直性脊柱炎"});
+CREATE (:cause {name:"银屑病性关节炎"});
+MATCH (d:disease {name:"慢性主动脉瓣关闭不全"}),(c:cause {name:"风湿性心脏病"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
+MATCH (d:disease {name:"慢性主动脉瓣关闭不全"}),(c:cause {name:"风湿性心脏病合并二尖瓣病变"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
+MATCH (d:disease {name:"慢性主动脉瓣关闭不全"}),(c:cause {name:"风湿性心脏病合并主动脉瓣狭窄"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
+MATCH (d:disease {name:"慢性主动脉瓣关闭不全"}),(c:cause {name:"二叶式主动脉瓣穿孔"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
+MATCH (d:disease {name:"慢性主动脉瓣关闭不全"}),(c:cause {name:"主动脉瓣穿孔"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
+MATCH (d:disease {name:"慢性主动脉瓣关闭不全"}),(c:cause {name:"室间隔缺损伴主动脉瓣脱垂"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
+MATCH (d:disease {name:"慢性主动脉瓣关闭不全"}),(c:cause {name:"感染性心内膜炎"}) CREATE (c)<-[:disease_cause {comment:"常见病因",reference:"内科学第九版"}]-(d);
+MATCH (d:disease {name:"慢性主动脉瓣关闭不全"}),(c:cause {name:"老年退行性钙化性主动脉瓣狭窄"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
+MATCH (d:disease {name:"慢性主动脉瓣关闭不全"}),(c:cause {name:"主动脉瓣黏液样变性"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
+MATCH (d:disease {name:"慢性主动脉瓣关闭不全"}),(c:cause {name:"Marfan综合征"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
+MATCH (d:disease {name:"慢性主动脉瓣关闭不全"}),(c:cause {name:"梅毒性主动脉炎"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
+MATCH (d:disease {name:"慢性主动脉瓣关闭不全"}),(c:cause {name:"高血压性主动脉环扩张"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
+MATCH (d:disease {name:"慢性主动脉瓣关闭不全"}),(c:cause {name:"特发性升主动脉扩张"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
+MATCH (d:disease {name:"慢性主动脉瓣关闭不全"}),(c:cause {name:"主动脉夹层形成"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
+MATCH (d:disease {name:"慢性主动脉瓣关闭不全"}),(c:cause {name:"强直性脊柱炎"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
+MATCH (d:disease {name:"慢性主动脉瓣关闭不全"}),(c:cause {name:"银屑病性关节炎"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
+//3.3.5 多瓣膜病
+MATCH (d:disease {name:"多瓣膜病"}),(c:cause {name:"风湿性心脏病"}) CREATE (c)<-[:disease_cause {comment:"常见病因",reference:"内科学第九版"}]-(d);
+MATCH (d:disease {name:"多瓣膜病"}),(c:cause {name:"老年性退行性改变"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
+MATCH (d:disease {name:"多瓣膜病"}),(c:cause {name:"黏液样变性"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
+MATCH (d:disease {name:"多瓣膜病"}),(c:cause {name:"感染性心内膜炎"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
 
-CREATE (:cause {name:"感染性心内膜炎"});
-CREATE (:cause {name:"外伤"});
-CREATE (:cause {name:"人工瓣瓣周漏"});
-CREATE (:cause {name:"原发性腱索断裂"});
-CREATE (:cause {name:"继发性腱索断裂"});
-CREATE (:cause {name:"慢性瓣膜病"});
-CREATE (:cause {name:"心肌梗死并发乳头肌功能不全或断裂"});
-CREATE (:cause {name:"创伤所致腿索或乳头肌断裂"});
-MATCH (d:disease {name:"急性二尖瓣关闭不全"}),(c:cause {name:"感染性心内膜炎"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
-MATCH (d:disease {name:"急性二尖瓣关闭不全"}),(c:cause {name:"外伤"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
-MATCH (d:disease {name:"急性二尖瓣关闭不全"}),(c:cause {name:"人工瓣瓣周漏"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
-MATCH (d:disease {name:"急性二尖瓣关闭不全"}),(c:cause {name:"原发性腱索断裂"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
-MATCH (d:disease {name:"急性二尖瓣关闭不全"}),(c:cause {name:"继发性腱索断裂"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
-MATCH (d:disease {name:"急性二尖瓣关闭不全"}),(c:cause {name:"慢性瓣膜病"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
-MATCH (d:disease {name:"急性二尖瓣关闭不全"}),(c:cause {name:"心肌梗死并发乳头肌功能不全或断裂"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
-MATCH (d:disease {name:"急性二尖瓣关闭不全"}),(c:cause {name:"创伤所致腿索或乳头肌断裂"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
+//四、并发症
+//4.3.1 二尖瓣狭窄
+CREATE (:complication {name:"二尖瓣狭窄",complication:"心房颤动"});
+CREATE (:complication {name:"二尖瓣狭窄",complication:"急性肺水肿"});
+CREATE (:complication {name:"二尖瓣狭窄",complication:"血栓栓塞"});
+CREATE (:complication {name:"二尖瓣狭窄",complication:"右心衰竭"});
+CREATE (:complication {name:"二尖瓣狭窄",complication:"感染性心内膜炎"});
+CREATE (:complication {name:"二尖瓣狭窄",complication:"肺部感染"});
+MATCH (d1:disease {name:"二尖瓣狭窄"}),(d2:complication {name:"二尖瓣狭窄"}) CREATE (d1)-[:disease_complication {reference:"内科学第九版"}]->(d2);
+//4.3.2 二尖瓣关闭不全
+CREATE (:complication {name:"二尖瓣关闭不全",complication:"心力衰竭"});
+CREATE (:complication {name:"二尖瓣关闭不全",complication:"心房颤动"});
+CREATE (:complication {name:"二尖瓣关闭不全",complication:"感染性心内膜炎"});
+CREATE (:complication {name:"二尖瓣关闭不全",complication:"栓塞"});
+MATCH (d1:disease {name:"二尖瓣关闭不全"}),(d2:complication {name:"二尖瓣关闭不全"}) CREATE (d1)-[:disease_complication {reference:"内科学第九版"}]->(d2);
+//4.3.3 主动脉瓣狭窄
+CREATE (:complication {name:"主动脉瓣狭窄",complication:"心律失常"});
+CREATE (:complication {name:"主动脉瓣狭窄",complication:"心脏性猝死"});
+CREATE (:complication {name:"主动脉瓣狭窄",complication:"充血性心力衰竭"});
+CREATE (:complication {name:"主动脉瓣狭窄",complication:"感染性心内膜炎"});
+CREATE (:complication {name:"主动脉瓣狭窄",complication:"体循环栓塞"});
+CREATE (:complication {name:"主动脉瓣狭窄",complication:"胃肠道出血"});
+MATCH (d1:disease {name:"主动脉瓣狭窄"}),(d2:complication {name:"主动脉瓣狭窄"}) CREATE (d1)-[:disease_complication {reference:"内科学第九版"}]->(d2);
+//4.3.4 主动脉瓣关闭不全
+CREATE (:complication {name:"主动脉瓣关闭不全",complication:"感染性心内膜炎"});
+CREATE (:complication {name:"主动脉瓣关闭不全",complication:"心力衰竭"});
+CREATE (:complication {name:"主动脉瓣关闭不全",complication:"心力衰竭"});
+CREATE (:complication {name:"主动脉瓣关闭不全",complication:"心脏性猝死"});
+MATCH (d1:disease {name:"主动脉瓣关闭不全"}),(d2:complication {name:"主动脉瓣关闭不全"}) CREATE (d1)-[:disease_complication {reference:"内科学第九版"}]->(d2);
 
 
-
-
-
-//诱因
+//五、诱因
 CREATE (:inducement {name:"呼吸道感染"});
 CREATE (:inducement {name:"感染性心内膜炎"});
 CREATE (:inducement {name:"心房颤动"});
@@ -590,7 +700,9 @@ MATCH (d:disease {name:"心力衰竭"}),(m:mechanism {description:"利钠肽分�
 // MATCH (d:disease {english_name:"STEMI"}),(p:pathology {description:"左心室收缩与舒张功能障碍"}) CREATE (d)-[:pathology_show {reference:"内科学第九版"}]->(p);
 
 
-//症状symptom
+//七、临床表现
+
+
 CREATE (:symptom {characteristic:"心绞痛"});
 CREATE (:symptom {characteristic:"体力劳动或情绪激动诱发"});
 CREATE (:symptom {characteristic:"胸骨体后发作，可波及心前区，也可横贯前胸"});
@@ -999,131 +1111,200 @@ MATCH (d:disease {name:"右心衰竭"}),(s:symptom {characteristic:"肝淤血肿
 MATCH (d:disease {name:"右心衰竭"}),(s:symptom {characteristic:"心源性肝硬化"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
 MATCH (d:disease {name:"右心衰竭"}),(s:symptom {characteristic:"三尖瓣关闭不全的反流性杂音"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
 
-// CREATE (:symptom {characteristic:"呼吸困难"});
-CREATE (:symptom {characteristic:"静息性呼吸困难"});
-// CREATE (:symptom {characteristic:"夜间阵发性呼吸困难"});
-// CREATE (:symptom {characteristic:"端坐呼吸"});
-// CREATE (:symptom {characteristic:"咳嗽"});
-CREATE (:symptom {characteristic:"干咳无痰或泡沫痰"});
-CREATE (:symptom {characteristic:"并发感染时咳黏液样或浓痰"});
-CREATE (:symptom {characteristic:"大咯血"});
-CREATE (:symptom {characteristic:"痰中带血或血痰"});
-// CREATE (:symptom {characteristic:"咳粉红色泡沫痰"});
-CREATE (:symptom {characteristic:"血栓栓塞"});
-CREATE (:symptom {characteristic:"声音嘶哑"});
-CREATE (:symptom {characteristic:"吞咽困难"});
-CREATE (:symptom {characteristic:"食欲减退"});
-// CREATE (:symptom {characteristic:"腹胀"});
-// CREATE (:symptom {characteristic:"恶心"});
-CREATE (:symptom {characteristic:"二尖瓣面容",type:"视诊"});
-CREATE (:symptom {characteristic:"双颧绀红",type:"视诊"});
-CREATE (:symptom {characteristic:"收缩期抬举样搏动",type:"触诊"});
-// CREATE (:symptom {characteristic:"颈静脉怒张",type:"视诊"});
-// CREATE (:symptom {characteristic:"肝颈静脉回流征阳性"});
-// CREATE (:symptom {characteristic:"肝大",type:"触诊"});
-CREATE (:symptom {characteristic:"双下肢水肿",type:"触诊"});
-CREATE (:symptom {characteristic:"亢进的第一心音，呈拍击样",type:"心音听诊"});
-CREATE (:symptom {characteristic:"开瓣音",type:"心音听诊"});
-CREATE (:symptom {characteristic:"P2亢进和分裂",type:"心音听诊"});
-CREATE (:symptom {characteristic:"心尖区舒张中晚期低调的隆隆样杂音，呈递增型",type:"心音听诊"});
-CREATE (:symptom {characteristic:"胸骨左缘第2肋间可闻及递减型高调叹气样舒张早期杂音",type:"心音听诊"});
-CREATE (:symptom {characteristic:"Graham-Steel杂音",type:"心音听诊"});
-CREATE (:symptom {characteristic:"于胸骨左缘第4、5肋间闻及全收缩期吹风样杂音",type:"心音听诊"});
-MATCH (d:disease {name:"二尖瓣狭窄"}),(s:symptom {characteristic:"呼吸困难"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"二尖瓣狭窄"}),(s:symptom {characteristic:"静息性呼吸困难"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"二尖瓣狭窄"}),(s:symptom {characteristic:"夜间阵发性呼吸困难"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"二尖瓣狭窄"}),(s:symptom {characteristic:"端坐呼吸"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"二尖瓣狭窄"}),(s:symptom {characteristic:"咳嗽"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"二尖瓣狭窄"}),(s:symptom {characteristic:"干咳无痰或泡沫痰"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"二尖瓣狭窄"}),(s:symptom {characteristic:"并发感染时咳黏液样或浓痰"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"二尖瓣狭窄"}),(s:symptom {characteristic:"大咯血"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"二尖瓣狭窄"}),(s:symptom {characteristic:"痰中带血或血痰"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"二尖瓣狭窄"}),(s:symptom {characteristic:"血栓栓塞"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"二尖瓣狭窄"}),(s:symptom {characteristic:"声音嘶哑"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"二尖瓣狭窄"}),(s:symptom {characteristic:"吞咽困难"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"二尖瓣狭窄"}),(s:symptom {characteristic:"食欲减退"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"二尖瓣狭窄"}),(s:symptom {characteristic:"腹胀"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"二尖瓣狭窄"}),(s:symptom {characteristic:"恶心"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"二尖瓣狭窄"}),(s:symptom {characteristic:"胸痛"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"二尖瓣狭窄"}),(s:symptom {characteristic:"二尖瓣面容"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"二尖瓣狭窄"}),(s:symptom {characteristic:"双颧绀红"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"二尖瓣狭窄"}),(s:symptom {characteristic:"收缩期抬举样搏动"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"二尖瓣狭窄"}),(s:symptom {characteristic:"颈静脉怒张"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"二尖瓣狭窄"}),(s:symptom {characteristic:"肝颈静脉回流征阳性"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"二尖瓣狭窄"}),(s:symptom {characteristic:"肝大"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"二尖瓣狭窄"}),(s:symptom {characteristic:"双下肢水肿"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"二尖瓣狭窄"}),(s:symptom {characteristic:"亢进的第一心音，呈拍击样"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"二尖瓣狭窄"}),(s:symptom {characteristic:"开瓣音"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"二尖瓣狭窄"}),(s:symptom {characteristic:"P2亢进和分裂"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"二尖瓣狭窄"}),(s:symptom {characteristic:"心尖区舒张中晚期低调的隆隆样杂音，呈递增型"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"二尖瓣狭窄"}),(s:symptom {characteristic:"胸骨左缘第2肋间可闻及递减型高调叹气样舒张早期杂音"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"二尖瓣狭窄"}),(s:symptom {characteristic:"Graham-Steel杂音"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"二尖瓣狭窄"}),(s:symptom {characteristic:"于胸骨左缘第4、5肋间闻及全收缩期吹风样杂音"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
 
-// CREATE (:symptom {characteristic:"劳力性呼吸困难"});
-CREATE (:symptom {characteristic:"急性左心衰竭"});
-// CREATE (:symptom {characteristic:"急性肺水肿"});
-// CREATE (:symptom {characteristic:"心源性休克"});
-CREATE (:symptom {characteristic:"心尖抬举样搏动",type:"心音听诊"});
-CREATE (:symptom {characteristic:"肺动脉瓣区第二心音分裂",type:"心音听诊"});
-CREATE (:symptom {characteristic:"心尖区第四心音",type:"心音听诊"});
-// CREATE (:symptom {characteristic:"心尖区收缩期杂音",type:"心音听诊"});
-CREATE (:symptom {characteristic:"双肺干、湿啰音",type:"听诊"});
-MATCH (d:disease {name:"急性二尖瓣关闭不全"}),(s:symptom {characteristic:"劳力性呼吸困难"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"急性二尖瓣关闭不全"}),(s:symptom {characteristic:"急性左心衰竭"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"急性二尖瓣关闭不全"}),(s:symptom {characteristic:"急性左心衰竭"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"急性二尖瓣关闭不全"}),(s:symptom {characteristic:"心源性休克"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"急性二尖瓣关闭不全"}),(s:symptom {characteristic:"肺动脉瓣区第二心音分裂"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"急性二尖瓣关闭不全"}),(s:symptom {characteristic:"心尖抬举样搏动"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"急性二尖瓣关闭不全"}),(s:symptom {characteristic:"心尖区第四心音"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"急性二尖瓣关闭不全"}),(s:symptom {characteristic:"心尖区收缩期杂音"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"急性二尖瓣关闭不全"}),(s:symptom {characteristic:"双肺干、湿啰音"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
+//7.3.1 二尖瓣狭窄
+CREATE (:symptom {characteristic:"呼吸困难",inducement:"运动/情绪激动/妊娠/感染/快速性房颤",disease:"二尖瓣狭窄"});
+CREATE (:symptom {characteristic:"静息性呼吸困难",disease:"二尖瓣狭窄"});
+CREATE (:symptom {characteristic:"夜间阵发性呼吸困难",disease:"二尖瓣狭窄"});
+CREATE (:symptom {characteristic:"端坐呼吸",disease:"二尖瓣狭窄"});
+CREATE (:symptom {characteristic:"咳嗽",inducement:"夜间睡眠/劳动",disease:"二尖瓣狭窄"});
+CREATE (:symptom {characteristic:"干咳无痰或泡沫痰",inducement:"夜间睡眠/劳动",disease:"二尖瓣狭窄"});
+CREATE (:symptom {characteristic:"咳黏液样或浓痰",disease:"二尖瓣狭窄",occur_with:"感染"});
+CREATE (:symptom {characteristic:"大咯血",disease:"二尖瓣狭窄"});
+CREATE (:symptom {characteristic:"痰中带血或血痰",disease:"二尖瓣狭窄"});
+CREATE (:symptom {characteristic:"咳粉红色泡沫痰",disease:"二尖瓣狭窄"});
+CREATE (:symptom {characteristic:"咳胶冻状暗红色痰",occur_with:"心力衰竭",disease:"二尖瓣狭窄"});
+CREATE (:symptom {characteristic:"血栓栓塞",disease:"二尖瓣狭窄"});
+CREATE (:symptom {characteristic:"心房颤动",occur_with:"血栓栓塞",disease:"二尖瓣狭窄"});
+CREATE (:symptom {characteristic:"声音嘶哑",disease:"二尖瓣狭窄"});
+CREATE (:symptom {characteristic:"吞咽困难",disease:"二尖瓣狭窄"});
+CREATE (:symptom {characteristic:"食欲减退",occur_with:"右心室衰竭",disease:"二尖瓣狭窄"});
+CREATE (:symptom {characteristic:"腹胀",occur_with:"右心室衰竭",disease:"二尖瓣狭窄"});
+CREATE (:symptom {characteristic:"恶心",occur_with:"右心室衰竭",disease:"二尖瓣狭窄"});
+CREATE (:symptom {characteristic:"胸痛",disease:"二尖瓣狭窄"});
+CREATE (:symptom {characteristic:"二尖瓣面容",disease:"二尖瓣狭窄"});
+CREATE (:symptom {characteristic:"双颧绀红",disease:"二尖瓣狭窄"});
+CREATE (:symptom {characteristic:"剑突下收缩期抬举样搏动",occur_with:"右心室扩大",disease:"二尖瓣狭窄"});
+CREATE (:symptom {characteristic:"颈静脉怒张",occur_with:"右心衰竭",disease:"二尖瓣狭窄"});
+CREATE (:symptom {characteristic:"肝颈静脉回流征阳性",occur_with:"右心衰竭",disease:"二尖瓣狭窄"});
+CREATE (:symptom {characteristic:"肝大",occur_with:"右心衰竭",disease:"二尖瓣狭窄"});
+CREATE (:symptom {characteristic:"双下肢水肿",occur_with:"右心衰竭",disease:"二尖瓣狭窄"});
+CREATE (:symptom {characteristic:"亢进的第一心音，呈拍击样",disease:"二尖瓣狭窄"});
+CREATE (:symptom {characteristic:"开瓣音",disease:"二尖瓣狭窄"});
+CREATE (:symptom {characteristic:"P2亢进和分裂",occur_with:"肺动脉高压",disease:"二尖瓣狭窄"});
+CREATE (:symptom {characteristic:"心尖区舒张期隆隆样杂音",disease:"二尖瓣狭窄"});
+CREATE (:symptom {characteristic:"胸骨左缘第2肋间递减型高调叹气样舒张早期杂音（Graham-Steel杂音）",occur_with:"严重肺动脉高压",disease:"二尖瓣狭窄"});
+CREATE (:symptom {characteristic:"胸骨左缘第4、5肋间全收缩期吹风样杂音",occur_with:"右心室扩大",disease:"二尖瓣狭窄"});
+MATCH (d:disease {name:"二尖瓣狭窄"}),(s:symptom {disease:"二尖瓣狭窄"}) CREATE (d)-[:disease_symtom {reference:"内科学第九版"}]->(s);
+//7.3.2.1 急性二尖瓣关闭不全
+CREATE (:symptom {characteristic:"轻微劳力性呼吸困难",disease:"急性二尖瓣关闭不全"});
+CREATE (:symptom {characteristic:"急性左心衰竭",disease:"急性二尖瓣关闭不全"});
+CREATE (:symptom {characteristic:"急性肺水肿",disease:"急性二尖瓣关闭不全"});
+CREATE (:symptom {characteristic:"心源性休克",disease:"急性二尖瓣关闭不全"});
+CREATE (:symptom {characteristic:"心尖区抬举样搏动",disease:"急性二尖瓣关闭不全"});
+CREATE (:symptom {characteristic:"肺动脉瓣区第二心音分裂",disease:"急性二尖瓣关闭不全"});
+CREATE (:symptom {characteristic:"心尖区第四心音",disease:"急性二尖瓣关闭不全"});
+CREATE (:symptom {characteristic:"心尖区收缩期杂音",disease:"急性二尖瓣关闭不全",comment:"主要体征"});
+CREATE (:symptom {characteristic:"双肺干、湿啰音",disease:"急性二尖瓣关闭不全"});
+MATCH (d:disease {name:"急性二尖瓣关闭不全"}),(s:symptom {disease:"急性二尖瓣关闭不全"}) CREATE (d)-[:disease_symtom {reference:"内科学第九版"}]->(s);
+//7.3.2.2 慢性二尖瓣关闭不全
+CREATE (:symptom {characteristic:"疲乏无力",disease:"慢性二尖瓣关闭不全"});
+CREATE (:symptom {characteristic:"活动耐力下降",disease:"慢性二尖瓣关闭不全"});
+CREATE (:symptom {characteristic:"劳力性呼吸困难",disease:"慢性二尖瓣关闭不全"});
+CREATE (:symptom {characteristic:"静息性呼吸困难",disease:"慢性二尖瓣关闭不全"});
+CREATE (:symptom {characteristic:"夜间阵发性呼吸困难",disease:"慢性二尖瓣关闭不全"});
+CREATE (:symptom {characteristic:"端坐呼吸",disease:"慢性二尖瓣关闭不全"});
+CREATE (:symptom {characteristic:"腹胀",disease:"慢性二尖瓣关闭不全",occur_with:"心力衰竭"});
+CREATE (:symptom {characteristic:"食欲缺乏",disease:"慢性二尖瓣关闭不全",occur_with:"心力衰竭"});
+CREATE (:symptom {characteristic:"肝脏瘀血肿大",disease:"慢性二尖瓣关闭不全",occur_with:"心力衰竭"});
+CREATE (:symptom {characteristic:"水肿",disease:"慢性二尖瓣关闭不全",occur_with:"心力衰竭"});
+CREATE (:symptom {characteristic:"胸腔积液",disease:"慢性二尖瓣关闭不全",occur_with:"心力衰竭"});
+CREATE (:symptom {characteristic:"腹腔积液",disease:"慢性二尖瓣关闭不全",occur_with:"心力衰竭"});
+CREATE (:symptom {characteristic:"心绞痛",disease:"慢性二尖瓣关闭不全",occur_with:"冠状动脉疾病"});
+CREATE (:symptom {characteristic:"心界向左下扩大",disease:"慢性二尖瓣关闭不全"});
+CREATE (:symptom {characteristic:"心尖搏动向下向左移位",disease:"慢性二尖瓣关闭不全"});
+CREATE (:symptom {characteristic:"收缩期可触及高动力性心尖搏动",disease:"慢性二尖瓣关闭不全"});
+CREATE (:symptom {characteristic:"颈静脉怒张",disease:"慢性二尖瓣关闭不全",occur_with:"右心衰竭"});
+CREATE (:symptom {characteristic:"肝颈回流征阳性",disease:"慢性二尖瓣关闭不全",occur_with:"右心衰竭"});
+CREATE (:symptom {characteristic:"肝大",disease:"慢性二尖瓣关闭不全",occur_with:"右心衰竭"});
+CREATE (:symptom {characteristic:"双下肢水肿",disease:"慢性二尖瓣关闭不全",occur_with:"右心衰竭"});
+CREATE (:symptom {characteristic:"第一心音减弱",disease:"慢性二尖瓣关闭不全"});
+CREATE (:symptom {characteristic:"第二心音分裂",disease:"慢性二尖瓣关闭不全"});
+CREATE (:symptom {characteristic:"低调第三心音",disease:"慢性二尖瓣关闭不全"});
+CREATE (:symptom {characteristic:"心尖区全收缩期吹风样杂音",disease:"慢性二尖瓣关闭不全",comment:"典型杂音"});
+CREATE (:symptom {characteristic:"收缩期震颤",disease:"慢性二尖瓣关闭不全"});
+MATCH (d:disease {name:"慢性二尖瓣关闭不全"}),(s:symptom {disease:"慢性二尖瓣关闭不全"}) CREATE (d)-[:disease_symtom {reference:"内科学第九版"}]->(s);
+//7.3.3 主动脉瓣狭窄
+CREATE (:symptom {characteristic:"劳力性呼吸困难",disease:"主动脉瓣狭窄"});
+CREATE (:symptom {characteristic:"夜间阵发性呼吸困难",disease:"主动脉瓣狭窄"});
+CREATE (:symptom {characteristic:"端坐呼吸",disease:"主动脉瓣狭窄"});
+CREATE (:symptom {characteristic:"急性肺水肿",disease:"主动脉瓣狭窄"});
+CREATE (:symptom {characteristic:"心绞痛",inducement:"运动",mitigation:"休息及含服硝酸甘油可缓解",disease:"主动脉瓣狭窄"});
+CREATE (:symptom {characteristic:"晕厥",disease:"主动脉瓣狭窄"});
+CREATE (:symptom {characteristic:"黑矇",disease:"主动脉瓣狭窄"});
+CREATE (:symptom {characteristic:"心界正常或轻度向左扩大",disease:"主动脉瓣狭窄"});
+CREATE (:symptom {characteristic:"心尖区收缩期抬举样搏动",disease:"主动脉瓣狭窄"});
+CREATE (:symptom {characteristic:"收缩压降低",disease:"主动脉瓣狭窄"});
+CREATE (:symptom {characteristic:"脉压减小",disease:"主动脉瓣狭窄"});
+CREATE (:symptom {characteristic:"脉搏细弱",disease:"主动脉瓣狭窄"});
+CREATE (:symptom {characteristic:"颈动脉搏动明显延迟",disease:"主动脉瓣狭窄"});
+CREATE (:symptom {characteristic:"第一心音正常",disease:"主动脉瓣狭窄"});
+CREATE (:symptom {characteristic:"主动脉瓣第二心音成分减弱或消失",disease:"主动脉瓣狭窄"});
+CREATE (:symptom {characteristic:"第二心音中主动脉瓣成分延迟",disease:"主动脉瓣狭窄"});
+CREATE (:symptom {characteristic:"第二心音中主动脉瓣成分呈逆分裂",disease:"主动脉瓣狭窄"});
+CREATE (:symptom {characteristic:"明显的第四心音",disease:"主动脉瓣狭窄"});
+CREATE (:symptom {characteristic:"主动脉瓣射流音",disease:"主动脉瓣狭窄"});
+CREATE (:symptom {characteristic:"粗糙而响亮的射流性杂音",disease:"主动脉瓣狭窄",comment:"典型杂音"});
+MATCH (d:disease {name:"主动脉瓣狭窄"}),(s:symptom {disease:"主动脉瓣狭窄"}) CREATE (d)-[:disease_symtom {reference:"内科学第九版"}]->(s);
+//7.3.4.1 急性主动脉瓣关闭不全
+CREATE (:symptom {characteristic:"呼吸困难",disease:"急性主动脉瓣关闭不全"});
+CREATE (:symptom {characteristic:"不能平卧",disease:"急性主动脉瓣关闭不全"});
+CREATE (:symptom {characteristic:"全身大汗",disease:"急性主动脉瓣关闭不全"});
+CREATE (:symptom {characteristic:"频繁咳嗽",disease:"急性主动脉瓣关闭不全"});
+CREATE (:symptom {characteristic:"咳白色或粉红色泡沫痰",disease:"急性主动脉瓣关闭不全"});
+CREATE (:symptom {characteristic:"烦躁不安",disease:"急性主动脉瓣关闭不全"});
+CREATE (:symptom {characteristic:"神志模糊",disease:"急性主动脉瓣关闭不全"});
+CREATE (:symptom {characteristic:"昏迷",disease:"急性主动脉瓣关闭不全"});
+CREATE (:symptom {characteristic:"面色灰暗",disease:"急性主动脉瓣关闭不全"});
+CREATE (:symptom {characteristic:"唇甲发绀",disease:"急性主动脉瓣关闭不全"});
+CREATE (:symptom {characteristic:"脉搏细数",disease:"急性主动脉瓣关闭不全"});
+CREATE (:symptom {characteristic:"血压下降",disease:"急性主动脉瓣关闭不全"});
+CREATE (:symptom {characteristic:"休克",disease:"急性主动脉瓣关闭不全"});
+CREATE (:symptom {characteristic:"第一减弱或消失",disease:"急性主动脉瓣关闭不全"});
+CREATE (:symptom {characteristic:"病理性第三心音和第四心音",disease:"急性主动脉瓣关闭不全"});
+CREATE (:symptom {characteristic:"舒张期杂音柔和、短促、低音调",disease:"急性主动脉瓣关闭不全"});
+CREATE (:symptom {characteristic:"心尖搏动正常",disease:"急性主动脉瓣关闭不全"});
+CREATE (:symptom {characteristic:"肺部哮鸣音",disease:"急性主动脉瓣关闭不全"});
+CREATE (:symptom {characteristic:"肺底细小水泡音",disease:"急性主动脉瓣关闭不全"});
+CREATE (:symptom {characteristic:"慢肺水泡音",disease:"急性主动脉瓣关闭不全"});
+MATCH (d:disease {name:"急性主动脉瓣关闭不全"}),(s:symptom {disease:"急性主动脉瓣关闭不全"}) CREATE (d)-[:disease_symtom {reference:"内科学第九版"}]->(s);
+//7.3.4.2 慢性主动脉瓣关闭不全
+CREATE (:symptom {characteristic:"心悸",disease:"慢性主动脉瓣关闭不全"});
+CREATE (:symptom {characteristic:"心前区不适",disease:"慢性主动脉瓣关闭不全"});
+CREATE (:symptom {characteristic:"头颈部强烈动脉搏动感",disease:"慢性主动脉瓣关闭不全"});
+CREATE (:symptom {characteristic:"劳力性呼吸困难",disease:"慢性主动脉瓣关闭不全",occur_with:"心力衰竭"});
+CREATE (:symptom {characteristic:"夜间阵发性呼吸困难",disease:"慢性主动脉瓣关闭不全",occur_with:"心力衰竭"});
+CREATE (:symptom {characteristic:"端坐呼吸",disease:"慢性主动脉瓣关闭不全",occur_with:"心力衰竭"});
+CREATE (:symptom {characteristic:"胸痛",disease:"慢性主动脉瓣关闭不全"});
+CREATE (:symptom {characteristic:"头晕",disease:"慢性主动脉瓣关闭不全"});
+CREATE (:symptom {characteristic:"眩晕",disease:"慢性主动脉瓣关闭不全"});
+CREATE (:symptom {characteristic:"面色苍白",disease:"慢性主动脉瓣关闭不全"});
+CREATE (:symptom {characteristic:"头随心搏摆动。 ",disease:"慢性主动脉瓣关闭不全"});
+CREATE (:symptom {characteristic:"心尖搏动向左下移位",disease:"慢性主动脉瓣关闭不全"});
+CREATE (:symptom {characteristic:"心界向左下扩大",disease:"慢性主动脉瓣关闭不全"});
+CREATE (:symptom {characteristic:"颈动脉搏动明显增强",disease:"慢性主动脉瓣关闭不全"});
+CREATE (:symptom {characteristic:"收缩期震颤",disease:"慢性主动脉瓣关闭不全"});
+CREATE (:symptom {characteristic:"第一音减弱",disease:"慢性主动脉瓣关闭不全"});
+CREATE (:symptom {characteristic:"主动脉瓣区第二心音减弱或消失",disease:"慢性主动脉瓣关闭不全"});
+CREATE (:symptom {characteristic:"心尖区第三心音",disease:"慢性主动脉瓣关闭不全"});
+CREATE (:symptom {characteristic:"主动脉瓣区舒张期杂音",disease:"慢性主动脉瓣关闭不全"});
+CREATE (:symptom {characteristic:"动脉收缩压增高",disease:"慢性主动脉瓣关闭不全"});
+CREATE (:symptom {characteristic:"舒张压降低",disease:"慢性主动脉瓣关闭不全"});
+CREATE (:symptom {characteristic:"脉压增宽",disease:"慢性主动脉瓣关闭不全"});
+CREATE (:symptom {characteristic:"点头征（De Musset征）",disease:"慢性主动脉瓣关闭不全"});
+CREATE (:symptom {characteristic:"水冲脉",disease:"慢性主动脉瓣关闭不全"});
+CREATE (:symptom {characteristic:"股动脉枪击音（Traube征）",disease:"慢性主动脉瓣关闭不全"});
+CREATE (:symptom {characteristic:"毛细血管搏动征",disease:"慢性主动脉瓣关闭不全"});
+CREATE (:symptom {characteristic:"双期杂音（Duroziez双重音）",disease:"慢性主动脉瓣关闭不全"});
+MATCH (d:disease {name:"慢性主动脉瓣关闭不全"}),(s:symptom {disease:"慢性主动脉瓣关闭不全"}) CREATE (d)-[:disease_symtom {reference:"内科学第九版"}]->(s);
+//7.3.5.1 二尖瓣狭窄伴主动脉瓣关闭不全
+CREATE (:symptom {characteristic:"二尖瓣舒张期杂音可减弱或消失",disease:"二尖瓣狭窄伴主动脉瓣关闭不全"});
+CREATE (:symptom {characteristic:"周围血管征不明显",disease:"二尖瓣狭窄伴主动脉瓣关闭不全"});
+MATCH (d:disease {name:"二尖瓣狭窄伴主动脉瓣关闭不全"}),(s:symptom {disease:"二尖瓣狭窄伴主动脉瓣关闭不全"}) CREATE (d)-[:disease_symtom {reference:"内科学第九版"}]->(s);
+//7.3.5.2 二尖瓣狭窄伴主动脉瓣狭窄
+CREATE (:symptom {characteristic:"心绞痛不明显",disease:"二尖瓣狭窄伴主动脉瓣狭窄"});
+MATCH (d:disease {name:"二尖瓣狭窄伴主动脉瓣狭窄"}),(s:symptom {disease:"二尖瓣狭窄伴主动脉瓣狭窄"}) CREATE (d)-[:disease_symtom {reference:"内科学第九版"}]->(s);
+//7.3.5.3 主动脉瓣狭窄伴二尖瓣关闭不全
+CREATE (:symptom {characteristic:"肺淤血早期发生",disease:"主动脉瓣狭窄伴二尖瓣关闭不全"});
+CREATE (:symptom {characteristic:"短期发生左心衰竭",disease:"主动脉瓣狭窄伴二尖瓣关闭不全"});
+MATCH (d:disease {name:"主动脉瓣狭窄伴二尖瓣关闭不全"}),(s:symptom {disease:"主动脉瓣狭窄伴二尖瓣关闭不全"}) CREATE (d)-[:disease_symtom {reference:"内科学第九版"}]->(s);
+//7.3.5.4 二尖瓣关闭不全伴主动脉瓣关闭不全 
+CREATE (:symptom {characteristic:"较早发生左心室衰竭",disease:"二尖瓣关闭不全伴主动脉瓣关闭不全"});
+MATCH (d:disease {name:"二尖瓣关闭不全伴主动脉瓣关闭不全"}),(s:symptom {disease:"二尖瓣关闭不全伴主动脉瓣关闭不全"}) CREATE (d)-[:disease_symtom {reference:"内科学第九版"}]->(s);
 
-CREATE (:symptom {characteristic:"疲乏无力"});
-CREATE (:symptom {characteristic:"活动耐力下降"});
-// CREATE (:symptom {characteristic:"腹胀"});
-// CREATE (:symptom {characteristic:"食欲缺乏"});
-CREATE (:symptom {characteristic:"肝脏瘀血肿大"});
-// CREATE (:symptom {characteristic:"水肿"});
-// CREATE (:symptom {characteristic:"胸腔积液"});
-CREATE (:symptom {characteristic:"腹腔积液"});
-// CREATE (:symptom {characteristic:"心绞痛"});
-CREATE (:symptom {characteristic:"心界向左下扩大"});
-CREATE (:symptom {characteristic:"心尖搏动向下向左移位"});
-CREATE (:symptom {characteristic:"收缩期可触及高动力性心尖搏动"});
-CREATE (:symptom {characteristic:"颈静脉怒张",complicate:"右心衰竭"});
-CREATE (:symptom {characteristic:"肝颈回流征阳性",complicate:"右心衰竭"});
-CREATE (:symptom {characteristic:"肝大",complicate:"右心衰竭"});
-CREATE (:symptom {characteristic:"双下肢水肿",complicate:"右心衰竭"});
-CREATE (:symptom {characteristic:"第一心音减弱"});
-CREATE (:symptom {characteristic:"第二心音分裂"});
-CREATE (:symptom {characteristic:"低调第三心音"});
-CREATE (:symptom {characteristic:"心尖区全收缩期吹风样杂音"});
-CREATE (:symptom {characteristic:"收缩期震颤"});
+//八、实验室和其他检查
 
-MATCH (d:disease {name:"慢性二尖瓣关闭不全"}),(s:symptom {characteristic:"疲乏无力"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"慢性二尖瓣关闭不全"}),(s:symptom {characteristic:"活动耐力下降"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"慢性二尖瓣关闭不全"}),(s:symptom {characteristic:"腹胀"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"慢性二尖瓣关闭不全"}),(s:symptom {characteristic:"食欲缺乏"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"慢性二尖瓣关闭不全"}),(s:symptom {characteristic:"肝脏瘀血肿大"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"慢性二尖瓣关闭不全"}),(s:symptom {characteristic:"水肿"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"慢性二尖瓣关闭不全"}),(s:symptom {characteristic:"胸腔积液"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"慢性二尖瓣关闭不全"}),(s:symptom {characteristic:"腹腔积液"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"慢性二尖瓣关闭不全"}),(s:symptom {characteristic:"心绞痛"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"慢性二尖瓣关闭不全"}),(s:symptom {characteristic:"心界向左下扩大"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"慢性二尖瓣关闭不全"}),(s:symptom {characteristic:"心尖搏动向下向左移位"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"慢性二尖瓣关闭不全"}),(s:symptom {characteristic:"收缩期可触及高动力性心尖搏动"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"慢性二尖瓣关闭不全"}),(s:symptom {characteristic:"颈静脉怒张",complicate:"右心衰竭"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"慢性二尖瓣关闭不全"}),(s:symptom {characteristic:"肝颈回流征阳性",complicate:"右心衰竭"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"慢性二尖瓣关闭不全"}),(s:symptom {characteristic:"肝大",complicate:"右心衰竭"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"慢性二尖瓣关闭不全"}),(s:symptom {characteristic:"双下肢水肿",complicate:"右心衰竭"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"慢性二尖瓣关闭不全"}),(s:symptom {characteristic:"第一心音减弱"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"慢性二尖瓣关闭不全"}),(s:symptom {characteristic:"第二心音分裂"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"慢性二尖瓣关闭不全"}),(s:symptom {characteristic:"低调第三心音"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"慢性二尖瓣关闭不全"}),(s:symptom {characteristic:"心尖区全收缩期吹风样杂音"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-MATCH (d:disease {name:"慢性二尖瓣关闭不全"}),(s:symptom {characteristic:"收缩期震颤"}) CREATE (d)-[:patient_show {reference:"内科学第九版"}]->(s);
-
-
+//8.3.1 二尖瓣狭窄
+CREATE (:examination {name:"X线检查",information:"肺静脉压增高导致肺淤血的迹象/左心房扩大",disease:"二尖瓣狭窄"});
+CREATE (:examination {name:"心电图",information:"左心房扩大/QRS波群示电轴右偏/和右心室肥厚表现/房颤",disease:"二尖瓣狭窄"});
+CREATE (:examination {name:"M型超声心动图",information:"二尖瓣前叶呈“城墙样”改变（EF斜率降低，A峰消失）/后叶与前叶同向运动/瓣叶回声增强",disease:"二尖瓣狭窄"});
+CREATE (:examination {name:"二维超声",information:"瓣叶活动度/瓣叶厚度/瓣叶钙化/瓣膜病变",disease:"二尖瓣狭窄"});
+CREATE (:examination {name:"经食管超声",information:"左心耳及左心房附壁血栓的检出",disease:"二尖瓣狭窄"});
+CREATE (:examination {name:"彩色多普勒血流显像",information:"二尖瓣狭窄的射流",disease:"二尖瓣狭窄"});
+CREATE (:examination {name:"连续波或脉冲波多普勒",information:"二尖瓣狭窄严重程度",disease:"二尖瓣狭窄"});
+MATCH (d:disease {name:"二尖瓣狭窄"}),(rt:examination {disease:"二尖瓣狭窄"}) CREATE (d)-[:disease_examination {reference:"内科学第九版"}]->(rt);
+//8.3.2 二尖瓣关闭不全
+CREATE (:examination {name:"X线检查",disease:"二尖瓣关闭不全"});
+CREATE (:examination {name:"心电图",disease:"二尖瓣关闭不全"});
+CREATE (:examination {name:"M型超声心动图",information:"左心室超容量负荷改变",disease:"二尖瓣关闭不全"});
+CREATE (:examination {name:"二维超声心动图",information:"二尖瓣装置的形态特征",disease:"二尖瓣关闭不全"});
+CREATE (:examination {name:"脉冲多普勒超声",information:"确诊二尖瓣反流",disease:"二尖瓣关闭不全"});
+CREATE (:examination {name:"彩色多普勒血流显像",information:"像诊断二尖瓣关闭不全",disease:"二尖瓣关闭不全"});
+MATCH (d:disease {name:"二尖瓣关闭不全"}),(rt:examination {disease:"二尖瓣关闭不全"}) CREATE (d)-[:disease_examination {reference:"内科学第九版"}]->(rt);
+//8.3.3 主动脉瓣狭窄
+CREATE (:examination {name:"X线检查",information:"左心房轻度增大/升主动脉扩张/主动脉瓣膜钙化",disease:"主动脉瓣狭窄"});
+CREATE (:examination {name:"心电图",information:"QRS波群电压增高伴轻度ST-T改变/左心室肥厚伴劳损/左心房增大",disease:"主动脉瓣狭窄"});
+CREATE (:examination {name:"二维超声心动图",information:"主动脉瓣瓣叶增厚/瓣膜钙化/瓣叶收缩期开放幅度减小（<15mm）, 开放速度减慢/左心室后壁及室间隔对称性肥厚/左心房增大/主动脉根部狭窄后扩张/二叶、三叶主动脉瓣畸形",disease:"主动脉瓣狭窄"});
+CREATE (:examination {name:"彩色多普勒超声心动图",information:"血流于瓣口下方加速形成五彩镶嵌的射流",disease:"主动脉瓣狭窄"});
+CREATE (:examination {name:"连续多普勒",information:"心脏及血管内的血流速度/狭窄程度",disease:"主动脉瓣狭窄"});
+MATCH (d:disease {name:"主动脉瓣狭窄"}),(rt:examination {disease:"主动脉瓣狭窄"}) CREATE (d)-[:disease_examination {reference:"内科学第九版"}]->(rt);
+//8.3.4 主动脉瓣关闭不全
+CREATE (:examination {name:"X线检查",information:"靴型心/肺淤血/肺水肿",disease:"主动脉瓣关闭不全"});
+CREATE (:examination {name:"心电图",information:"左心室肥厚劳损伴电轴左偏/心室内传导阻滞/房性心律失常/室性心律失常/窦性心动过速/非特异性ST-T改变",disease:"主动脉瓣关闭不全"});
+CREATE (:examination {name:"M型超声心动图",information:"舒张期二尖瓣前叶快速高频的振动",disease:"主动脉瓣关闭不全"});
+CREATE (:examination {name:"二维超声",information:"主动脉瓣关闭时不能合拢",disease:"主动脉瓣关闭不全"});
+CREATE (:examination {name:"多普勒超声",information:"主动脉瓣下方（左心室流出道）探及全舒张期反流",disease:"主动脉瓣关闭不全"});
+MATCH (d:disease {name:"主动脉瓣狭窄"}),(rt:examination {disease:"主动脉瓣关闭不全"}) CREATE (d)-[:disease_examination {reference:"内科学第九版"}]->(rt);
 
 //辅助检查
 CREATE (:examination {name:"心肌肌钙蛋白I",english_name:"cTnI",type:"心肌损伤标志物"});
@@ -2109,9 +2290,20 @@ MATCH (d:disease {name:"急性心力衰竭"}),(t:treatment {name:"主动脉内�
 MATCH (d:disease {name:"急性心力衰竭"}),(t:treatment {name:"体外膜式氧合"}) CREATE (t)-[:cure {reference:"内科学第九版"}]->(d);
 MATCH (d:disease {name:"急性心力衰竭"}),(t:treatment {name:"可植入式电动左心室辅助泵Impella"}) CREATE (t)-[:cure {reference:"内科学第九版"}]->(d);
 
-CREATE (:treatment {name:"经皮球囊二尖瓣成形术",english_name:"PBMV"});
-CREATE (:treatment {name:"二尖瓣分离术"});
-CREATE (:treatment {name:"人工瓣膜置换术"});
-MATCH (d:disease {name:"二尖瓣狭窄"}),(t:treatment {name:"经皮球囊二尖瓣成形术"}) CREATE (t)-[:cure {reference:"内科学第九版"}]->(d);
-MATCH (d:disease {name:"二尖瓣狭窄"}),(t:treatment {name:"二尖瓣分离术"}) CREATE (t)-[:cure {reference:"内科学第九版"}]->(d);
-MATCH (d:disease {name:"二尖瓣狭窄"}),(t:treatment {name:"人工瓣膜置换术"}) CREATE (t)-[:cure {reference:"内科学第九版"}]->(d);
+//十、手术治疗
+//10.3.1 二尖瓣狭窄
+CREATE (:operation {name:"经皮球囊二尖瓣成形术",english_name:"PBMV",indication:"单纯的二尖瓣狭窄病人",disease:"二尖瓣狭窄"});
+CREATE (:operation {name:"二尖瓣分离术",indication:"瓣叶严重钙化/病变累及腱索和乳头肌/左心房内有血栓者"});
+CREATE (:operation {name:"人工瓣膜置换术",indication:"严重瓣叶和瓣下结构钙化、畸形，不宜做经皮球囊二尖瓣成形术或分离术者/二尖瓣狭窄合并明显二尖瓣关闭不全者"});
+MATCH (d:disease {name:"二尖瓣狭窄"}),(t:operation {disease:"二尖瓣狭窄"}) CREATE (d)-[:disease_operation {reference:"内科学第九版"}]->(t);
+
+//10.3.2 二尖瓣关闭不全
+
+//10.3.3 主动脉瓣狭窄
+CREATE (:operation {name:"人工瓣膜置换术",indication:"重度狭窄伴心绞痛晕厥或心力衰竭症状的病人/无症状病人伴有有进行性心脏增大和（或）左心室功能进行性减退，活动时血压下降",disease:"主动脉瓣狭窄"});
+CREATE (:operation {name:"直视下主动脉瓣分离术",indication:"儿童和青少年的非钙化性先天性主动脉瓣严重狭窄者/无症状者",disease:"主动脉瓣狭窄"});
+CREATE (:operation {name:"经皮主动脉瓣球囊成形术",indication:"由于严重主动脉瓣狭窄的心源性休克/严重主动脉瓣狭窄需急诊非心脏手术治疗/严重主动脉瓣狭窄的妊娠妇女/严重主动脉瓣狭窄，拒绝手术治疗的病人",disease:"主动脉瓣狭窄"});
+CREATE (:operation {name:"经皮主动脉瓣置换术",english_name:"TAVI",indication:"不适合外科手术的高危病人（如极高龄、慢性肺部疾病、肾衰竭、贫血、肿瘤）",disease:"主动脉瓣狭窄"});
+MATCH (d:disease {name:"主动脉瓣狭窄"}),(t:operation {disease:"主动脉瓣狭窄"}) CREATE (d)-[:disease_operation {reference:"内科学第九版"}]->(t);
+
+//10.3.4 主动脉瓣关闭不全
