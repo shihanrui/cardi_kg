@@ -525,184 +525,41 @@ MATCH (d:disease {name:"冠状动脉痉挛"}),(c:inducement {name:"吸烟"}) CRE
 MATCH (d:disease {name:"冠状动脉痉挛"}),(c:inducement {name:"酒精"}) CREATE (c)<-[:disease_inducement {reference:"内科学第九版"}]-(d);
 MATCH (d:disease {name:"冠状动脉痉挛"}),(c:inducement {name:"毒品"}) CREATE (c)<-[:disease_inducement {reference:"内科学第九版"}]-(d);
 
-//mechanism
-// CREATE (:mechanism {description:"暂时的缺血缺氧"});
-// CREATE (:mechanism {description:"持续严重的心肌缺血"});
+//五、诊断
+
+//6.3.4 主动脉关闭不全
+
+//六、鉴别诊断
+
+//6.3.1 二尖瓣狭窄
+CREATE (:differential_diagnosis {name:"主动脉瓣关闭不全",symptom:"心尖部舒张期隆隆样杂音",disease:"二尖瓣狭窄"});
+CREATE (:differential_diagnosis {name:"左心房黏液瘤",symptom:"心尖部舒张期隆隆样杂音",disease:"二尖瓣狭窄"});
+CREATE (:differential_diagnosis {name:"经二尖瓣口血流增加",symptom:"心尖部舒张期隆隆样杂音",disease:"二尖瓣狭窄"});
+MATCH (d:disease {name:"二尖瓣狭窄"}),(dd:differential_diagnosis {disease:"二尖瓣狭窄"}) CREATE (d)-[:disease_differential_diagnosis {reference:"内科学第九版"}]->(dd);
+//6.3.2 二尖瓣关闭不全
+CREATE (:differential_diagnosis {name:"三尖瓣关闭不全",symptom:"收缩期杂音",disease:"二尖瓣关闭不全"});
+CREATE (:differential_diagnosis {name:"室间隔缺损",symptom:"收缩期杂音",disease:"二尖瓣关闭不全"});
+CREATE (:differential_diagnosis {name:"主动脉瓣狭窄",symptom:"收缩期杂音",disease:"二尖瓣关闭不全"});
+CREATE (:differential_diagnosis {name:"梗阻性肥厚型心肌病",symptom:"收缩期杂音",disease:"二尖瓣关闭不全"});
+CREATE (:differential_diagnosis {name:"肺动脉瓣狭窄",symptom:"收缩期杂音",disease:"二尖瓣关闭不全"});
+MATCH (d:disease {name:"二尖瓣关闭不全"}),(dd:differential_diagnosis {disease:"二尖瓣关闭不全"}) CREATE (d)-[:disease_differential_diagnosis {reference:"内科学第九版"}]->(dd);
+//6.3.3 主动脉狭窄
+CREATE (:differential_diagnosis {name:"梗阻性肥厚型心肌病",symptom:"收缩期杂音",disease:"主动脉狭窄"});
+CREATE (:differential_diagnosis {name:"先天性主动脉瓣上狭窄",symptom:"收缩期杂音",disease:"主动脉狭窄"});
+CREATE (:differential_diagnosis {name:"先天性主动脉瓣下狭窄",symptom:"收缩期杂音",disease:"主动脉狭窄"});
+CREATE (:differential_diagnosis {name:"先天性主动脉瓣下狭窄",symptom:"收缩期杂音",disease:"主动脉狭窄"});
+CREATE (:differential_diagnosis {name:"二尖瓣关闭不全",symptom:"收缩期杂音",disease:"主动脉狭窄"});
+CREATE (:differential_diagnosis {name:"三尖瓣关闭不全",symptom:"收缩期杂音",disease:"主动脉狭窄"});
+CREATE (:differential_diagnosis {name:"室间隔缺损",symptom:"收缩期杂音",disease:"主动脉狭窄"});
+MATCH (d:disease {name:"主动脉狭窄"}),(dd:differential_diagnosis {disease:"主动脉狭窄"}) CREATE (d)-[:disease_differential_diagnosis {reference:"内科学第九版"}]->(dd);
+//6.3.4 主动脉关闭不全
+CREATE (:differential_diagnosis {name:"二尖瓣狭窄",symptom:"主动脉瓣关闭不全杂音",disease:"主动脉关闭不全"});
+MATCH (d:disease {name:"主动脉关闭不全"}),(dd:differential_diagnosis {disease:"主动脉关闭不全"}) CREATE (d)-[:disease_differential_diagnosis {reference:"内科学第九版"}]->(dd);
 
 
-CREATE (:mechanism {description:"冠状动脉固定狭窄"});
-CREATE (:mechanism {description:"心脏负荷增加"});
-CREATE (:mechanism {description:"心率增快"});
-CREATE (:mechanism {description:"心肌张力增加"});
-CREATE (:mechanism {description:"心肌收缩力增加"});
-CREATE (:mechanism {description:"冠状动脉供血不足"});
-CREATE (:mechanism {description:"心肌耗氧量增加"});
-MATCH (m:mechanism {description:"心脏负荷增加"}),(c:inducement {name:"体力劳动"}) CREATE (c)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m);
-MATCH (m:mechanism {description:"心脏负荷增加"}),(c:inducement {name:"情绪激动"}) CREATE (c)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m);
-MATCH (m:mechanism {description:"心脏负荷增加"}),(c:inducement {name:"饱食"}) CREATE (c)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m);
-MATCH (m:mechanism {description:"心脏负荷增加"}),(c:inducement {name:"寒冷"}) CREATE (c)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m);
-MATCH (m:mechanism {description:"心脏负荷增加"}),(c:inducement {name:"吸烟"}) CREATE (c)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m);
-MATCH (m:mechanism {description:"心脏负荷增加"}),(c:inducement {name:"心动过速"}) CREATE (c)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m);
-MATCH (m:mechanism {description:"心脏负荷增加"}),(c:inducement {name:"休克"}) CREATE (c)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m);
-MATCH (m1:mechanism {description:"心脏负荷增加"}),(m2:mechanism {description:"心率增快"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"心脏负荷增加"}),(m2:mechanism {description:"心肌张力增加"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"心脏负荷增加"}),(m2:mechanism {description:"心肌收缩力增加"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"心率增快"}),(m2:mechanism {description:"心肌耗氧量增加"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"心肌张力增加"}),(m2:mechanism {description:"心肌耗氧量增加"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"心肌收缩力增加"}),(m2:mechanism {description:"心肌耗氧量增加"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"冠状动脉固定狭窄"}),(m2:mechanism {description:"冠状动脉供血不足"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
-
-CREATE (:mechanism {description:"冠脉粥样硬化"});
-CREATE (:mechanism {description:"心肌缺血"});
-CREATE (:mechanism {description:"心肌缺氧"});
-CREATE (:mechanism {description:"心肌细胞减少"});
-CREATE (:mechanism {description:"心肌细胞坏死"});
-CREATE (:mechanism {description:"心肌瘢痕"});
-CREATE (:mechanism {description:"心肌弥漫性纤维化"});
-MATCH (m1:mechanism {description:"冠脉粥样硬化"}),(m2:mechanism {description:"心肌缺血"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"冠脉粥样硬化"}),(m2:mechanism {description:"心肌缺氧"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"心肌缺血"}),(m2:mechanism {description:"心肌细胞减少"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"心肌缺血"}),(m2:mechanism {description:"心肌细胞坏死"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"心肌缺血"}),(m2:mechanism {description:"心肌弥漫性纤维化"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"心肌缺血"}),(m2:mechanism {description:"心肌瘢痕"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"心肌缺氧"}),(m2:mechanism {description:"心肌细胞减少"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"心肌缺氧"}),(m2:mechanism {description:"心肌细胞坏死"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"心肌缺氧"}),(m2:mechanism {description:"心肌弥漫性纤维化"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"心肌缺氧"}),(m2:mechanism {description:"心肌瘢痕"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
-
-CREATE (:mechanism {description:"不稳定粥样硬化斑块破裂、糜烂"});
-CREATE (:mechanism {description:"血小板聚集"});
-CREATE (:mechanism {description:"血栓形成"});
-CREATE (:mechanism {description:"冠状动脉痉挛收缩"});
-CREATE (:mechanism {description:"微血管栓塞"});
-CREATE (:mechanism {description:"心肌供氧减少"});
-CREATE (:mechanism {description:"心肌缺血加重"});
-MATCH (m1:mechanism {description:"冠脉粥样硬化"}),(m2:mechanism {description:"不稳定粥样硬化斑块破裂、糜烂"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"冠脉粥样硬化"}),(m2:mechanism {description:"不稳定粥样硬化斑块糜烂"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"不稳定粥样硬化斑块破裂、糜烂"}),(m2:mechanism {description:"血小板聚集"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"不稳定粥样硬化斑块破裂、糜烂"}),(m2:mechanism {description:"血栓形成"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"不稳定粥样硬化斑块破裂、糜烂"}),(m2:mechanism {description:"冠状动脉痉挛收缩"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"不稳定粥样硬化斑块破裂、糜烂"}),(m2:mechanism {description:"微血管栓塞"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"血小板聚集"}),(m2:mechanism {description:"心肌供氧减少"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"血栓形成"}),(m2:mechanism {description:"心肌供氧减少"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"冠状动脉痉挛收缩"}),(m2:mechanism {description:"心肌供氧减少"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"微血管栓塞"}),(m2:mechanism {description:"心肌缺血加重"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"血小板聚集"}),(m2:mechanism {description:"心肌缺血加重"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"血栓形成"}),(m2:mechanism {description:"心肌缺血加重"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"冠状动脉痉挛收缩"}),(m2:mechanism {description:"心肌缺血加重"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
-
-CREATE (:mechanism {description:"血管管腔闭塞",duration:"≥20~30min"});
-CREATE (:mechanism {description:"不稳定粥样硬化斑块破溃"});
-CREATE (:mechanism {description:"继发血栓形成"});
-CREATE (:mechanism {description:"交感神经活动增强"});
-CREATE (:mechanism {description:"机体应激反应性增强"});
-CREATE (:mechanism {description:"血压增高"});
-CREATE (:mechanism {description:"冠状动脉张力增高"});
-CREATE (:mechanism {description:"血脂增高"});
-CREATE (:mechanism {description:"血粘稠度增高"});
-CREATE (:mechanism {description:"左心室负荷加重"});
-CREATE (:mechanism {description:"心排量骤降"});
-CREATE (:mechanism {description:"冠状动脉灌注量锐减"});
-
-MATCH (m:mechanism {description:"交感神经活动增强"}),(c:inducement {name:"晨起"}) CREATE (c)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m);
-MATCH (m:mechanism {description:"血脂增高"}),(c:inducement {name:"饱餐"}) CREATE (c)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m);
-MATCH (m:mechanism {description:"血粘稠度增高"}),(c:inducement {name:"饱餐"}) CREATE (c)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m);
-MATCH (m:mechanism {description:"左心室负荷加重"}),(c:inducement {name:"重体力活动"}) CREATE (c)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m);
-MATCH (m:mechanism {description:"左心室负荷加重"}),(c:inducement {name:"情绪过分激动"}) CREATE (c)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m);
-MATCH (m:mechanism {description:"左心室负荷加重"}),(c:inducement {name:"血压剧升"}) CREATE (c)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m);
-MATCH (m:mechanism {description:"左心室负荷加重"}),(c:inducement {name:"用力排便"}) CREATE (c)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m);
-MATCH (m:mechanism {description:"心排量骤降"}),(c:inducement {name:"休克"}) CREATE (c)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m);
-MATCH (m:mechanism {description:"心排量骤降"}),(c:inducement {name:"脱水"}) CREATE (c)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m);
-MATCH (m:mechanism {description:"心排量骤降"}),(c:inducement {name:"出血"}) CREATE (c)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m);
-MATCH (m:mechanism {description:"心排量骤降"}),(c:inducement {name:"外科手术"}) CREATE (c)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m);
-MATCH (m:mechanism {description:"心排量骤降"}),(c:inducement {name:"严重心律失常"}) CREATE (c)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m);
-
-MATCH (m1:mechanism {description:"交感神经活动增强"}),(m2:mechanism {description:"机体应激反应性增强"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"机体应激反应性增强"}),(m2:mechanism {description:"心肌张力增加"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"机体应激反应性增强"}),(m2:mechanism {description:"心率增快"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"机体应激反应性增强"}),(m2:mechanism {description:"血压增高"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"机体应激反应性增强"}),(m2:mechanism {description:"冠状动脉张力增高"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"心肌张力增加"}),(m2:mechanism {description:"不稳定粥样硬化斑块破溃"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"心率增快"}),(m2:mechanism {description:"不稳定粥样硬化斑块破溃"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"血压增高"}),(m2:mechanism {description:"不稳定粥样硬化斑块破溃"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"冠状动脉张力增高"}),(m2:mechanism {description:"不稳定粥样硬化斑块破溃"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"血脂增高"}),(m2:mechanism {description:"不稳定粥样硬化斑块破溃"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"血粘稠度增高"}),(m2:mechanism {description:"不稳定粥样硬化斑块破溃"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"左心室负荷加重"}),(m2:mechanism {description:"不稳定粥样硬化斑块破溃"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"心排量骤降"}),(m2:mechanism {description:"冠状动脉灌注量锐减"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"心排量骤降"}),(m2:mechanism {description:"不稳定粥样硬化斑块破溃"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"不稳定粥样硬化斑块破溃"}),(m2:mechanism {description:"继发血栓形成"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"继发血栓形成"}),(m2:mechanism {description:"血管管腔闭塞"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
-CREATE (:mechanism {description:"壁冠状动脉在收缩期被挤压"});
-CREATE (:mechanism {description:"远端心肌缺血"});
-MATCH (m1:mechanism {description:"壁冠状动脉在收缩期被挤压"}),(m2:mechanism {description:"远端心肌缺血"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
-
-MATCH (d:disease {name:"稳定型心绞痛"}),(m:mechanism {description:"冠状动脉供血不足"}) CREATE (d)<-[:mechanism_subsequence {reference:"内科学第九版"}]-(m);
-MATCH (d:disease {name:"稳定型心绞痛"}),(m:mechanism {description:"心肌耗氧量增加"}) CREATE (d)<-[:mechanism_subsequence {reference:"内科学第九版"}]-(m);
-MATCH (d:disease {name:"缺血性心肌病"}),(m:mechanism {description:"心肌细胞减少"}) CREATE (d)<-[:mechanism_subsequence {reference:"内科学第九版"}]-(m);
-MATCH (d:disease {name:"缺血性心肌病"}),(m:mechanism {description:"心肌细胞坏死"}) CREATE (d)<-[:mechanism_subsequence {reference:"内科学第九版"}]-(m);
-MATCH (d:disease {name:"缺血性心肌病"}),(m:mechanism {description:"心肌弥漫性纤维化"}) CREATE (d)<-[:mechanism_subsequence {reference:"内科学第九版"}]-(m);
-MATCH (d:disease {name:"缺血性心肌病"}),(m:mechanism {description:"心肌瘢痕"}) CREATE (d)<-[:mechanism_subsequence {reference:"内科学第九版"}]-(m);
-MATCH (d:disease {english_name:"UA"}),(m:mechanism {description:"心肌供氧减少"}) CREATE (d)<-[:mechanism_subsequence {reference:"内科学第九版"}]-(m);
-MATCH (d:disease {english_name:"UA"}),(m:mechanism {description:"心肌缺血"}) CREATE (d)<-[:mechanism_subsequence {reference:"内科学第九版"}]-(m);
-MATCH (d:disease {english_name:"NSTEMI"}),(m:mechanism {description:"心肌供氧减少"}) CREATE (d)<-[:mechanism_subsequence {reference:"内科学第九版"}]-(m);
-MATCH (d:disease {english_name:"NSTEMI"}),(m:mechanism {description:"心肌缺血加重"}) CREATE (d)<-[:mechanism_subsequence {reference:"内科学第九版"}]-(m);
-MATCH (d:disease {english_name:"STEMI"}),(m:mechanism {description:"血管管腔闭塞"}) CREATE (d)<-[:mechanism_subsequence {reference:"内科学第九版"}]-(m);
-MATCH (d:disease {name:"心肌桥"}),(m:mechanism {description:"远端心肌缺血"}) CREATE (d)<-[:mechanism_subsequence {reference:"内科学第九版"}]-(m);
-
-
-CREATE (:mechanism {description:"心肌损伤"});
-CREATE (:mechanism {description:"Frank-Starling机制"});
-CREATE (:mechanism {description:"心室重塑"});
-CREATE (:mechanism {description:"交感神经兴奋性增强"});
-CREATE (:mechanism {description:"RAAS激活"});
-CREATE (:mechanism {description:"精氨酸加压素增加"});
-CREATE (:mechanism {description:"利钠肽分泌增加"});
-
-MATCH (m1:mechanism {description:"心肌损伤"}),(m2:mechanism {description:"Frank-Starling机制"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"心肌损伤"}),(m2:mechanism {description:"心室重塑"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"心肌损伤"}),(m2:mechanism {description:"交感神经兴奋性增强"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"心肌损伤"}),(m2:mechanism {description:"RAAS激活"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"心肌损伤"}),(m2:mechanism {description:"精氨酸加压素增加"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
-MATCH (m1:mechanism {description:"心肌损伤"}),(m2:mechanism {description:"利钠肽分泌增加"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
-
-MATCH (d:disease {name:"心力衰竭"}),(m:mechanism {description:"Frank-Starling机制"}) CREATE (d)<-[:mechanism_subsequence {reference:"内科学第九版"}]-(m);
-MATCH (d:disease {name:"心力衰竭"}),(m:mechanism {description:"心室重塑"}) CREATE (d)<-[:mechanism_subsequence {reference:"内科学第九版"}]-(m);
-MATCH (d:disease {name:"心力衰竭"}),(m:mechanism {description:"交感神经兴奋性增强"}) CREATE (d)<-[:mechanism_subsequence {reference:"内科学第九版"}]-(m);
-MATCH (d:disease {name:"心力衰竭"}),(m:mechanism {description:"RAAS激活"}) CREATE (d)<-[:mechanism_subsequence {reference:"内科学第九版"}]-(m);
-MATCH (d:disease {name:"心力衰竭"}),(m:mechanism {description:"精氨酸加压素增加"}) CREATE (d)<-[:mechanism_subsequence {reference:"内科学第九版"}]-(m);
-MATCH (d:disease {name:"心力衰竭"}),(m:mechanism {description:"利钠肽分泌增加"}) CREATE (d)<-[:mechanism_subsequence {reference:"内科学第九版"}]-(m);
-
-
-
-// //病理
-// CREATE (:pathology {description:"冠脉狭窄或部分闭塞"});
-// CREATE (:pathology {description:"心肺顺应性降低"});
-// CREATE (:pathology {description:"左心室收缩与舒张功能障碍"});
-// CREATE (:pathology {description:"灶性心肌坏死"});
-// CREATE (:pathology {description:"心内膜下心肌坏死"});
-// CREATE (:pathology {description:"心肌瘢痕"});
-// CREATE (:pathology {description:"心肌纤维化"});
-// CREATE (:pathology {description:"心肌细胞减少、坏死"});
-// CREATE (:pathology {description:"冠状动脉病变"});
-// CREATE (:pathology {description:"心肌病变"});
-
-// MATCH (d:disease {name:"稳定型心绞痛"}),(p:pathology {description:"冠脉狭窄或部分闭塞"}) CREATE (d)-[:pathology_show {reference:"内科学第九版"}]->(p);
-// MATCH (d:disease {name:"稳定型心绞痛"}),(p:pathology {description:"心肺顺应性降低"}) CREATE (d)-[:pathology_show {reference:"内科学第九版"}]->(p);
-// MATCH (d:disease {name:"稳定型心绞痛"}),(p:pathology {description:"左心室收缩与舒张功能障碍"}) CREATE (d)-[:pathology_show {reference:"内科学第九版"}]->(p);
-// MATCH (d:disease {english_name:"NSTEMI"}),(p:pathology {description:"灶性心肌坏死"}) CREATE (d)-[:pathology_show {reference:"内科学第九版"}]->(p);
-// MATCH (d:disease {english_name:"NSTEMI"}),(p:pathology {description:"灶性心肌坏死"}) CREATE (d)-[:pathology_show {reference:"内科学第九版"}]->(p);
-// MATCH (d:disease {name:"缺血性心肌病"}),(p:pathology {description:"心肌瘢痕"}) CREATE (d)-[:pathology_show {reference:"内科学第九版"}]->(p);
-// MATCH (d:disease {name:"缺血性心肌病"}),(p:pathology {description:"心肌纤维化"}) CREATE (d)-[:pathology_show {reference:"内科学第九版"}]->(p);
-// MATCH (d:disease {name:"缺血性心肌病"}),(p:pathology {description:"心肌细胞减少、坏死"}) CREATE (d)-[:pathology_show {reference:"内科学第九版"}]->(p);
-// MATCH (d:disease {english_name:"STEMI"}),(p:pathology {description:"冠状动脉病变"}) CREATE (d)-[:pathology_show {reference:"内科学第九版"}]->(p);
-// MATCH (d:disease {english_name:"STEMI"}),(p:pathology {description:"心肌病变"}) CREATE (d)-[:pathology_show {reference:"内科学第九版"}]->(p);
-// MATCH (d:disease {english_name:"STEMI"}),(p:pathology {description:"左心室收缩与舒张功能障碍"}) CREATE (d)-[:pathology_show {reference:"内科学第九版"}]->(p);
 
 
 //七、临床表现
-
-
 CREATE (:symptom {characteristic:"心绞痛"});
 CREATE (:symptom {characteristic:"体力劳动或情绪激动诱发"});
 CREATE (:symptom {characteristic:"胸骨体后发作，可波及心前区，也可横贯前胸"});
@@ -1273,7 +1130,6 @@ CREATE (:symptom {characteristic:"较早发生左心室衰竭",disease:"二尖�
 MATCH (d:disease {name:"二尖瓣关闭不全伴主动脉瓣关闭不全"}),(s:symptom {disease:"二尖瓣关闭不全伴主动脉瓣关闭不全"}) CREATE (d)-[:disease_symtom {reference:"内科学第九版"}]->(s);
 
 //八、实验室和其他检查
-
 //8.3.1 二尖瓣狭窄
 CREATE (:examination {name:"X线检查",information:"肺静脉压增高导致肺淤血的迹象/左心房扩大",disease:"二尖瓣狭窄"});
 CREATE (:examination {name:"心电图",information:"左心房扩大/QRS波群示电轴右偏/和右心室肥厚表现/房颤",disease:"二尖瓣狭窄"});
@@ -2290,20 +2146,96 @@ MATCH (d:disease {name:"急性心力衰竭"}),(t:treatment {name:"主动脉内�
 MATCH (d:disease {name:"急性心力衰竭"}),(t:treatment {name:"体外膜式氧合"}) CREATE (t)-[:cure {reference:"内科学第九版"}]->(d);
 MATCH (d:disease {name:"急性心力衰竭"}),(t:treatment {name:"可植入式电动左心室辅助泵Impella"}) CREATE (t)-[:cure {reference:"内科学第九版"}]->(d);
 
-//十、手术治疗
+//八、药物治疗及禁用药物
+//8.3.1 二尖瓣狭窄
+CREATE (:drug {name:"苄星青霉素",dosage:"120万U",usage:"肌内注射",disease:"二尖瓣狭窄",aim:"治疗风湿热"});
+CREATE (:drug {name:"β受体拮抗剂",indication:"窦性心律病人在心律加快时呼吸困难",aim:"降低心律",disease:"二尖瓣狭窄"});
+CREATE (:drug {name:"非二氢咄唗类钙通道阻滞剂",indication:"窦性心律病人在心律加快时呼吸困难",aim:"降低心律",disease:"二尖瓣狭窄"});
+CREATE (:drug {name:"利尿药",indication:"存在肺淤血导致的呼吸困难",disease:"二尖瓣狭窄"});
+CREATE (:drug {name:"镇静剂",indication:"并发大量咯血",disease:"二尖瓣狭窄",aim:"降低肺动脉压"});
+CREATE (:drug {name:"利尿剂",indication:"并发大量咯血",usag:"静脉注射",aim:"降低肺动脉压",disease:"二尖瓣狭窄"});
+CREATE (:drug {name:"毛花苷丙",indication:"并发房颤伴快速心室率",usag:"静脉注射",aim:"减慢心室率",disease:"二尖瓣狭窄"});
+CREATE (:drug {name:"硝酸酯类药物",indication:"并发急性肺水肿",aim:"扩张静脉系统、减轻心脏前负荷",disease:"二尖瓣狭窄"});
+CREATE (:drug {name:"洋地黄类药物",indication:"并发房颤",usag:"静脉注射",aim:"控制心室率",disease:"二尖瓣狭窄"});
+CREATE (:drug {name:"地尔硫䓬",indication:"并发房颤",usag:"静脉注射",aim:"控制心室率",disease:"二尖瓣狭窄"});
+CREATE (:drug {name:"艾司洛尔",indication:"并发房颤",usag:"静脉注射",aim:"控制心室率",disease:"二尖瓣狭窄"});
+MATCH (ds:disease {name:"二尖瓣狭窄"}),(dg:drug {disease:"二尖瓣狭窄"}) CREATE (ds)-[:disease_drug {reference:"内科学第九版"}]->(dg);
+CREATE (:drug {name:"地高辛",indication:"窦性心律的二尖瓣狭窄病人",prohibit_disease:"二尖瓣狭窄"});
+MATCH (ds:disease {name:"二尖瓣狭窄"}),(dg:drug {prohibit_disease:"二尖瓣狭窄"}) CREATE (ds)-[:disease_prohibit_drug {reference:"内科学第九版"}]->(dg);
+//8.3.2.1 急性二尖瓣关闭不全
+CREATE (:drug {name:"动脉扩张剂",aim:"减低体循环血流阻力",disease:"急性二尖瓣关闭不全"});
+MATCH (ds:disease {name:"急性二尖瓣关闭不全"}),(dg:drug {disease:"急性二尖瓣关闭不全"}) CREATE (ds)-[:disease_drug {reference:"内科学第九版"}]->(dg);
+CREATE (:drug {name:"动脉扩张剂",indication:"低血压",prohibit_disease:"急性二尖瓣关闭不全"});
+MATCH (ds:disease {name:"急性二尖瓣关闭不全"}),(dg:drug {prohibit_disease:"急性二尖瓣关闭不全"}) CREATE (ds)-[:disease_prohibit_drug {reference:"内科学第九版"}]->(dg);
+//8.3.2.2 慢性二尖瓣关闭不全
+CREATE (:drug {name:"血管紧张素酶抑制剂",english_name:"ACEI",indication:"有症状",aim:"减低左心室容积，缓解症状",disease:"慢性二尖瓣关闭不全"});
+CREATE (:drug {name:"抗凝药物",indication:"合并房颤",disease:"慢性二尖瓣关闭不全"});
+MATCH (ds:disease {name:"慢性二尖瓣关闭不全"}),(dg:drug {disease:"慢性二尖瓣关闭不全"}) CREATE (ds)-[:disease_drug {reference:"内科学第九版"}]->(dg);
+//8.3.3 主动脉瓣狭窄
+CREATE (:drug {name:"利尿剂",indication:"心衰病人等待手术者过程中",aim:"缓解肺充血",disease:"主动脉瓣狭窄"});
+MATCH (ds:disease {name:"主动脉瓣狭窄"}),(dg:drug {disease:"主动脉瓣狭窄"}) CREATE (ds)-[:disease_drug {reference:"内科学第九版"}]->(dg);
+CREATE (:drug {name:"血管紧张素酶抑制剂",english_name:"ACEI",prohibit_disease:"主动脉瓣狭窄"});
+CREATE (:drug {name:"β受体拮抗剂",prohibit_disease:"主动脉瓣狭窄"});
+MATCH (ds:disease {name:"主动脉瓣狭窄"}),(dg:drug {prohibit_disease:"主动脉瓣狭窄"}) CREATE (ds)-[:disease_prohibit_drug {reference:"内科学第九版"}]->(dg);
+//8.3.4.1 急性主动脉瓣关闭不全
+CREATE (:drug {name:"多巴胺",indication:"外科术前",usag:"静脉注射",disease:"急性主动脉瓣关闭不全"});
+CREATE (:drug {name:"多巴酚丁胺",indication:"外科术前",usag:"静脉注射",disease:"急性主动脉瓣关闭不全"});
+CREATE (:drug {name:"硝普钠",indication:"外科术前",usag:"静脉注射",disease:"急性主动脉瓣关闭不全"});
+CREATE (:drug {name:"呋塞米",indication:"外科术前",usag:"静脉注射",disease:"急性主动脉瓣关闭不全"});
+MATCH (ds:disease {name:"急性主动脉瓣关闭不全"}),(dg:drug {disease:"急性主动脉瓣关闭不全"}) CREATE (ds)-[:disease_drug {reference:"内科学第九版"}]->(dg);
+//8.3.4.1 慢性主动脉瓣关闭不全
+CREATE (:drug {name:"尼群地平",indication:"左心室扩大但收缩功能正常",aim:"延迟或减少主动脉瓣手术的需要",disease:"慢性主动脉瓣关闭不全"});
+CREATE (:drug {name:"肼屈嗪",indication:"左心室扩大但收缩功能正常",aim:"延迟或减少主动脉瓣手术的需要",disease:"慢性主动脉瓣关闭不全"});
+CREATE (:drug {name:"血管紧张素酶抑制剂",english_name:"ACEI",indication:"左心室扩大但收缩功能正常",aim:"延迟或减少主动脉瓣手术的需要",disease:"慢性主动脉瓣关闭不全"});
+MATCH (ds:disease {name:"慢性主动脉瓣关闭不全"}),(dg:drug {disease:"慢性主动脉瓣关闭不全"}) CREATE (ds)-[:disease_drug {reference:"内科学第九版"}]->(dg);
+
+//十、非药物治疗
 //10.3.1 二尖瓣狭窄
-CREATE (:operation {name:"经皮球囊二尖瓣成形术",english_name:"PBMV",indication:"单纯的二尖瓣狭窄病人",disease:"二尖瓣狭窄"});
-CREATE (:operation {name:"二尖瓣分离术",indication:"瓣叶严重钙化/病变累及腱索和乳头肌/左心房内有血栓者"});
-CREATE (:operation {name:"人工瓣膜置换术",indication:"严重瓣叶和瓣下结构钙化、畸形，不宜做经皮球囊二尖瓣成形术或分离术者/二尖瓣狭窄合并明显二尖瓣关闭不全者"});
-MATCH (d:disease {name:"二尖瓣狭窄"}),(t:operation {disease:"二尖瓣狭窄"}) CREATE (d)-[:disease_operation {reference:"内科学第九版"}]->(t);
-
-//10.3.2 二尖瓣关闭不全
-
+CREATE (:treatment {name:"避免剧烈的体力活动",indication:"轻度二尖瓣狭窄无症状者",disease:"二尖瓣狭窄"});
+CREATE (:treatment {name:"减少体力活动",indication:"存在肺淤血导致的呼吸困难",disease:"二尖瓣狭窄"});
+CREATE (:treatment {name:"限制钠盐摄入",indication:"存在肺淤血导致的呼吸困难",disease:"二尖瓣狭窄"});
+CREATE (:treatment {name:"电复律",indication:"合并房颤、出现肺水肿/休克/心绞痛/晕厥",disease:"二尖瓣狭窄"});
+CREATE (:treatment {name:"经皮球囊二尖瓣成形术",english_name:"PBMV",indication:"单纯的二尖瓣狭窄病人",disease:"二尖瓣狭窄"});
+CREATE (:treatment {name:"二尖瓣分离术",indication:"瓣叶严重钙化/病变累及腱索和乳头肌/左心房内有血栓者",disease:"二尖瓣狭窄"});
+CREATE (:treatment {name:"人工瓣膜置换术",indication:"严重瓣叶和瓣下结构钙化、畸形，不宜做经皮球囊二尖瓣成形术或分离术者/二尖瓣狭窄合并明显二尖瓣关闭不全者",disease:"二尖瓣狭窄"});
+MATCH (d:disease {name:"二尖瓣狭窄"}),(t:treatment {disease:"二尖瓣狭窄"}) CREATE (d)-[:disease_treatment {reference:"内科学第九版"}]->(t);
+//10.3.2.1 急性二尖瓣关闭不全
+CREATE (:treatment {name:"主动脉内球囊反搏",english_name:"IABP",indication:"低血压",disease:"急性二尖瓣关闭不全"});
+CREATE (:treatment {name:"二尖瓣修补术",indication:"瓣膜损坏较轻，瓣叶无钙化，瓣环又扩大，但瓣下腱索无严重增厚者",disease:"急性二尖瓣关闭不全"});
+CREATE (:treatment {name:"二尖瓣置换术",indication:"瓣膜损坏严重者",disease:"急性二尖瓣关闭不全"});
+MATCH (d:disease {name:"急性二尖瓣关闭不全"}),(t:treatment {disease:"急性二尖瓣关闭不全"}) CREATE (d)-[:disease_treatment {reference:"内科学第九版"}]->(t);
+//10.3.2.2 慢性二尖瓣关闭不全
+CREATE (:treatment {name:"定期随访",indication:"无症状",disease:"慢性二尖瓣关闭不全"});
+CREATE (:treatment {name:"避免竞技性运动",indication:"左心室明显增大（左心室舒张末内径≥60mm）/静息时存在左心室缩功能不全/存在肺动脉高压",disease:"慢性二尖瓣关闭不全"});
+CREATE (:treatment {name:"二尖瓣修补术",indication:"瓣膜损坏较轻，瓣叶无钙化，瓣环又扩大，但瓣下腱索无严重增厚者",disease:"慢性二尖瓣关闭不全"});
+CREATE (:treatment {name:"二尖瓣置换术",indication:"瓣膜损坏严重者",disease:"慢性二尖瓣关闭不全"});
+MATCH (d:disease {name:"慢性二尖瓣关闭不全"}),(t:treatment {disease:"慢性二尖瓣关闭不全"}) CREATE (d)-[:disease_treatment {reference:"内科学第九版"}]->(t);
 //10.3.3 主动脉瓣狭窄
-CREATE (:operation {name:"人工瓣膜置换术",indication:"重度狭窄伴心绞痛晕厥或心力衰竭症状的病人/无症状病人伴有有进行性心脏增大和（或）左心室功能进行性减退，活动时血压下降",disease:"主动脉瓣狭窄"});
-CREATE (:operation {name:"直视下主动脉瓣分离术",indication:"儿童和青少年的非钙化性先天性主动脉瓣严重狭窄者/无症状者",disease:"主动脉瓣狭窄"});
-CREATE (:operation {name:"经皮主动脉瓣球囊成形术",indication:"由于严重主动脉瓣狭窄的心源性休克/严重主动脉瓣狭窄需急诊非心脏手术治疗/严重主动脉瓣狭窄的妊娠妇女/严重主动脉瓣狭窄，拒绝手术治疗的病人",disease:"主动脉瓣狭窄"});
-CREATE (:operation {name:"经皮主动脉瓣置换术",english_name:"TAVI",indication:"不适合外科手术的高危病人（如极高龄、慢性肺部疾病、肾衰竭、贫血、肿瘤）",disease:"主动脉瓣狭窄"});
-MATCH (d:disease {name:"主动脉瓣狭窄"}),(t:operation {disease:"主动脉瓣狭窄"}) CREATE (d)-[:disease_operation {reference:"内科学第九版"}]->(t);
-
-//10.3.4 主动脉瓣关闭不全
+CREATE (:treatment {name:"定期随访",indication:"无症状",disease:"主动脉瓣狭窄"});
+CREATE (:treatment {name:"每2年复查一次",indication:"轻度狭窄，体力活动不受限制",disease:"主动脉瓣狭窄"});
+CREATE (:treatment {name:"每6-12个月复查一次",indication:"避免剧烈体力活动",disease:"主动脉瓣狭窄"});
+CREATE (:treatment {name:"电转复",indication:"出现房颤",disease:"主动脉瓣狭窄"});
+CREATE (:treatment {name:"人工瓣膜置换术",indication:"重度狭窄伴心绞痛晕厥或心力衰竭症状的病人/无症状病人伴有有进行性心脏增大和（或）左心室功能进行性减退，活动时血压下降",disease:"主动脉瓣狭窄"});
+CREATE (:treatment {name:"直视下主动脉瓣分离术",indication:"儿童和青少年的非钙化性先天性主动脉瓣严重狭窄者/无症状者",disease:"主动脉瓣狭窄"});
+CREATE (:treatment {name:"经皮主动脉瓣球囊成形术",indication:"由于严重主动脉瓣狭窄的心源性休克/严重主动脉瓣狭窄需急诊非心脏手术治疗/严重主动脉瓣狭窄的妊娠妇女/严重主动脉瓣狭窄，拒绝手术治疗的病人",disease:"主动脉瓣狭窄"});
+CREATE (:treatment {name:"经皮主动脉瓣置换术",english_name:"TAVI",indication:"不适合外科手术的高危病人（如极高龄、慢性肺部疾病、肾衰竭、贫血、肿瘤）",disease:"主动脉瓣狭窄"});
+MATCH (d:disease {name:"主动脉瓣狭窄"}),(t:treatment {disease:"主动脉瓣狭窄"}) CREATE (d)-[:disease_treatment {reference:"内科学第九版"}]->(t);
+//10.3.4.1 急性主动脉瓣关闭不全
+CREATE (:treatment {name:"吸氧",indication:"外科术前",disease:"急性主动脉瓣关闭不全"});
+CREATE (:treatment {name:"镇静",indication:"外科术前",disease:"急性主动脉瓣关闭不全"});
+CREATE (:treatment {name:"Swan-Ganz导管床旁血流动力学监测",aim:"降低肺静脉压、增加心排出量、稳定血流动力学 ",disease:"急性主动脉瓣关闭不全"});
+CREATE (:treatment {name:"人工瓣膜置换术",disease:"急性主动脉瓣关闭不全"});
+CREATE (:treatment {name:"主动脉瓣修复术",disease:"急性主动脉瓣关闭不全"});
+MATCH (d:disease {name:"急性主动脉瓣关闭不全"}),(t:treatment {disease:"急性主动脉瓣关闭不全"}) CREATE (d)-[:disease_treatment {reference:"内科学第九版"}]->(t);
+//10.3.4.2 慢性主动脉瓣关闭不全
+CREATE (:treatment {name:"随访",indication:"无症状且左心室功能正常者",disease:"慢性主动脉瓣关闭不全"});
+CREATE (:treatment {name:"每1-2年随访一次",indication:"轻中度主动脉瓣关闭不全",disease:"慢性主动脉瓣关闭不全"});
+CREATE (:treatment {name:"每半年随访一次",indication:"重度主动脉瓣关闭不全",disease:"慢性主动脉瓣关闭不全"});
+CREATE (:treatment {name:"限制体力活动",indication:"预防感染性心内膜炎/预防风湿活动/左心室功能减低的病人",disease:"慢性主动脉瓣关闭不全"});
+CREATE (:treatment {name:"主动脉瓣置换术",indication:"原发性主动脉瓣关闭不全",disease:"慢性主动脉瓣关闭不全"});
+CREATE (:treatment {name:"主动脉瓣成形术",indication:"继发性主动脉瓣关闭不全",disease:"慢性主动脉瓣关闭不全"});
+CREATE (:treatment {name:"瓣膜修复术",indication:"瓣叶穿孔",disease:"慢性主动脉瓣关闭不全"});
+MATCH (d:disease {name:"慢性主动脉瓣关闭不全"}),(t:treatment {disease:"慢性主动脉瓣关闭不全"}) CREATE (d)-[:disease_treatment {reference:"内科学第九版"}]->(t);
+//10.4 多瓣膜病
+CREATE (:treatment {name:"手术治疗",disease:"多瓣膜病"});
+MATCH (d:disease {name:"多瓣膜病"}),(t:treatment {disease:"多瓣膜病"}) CREATE (d)-[:disease_treatment {reference:"内科学第九版"}]->(t);
