@@ -88,7 +88,6 @@ MATCH (dc:disease {name:"心力衰竭"}),(d:disease {name:"射血分数保留性
 CREATE (:disease {name:"中间范围射血分数心衰",enlish_name:"HFmrEF",definition:"40%≤LVEF<50%的心衰"});
 MATCH (dc:disease {name:"心力衰竭"}),(d:disease {name:"中间范围射血分数心衰"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
 
-
 //1.3 心脏瓣膜病
 CREATE (:disease {name:"心脏瓣膜病",definition:"由多种原因引起的心脏瓣膜狭窄或（和）关闭不全所致的心脏疾病"});
 //1.3.1 二尖瓣狭窄
@@ -137,37 +136,105 @@ MATCH (dc:disease {name:"多瓣膜病"}),(d:disease {name:"二尖瓣狭窄伴三
 CREATE (:disease {name:"风湿性心脏病",abbreviation:"风心病",english_name:"RHD",definition:"风湿性炎症导致的瓣膜损害"});
 MATCH (dc:disease {name:"心脏瓣膜病"}),(d:disease {name:"风湿性心脏病"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
 
-
 //1.4 心律失常
 CREATE (:disease {name:"心律失常"});
+//1.4.1 窦性心律失常
 CREATE (:disease {name:"窦性心律失常"});
-CREATE (:disease {name:"房性心律失常"});
-CREATE (:disease {name:"房室交界区性心律失常"});
-CREATE (:disease {name:"室性心律失常"});
-CREATE (:disease {name:"心脏传导阻滞"});
 MATCH (dc:disease {name:"心律失常"}),(d:disease {name:"窦性心律失常"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
+//1.4.1.1 窦性心动过速
+CREATE (:disease {name:"窦性心动过速"});
+MATCH (dc:disease {name:"窦性心律失常"}),(d:disease {name:"窦性心动过速"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
+//1.4.1.2 窦性停搏
+CREATE (:disease {name:"窦性停搏"});
+MATCH (dc:disease {name:"窦性心律失常"}),(d:disease {name:"窦性停搏"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
+//1.4.1.3 窦房传导阻滞
+CREATE (:disease {name:"窦房传导阻滞"});
+MATCH (dc:disease {name:"窦性心律失常"}),(d:disease {name:"窦房传导阻滞"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
+//1.4.1.5 病态窦房结综合征
+CREATE (:disease {name:"病态窦房结综合征"});
+MATCH (dc:disease {name:"窦性心律失常"}),(d:disease {name:"病态窦房结综合征"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
+//1.4.2 房性心律失常
+CREATE (:disease {name:"房性心律失常"});
 MATCH (dc:disease {name:"心律失常"}),(d:disease {name:"房性心律失常"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
+//1.4.2.1 房性期前收缩
+CREATE (:disease {name:"房性期前收缩"});
+MATCH (dc:disease {name:"房性心律失常"}),(d:disease {name:"房性期前收缩"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
+//1.4.2.2 房性心动过速
+CREATE (:disease {name:"房性心动过速"});
+MATCH (dc:disease {name:"房性心律失常"}),(d:disease {name:"房性心动过速"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
+//1.4.2.3 心房扑动
+CREATE (:disease {name:"心房扑动"});
+MATCH (dc:disease {name:"房性心律失常"}),(d:disease {name:"心房扑动"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
+//1.4.2.4 心房颤动
+CREATE (:disease {name:"心房颤动"});
+MATCH (dc:disease {name:"房性心律失常"}),(d:disease {name:"心房颤动"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
+//1.4.3 房室交界区性心律失常
+CREATE (:disease {name:"房室交界区性心律失常"});
 MATCH (dc:disease {name:"心律失常"}),(d:disease {name:"房室交界区性心律失常"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
+//1.4.3.1 房室交界区性期前收缩
+CREATE (:disease {name:"房室交界区性期前收缩"});
+MATCH (dc:disease {name:"房室交界区性心律失常"}),(d:disease {name:"房室交界区性期前收缩"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
+//1.4.3.2 房室交界区性逸搏与心律
+CREATE (:disease {name:"房室交界区性逸搏与心律"});
+MATCH (dc:disease {name:"房室交界区性心律失常"}),(d:disease {name:"房室交界区性逸搏与心律"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
+//1.4.3.3 非阵发性房室交界区性心动过速
+CREATE (:disease {name:"非阵发性房室交界区性心动过速"});
+MATCH (dc:disease {name:"房室交界区性心律失常"}),(d:disease {name:"非阵发性房室交界区性心动过速"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
+//1.4.3.4 房室交界区相关的折返性心动过速
+CREATE (:disease {name:"房室交界区相关的折返性心动过速"});
+MATCH (dc:disease {name:"房室交界区性心律失常"}),(d:disease {name:"房室交界区相关的折返性心动过速"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
+//1.4.4 室性心律失常
+CREATE (:disease {name:"室性心律失常"});
 MATCH (dc:disease {name:"心律失常"}),(d:disease {name:"室性心律失常"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
+//1.4.4.1 室性期前收缩
+CREATE (:disease {name:"室性期前收缩"});
+MATCH (dc:disease {name:"室性心律失常"}),(d:disease {name:"室性期前收缩"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
+//1.4.4.2 室性心动过速
+CREATE (:disease {name:"室性心动过速"});
+MATCH (dc:disease {name:"室性心律失常"}),(d:disease {name:"室性心动过速"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
+//1.4.4.3 心室扑动
+CREATE (:disease {name:"心室扑动"});
+MATCH (dc:disease {name:"室性心律失常"}),(d:disease {name:"心室扑动"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
+//1.4.4.4 心室颤动
+CREATE (:disease {name:"心室颤动"});
+MATCH (dc:disease {name:"室性心律失常"}),(d:disease {name:"心室颤动"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
+//1.4.5 心脏传导阻滞
+CREATE (:disease {name:"心脏传导阻滞"});
 MATCH (dc:disease {name:"心律失常"}),(d:disease {name:"心脏传导阻滞"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
+//1.4.5.1 房室阻滞
+CREATE (:disease {name:"房室阻滞"});
+MATCH (dc:disease {name:"心脏传导阻滞"}),(d:disease {name:"房室阻滞"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
+//1.4.5.2 室内阻滞
+CREATE (:disease {name:"室内阻滞"});
+MATCH (dc:disease {name:"心脏传导阻滞"}),(d:disease {name:"室内阻滞"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
 
 //1.5 心包疾病
 CREATE (:disease {name:"心包疾病",definition:"是由感染、肿瘤、代谢性疾病、尿毒症、自身免疫病、外伤等引起的心包病理性改变"});
-CREATE (:disease {name:"急性心包炎"});
-CREATE (:disease {name:"心包积液"});
-CREATE (:disease {name:"心脏压塞"});
-CREATE (:disease {name:"窄缩性心包炎",definition:"是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病"});
+//1.5.1 急性心包炎
+CREATE (:disease {name:"急性心包炎",definition:"心包脏层和壁层的急性炎症性疾病"});
 MATCH (dc:disease {name:"心包疾病"}),(d:disease {name:"急性心包炎"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
+//1.5.1.1 特发性急性心包炎
+CREATE (:disease {name:"特发性急性心包炎",synonym:"急性非特异性心包炎",definition:"无法明确病因的急性心包炎"});
+//1.5.2 心包积液
+CREATE (:disease {name:"心包积液",definition:"心包疾病或其他病因累及心包可造成心包渗出和心包积液"});
 MATCH (dc:disease {name:"心包疾病"}),(d:disease {name:"心包积液"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
+//1.5.3 心脏压塞
+CREATE (:disease {name:"心脏压塞",definition:"心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状"});
 MATCH (dc:disease {name:"心包疾病"}),(d:disease {name:"心脏压塞"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
+//1.5.4 急性心包炎
+CREATE (:disease {name:"窄缩性心包炎",definition:"是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病"});
 MATCH (dc:disease {name:"心包疾病"}),(d:disease {name:"窄缩性心包炎"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
 
+//1.6 感染性心内膜炎
 CREATE (:disease {name:"感染性心内膜炎"});
-CREATE (:disease {name:"自体瓣膜心内膜炎"});
-CREATE (:disease {name:"人工瓣膜和静脉药瘾者心内膜炎"});
 MATCH (dc:disease {name:"感染性心内膜炎"}),(d:disease {name:"自体瓣膜心内膜炎"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
+//1.6.1 自体瓣膜心内膜炎
+CREATE (:disease {name:"自体瓣膜心内膜炎"});
+//1.6.2 人工瓣膜和静脉药瘾者心内膜炎
+CREATE (:disease {name:"人工瓣膜和静脉药瘾者心内膜炎"});
 MATCH (dc:disease {name:"感染性心内膜炎"}),(d:disease {name:"人工瓣膜和静脉药瘾者心内膜炎"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
 
+//1.6 主动脉疾病
 CREATE (:disease {name:"主动脉疾病"});
 CREATE (:disease {name:"主动脉弓中断"});
 CREATE (:disease {name:"主动脉缩窄"});
@@ -186,13 +253,15 @@ MATCH (dc:disease {name:"主动脉疾病"}),(d:disease {name:"主动脉瘤"}) CR
 MATCH (dc:disease {name:"主动脉疾病"}),(d:disease {name:"主动脉夹层"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
 MATCH (dc:disease {name:"主动脉疾病"}),(d:disease {name:"多发性大动脉炎"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
 
+//1.7 周围血管病
 CREATE (:disease {name:"周围血管病"});
 CREATE (:disease {name:"静脉血栓症"});
 CREATE (:disease {name:"闭塞性周围动脉粥样硬化"});
 MATCH (dc:disease {name:"周围血管病"}),(d:disease {name:"静脉血栓症"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
 MATCH (dc:disease {name:"周围血管病"}),(d:disease {name:"闭塞性周围动脉粥样硬化"}) CREATE (dc)-[:include_disease {reference:"内科学第九版"}]->(d);
 
-CREATE (:disease {name:"心血管神经症"});
+//1.8 心血管神经症
+CREATE (:disease {name:"心血管神经症",definition:"以心血管疾病的有关症状为主要表现的临床综合征，临床上无器质性心脏病的证据"});
 
 //二、风险因子
 //2.1.1  冠状动脉粥样硬化性心脏病
@@ -235,10 +304,15 @@ CREATE (:risk_factor {name:"既往心肌梗死史",disease:"心力衰竭"});
 MATCH (d:disease {name:"心力衰竭"}),(r:risk_factor {disease:"心力衰竭"}) CREATE (d)<-[:disease_risk_factor {reference:"内科学第九版"}]-(r);
 
 //2.3  心脏瓣膜病
-CREATE (:risk_factor {name:"年龄40~50岁"});
-CREATE (:risk_factor {name:"女性"});
-MATCH (d:disease {name:"二尖瓣狭窄"}),(r:risk_factor {name:"年龄40~50岁"}) CREATE (d)<-[:disease_risk_factor {reference:"内科学第九版"}]-(r);
-MATCH (d:disease {name:"二尖瓣狭窄"}),(r:risk_factor {name:"女性"}) CREATE (d)<-[:disease_risk_factor {reference:"内科学第九版"}]-(r);
+CREATE (:risk_factor {name:"年龄40~50岁",disease:"二尖瓣狭窄"});
+CREATE (:risk_factor {name:"女性",disease:"二尖瓣狭窄"});
+MATCH (d:disease {name:"二尖瓣狭窄"}),(r:risk_factor {disease:"二尖瓣狭窄"}) CREATE (d)<-[:disease_risk_factor {reference:"内科学第九版"}]-(r);
+
+//2.8 心血管神经症
+CREATE (:risk_factor {name:"女性",disease:"心血管神经症"});
+CREATE (:risk_factor {name:"中青年",disease:"心血管神经症"});
+MATCH (d:disease {name:"心血管神经症"}),(r:risk_factor {disease:"心血管神经症"}) CREATE (d)<-[:disease_risk_factor {reference:"内科学第九版"}]-(r);
+
 
 //三、病因
 //3.2 心力衰竭
@@ -366,7 +440,55 @@ CREATE (:cause {name:"风湿性心脏病",disease:"多瓣膜病"});
 CREATE (:cause {name:"老年性退行性改变",disease:"多瓣膜病"});
 CREATE (:cause {name:"黏液样变性",disease:"多瓣膜病"});
 CREATE (:cause {name:"感染性心内膜炎",disease:"多瓣膜病"});
-MATCH (d:disease {name:"多瓣膜病"}),(c:cause {disease:"多瓣膜病"}) CREATE (c)<-[:disease_cause {comment:"常见病因",reference:"内科学第九版"}]-(d);
+MATCH (d:disease {name:"多瓣膜病"}),(c:cause {disease:"多瓣膜病"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
+
+//3.5.1 急性心包炎
+CREATE (:cause {name:"病毒感染",disease:"急性心包炎"});
+CREATE (:cause {name:"细菌感染",disease:"急性心包炎"});
+CREATE (:cause {name:"自身免疫病",disease:"急性心包炎"});
+CREATE (:cause {name:"肿瘤",disease:"急性心包炎"});
+CREATE (:cause {name:"尿毒症",disease:"急性心包炎"});
+CREATE (:cause {name:"急性心肌梗死后心包炎",disease:"急性心包炎"});
+CREATE (:cause {name:"主动脉夹层",disease:"急性心包炎"});
+CREATE (:cause {name:"胸壁外伤",disease:"急性心包炎"});
+CREATE (:cause {name:"心脏手术",disease:"急性心包炎"});
+MATCH (d:disease {name:"急性心包炎"}),(c:cause {disease:"急性心包炎"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
+
+//3.5.2 心包积液
+CREATE (:cause {name:"肿瘤",disease:"心包积液"});
+CREATE (:cause {name:"特发性心包炎",disease:"心包积液"});
+CREATE (:cause {name:"感染性心包炎",disease:"心包积液"});
+CREATE (:cause {name:"结核性心包炎",disease:"心包积液"});
+CREATE (:cause {name:"严重体循环瘀血",disease:"心包积液"});
+CREATE (:cause {name:"穿刺伤",disease:"心包积液"});
+CREATE (:cause {name:"心室破裂",disease:"心包积液"});
+CREATE (:cause {name:"心胸外科手术",disease:"心包积液"});
+CREATE (:cause {name:"介入操作造成的冠状动脉穿孔",disease:"心包积液"});
+MATCH (d:disease {name:"心包积液"}),(c:cause {disease:"心包积液"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
+
+//3.5.3 心脏压塞
+CREATE (:cause {name:"肿瘤",disease:"心脏压塞"});
+CREATE (:cause {name:"特发性心包炎",disease:"心脏压塞"});
+CREATE (:cause {name:"感染性心包炎",disease:"心脏压塞"});
+CREATE (:cause {name:"结核性心包炎",disease:"心脏压塞"});
+CREATE (:cause {name:"严重体循环瘀血",disease:"心脏压塞"});
+CREATE (:cause {name:"穿刺伤",disease:"心脏压塞"});
+CREATE (:cause {name:"心室破裂",disease:"心脏压塞"});
+CREATE (:cause {name:"心胸外科手术",disease:"心脏压塞"});
+CREATE (:cause {name:"介入操作造成的冠状动脉穿孔",disease:"心脏压塞"});
+MATCH (d:disease {name:"心脏压塞"}),(c:cause {disease:"心包积液"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
+
+//3.8 心血管神经症
+CREATE (:cause {name:"抑郁型神经",disease:"心血管神经症"});
+CREATE (:cause {name:"焦虑型神经",disease:"心血管神经症"});
+CREATE (:cause {name:"忧愁型神经",disease:"心血管神经症"});
+CREATE (:cause {name:"精神受到外界环境刺激",disease:"心血管神经症"});
+CREATE (:cause {name:"工作紧张",disease:"心血管神经症"});
+CREATE (:cause {name:"压力大",disease:"心血管神经症"});
+CREATE (:cause {name:"家庭成员中有神经官能症",disease:"心血管神经症"});
+CREATE (:cause {name:"对疑似症状产生过度忧虑",disease:"心血管神经症"});
+MATCH (d:disease {name:"心血管神经症"}),(c:cause {disease:"心血管神经症"}) CREATE (c)<-[:disease_cause {reference:"内科学第九版"}]-(d);
+
 
 //四、诱因
 
@@ -935,6 +1057,172 @@ MATCH (d:disease {name:"主动脉瓣狭窄伴二尖瓣关闭不全"}),(s:symptom
 CREATE (:symptom {characteristic:"较早发生左心室衰竭",disease:"二尖瓣关闭不全伴主动脉瓣关闭不全"});
 MATCH (d:disease {name:"二尖瓣关闭不全伴主动脉瓣关闭不全"}),(s:symptom {disease:"二尖瓣关闭不全伴主动脉瓣关闭不全"}) CREATE (d)-[:disease_symtom {reference:"内科学第九版"}]->(s);
 
+//5.5.1 急性心包炎
+CREATE (:symptom {characteristic:"胸痛",disease:"急性心包炎"});
+CREATE (:symptom {characteristic:"胸骨后、心前区疼痛",disease:"急性心包炎"});
+CREATE (:symptom {characteristic:"颈部、左肩、左臂、上腹部放射痛",disease:"急性心包炎"});
+CREATE (:symptom {characteristic:"疼痛性质尖锐",disease:"急性心包炎"});
+CREATE (:symptom {characteristic:"呼吸困难",disease:"急性心包炎"});
+CREATE (:symptom {characteristic:"水肿",disease:"急性心包炎"});
+CREATE (:symptom {characteristic:"发热",comment:"感染性心包炎",disease:"急性心包炎"});
+CREATE (:symptom {characteristic:"乏力",comment:"感染性心包炎",disease:"急性心包炎"});
+CREATE (:symptom {characteristic:"白细胞计数增加",examination:"血清学检查",comment:"感染性心包炎",disease:"急性心包炎"});
+CREATE (:symptom {characteristic:"中性粒细胞增加",examination:"血清学检查",comment:"感染性心包炎",disease:"急性心包炎"});
+CREATE (:symptom {characteristic:"C反应蛋白增高",examination:"血清学检查",comment:"感染性心包炎",disease:"急性心包炎"});
+CREATE (:symptom {characteristic:"红细胞沉降率增快",examination:"血清学检查",comment:"感染性心包炎",disease:"急性心包炎"});
+CREATE (:symptom {characteristic:"免疫指标阳性",examination:"血清学检查",comment:"自身免疫病引起心包炎",disease:"急性心包炎"});
+CREATE (:symptom {characteristic:"肌酐明显升高",examination:"血清学检查",comment:"尿毒症病人",disease:"急性心包炎"});
+CREATE (:symptom {characteristic:"心包摩擦音，呈抓刮样粗糙的高频音",disease:"急性心包炎"});
+CREATE (:symptom {characteristic:"三相摩擦音",disease:"急性心包炎"});
+CREATE (:symptom {characteristic:"心电图异常",examination:"心电图",disease:"急性心包炎"});
+CREATE (:symptom {characteristic:"除aVR及V1导联以外ST段呈弓背向下型抬高",examination:"心电图",disease:"急性心包炎"});
+CREATE (:symptom {characteristic:"心电图异常",examination:"心电图",disease:"急性心包炎"});
+CREATE (:symptom {characteristic:"aVR及V1导联ST段压低",examination:"心电图",disease:"急性心包炎"});
+CREATE (:symptom {characteristic:"窦性心动过速",examination:"心电图",disease:"急性心包炎"});
+CREATE (:symptom {characteristic:"QRS电交替",examination:"心电图",disease:"急性心包炎"});
+CREATE (:symptom {characteristic:"心影增大",examination:"胸部X线",comment:"心包积液较多",disease:"急性心包炎"});
+CREATE (:symptom {characteristic:"心包渗出后心包积液",examination:"胸部X线/超声心动图",disease:"急性心包炎"});
+MATCH (d:disease {name:"急性心包炎"}),(s:symptom {disease:"急性心包炎"}) CREATE (d)-[:disease_symtom {reference:"内科学第九版"}]->(s);
+
+//5.5.2 心包积液
+CREATE (:symptom {characteristic:"呼吸困难",disease:"心包积液"});
+CREATE (:symptom {characteristic:"端坐呼吸",disease:"心包积液"});
+CREATE (:symptom {characteristic:"身体前倾",disease:"心包积液"});
+CREATE (:symptom {characteristic:"面色苍白",disease:"心包积液"});
+CREATE (:symptom {characteristic:"发绀",disease:"心包积液"});
+CREATE (:symptom {characteristic:"干咳",disease:"心包积液"});
+CREATE (:symptom {characteristic:"声音嘶哑",disease:"心包积液"});
+CREATE (:symptom {characteristic:"吞咽困难",disease:"心包积液"});
+CREATE (:symptom {characteristic:"上腹部疼痛",disease:"心包积液"});
+CREATE (:symptom {characteristic:"肝大",disease:"心包积液"});
+CREATE (:symptom {characteristic:"全身水肿",disease:"心包积液"});
+CREATE (:symptom {characteristic:"胸腔积液",disease:"心包积液"});
+CREATE (:symptom {characteristic:"腹腔积液",disease:"心包积液"});
+CREATE (:symptom {characteristic:"休克",disease:"心包积液"});
+CREATE (:symptom {characteristic:"心尖搏动减弱",disease:"心包积液"});
+CREATE (:symptom {characteristic:"心脏浊音界向两侧增大",disease:"心包积液"});
+CREATE (:symptom {characteristic:"心音低而遥远",disease:"心包积液"});
+CREATE (:symptom {characteristic:"左肩胛骨下出现叩浊音",disease:"心包积液"});
+CREATE (:symptom {characteristic:"支气管呼吸音",disease:"心包积液"});
+CREATE (:symptom {characteristic:"心包积液征（Ewart征）",disease:"心包积液"});
+CREATE (:symptom {characteristic:"胸骨左缘第3、4肋间闻及心包叩击音",disease:"心包积液"});
+CREATE (:symptom {characteristic:"奇脉",disease:"心包积液"});
+CREATE (:symptom {characteristic:"体循环瘀血",disease:"心包积液"});
+CREATE (:symptom {characteristic:"颈静脉怒张",disease:"心包积液"});
+CREATE (:symptom {characteristic:"肝颈静脉回流征",disease:"心包积液"});
+CREATE (:symptom {characteristic:"下肢水肿",disease:"心包积液"});
+CREATE (:symptom {characteristic:"肢体导联QRS低电压",examination:"心电图",disease:"心包积液"});
+CREATE (:symptom {characteristic:"P波",examination:"心电图",disease:"心包积液"});
+CREATE (:symptom {characteristic:"QRS波",examination:"心电图",disease:"心包积液"});
+CREATE (:symptom {characteristic:"T波电交替",examination:"心电图",disease:"心包积液"});
+CREATE (:symptom {characteristic:"窦性心动过速",examination:"心电图",disease:"心包积液"});
+CREATE (:symptom {characteristic:"肺野清晰",examination:"X线检查",disease:"心包积液"});
+CREATE (:symptom {characteristic:"心影显著增大",examination:"X线检查",disease:"心包积液"});
+CREATE (:symptom {characteristic:"整个心动周期可见脏层心包与壁层心包之间存在积液",examination:"超声心动图",disease:"心包积液"});
+CREATE (:symptom {characteristic:"游泳心",examination:"超声心动图",disease:"心包积液"});
+CREATE (:symptom {characteristic:"舒张末期右心房塌陷",examination:"超声心动图",disease:"心包积液"});
+CREATE (:symptom {characteristic:"舒张早期右心室游离壁塌陷",examination:"超声心动图",disease:"心包积液"});
+CREATE (:symptom {characteristic:"吸气时右心室内径增大",examination:"超声心动图",disease:"心包积液"});
+CREATE (:symptom {characteristic:"吸气时左心室内径减小",examination:"超声心动图",disease:"心包积液"});
+CREATE (:symptom {characteristic:"吸气时室间隔左移",examination:"超声心动图",disease:"心包积液"});
+
+MATCH (d:disease {name:"心包积液"}),(s:symptom {disease:"心包积液"}) CREATE (d)-[:disease_symtom {reference:"内科学第九版"}]->(s);
+
+//5.5.3 心脏压塞
+CREATE (:symptom {characteristic:"呼吸困难",disease:"心脏压塞"});
+CREATE (:symptom {characteristic:"端坐呼吸",disease:"心脏压塞"});
+CREATE (:symptom {characteristic:"身体前倾",disease:"心脏压塞"});
+CREATE (:symptom {characteristic:"面色苍白",disease:"心脏压塞"});
+CREATE (:symptom {characteristic:"发绀",disease:"心脏压塞"});
+CREATE (:symptom {characteristic:"干咳",disease:"心脏压塞"});
+CREATE (:symptom {characteristic:"声音嘶哑",disease:"心脏压塞"});
+CREATE (:symptom {characteristic:"吞咽困难",disease:"心脏压塞"});
+CREATE (:symptom {characteristic:"上腹部疼痛",disease:"心脏压塞"});
+CREATE (:symptom {characteristic:"肝大",disease:"心脏压塞"});
+CREATE (:symptom {characteristic:"全身水肿",disease:"心脏压塞"});
+CREATE (:symptom {characteristic:"胸腔积液",disease:"心脏压塞"});
+CREATE (:symptom {characteristic:"腹腔积液",disease:"心脏压塞"});
+CREATE (:symptom {characteristic:"休克",disease:"心脏压塞"});
+CREATE (:symptom {characteristic:"心尖搏动减弱",disease:"心脏压塞"});
+CREATE (:symptom {characteristic:"心脏浊音界向两侧增大",disease:"心脏压塞"});
+CREATE (:symptom {characteristic:"心音低而遥远",disease:"心脏压塞"});
+CREATE (:symptom {characteristic:"左肩胛骨下出现叩浊音",disease:"心脏压塞"});
+CREATE (:symptom {characteristic:"支气管呼吸音",disease:"心脏压塞"});
+CREATE (:symptom {characteristic:"心包积液征（Ewart征）",disease:"心脏压塞"});
+CREATE (:symptom {characteristic:"胸骨左缘第3、4肋间闻及心包叩击音",disease:"心脏压塞"});
+CREATE (:symptom {characteristic:"奇脉",disease:"心脏压塞"});
+CREATE (:symptom {characteristic:"体循环瘀血",disease:"心脏压塞"});
+CREATE (:symptom {characteristic:"颈静脉怒张",disease:"心脏压塞"});
+CREATE (:symptom {characteristic:"肝颈静脉回流征",disease:"心脏压塞"});
+CREATE (:symptom {characteristic:"下肢水肿",disease:"心脏压塞"});
+CREATE (:symptom {characteristic:"窦性心动过速",disease:"心脏压塞"});
+CREATE (:symptom {characteristic:"血压下降",disease:"心脏压塞"});
+CREATE (:symptom {characteristic:"脉压变小",disease:"心脏压塞"});
+CREATE (:symptom {characteristic:"静脉压明显升高",disease:"心脏压塞"});
+CREATE (:symptom {characteristic:"急性循环衰竭",disease:"心脏压塞"});
+CREATE (:symptom {characteristic:"休克",disease:"心脏压塞"});
+CREATE (:symptom {characteristic:"Kussmaul征",disease:"心脏压塞"});
+CREATE (:symptom {characteristic:"为挠动脉搏动呈吸气性显著减弱或消失",disease:"心脏压塞"});
+CREATE (:symptom {characteristic:"肢体导联QRS低电压",examination:"心电图",disease:"心脏压塞"});
+CREATE (:symptom {characteristic:"P波",examination:"心电图",disease:"心脏压塞"});
+CREATE (:symptom {characteristic:"QRS波",examination:"心电图",disease:"心脏压塞"});
+CREATE (:symptom {characteristic:"T波电交替",examination:"心电图",disease:"心脏压塞"});
+CREATE (:symptom {characteristic:"窦性心动过速",examination:"心电图",disease:"心脏压塞"});
+CREATE (:symptom {characteristic:"肺野清晰",examination:"X线检查",disease:"心脏压塞"});
+CREATE (:symptom {characteristic:"心影显著增大",examination:"X线检查",disease:"心脏压塞"});
+CREATE (:symptom {characteristic:"整个心动周期可见脏层心包与壁层心包之间存在积液",examination:"超声心动图",disease:"心脏压塞"});
+CREATE (:symptom {characteristic:"游泳心",examination:"超声心动图",disease:"心脏压塞"});
+CREATE (:symptom {characteristic:"舒张末期右心房塌陷",examination:"超声心动图",disease:"心脏压塞"});
+CREATE (:symptom {characteristic:"舒张早期右心室游离壁塌陷",examination:"超声心动图",disease:"心脏压塞"});
+CREATE (:symptom {characteristic:"吸气时右心室内径增大",examination:"超声心动图",disease:"心脏压塞"});
+CREATE (:symptom {characteristic:"吸气时左心室内径减小",examination:"超声心动图",disease:"心脏压塞"});
+CREATE (:symptom {characteristic:"吸气时室间隔左移",examination:"超声心动图",disease:"心脏压塞"});
+MATCH (d:disease {name:"心脏压塞"}),(s:symptom {disease:"心脏压塞"}) CREATE (d)-[:disease_symtom {reference:"内科学第九版"}]->(s);
+
+//5.8 心血管神经症
+CREATE (:symptom {characteristic:"心悸",disease:"心血管神经症"});
+CREATE (:symptom {characteristic:"呼吸困难",disease:"心血管神经症"});
+CREATE (:symptom {characteristic:"心前区痛",disease:"心血管神经症"});
+CREATE (:symptom {characteristic:"针刺样、牵扯样或刀割样疼痛",disease:"心血管神经症"});
+CREATE (:symptom {characteristic:"含服硝酸甘油不能缓解疼痛",disease:"心血管神经症"});
+CREATE (:symptom {characteristic:"失眠",disease:"心血管神经症"});
+CREATE (:symptom {characteristic:"多梦",disease:"心血管神经症"});
+CREATE (:symptom {characteristic:"失眠",disease:"心血管神经症"});
+CREATE (:symptom {characteristic:"焦虑",disease:"心血管神经症"});
+CREATE (:symptom {characteristic:"食欲缺乏",disease:"心血管神经症"});
+CREATE (:symptom {characteristic:"头晕",disease:"心血管神经症"});
+CREATE (:symptom {characteristic:"耳鸣多汗",disease:"心血管神经症"});
+CREATE (:symptom {characteristic:"手足发冷",disease:"心血管神经症"});
+CREATE (:symptom {characteristic:"双手震颤",disease:"心血管神经症"});
+CREATE (:symptom {characteristic:"手足发冷",disease:"心血管神经症"});
+CREATE (:symptom {characteristic:"尿频",disease:"心血管神经症"});
+CREATE (:symptom {characteristic:"大便次数增多",disease:"心血管神经症"});
+CREATE (:symptom {characteristic:"便秘",disease:"心血管神经症"});
+CREATE (:symptom {characteristic:"心率增快",disease:"心血管神经症"});
+CREATE (:symptom {characteristic:"心音增强",disease:"心血管神经症"});
+CREATE (:symptom {characteristic:"短促收缩期杂音",disease:"心血管神经症"});
+CREATE (:symptom {characteristic:"期前收缩",disease:"心血管神经症"});
+CREATE (:symptom {characteristic:"血压轻度升高",disease:"心血管神经症"});
+CREATE (:symptom {characteristic:"腱反射较活跃",disease:"心血管神经症"});
+CREATE (:symptom {characteristic:"窦性心动过速",examination:"心电图",disease:"心血管神经症"});
+CREATE (:symptom {characteristic:"房性或室性期前收缩",examination:"心电图",disease:"心血管神经症"});
+CREATE (:symptom {characteristic:"非特异性ST-T改变",examination:"心电图",disease:"心血管神经症"});
+CREATE (:symptom {characteristic:"心绞痛",occur_with:"精神心理问题",disease:"心血管神经症"});
+CREATE (:symptom {characteristic:"心力衰竭",occur_with:"精神心理问题",disease:"心血管神经症"});
+CREATE (:symptom {characteristic:"抑郁",occur_with:"精神心理问题",disease:"心血管神经症"});
+CREATE (:symptom {characteristic:"不安",occur_with:"精神心理问题",disease:"心血管神经症"});
+CREATE (:symptom {characteristic:"压抑",occur_with:"精神心理问题",disease:"心血管神经症"});
+CREATE (:symptom {characteristic:"焦躁不安",occur_with:"精神心理问题",disease:"心血管神经症"});
+CREATE (:symptom {characteristic:"易怒",occur_with:"精神心理问题",disease:"心血管神经症"});
+CREATE (:symptom {characteristic:"易疲劳",occur_with:"精神心理问题",disease:"心血管神经症"});
+CREATE (:symptom {characteristic:"急性发作",occur_with:"精神心理问题",disease:"心血管神经症"});
+CREATE (:symptom {characteristic:"惊恐障碍",occur_with:"精神心理问题",disease:"心血管神经症"});
+CREATE (:symptom {characteristic:"胸痛",occur_with:"精神心理问题",disease:"心血管神经症"});
+CREATE (:symptom {characteristic:"头痛",occur_with:"精神心理问题",disease:"心血管神经症"});
+CREATE (:symptom {characteristic:"出汗发抖",occur_with:"精神心理问题",disease:"心血管神经症"});
+CREATE (:symptom {characteristic:"无器质性病变证据",occur_with:"精神心理问题",disease:"心血管神经症"});
+MATCH (d:disease {name:"心血管神经症"}),(s:symptom {disease:"心血管神经症"}) CREATE (d)-[:disease_symtom {reference:"内科学第九版"}]->(s);
+
 
 //六、分期分级分类
 
@@ -1142,6 +1430,32 @@ CREATE (:examination {name:"二维超声",information:"主动脉瓣关闭时不�
 CREATE (:examination {name:"多普勒超声",information:"主动脉瓣下方（左心室流出道）探及全舒张期反流",disease:"主动脉瓣关闭不全"});
 MATCH (d:disease {name:"主动脉瓣狭窄"}),(rt:examination {disease:"主动脉瓣关闭不全"}) CREATE (d)-[:disease_examination {reference:"内科学第九版"}]->(rt);
 
+//7.5.1 急性心包炎
+CREATE (:examination {name:"血清学检查",information:"白细胞计数/中性粒细胞/C反应蛋白/红细胞/免疫指标/肌酐",disease:"急性心包炎"});
+CREATE (:examination {name:"心电图",information:"心电图改变",disease:"急性心包炎"});
+CREATE (:examination {name:"胸部X线",information:"心包积液情况",disease:"急性心包炎"});
+CREATE (:examination {name:"超声心动图",information:"靴型心/肺淤血/肺水肿",disease:"急性心包炎"});
+CREATE (:examination {name:"心脏磁共振成像",english_name:"MRI",information:"心包积液的容量和分布情况/心包厚度",disease:"急性心包炎"});
+CREATE (:examination {name:"心包穿刺",information:"心脏压塞",disease:"急性心包炎"});
+MATCH (d:disease {name:"急性心包炎"}),(rt:examination {disease:"急性心包炎"}) CREATE (d)-[:disease_examination {reference:"内科学第九版"}]->(rt);
+
+//7.5.2 心包积液
+CREATE (:examination {name:"X线检查",information:"心影增大",disease:"心包积液"});
+CREATE (:examination {name:"心电图",information:"QRS波/P波/T波/窦性心动过速",disease:"心包积液"});
+CREATE (:examination {name:"超声心电图",information:"心包积液定量、定位",disease:"心包积液"});
+CREATE (:examination {name:"心脏磁共振成像",information:"心包积液的位置、范围和容量/心包积液的性质/心包膜的增厚/心包腔内肿瘤",disease:"心包积液"});
+CREATE (:examination {name:"心包穿刺",information:"心包积液的性质",disease:"心包积液"});
+MATCH (d:disease {name:"心包积液"}),(rt:examination {disease:"心包积液"}) CREATE (d)-[:disease_examination {reference:"内科学第九版"}]->(rt);
+
+//7.5.3 心脏压塞
+CREATE (:examination {name:"X线检查",information:"心影增大",disease:"心脏压塞"});
+CREATE (:examination {name:"心电图",information:"QRS波/P波/T波/窦性心动过速",disease:"心脏压塞"});
+CREATE (:examination {name:"超声心电图",information:"心包积液定量、定位",disease:"心脏压塞"});
+CREATE (:examination {name:"心脏磁共振成像",information:"心包积液的位置、范围和容量/心包积液的性质/心包膜的增厚/心包腔内肿瘤",disease:"心脏压塞"});
+CREATE (:examination {name:"心包穿刺",information:"心包积液的性质",disease:"心脏压塞"});
+MATCH (d:disease {name:"心脏压塞"}),(rt:examination {disease:"心脏压塞"}) CREATE (d)-[:disease_examination {reference:"内科学第九版"}]->(rt);
+
+
 //八、并发症
 //8.1.1.2.2 ST段抬高型心肌梗死
 CREATE (d:complication {complication:"乳头肌功能失调或断裂",disease:"ST段抬高型心肌梗死"});
@@ -1180,6 +1494,9 @@ CREATE (:complication {disease:"主动脉瓣关闭不全",complication:"心力�
 CREATE (:complication {disease:"主动脉瓣关闭不全",complication:"心脏性猝死"});
 MATCH (d1:disease {name:"主动脉瓣关闭不全"}),(d2:complication {disease:"主动脉瓣关闭不全"}) CREATE (d1)-[:disease_complication {reference:"内科学第九版"}]->(d2);
 
+//8.8 心血管神经症
+CREATE (:complication {disease:"心血管神经症",complication:"精神心理问题"});
+MATCH (d1:disease {name:"心血管神经症"}),(d2:complication {disease:"心血管神经症"}) CREATE (d1)-[:disease_complication {reference:"内科学第九版"}]->(d2);
 
 //九、鉴别诊断
 //9.1.1.1.1 稳定型心绞痛
@@ -1296,7 +1613,37 @@ MATCH (d:disease {name:"主动脉瓣狭窄"}),(dd:differential_diagnosis {diseas
 //9.3.4 主动脉瓣关闭不全
 CREATE (:differential_diagnosis {name:"二尖瓣狭窄",symptom:"主动脉瓣关闭不全杂音",disease:"主动脉瓣关闭不全"});
 MATCH (d:disease {name:"主动脉瓣关闭不全"}),(dd:differential_diagnosis {disease:"主动脉瓣关闭不全"}) CREATE (d)-[:disease_differential_diagnosis {reference:"内科学第九版"}]->(dd);
+//9.5.1 急性心包炎
+CREATE (:differential_diagnosis {name:"急性心肌梗死",symptom:"胸痛伴心电图ST段抬高",disease:"急性心包炎"});
+CREATE (:differential_diagnosis {name:"主动脉夹层动脉瘤破裂",symptom:"高血压史、胸痛",disease:"急性心包炎"});
+CREATE (:differential_diagnosis {name:"肺栓塞",symptom:"胸痛/胸闷/晕厥",disease:"急性心包炎"});
+MATCH (d:disease {name:"急性心包炎"}),(dd:differential_diagnosis {disease:"急性心包炎"}) CREATE (d)-[:disease_differential_diagnosis {reference:"内科学第九版"}]->(dd);
+//9.5.2 心包积液
+CREATE (:differential_diagnosis {name:"心力衰竭",symptom:"呼吸困难",disease:"心包积液"});
+CREATE (:differential_diagnosis {name:"冠心病",symptom:"呼吸困难",disease:"心包积液"});
+CREATE (:differential_diagnosis {name:"高血压",symptom:"呼吸困难",disease:"心包积液"});
+CREATE (:differential_diagnosis {name:"瓣膜病",symptom:"呼吸困难",disease:"心包积液"});
+CREATE (:differential_diagnosis {name:"先天性心脏病",symptom:"呼吸困难",disease:"心包积液"});
+CREATE (:differential_diagnosis {name:"心肌病",symptom:"呼吸困难",disease:"心包积液"});
+MATCH (d:disease {name:"心包积液"}),(dd:differential_diagnosis {disease:"心包积液"}) CREATE (d)-[:disease_differential_diagnosis {reference:"内科学第九版"}]->(dd);
+//9.5.3 心脏压塞
+CREATE (:differential_diagnosis {name:"心力衰竭",symptom:"呼吸困难",disease:"心脏压塞"});
+CREATE (:differential_diagnosis {name:"冠心病",symptom:"呼吸困难",disease:"心脏压塞"});
+CREATE (:differential_diagnosis {name:"高血压",symptom:"呼吸困难",disease:"心脏压塞"});
+CREATE (:differential_diagnosis {name:"瓣膜病",symptom:"呼吸困难",disease:"心脏压塞"});
+CREATE (:differential_diagnosis {name:"先天性心脏病",symptom:"呼吸困难",disease:"心脏压塞"});
+CREATE (:differential_diagnosis {name:"心肌病",symptom:"呼吸困难",disease:"心脏压塞"});
+MATCH (d:disease {name:"心脏压塞"}),(dd:differential_diagnosis {disease:"心脏压塞"}) CREATE (d)-[:disease_differential_diagnosis {reference:"内科学第九版"}]->(dd);
 
+
+
+//9.8 心血管神经症
+CREATE (:differential_diagnosis {name:"心绞痛",disease:"心血管神经症"});
+CREATE (:differential_diagnosis {name:"甲状腺功能亢进",disease:"心血管神经症"});
+CREATE (:differential_diagnosis {name:"心肌炎",disease:"心血管神经症"});
+CREATE (:differential_diagnosis {name:"二尖瓣脱垂综合征",disease:"心血管神经症"});
+CREATE (:differential_diagnosis {name:"嗜铬细胞瘤",disease:"心血管神经症"});
+MATCH (d:disease {name:"心血管神经症"}),(dd:differential_diagnosis {disease:"心血管神经症"}) CREATE (d)-[:disease_differential_diagnosis {reference:"内科学第九版"}]->(dd);
 
 //十、药物治疗及禁用药物
 //10.1.1.1.1 稳定型心绞痛
@@ -1557,6 +1904,25 @@ CREATE (:drug {name:"肼屈嗪",indication:"左心室扩大但收缩功能正常
 CREATE (:drug {name:"血管紧张素酶抑制剂",english_name:"ACEI",indication:"左心室扩大但收缩功能正常",aim:"延迟或减少主动脉瓣手术的需要",disease:"慢性主动脉瓣关闭不全"});
 MATCH (ds:disease {name:"慢性主动脉瓣关闭不全"}),(dg:drug {disease:"慢性主动脉瓣关闭不全"}) CREATE (ds)-[:disease_drug {reference:"内科学第九版"}]->(dg);
 
+//11.5.1 急性心包炎
+CREATE (:drug {name:"阿司匹林",dosage:"2~4g/d",indication:"疼痛",aim:"缓解疼痛",disease:"急性心包炎"});
+CREATE (:drug {name:"布洛芬",dosage:"400~600mg",frequency:"一日3次",indication:"疼痛、阿司匹林效果不佳",aim:"缓解疼痛",disease:"急性心包炎"});
+CREATE (:drug {name:"吲哚美辛",dosage:"20~50mg",frequency:"一日3次",indication:"疼痛、阿司匹林效果不佳",aim:"缓解疼痛",disease:"急性心包炎"});
+CREATE (:drug {name:"秋水仙",dosage:"0.6mg",frequency:"一日2次",indication:"疼痛、阿司匹林效果不佳",aim:"缓解疼痛",disease:"急性心包炎"});
+CREATE (:drug {name:"吗啡",disease:"急性心包炎"});
+CREATE (:drug {name:"泼尼松",dosage:"40~80mg/d",disease:"急性心包炎"});
+MATCH (ds:disease {name:"急性心包炎"}),(dg:drug {disease:"急性心包炎"}) CREATE (ds)-[:disease_drug {reference:"内科学第九版"}]->(dg);
+
+//11.8 心血管神经症
+CREATE (:drug {name:"氯硝西泮",indication:"焦虑症状明显",aim:"抗焦虑",disease:"心血管神经症"});
+CREATE (:drug {name:"劳拉西泮",indication:"焦虑症状明显",aim:"抗焦虑",disease:"心血管神经症"});
+CREATE (:drug {name:"阿米替林",indication:"伴有抑郁",aim:"抗抑郁",disease:"心血管神经症"});
+CREATE (:drug {name:"多塞平",indication:"伴有抑郁",aim:"抗抑郁",disease:"心血管神经症"});
+CREATE (:drug {name:"氟西汀",indication:"伴有抑郁",aim:"抗抑郁",disease:"心血管神经症"});
+CREATE (:drug {name:"舍曲林",indication:"伴有抑郁",aim:"抗抑郁",disease:"心血管神经症"});
+MATCH (ds:disease {name:"心血管神经症"}),(dg:drug {disease:"心血管神经症"}) CREATE (ds)-[:disease_drug {reference:"内科学第九版"}]->(dg);
+
+
 //十一、非药物治疗
 //11.1.1.1.1 稳定型心绞痛
 CREATE (:treatment {name:"立刻休息",indication:"心绞痛发作时",disease:"稳定型心绞痛"});
@@ -1698,6 +2064,27 @@ CREATE (:treatment {name:"主动脉瓣置换术",indication:"原发性主动脉�
 CREATE (:treatment {name:"主动脉瓣成形术",indication:"继发性主动脉瓣关闭不全",disease:"慢性主动脉瓣关闭不全"});
 CREATE (:treatment {name:"瓣膜修复术",indication:"瓣叶穿孔",disease:"慢性主动脉瓣关闭不全"});
 MATCH (d:disease {name:"慢性主动脉瓣关闭不全"}),(t:treatment {disease:"慢性主动脉瓣关闭不全"}) CREATE (d)-[:disease_treatment {reference:"内科学第九版"}]->(t);
-//11.4 多瓣膜病
+//11.3.4 多瓣膜病
 CREATE (:treatment {name:"手术治疗",disease:"多瓣膜病"});
 MATCH (d:disease {name:"多瓣膜病"}),(t:treatment {disease:"多瓣膜病"}) CREATE (d)-[:disease_treatment {reference:"内科学第九版"}]->(t);
+
+//11.5.1 急性心包炎
+CREATE (:treatment {name:"卧床休息",disease:"急性心包炎"});
+CREATE (:treatment {name:"心包穿刺引流",indication:"心包积液多引起急性心脏压塞",disease:"急性心包炎"});
+CREATE (:treatment {name:"外科心包切除术",indication:"顽固性复发性心包炎病程超过2年/心包积液反复穿刺引流无法缓解/激素无法控制/伴严重胸痛",disease:"急性心包炎"});
+MATCH (d:disease {name:"急性心包炎"}),(t:treatment {disease:"急性心包炎"}) CREATE (d)-[:disease_treatment {reference:"内科学第九版"}]->(t);
+
+//11.5.2 心包积液
+CREATE (:treatment {name:"心包穿刺引流",disease:"心包积液"});
+CREATE (:treatment {name:"扩容、升压治疗",indication:"伴休克",disease:"心包积液"});
+MATCH (d:disease {name:"心包积液"}),(t:treatment {disease:"心包积液"}) CREATE (d)-[:disease_treatment {reference:"内科学第九版"}]->(t);
+
+//11.5.2 心脏压塞
+CREATE (:treatment {name:"心包穿刺引流",disease:"心脏压塞"});
+CREATE (:treatment {name:"扩容、升压治疗",indication:"伴休克",disease:"心脏压塞"});
+MATCH (d:disease {name:"心脏压塞"}),(t:treatment {disease:"心脏压塞"}) CREATE (d)-[:disease_treatment {reference:"内科学第九版"}]->(t);
+
+//11.8 心血管神经症
+CREATE (:treatment {name:"心理治疗",disease:"心血管神经症"});
+CREATE (:treatment {name:"危险因素干预",indication:"合并高血压、高血脂等心血管危险因素而无明确器质性病变者",disease:"心血管神经症"});
+MATCH (d:disease {name:"心血管神经症"}),(t:treatment {disease:"心血管神经症"}) CREATE (d)-[:disease_treatment {reference:"内科学第九版"}]->(t);
