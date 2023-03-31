@@ -1,21 +1,175 @@
-//病理
 
-CREATE (:Pathology {name:"左心室代偿功能不全"});
-MATCH (p:Pathology {name:"左心室代偿功能不全"}), (d:Disease {name:"左心衰竭"}) CREATE (p)-[:Leadto {reference:"内科学第九版"}]->(d);
+//mechanism
+// CREATE (:mechanism {description:"暂时的缺血缺氧"});
+// CREATE (:mechanism {description:"持续严重的心肌缺血"});
 
-CREATE (:Pathology {name:"Frank-Starling机制"});
-CREATE (:Pathology {name:"神经体液机制"});
-CREATE (:Pathology {name:"交感神经兴奋性增强"});
-CREATE (:Pathology {name:"体液因子改变"});
-CREATE (:Pathology {name:"RAAS激活"});
-CREATE (:Pathology {name:"精氨酸加压素升高"});
-CREATE (:Pathology {name:"利钠肽升高"});
-MATCH (p1:Pathology {name:"体液因子改变"}), (p2:Pathology {name:"精氨酸加压素升高"}) CREATE (p1)-[:Includes_pathology {reference:"内科学第九版"}]->(p2);
-MATCH (p1:Pathology {name:"体液因子改变"}), (p2:Pathology {name:"利钠肽升高"}) CREATE (p1)-[:Includes_pathology {reference:"内科学第九版"}]->(p2);
-CREATE (:Pathology {name:"心室重塑"});
-MATCH (p:Pathology {name:"Frank-Starling机制"}), (c:Category {name:"心力衰竭"}) CREATE (p)-[:Leadto {reference:"内科学第九版"}]->(c);
-MATCH (p:Pathology {name:"交感神经兴奋性增强"}), (c:Category {name:"心力衰竭"}) CREATE (p)-[:Leadto {reference:"内科学第九版"}]->(c);
-MATCH (p:Pathology {name:"心室重塑"}), (c:Category {name:"心力衰竭"}) CREATE (p)-[:Leadto {reference:"内科学第九版"}]->(c);
-MATCH (p:Pathology {name:"RAAS激活"}), (c:Category {name:"心力衰竭"}) CREATE (p)-[:Leadto {reference:"内科学第九版"}]->(c);
-MATCH (p:Pathology {name:"精氨酸加压素升高"}), (c:Category {name:"心力衰竭"}) CREATE (p)-[:Leadto {reference:"内科学第九版"}]->(c);
-MATCH (p:Pathology {name:"利钠肽升高"}), (c:Category {name:"心力衰竭"}) CREATE (p)-[:Leadto {reference:"内科学第九版"}]->(c);
+
+CREATE (:mechanism {description:"冠状动脉固定狭窄"});
+CREATE (:mechanism {description:"心脏负荷增加"});
+CREATE (:mechanism {description:"心率增快"});
+CREATE (:mechanism {description:"心肌张力增加"});
+CREATE (:mechanism {description:"心肌收缩力增加"});
+CREATE (:mechanism {description:"冠状动脉供血不足"});
+CREATE (:mechanism {description:"心肌耗氧量增加"});
+MATCH (m:mechanism {description:"心脏负荷增加"}),(c:inducement {name:"体力劳动"}) CREATE (c)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m);
+MATCH (m:mechanism {description:"心脏负荷增加"}),(c:inducement {name:"情绪激动"}) CREATE (c)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m);
+MATCH (m:mechanism {description:"心脏负荷增加"}),(c:inducement {name:"饱食"}) CREATE (c)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m);
+MATCH (m:mechanism {description:"心脏负荷增加"}),(c:inducement {name:"寒冷"}) CREATE (c)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m);
+MATCH (m:mechanism {description:"心脏负荷增加"}),(c:inducement {name:"吸烟"}) CREATE (c)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m);
+MATCH (m:mechanism {description:"心脏负荷增加"}),(c:inducement {name:"心动过速"}) CREATE (c)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m);
+MATCH (m:mechanism {description:"心脏负荷增加"}),(c:inducement {name:"休克"}) CREATE (c)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m);
+MATCH (m1:mechanism {description:"心脏负荷增加"}),(m2:mechanism {description:"心率增快"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
+MATCH (m1:mechanism {description:"心脏负荷增加"}),(m2:mechanism {description:"心肌张力增加"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
+MATCH (m1:mechanism {description:"心脏负荷增加"}),(m2:mechanism {description:"心肌收缩力增加"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
+MATCH (m1:mechanism {description:"心率增快"}),(m2:mechanism {description:"心肌耗氧量增加"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
+MATCH (m1:mechanism {description:"心肌张力增加"}),(m2:mechanism {description:"心肌耗氧量增加"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
+MATCH (m1:mechanism {description:"心肌收缩力增加"}),(m2:mechanism {description:"心肌耗氧量增加"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
+MATCH (m1:mechanism {description:"冠状动脉固定狭窄"}),(m2:mechanism {description:"冠状动脉供血不足"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
+
+CREATE (:mechanism {description:"冠脉粥样硬化"});
+CREATE (:mechanism {description:"心肌缺血"});
+CREATE (:mechanism {description:"心肌缺氧"});
+CREATE (:mechanism {description:"心肌细胞减少"});
+CREATE (:mechanism {description:"心肌细胞坏死"});
+CREATE (:mechanism {description:"心肌瘢痕"});
+CREATE (:mechanism {description:"心肌弥漫性纤维化"});
+MATCH (m1:mechanism {description:"冠脉粥样硬化"}),(m2:mechanism {description:"心肌缺血"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
+MATCH (m1:mechanism {description:"冠脉粥样硬化"}),(m2:mechanism {description:"心肌缺氧"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
+MATCH (m1:mechanism {description:"心肌缺血"}),(m2:mechanism {description:"心肌细胞减少"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
+MATCH (m1:mechanism {description:"心肌缺血"}),(m2:mechanism {description:"心肌细胞坏死"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
+MATCH (m1:mechanism {description:"心肌缺血"}),(m2:mechanism {description:"心肌弥漫性纤维化"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
+MATCH (m1:mechanism {description:"心肌缺血"}),(m2:mechanism {description:"心肌瘢痕"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
+MATCH (m1:mechanism {description:"心肌缺氧"}),(m2:mechanism {description:"心肌细胞减少"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
+MATCH (m1:mechanism {description:"心肌缺氧"}),(m2:mechanism {description:"心肌细胞坏死"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
+MATCH (m1:mechanism {description:"心肌缺氧"}),(m2:mechanism {description:"心肌弥漫性纤维化"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
+MATCH (m1:mechanism {description:"心肌缺氧"}),(m2:mechanism {description:"心肌瘢痕"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
+
+CREATE (:mechanism {description:"不稳定粥样硬化斑块破裂、糜烂"});
+CREATE (:mechanism {description:"血小板聚集"});
+CREATE (:mechanism {description:"血栓形成"});
+CREATE (:mechanism {description:"冠状动脉痉挛收缩"});
+CREATE (:mechanism {description:"微血管栓塞"});
+CREATE (:mechanism {description:"心肌供氧减少"});
+CREATE (:mechanism {description:"心肌缺血加重"});
+MATCH (m1:mechanism {description:"冠脉粥样硬化"}),(m2:mechanism {description:"不稳定粥样硬化斑块破裂、糜烂"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
+MATCH (m1:mechanism {description:"冠脉粥样硬化"}),(m2:mechanism {description:"不稳定粥样硬化斑块糜烂"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
+MATCH (m1:mechanism {description:"不稳定粥样硬化斑块破裂、糜烂"}),(m2:mechanism {description:"血小板聚集"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
+MATCH (m1:mechanism {description:"不稳定粥样硬化斑块破裂、糜烂"}),(m2:mechanism {description:"血栓形成"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
+MATCH (m1:mechanism {description:"不稳定粥样硬化斑块破裂、糜烂"}),(m2:mechanism {description:"冠状动脉痉挛收缩"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
+MATCH (m1:mechanism {description:"不稳定粥样硬化斑块破裂、糜烂"}),(m2:mechanism {description:"微血管栓塞"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
+MATCH (m1:mechanism {description:"血小板聚集"}),(m2:mechanism {description:"心肌供氧减少"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
+MATCH (m1:mechanism {description:"血栓形成"}),(m2:mechanism {description:"心肌供氧减少"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
+MATCH (m1:mechanism {description:"冠状动脉痉挛收缩"}),(m2:mechanism {description:"心肌供氧减少"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
+MATCH (m1:mechanism {description:"微血管栓塞"}),(m2:mechanism {description:"心肌缺血加重"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
+MATCH (m1:mechanism {description:"血小板聚集"}),(m2:mechanism {description:"心肌缺血加重"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
+MATCH (m1:mechanism {description:"血栓形成"}),(m2:mechanism {description:"心肌缺血加重"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
+MATCH (m1:mechanism {description:"冠状动脉痉挛收缩"}),(m2:mechanism {description:"心肌缺血加重"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
+
+CREATE (:mechanism {description:"血管管腔闭塞",duration:"≥20~30min"});
+CREATE (:mechanism {description:"不稳定粥样硬化斑块破溃"});
+CREATE (:mechanism {description:"继发血栓形成"});
+CREATE (:mechanism {description:"交感神经活动增强"});
+CREATE (:mechanism {description:"机体应激反应性增强"});
+CREATE (:mechanism {description:"血压增高"});
+CREATE (:mechanism {description:"冠状动脉张力增高"});
+CREATE (:mechanism {description:"血脂增高"});
+CREATE (:mechanism {description:"血粘稠度增高"});
+CREATE (:mechanism {description:"左心室负荷加重"});
+CREATE (:mechanism {description:"心排量骤降"});
+CREATE (:mechanism {description:"冠状动脉灌注量锐减"});
+
+MATCH (m:mechanism {description:"交感神经活动增强"}),(c:inducement {name:"晨起"}) CREATE (c)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m);
+MATCH (m:mechanism {description:"血脂增高"}),(c:inducement {name:"饱餐"}) CREATE (c)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m);
+MATCH (m:mechanism {description:"血粘稠度增高"}),(c:inducement {name:"饱餐"}) CREATE (c)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m);
+MATCH (m:mechanism {description:"左心室负荷加重"}),(c:inducement {name:"重体力活动"}) CREATE (c)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m);
+MATCH (m:mechanism {description:"左心室负荷加重"}),(c:inducement {name:"情绪过分激动"}) CREATE (c)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m);
+MATCH (m:mechanism {description:"左心室负荷加重"}),(c:inducement {name:"血压剧升"}) CREATE (c)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m);
+MATCH (m:mechanism {description:"左心室负荷加重"}),(c:inducement {name:"用力排便"}) CREATE (c)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m);
+MATCH (m:mechanism {description:"心排量骤降"}),(c:inducement {name:"休克"}) CREATE (c)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m);
+MATCH (m:mechanism {description:"心排量骤降"}),(c:inducement {name:"脱水"}) CREATE (c)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m);
+MATCH (m:mechanism {description:"心排量骤降"}),(c:inducement {name:"出血"}) CREATE (c)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m);
+MATCH (m:mechanism {description:"心排量骤降"}),(c:inducement {name:"外科手术"}) CREATE (c)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m);
+MATCH (m:mechanism {description:"心排量骤降"}),(c:inducement {name:"严重心律失常"}) CREATE (c)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m);
+
+MATCH (m1:mechanism {description:"交感神经活动增强"}),(m2:mechanism {description:"机体应激反应性增强"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
+MATCH (m1:mechanism {description:"机体应激反应性增强"}),(m2:mechanism {description:"心肌张力增加"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
+MATCH (m1:mechanism {description:"机体应激反应性增强"}),(m2:mechanism {description:"心率增快"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
+MATCH (m1:mechanism {description:"机体应激反应性增强"}),(m2:mechanism {description:"血压增高"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
+MATCH (m1:mechanism {description:"机体应激反应性增强"}),(m2:mechanism {description:"冠状动脉张力增高"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
+MATCH (m1:mechanism {description:"心肌张力增加"}),(m2:mechanism {description:"不稳定粥样硬化斑块破溃"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
+MATCH (m1:mechanism {description:"心率增快"}),(m2:mechanism {description:"不稳定粥样硬化斑块破溃"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
+MATCH (m1:mechanism {description:"血压增高"}),(m2:mechanism {description:"不稳定粥样硬化斑块破溃"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
+MATCH (m1:mechanism {description:"冠状动脉张力增高"}),(m2:mechanism {description:"不稳定粥样硬化斑块破溃"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
+MATCH (m1:mechanism {description:"血脂增高"}),(m2:mechanism {description:"不稳定粥样硬化斑块破溃"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
+MATCH (m1:mechanism {description:"血粘稠度增高"}),(m2:mechanism {description:"不稳定粥样硬化斑块破溃"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
+MATCH (m1:mechanism {description:"左心室负荷加重"}),(m2:mechanism {description:"不稳定粥样硬化斑块破溃"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
+MATCH (m1:mechanism {description:"心排量骤降"}),(m2:mechanism {description:"冠状动脉灌注量锐减"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
+MATCH (m1:mechanism {description:"心排量骤降"}),(m2:mechanism {description:"不稳定粥样硬化斑块破溃"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
+MATCH (m1:mechanism {description:"不稳定粥样硬化斑块破溃"}),(m2:mechanism {description:"继发血栓形成"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
+MATCH (m1:mechanism {description:"继发血栓形成"}),(m2:mechanism {description:"血管管腔闭塞"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
+CREATE (:mechanism {description:"壁冠状动脉在收缩期被挤压"});
+CREATE (:mechanism {description:"远端心肌缺血"});
+MATCH (m1:mechanism {description:"壁冠状动脉在收缩期被挤压"}),(m2:mechanism {description:"远端心肌缺血"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
+
+MATCH (d:disease {name:"稳定型心绞痛"}),(m:mechanism {description:"冠状动脉供血不足"}) CREATE (d)<-[:mechanism_subsequence {reference:"内科学第九版"}]-(m);
+MATCH (d:disease {name:"稳定型心绞痛"}),(m:mechanism {description:"心肌耗氧量增加"}) CREATE (d)<-[:mechanism_subsequence {reference:"内科学第九版"}]-(m);
+MATCH (d:disease {name:"缺血性心肌病"}),(m:mechanism {description:"心肌细胞减少"}) CREATE (d)<-[:mechanism_subsequence {reference:"内科学第九版"}]-(m);
+MATCH (d:disease {name:"缺血性心肌病"}),(m:mechanism {description:"心肌细胞坏死"}) CREATE (d)<-[:mechanism_subsequence {reference:"内科学第九版"}]-(m);
+MATCH (d:disease {name:"缺血性心肌病"}),(m:mechanism {description:"心肌弥漫性纤维化"}) CREATE (d)<-[:mechanism_subsequence {reference:"内科学第九版"}]-(m);
+MATCH (d:disease {name:"缺血性心肌病"}),(m:mechanism {description:"心肌瘢痕"}) CREATE (d)<-[:mechanism_subsequence {reference:"内科学第九版"}]-(m);
+MATCH (d:disease {english_name:"UA"}),(m:mechanism {description:"心肌供氧减少"}) CREATE (d)<-[:mechanism_subsequence {reference:"内科学第九版"}]-(m);
+MATCH (d:disease {english_name:"UA"}),(m:mechanism {description:"心肌缺血"}) CREATE (d)<-[:mechanism_subsequence {reference:"内科学第九版"}]-(m);
+MATCH (d:disease {english_name:"NSTEMI"}),(m:mechanism {description:"心肌供氧减少"}) CREATE (d)<-[:mechanism_subsequence {reference:"内科学第九版"}]-(m);
+MATCH (d:disease {english_name:"NSTEMI"}),(m:mechanism {description:"心肌缺血加重"}) CREATE (d)<-[:mechanism_subsequence {reference:"内科学第九版"}]-(m);
+MATCH (d:disease {english_name:"STEMI"}),(m:mechanism {description:"血管管腔闭塞"}) CREATE (d)<-[:mechanism_subsequence {reference:"内科学第九版"}]-(m);
+MATCH (d:disease {name:"心肌桥"}),(m:mechanism {description:"远端心肌缺血"}) CREATE (d)<-[:mechanism_subsequence {reference:"内科学第九版"}]-(m);
+
+
+CREATE (:mechanism {description:"心肌损伤"});
+CREATE (:mechanism {description:"Frank-Starling机制"});
+CREATE (:mechanism {description:"心室重塑"});
+CREATE (:mechanism {description:"交感神经兴奋性增强"});
+CREATE (:mechanism {description:"RAAS激活"});
+CREATE (:mechanism {description:"精氨酸加压素增加"});
+CREATE (:mechanism {description:"利钠肽分泌增加"});
+
+MATCH (m1:mechanism {description:"心肌损伤"}),(m2:mechanism {description:"Frank-Starling机制"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
+MATCH (m1:mechanism {description:"心肌损伤"}),(m2:mechanism {description:"心室重塑"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
+MATCH (m1:mechanism {description:"心肌损伤"}),(m2:mechanism {description:"交感神经兴奋性增强"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
+MATCH (m1:mechanism {description:"心肌损伤"}),(m2:mechanism {description:"RAAS激活"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
+MATCH (m1:mechanism {description:"心肌损伤"}),(m2:mechanism {description:"精氨酸加压素增加"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
+MATCH (m1:mechanism {description:"心肌损伤"}),(m2:mechanism {description:"利钠肽分泌增加"}) CREATE (m1)-[:mechanism_subsequence {reference:"内科学第九版"}]->(m2);
+
+MATCH (d:disease {name:"心力衰竭"}),(m:mechanism {description:"Frank-Starling机制"}) CREATE (d)<-[:mechanism_subsequence {reference:"内科学第九版"}]-(m);
+MATCH (d:disease {name:"心力衰竭"}),(m:mechanism {description:"心室重塑"}) CREATE (d)<-[:mechanism_subsequence {reference:"内科学第九版"}]-(m);
+MATCH (d:disease {name:"心力衰竭"}),(m:mechanism {description:"交感神经兴奋性增强"}) CREATE (d)<-[:mechanism_subsequence {reference:"内科学第九版"}]-(m);
+MATCH (d:disease {name:"心力衰竭"}),(m:mechanism {description:"RAAS激活"}) CREATE (d)<-[:mechanism_subsequence {reference:"内科学第九版"}]-(m);
+MATCH (d:disease {name:"心力衰竭"}),(m:mechanism {description:"精氨酸加压素增加"}) CREATE (d)<-[:mechanism_subsequence {reference:"内科学第九版"}]-(m);
+MATCH (d:disease {name:"心力衰竭"}),(m:mechanism {description:"利钠肽分泌增加"}) CREATE (d)<-[:mechanism_subsequence {reference:"内科学第九版"}]-(m);
+
+
+
+// //病理
+// CREATE (:pathology {description:"冠脉狭窄或部分闭塞"});
+// CREATE (:pathology {description:"心肺顺应性降低"});
+// CREATE (:pathology {description:"左心室收缩与舒张功能障碍"});
+// CREATE (:pathology {description:"灶性心肌坏死"});
+// CREATE (:pathology {description:"心内膜下心肌坏死"});
+// CREATE (:pathology {description:"心肌瘢痕"});
+// CREATE (:pathology {description:"心肌纤维化"});
+// CREATE (:pathology {description:"心肌细胞减少、坏死"});
+// CREATE (:pathology {description:"冠状动脉病变"});
+// CREATE (:pathology {description:"心肌病变"});
+
+// MATCH (d:disease {name:"稳定型心绞痛"}),(p:pathology {description:"冠脉狭窄或部分闭塞"}) CREATE (d)-[:pathology_show {reference:"内科学第九版"}]->(p);
+// MATCH (d:disease {name:"稳定型心绞痛"}),(p:pathology {description:"心肺顺应性降低"}) CREATE (d)-[:pathology_show {reference:"内科学第九版"}]->(p);
+// MATCH (d:disease {name:"稳定型心绞痛"}),(p:pathology {description:"左心室收缩与舒张功能障碍"}) CREATE (d)-[:pathology_show {reference:"内科学第九版"}]->(p);
+// MATCH (d:disease {english_name:"NSTEMI"}),(p:pathology {description:"灶性心肌坏死"}) CREATE (d)-[:pathology_show {reference:"内科学第九版"}]->(p);
+// MATCH (d:disease {english_name:"NSTEMI"}),(p:pathology {description:"灶性心肌坏死"}) CREATE (d)-[:pathology_show {reference:"内科学第九版"}]->(p);
+// MATCH (d:disease {name:"缺血性心肌病"}),(p:pathology {description:"心肌瘢痕"}) CREATE (d)-[:pathology_show {reference:"内科学第九版"}]->(p);
+// MATCH (d:disease {name:"缺血性心肌病"}),(p:pathology {description:"心肌纤维化"}) CREATE (d)-[:pathology_show {reference:"内科学第九版"}]->(p);
+// MATCH (d:disease {name:"缺血性心肌病"}),(p:pathology {description:"心肌细胞减少、坏死"}) CREATE (d)-[:pathology_show {reference:"内科学第九版"}]->(p);
+// MATCH (d:disease {english_name:"STEMI"}),(p:pathology {description:"冠状动脉病变"}) CREATE (d)-[:pathology_show {reference:"内科学第九版"}]->(p);
+// MATCH (d:disease {english_name:"STEMI"}),(p:pathology {description:"心肌病变"}) CREATE (d)-[:pathology_show {reference:"内科学第九版"}]->(p);
+// MATCH (d:disease {english_name:"STEMI"}),(p:pathology {description:"左心室收缩与舒张功能障碍"}) CREATE (d)-[:pathology_show {reference:"内科学第九版"}]->(p);
+
