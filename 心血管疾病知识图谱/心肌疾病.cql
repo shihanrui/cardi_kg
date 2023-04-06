@@ -273,8 +273,65 @@ CREATE (:symptom {characteristic:"室性心律失常",examination:"心电图",di
 CREATE (:symptom {characteristic:"房室传导阻滞",examination:"心电图",disease:"病毒性心肌炎"});
 
 //七、辅助检查
+//7.6.1 扩张型心肌病
+CREATE (:examination {name:"胸部X线检查",information:"心影/肺淤血/肺水肿/肺动脉压力增高/胸腔积液",disease:"扩张型心肌病"});
+CREATE (:examination {name:"心电图",information:"R波递增不良/室内传导阻滞/左束支传导阻滞",disease:"扩张型心肌病"});
+CREATE (:examination {name:"超声心动图",information:"左心室扩大",disease:"扩张型心肌病"});
+CREATE (:examination {name:"心脏磁共振",english_name:"CMR",information:"鉴别浸润性心肌病、致心律失常型右心室心肌病、心肌致密化不全、心肌炎、结节病等疾病",disease:"扩张型心肌病"});
+CREATE (:examination {name:"运动或药物负荷心肌显像",information:"除外冠状动脉疾病引起的缺血性心肌病",disease:"扩张型心肌病"});
+CREATE (:examination {name:"核素血池扫描",information:"舒张末期和收缩末期左心室容积增大，左心室射血分数降低",disease:"扩张型心肌病"});
+CREATE (:examination {name:"冠状动脉CT检查",enlish_name:"CTA",information:"冠状动脉狭窄等病变",disease:"扩张型心肌病"});
+CREATE (:examination {name:"冠状动脉造影",information:"除外冠状动脉性心脏病",disease:"扩张型心肌病"});
+CREATE (:examination {name:"心导管检查",disease:"扩张型心肌病"});
+CREATE (:examination {name:"心内膜心肌活检",english_name:"EMB",information:"爆发性淋巴细胞心肌炎/巨噬细胞心肌炎",disease:"扩张型心肌病"});
+MATCH (d:disease {name:"扩张型心肌病"}),(rt:examination {disease:"扩张型心肌病"}) CREATE (d)-[:disease_examination {reference:"内科学第九版"}]->(rt);
 
-//八、合并症
+CREATE (:laboratory_test {name:"脑钠肽",english_name:"BNP",information:"脑钠肽升高",disease:"扩张型心肌病"});
+CREATE (:laboratory_test {name:"N末端脑钠肽前体",english_name:"NT-proBNP",information:"脑钠肽升高",disease:"扩张型心肌病"});
+CREATE (:laboratory_test {name:"心肌肌钙蛋白I",information:"心肌肌钙蛋白I轻度升高",disease:"扩张型心肌病"});
+CREATE (:laboratory_test {name:"血常规",information:"贫血",disease:"扩张型心肌病"});
+CREATE (:laboratory_test {name:"电解质",information:"电解质失衡",disease:"扩张型心肌病"});
+CREATE (:laboratory_test {name:"肝肾功能",information:"肝硬化及肾功能不全",disease:"扩张型心肌病"});
+MATCH (d:disease {name:"扩张型心肌病"}),(rt:laboratory_test {disease:"扩张型心肌病"}) CREATE (d)-[:disease_laboratory_test {reference:"内科学第九版"}]->(rt);
+
+//7.6.2 肥厚型心肌病
+CREATE (:examination {name:"胸部X线检查",information:"心影正常大小/左心室增大",disease:"肥厚型心肌病"});
+CREATE (:examination {name:"心电图",information:"QRS波左心室高电压/导致T波/异常q波",disease:"肥厚型心肌病"});
+CREATE (:examination {name:"超声心动图",information:"心室不对称肥厚而无心室腔增大",disease:"肥厚型心肌病"});
+CREATE (:examination {name:"心脏磁共振",english_name:"CMR",information:"心室壁局限性或普遍性增厚",disease:"肥厚型心肌病"});
+CREATE (:examination {name:"同位素轧延迟增强扫描",information:"心肌呈片状强化/梗阻性HCM可见左心室流出道狭窄/SAM征/二尖瓣关闭不全",disease:"肥厚型心肌病"});
+CREATE (:examination {name:"心导管检查",information:"左心室舒张末期压力增高",disease:"肥厚型心肌病"});
+CREATE (:examination {name:"冠状动脉造影",information:"除外疑似心绞痛症状和心动图ST-T改变的病人",disease:"肥厚型心肌病"});
+CREATE (:examination {name:"心内膜心肌活检",information:"心肌细胞肥大、排列紊乱、局限性或弥散性间质纤维化",disease:"肥厚型心肌病"});
+MATCH (d:disease {name:"肥厚型心肌病"}),(rt:examination {disease:"肥厚型心肌病"}) CREATE (d)-[:disease_examination {reference:"内科学第九版"}]->(rt);
+
+//7.6.3 限制型心肌病
+CREATE (:laboratory_test {name:"尿本周蛋白",information:"淀粉样变性",disease:"限制型心肌病"});
+CREATE (:laboratory_test {name:"脑钠肽",english_name:"BNP",information:"BNP明显增高",disease:"限制型心肌病"});
+CREATE (:examination {name:"心电图",information:"低电压/QRS波异常/ST-T改变",disease:"限制型心肌病"});
+CREATE (:examination {name:"超声心动图",information:"双心房扩大/心室肥厚/心肌磨玻璃样改变",disease:"限制型心肌病"});
+CREATE (:examination {name:"X线胸片",information:"心包钙化",disease:"限制型心肌病"});
+CREATE (:examination {name:"CTA",information:"冠状动脉狭窄",disease:"限制型心肌病"});
+CREATE (:examination {name:"CMR",information:"心肌内呈颗粒样的轧延迟显像",disease:"限制型心肌病"});
+CREATE (:examination {name:"心导管检查",information:"肺动脉压明显增高（常>50mmHg）/舒张压变化较大/右心室舒张压相对较低",disease:"限制型心肌病"});
+CREATE (:examination {name:"心内膜心肌活检",information:"心肌淀粉样变性/高嗜酸性粒细胞综合征",disease:"限制型心肌病"});
+MATCH (d:disease {name:"限制型心肌病"}),(rt:laboratory_test {disease:"限制型心肌病"}) CREATE (d)-[:disease_laboratory_test {reference:"内科学第九版"}]->(rt);
+MATCH (d:disease {name:"限制型心肌病"}),(rt:examination {disease:"限制型心肌病"}) CREATE (d)-[:disease_examination {reference:"内科学第九版"}]->(rt);
+
+//7.6.4.1 病毒性心肌炎
+CREATE (:examination {name:"胸部X线检查",information:"心影扩大/有心包积液烧瓶样改变",disease:"病毒性心肌炎"});
+CREATE (:examination {name:"心电图",information:"ST-T改变",disease:"病毒性心肌炎"});
+CREATE (:examination {name:"超声心动图",information:"左心室正常或增大/室壁运动减低/左心室收缩功能减低/附壁血栓/心包积液",disease:"病毒性心肌炎"});
+CREATE (:examination {name:"心脏磁共振",information:"水肿/心肌充血/心外膜下或心肌中层片状强化",disease:"病毒性心肌炎"});
+CREATE (:examination {name:"心内膜心肌活检",english_name:"EMB",disease:"病毒性心肌炎"});
+
+CREATE (:laboratory_test {name:"心肌肌酸激酶",english_name:"CK-MB",information:"心肌损伤标志物",disease:"病毒性心肌炎"});
+CREATE (:laboratory_test {name:"肌酐蛋白T或I",information:"心肌损伤标志物",disease:"病毒性心肌炎"});
+CREATE (:laboratory_test {name:"非特异性炎症指标检测",information:"红细胞沉降率增快/C反应蛋白等非特异性炎症指标升高",disease:"病毒性心肌炎"});
+CREATE (:laboratory_test {name:"病毒血清学检测",information:"心内膜、心肌或心包组织内病毒、病毒抗原、病毒基因片段或病毒蛋白",disease:"病毒性心肌炎"});
+MATCH (d:disease {name:"病毒性心肌炎"}),(rt:laboratory_test {disease:"病毒性心肌炎"}) CREATE (d)-[:disease_laboratory_test {reference:"内科学第九版"}]->(rt);
+MATCH (d:disease {name:"病毒性心肌炎"}),(rt:examination {disease:"病毒性心肌炎"}) CREATE (d)-[:disease_examination {reference:"内科学第九版"}]->(rt);
+
 //九、鉴别诊断
 //9.6.1 扩张型心肌病
 CREATE (:differential_diagnosis {name:"心脏瓣膜病",symptom:"心脏扩大/收缩功能减低",disease:"扩张型心肌病"});
@@ -298,6 +355,9 @@ CREATE (:differential_diagnosis {name:"Danon病",symptom:"心肌肥厚",disease:
 CREATE (:differential_diagnosis {name:"遗传性共济失调",symptom:"心肌肥厚",disease:"肥厚型心肌病"});
 CREATE (:differential_diagnosis {name:"遗传性代谢性疾病",symptom:"心肌肥厚",disease:"肥厚型心肌病"});
 MATCH (d:disease {name:"肥厚型心肌病"}),(dd:differential_diagnosis {disease:"肥厚型心肌病"}) CREATE (d)-[:disease_differential_diagnosis {reference:"内科学第九版"}]->(dd);
+//9.6.3 限制型心肌病
+CREATE (:differential_diagnosis {name:"缩窄性心包炎",symptom:"临床表现/血流动力学改变",disease:"限制型心肌病"});
+MATCH (d:disease {name:"限制型心肌病"}),(dd:differential_diagnosis {disease:"限制型心肌病"}) CREATE (d)-[:disease_differential_diagnosis {reference:"内科学第九版"}]->(dd);
 
 //9.6.4.1 病毒性心肌炎
 CREATE (:differential_diagnosis {name:"甲状腺功能亢进",disease:"病毒性心肌炎"});
@@ -308,5 +368,78 @@ CREATE (:differential_diagnosis {name:"药物及毒物引起的心肌炎",diseas
 MATCH (d:disease {name:"病毒性心肌炎"}),(dd:differential_diagnosis {disease:"病毒性心肌炎"}) CREATE (d)-[:disease_differential_diagnosis {reference:"内科学第九版"}]->(dd);
 
 //十、药物
+//10.6.1 扩张型心肌病
+CREATE (:drug {name:"ACEI",disease:"扩张型心肌病",indication:"LVEF<40%的心力衰竭病人",aim:"治疗心力衰竭"});
+CREATE (:drug {name:"ARB",disease:"扩张型心肌病",indication:"LVEF<40%的心力衰竭病人，ACEI不耐受",aim:"治疗心力衰竭"});
+CREATE (:drug {name:"卡维地洛",disease:"扩张型心肌病",indication:"LVEF<40%的心力衰竭病人",aim:"治疗心力衰竭"});
+CREATE (:drug {name:"琥珀酸美托洛尔",disease:"扩张型心肌病",indication:"LVEF<40%的心力衰竭病人",aim:"治疗心力衰竭"});
+CREATE (:drug {name:"比索洛尔",disease:"扩张型心肌病",indication:"LVEF<40%的心力衰竭病人",aim:"治疗心力衰竭"});
+CREATE (:drug {name:"依普利酮",disease:"扩张型心肌病",indication:" ACEI和β受体拈抗剂基础上仍有症状且无肾功能严重受损的病人",aim:"治疗心力衰竭"});
+CREATE (:drug {name:"螺内酯",disease:"扩张型心肌病",indication:" ACEI和β受体拈抗剂基础上仍有症状且无肾功能严重受损的病人",aim:"治疗心力衰竭",side_effect:"引起少数男性病人乳房发育"});
+CREATE (:drug {name:"肼屈嗪和二硝酸异山梨酯",disease:"扩张型心肌病",indication:"ACEI和ARB不能耐受病人",aim:"治疗心力衰竭"});
+CREATE (:drug {name:"伊伐布雷定",disease:"扩张型心肌病",indication:"LVEF≤30%，窦性心率仍≥70次/分的病人，不能耐受β受体括抗剂或有使用禁忌",aim:"治疗心力衰竭"});
+CREATE (:drug {name:"血管紧张素受体脑啡肤酶抑制剂",english_name:"ARNI",disease:"扩张型心肌病",indication:"射血分数减低的心衰病人经过ACEI、β受体拮抗剂和醛固酮拮抗剂充分治疗后病人仍有症状",aim:"治疗心力衰竭"});
+CREATE (:drug {name:"呋塞米",dosage:"每日20mg",disease:"扩张型心肌病",aim:"治疗心力衰竭"});
+CREATE (:drug {name:"氢氧噻嗪",dosage:"每日25mg",disease:"扩张型心肌病",aim:"治疗心力衰竭"});
+CREATE (:drug {name:"洋地黄",dosage:"每日25mg",disease:"扩张型心肌病",indication:"ACE（ARB）受体桔抗剂、MRA治疗后仍有症状，或者不能耐受β受体拮抗剂的病人",aim:"治疗心力衰竭"});
+CREATE (:drug {name:"洋地黄",dosage:"每日25mg",disease:"扩张型心肌病",indication:"ACE（ARB）受体桔抗剂、MRA治疗后仍有症状，或者不能耐受β受体拮抗剂的病人",aim:"治疗心力衰竭"});
+CREATE (:drug {name:"华法林",disease:"扩张型心肌病",indication:"有房颤或已经有附壁血栓形成或有血栓栓塞病史的病人",aim:"抗凝治疗"});
+CREATE (:drug {name:"新型口服抗凝药物",disease:"扩张型心肌病",indication:"有房颤或已经有附壁血栓形成或有血栓栓塞病史的病人",aim:"抗凝治疗"});
+CREATE (:drug {name:"ACEI、ARB、MRA合用",prohibit_disease:"扩张型心肌病"});
+CREATE (:drug {name:"噻唑烷二酮类",prohibit_disease:"扩张型心肌病",side_effect:"加重心力衰竭"});
+CREATE (:drug {name:"格列酮类",prohibit_disease:"扩张型心肌病",side_effect:"加重心力衰竭"});
+CREATE (:drug {name:"NSAIDs",prohibit_disease:"扩张型心肌病",side_effect:"水钠潴留"});
+CREATE (:drug {name:"COX-2抑制剂",prohibit_disease:"扩张型心肌病",side_effect:"水钠潴留"});
+CREATE (:drug {name:"地尔硫䓬",prohibit_disease:"扩张型心肌病",side_effect:"负性肌力"});
+CREATE (:drug {name:"维拉帕米",prohibit_disease:"扩张型心肌病",side_effect:"负性肌力"});
+MATCH (ds:disease {name:"扩张型心肌病"}),(dg:drug {disease:"扩张型心肌病"}) CREATE (ds)-[:disease_drug {reference:"内科学第九版"}]->(dg);
+MATCH (ds:disease {name:"扩张型心肌病"}),(dg:drug {prohibit_disease:"扩张型心肌病"}) CREATE (ds)-[:disease_prohibit_drug {reference:"内科学第九版"}]->(dg);
+//10.6.2 肥厚型心肌病
+CREATE (:drug {name:"β受体拮抗剂",disease:"肥厚型心肌病",indication:"梗阻性HCM",aim:"减轻左心室流出道梗阻"});
+CREATE (:drug {name:"非二氢吡啶类钙通道阻滞剂",disease:"肥厚型心肌病",indication:"梗阻性HCM，不能耐受β受体桔抗剂",aim:"减轻左心室流出道梗阻"});
+CREATE (:drug {name:"丙吡胺",disease:"肥厚型心肌病",indication:"梗阻性HCM",side_effect:"口干、眼干、便秘等心脏外副作用",aim:"减轻左心室流出道梗阻"});
+CREATE (:drug {name:"ACEI",disease:"肥厚型心肌病",indication:"左心室扩大/左心室收缩功能减低/慢性心功能不全",aim:"治疗心力衰竭"});
+CREATE (:drug {name:"ARB",disease:"肥厚型心肌病",indication:"左心室扩大/左心室收缩功能减低/慢性心功能不全",aim:"治疗心力衰竭"});
+CREATE (:drug {name:"β受体拮抗剂",disease:"肥厚型心肌病",indication:"左心室扩大/左心室收缩功能减低/慢性心功能不全",aim:"治疗心力衰竭"});
+CREATE (:drug {name:"利尿剂",disease:"肥厚型心肌病",indication:"左心室扩大/左心室收缩功能减低/慢性心功能不全",aim:"治疗心力衰竭"});
+CREATE (:drug {name:"螺内酯",disease:"肥厚型心肌病",indication:"左心室扩大/左心室收缩功能减低/慢性心功能不全",aim:"治疗心力衰竭"});
+CREATE (:drug {name:"地高辛",disease:"肥厚型心肌病",indication:"左心室扩大/左心室收缩功能减低/慢性心功能不全",aim:"治疗心力衰竭"});
+CREATE (:drug {name:"胺碘酮",disease:"肥厚型心肌病",indication:"阵发性房颤",aim:"能减少阵发性房颤发作"});
+CREATE (:drug {name:"β受体拮抗剂",disease:"肥厚型心肌病",indication:"持续性房颤",aim:"控制心室率"});
+CREATE (:drug {name:"抗凝药",disease:"肥厚型心肌病",indication:"房颤",aim:"房颤治疗"});
+MATCH (ds:disease {name:"肥厚型心肌病"}),(dg:drug {disease:"肥厚型心肌病"}) CREATE (ds)-[:disease_drug {reference:"内科学第九版"}]->(dg);
+//10.6.4.1 病毒性心肌炎
+CREATE (:drug {name:"利尿剂",disease:"病毒性心肌炎",indication:"出现心力衰竭"});
+CREATE (:drug {name:"血管扩张剂",disease:"病毒性心肌炎",indication:"出现心力衰竭"});
+CREATE (:drug {name:"ACEI",disease:"病毒性心肌炎",indication:"出现心力衰竭"});
+CREATE (:drug {name:"抗心律失常药物",disease:"病毒性心肌炎",indication:"出现快速型心律失常"});
+CREATE (:drug {name:"腺苷三磷酸",disease:"病毒性心肌炎",aim:"促进心肌代谢"});
+CREATE (:drug {name:"辅酶A",disease:"病毒性心肌炎",aim:"促进心肌代谢"});
+CREATE (:drug {name:"环腺苷酸",disease:"病毒性心肌炎",aim:"促进心肌代谢"});
+MATCH (ds:disease {name:"病毒性心肌炎"}),(dg:drug {disease:"病毒性心肌炎"}) CREATE (ds)-[:disease_drug {reference:"内科学第九版"}]->(dg);
+
 
 //十一、鉴别诊断
+//11.6.1 扩张型心肌病
+CREATE (:treatment {name:"心力衰竭的心脏再同步化治疗",english_name:"CRT",indication:"心力衰竭病人",disease:"扩张型心肌病"});
+CREATE (:treatment {name:"心脏移植",english_name:"CRT",indication:"严重心力衰竭内科治疗无效",disease:"扩张型心肌病"});
+CREATE (:treatment {name:"左心机械辅助循环",indication:"心脏移植等待期",aim:"改善循环",disease:"扩张型心肌病"});
+CREATE (:treatment {name:"左心室成形术",indication:"心脏移植等待期",aim:"减轻反流、改善心功能",disease:"扩张型心肌病"});
+CREATE (:treatment {name:"植入型心律转复除颤器",english_name:"ICD",indication:"有持续性室速/有室速、室颤导致的心跳骤停史/LVEF≤35%，NYHA心功能评分Ⅱ~Ⅲ级，预期生存时间＞1年，且有一定生活质量",disease:"扩张型心肌病",aim:"预防心脏猝死"});
+MATCH (d:disease {name:"扩张型心肌病"}),(t:treatment {disease:"扩张型心肌病"}) CREATE (d)-[:disease_treatment {reference:"内科学第九版"}]->(t);
+//11.6.2 肥厚型心肌病
+CREATE (:treatment {name:"室间隔切除术",indication:"药物治疗无效，心功能不全（NYHA Ⅲ~Ⅳ级）病人，存在严重流出道梗阻（静息或运动时流出道压力阶差大于50mmg） ",disease:"肥厚型心肌病"});
+CREATE (:treatment {name:"酒精室间隔消融术",indication:"药物治疗无效，心功能不全（NYHA Ⅲ~Ⅳ级）病人，存在严重流出道梗阻（静息或运动时流出道压力阶差大于50mmg） ",aim:"改善心力衰竭",disease:"肥厚型心肌病"});
+CREATE (:treatment {name:"右心室心尖起搏",indication:"其他病因有双腔起搏置入适应证的病人",aim:"减轻左心室流出道梗阻",disease:"肥厚型心肌病"});
+CREATE (:treatment {name:"双腔起搏",indication:"药物治疗效果差而又不太适合手术或消融的病人",disease:"肥厚型心肌病"});
+CREATE (:treatment {name:"猝死风险评估和ICD预防",indication:"青年和运动员",disease:"肥厚型心肌病"});
+MATCH (d:disease {name:"肥厚型心肌病"}),(t:treatment {disease:"肥厚型心肌病"}) CREATE (d)-[:disease_treatment {reference:"内科学第九版"}]->(t);
+//11.6.3 限制型心肌病
+CREATE (:treatment {name:"避免劳累、呼吸道感染等心力衰竭的诱因",indication:"原发性RCM",disease:"限制型心肌病"});
+CREATE (:treatment {name:"针对病因的特异性治疗",indication:"继发性RCM",disease:"限制型心肌病"});
+MATCH (d:disease {name:"限制型心肌病"}),(t:treatment {disease:"限制型心肌病"}) CREATE (d)-[:disease_treatment {reference:"内科学第九版"}]->(t);
+//11.6.4.1 病毒性心肌炎
+CREATE (:treatment {name:"避免劳累，适当休息",disease:"病毒性心肌炎"});
+CREATE (:treatment {name:"临时心脏起搏器",indication:"高度房室传导阻滞或窦房结功能损害而出现晕厥或明显低血压",disease:"病毒性心肌炎"});
+CREATE (:treatment {name:"特异性抗病毒治疗",disease:"病毒性心肌炎"});
+MATCH (d:disease {name:"病毒性心肌炎"}),(t:treatment {disease:"病毒性心肌炎"}) CREATE (d)-[:disease_treatment {reference:"内科学第九版"}]->(t);

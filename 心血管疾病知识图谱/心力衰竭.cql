@@ -312,9 +312,9 @@ CREATE (:drug {name:"阿利吉仑",aim:"RAAS抑制剂",disease:"慢性心力衰�
 CREATE (:drug {name:"美托洛尔",aim:"RAAS抑制剂",disease:"慢性心力衰竭",contraindication:"支气管痉挛性疾病/严重心动过缓/二度及二度以上房室阻滞/严重周围血管疾病/重度急性心衰"});
 CREATE (:drug {name:"比索洛尔",aim:"RAAS抑制剂",disease:"慢性心力衰竭",contraindication:"支气管痉挛性疾病/严重心动过缓/二度及二度以上房室阻滞/严重周围血管疾病/重度急性心衰"});
 CREATE (:drug {name:"卡维地洛",aim:"RAAS抑制剂",disease:"慢性心力衰竭",contraindication:"支气管痉挛性疾病/严重心动过缓/二度及二度以上房室阻滞/严重周围血管疾病/重度急性心衰"});
-CREATE (:drug {name:"地高辛",aim:"正性肌力药",disease:"慢性心力衰竭",dosage:"0.125mg",frequency:"每日",side_effect:"洋黄地中毒"});
-CREATE (:drug {name:"毛花苷丙",aim:"正性肌力药",disease:"慢性心力衰竭",usage:"静脉注射",indication:"急性心力衰竭/慢性心衰加重",side_effect:"洋黄地中毒"});
-CREATE (:drug {name:"毒毛花苷K",aim:"正性肌力药",disease:"慢性心力衰竭",usage:"静脉注射",indication:"急性心力衰竭/慢性心衰加重",side_effect:"洋黄地中毒"});
+CREATE (:drug {name:"地高辛",aim:"正性肌力药",disease:"慢性心力衰竭",dosage:"0.125mg",frequency:"每日",side_effect:"洋地黄中毒"});
+CREATE (:drug {name:"毛花苷丙",aim:"正性肌力药",disease:"慢性心力衰竭",usage:"静脉注射",indication:"急性心力衰竭/慢性心衰加重",side_effect:"洋地黄中毒"});
+CREATE (:drug {name:"毒毛花苷K",aim:"正性肌力药",disease:"慢性心力衰竭",usage:"静脉注射",indication:"急性心力衰竭/慢性心衰加重",side_effect:"洋地黄中毒"});
 CREATE (:drug {name:"多巴胺",aim:"正性肌力药",disease:"慢性心力衰竭",usage:"静脉注射",indication:"短期静脉应用"});
 CREATE (:drug {name:"多巴酚丁胺",aim:"正性肌力药",disease:"慢性心力衰竭",usage:"静脉注射",indication:"短期静脉应用"});
 CREATE (:drug {name:"米力农",aim:"正性肌力药",disease:"慢性心力衰竭",side_effect:"长期使用死亡率增加",indication:"对心脏术后急性收缩性心力衰竭/难治性心力衰竭/心脏移植前的终末期心力衰竭短期应用"});
