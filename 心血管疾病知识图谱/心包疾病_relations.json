@@ -1,0 +1,8059 @@
+﻿[
+  {
+    "n1": {
+      "identity": 1009,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包疾病",
+        "definition": "由感染、肿瘤、代谢性疾病、尿毒症、自身免疫病、外伤等引起的心包病理性改变。"
+      }
+    },
+    "r": {
+      "identity": 1047,
+      "start": 1009,
+      "end": 1014,
+      "type": "include_disease",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1009,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包疾病",
+        "definition": "由感染、肿瘤、代谢性疾病、尿毒症、自身免疫病、外伤等引起的心包病理性改变。"
+      }
+    },
+    "r": {
+      "identity": 1046,
+      "start": 1009,
+      "end": 1013,
+      "type": "include_disease",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1009,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包疾病",
+        "definition": "由感染、肿瘤、代谢性疾病、尿毒症、自身免疫病、外伤等引起的心包病理性改变。"
+      }
+    },
+    "r": {
+      "identity": 1045,
+      "start": 1009,
+      "end": 1012,
+      "type": "include_disease",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1009,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包疾病",
+        "definition": "由感染、肿瘤、代谢性疾病、尿毒症、自身免疫病、外伤等引起的心包病理性改变。"
+      }
+    },
+    "r": {
+      "identity": 1043,
+      "start": 1009,
+      "end": 1010,
+      "type": "include_disease",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1010,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "急性心包炎",
+        "definition": "心包脏层和壁层的急性炎症性疾病。"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1010,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "急性心包炎",
+        "definition": "心包脏层和壁层的急性炎症性疾病。"
+      }
+    },
+    "r": {
+      "identity": 1044,
+      "start": 1010,
+      "end": 1011,
+      "type": "include_disease",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1011,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "synonym": "急性非特异性心包炎",
+        "name": "特发性急性心包炎",
+        "definition": "无法明确病因的急性心包炎。"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1010,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "急性心包炎",
+        "definition": "心包脏层和壁层的急性炎症性疾病。"
+      }
+    },
+    "r": {
+      "identity": 1055,
+      "start": 1010,
+      "end": 1022,
+      "type": "disease_cause",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1022,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "急性心包炎",
+        "name": "胸壁外伤"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1010,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "急性心包炎",
+        "definition": "心包脏层和壁层的急性炎症性疾病。"
+      }
+    },
+    "r": {
+      "identity": 1052,
+      "start": 1010,
+      "end": 1019,
+      "type": "disease_cause",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1019,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "急性心包炎",
+        "name": "尿毒症"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1010,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "急性心包炎",
+        "definition": "心包脏层和壁层的急性炎症性疾病。"
+      }
+    },
+    "r": {
+      "identity": 1051,
+      "start": 1010,
+      "end": 1018,
+      "type": "disease_cause",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1018,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "急性心包炎",
+        "name": "肿瘤"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1010,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "急性心包炎",
+        "definition": "心包脏层和壁层的急性炎症性疾病。"
+      }
+    },
+    "r": {
+      "identity": 1053,
+      "start": 1010,
+      "end": 1020,
+      "type": "disease_cause",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1020,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "急性心包炎",
+        "name": "急性心肌梗死后心包炎"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1010,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "急性心包炎",
+        "definition": "心包脏层和壁层的急性炎症性疾病。"
+      }
+    },
+    "r": {
+      "identity": 1050,
+      "start": 1010,
+      "end": 1017,
+      "type": "disease_cause",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1017,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "急性心包炎",
+        "name": "自身免疫病"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1010,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "急性心包炎",
+        "definition": "心包脏层和壁层的急性炎症性疾病。"
+      }
+    },
+    "r": {
+      "identity": 1048,
+      "start": 1010,
+      "end": 1015,
+      "type": "disease_cause",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1015,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "急性心包炎",
+        "name": "病毒感染"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1010,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "急性心包炎",
+        "definition": "心包脏层和壁层的急性炎症性疾病。"
+      }
+    },
+    "r": {
+      "identity": 1049,
+      "start": 1010,
+      "end": 1016,
+      "type": "disease_cause",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1016,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "急性心包炎",
+        "name": "细菌感染"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1010,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "急性心包炎",
+        "definition": "心包脏层和壁层的急性炎症性疾病。"
+      }
+    },
+    "r": {
+      "identity": 1054,
+      "start": 1010,
+      "end": 1021,
+      "type": "disease_cause",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1021,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "急性心包炎",
+        "name": "主动脉夹层"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1010,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "急性心包炎",
+        "definition": "心包脏层和壁层的急性炎症性疾病。"
+      }
+    },
+    "r": {
+      "identity": 1056,
+      "start": 1010,
+      "end": 1023,
+      "type": "disease_cause",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1023,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "急性心包炎",
+        "name": "心脏手术"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1010,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "急性心包炎",
+        "definition": "心包脏层和壁层的急性炎症性疾病。"
+      }
+    },
+    "r": {
+      "identity": 1086,
+      "start": 1010,
+      "end": 1053,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1053,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "急性心包炎",
+        "characteristic": "胸骨后、心前区疼痛"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1010,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "急性心包炎",
+        "definition": "心包脏层和壁层的急性炎症性疾病。"
+      }
+    },
+    "r": {
+      "identity": 1093,
+      "start": 1010,
+      "end": 1060,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1060,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "急性心包炎",
+        "examination": "血清学检查",
+        "comment": "感染性心包炎",
+        "characteristic": "白细胞计数增加"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1010,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "急性心包炎",
+        "definition": "心包脏层和壁层的急性炎症性疾病。"
+      }
+    },
+    "r": {
+      "identity": 1094,
+      "start": 1010,
+      "end": 1061,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1061,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "急性心包炎",
+        "examination": "血清学检查",
+        "comment": "感染性心包炎",
+        "characteristic": "中性粒细胞增加"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1010,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "急性心包炎",
+        "definition": "心包脏层和壁层的急性炎症性疾病。"
+      }
+    },
+    "r": {
+      "identity": 1090,
+      "start": 1010,
+      "end": 1057,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1057,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "急性心包炎",
+        "characteristic": "水肿"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1010,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "急性心包炎",
+        "definition": "心包脏层和壁层的急性炎症性疾病。"
+      }
+    },
+    "r": {
+      "identity": 1085,
+      "start": 1010,
+      "end": 1052,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1052,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "急性心包炎",
+        "characteristic": "胸痛"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1010,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "急性心包炎",
+        "definition": "心包脏层和壁层的急性炎症性疾病。"
+      }
+    },
+    "r": {
+      "identity": 1092,
+      "start": 1010,
+      "end": 1059,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1059,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "急性心包炎",
+        "comment": "感染性心包炎",
+        "characteristic": "乏力"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1010,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "急性心包炎",
+        "definition": "心包脏层和壁层的急性炎症性疾病。"
+      }
+    },
+    "r": {
+      "identity": 1103,
+      "start": 1010,
+      "end": 1070,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1070,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "急性心包炎",
+        "examination": "心电图",
+        "characteristic": "心电图异常"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1010,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "急性心包炎",
+        "definition": "心包脏层和壁层的急性炎症性疾病。"
+      }
+    },
+    "r": {
+      "identity": 1098,
+      "start": 1010,
+      "end": 1065,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1065,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "急性心包炎",
+        "examination": "血清学检查",
+        "comment": "尿毒症病人",
+        "characteristic": "肌酐明显升高"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1010,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "急性心包炎",
+        "definition": "心包脏层和壁层的急性炎症性疾病。"
+      }
+    },
+    "r": {
+      "identity": 1088,
+      "start": 1010,
+      "end": 1055,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1055,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "急性心包炎",
+        "characteristic": "疼痛性质尖锐"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1010,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "急性心包炎",
+        "definition": "心包脏层和壁层的急性炎症性疾病。"
+      }
+    },
+    "r": {
+      "identity": 1102,
+      "start": 1010,
+      "end": 1069,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1069,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "急性心包炎",
+        "examination": "心电图",
+        "characteristic": "除aVR及V1导联以外ST段呈弓背向下型抬高"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1010,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "急性心包炎",
+        "definition": "心包脏层和壁层的急性炎症性疾病。"
+      }
+    },
+    "r": {
+      "identity": 1105,
+      "start": 1010,
+      "end": 1072,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1072,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "急性心包炎",
+        "examination": "心电图",
+        "characteristic": "窦性心动过速"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1010,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "急性心包炎",
+        "definition": "心包脏层和壁层的急性炎症性疾病。"
+      }
+    },
+    "r": {
+      "identity": 1106,
+      "start": 1010,
+      "end": 1073,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1073,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "急性心包炎",
+        "examination": "心电图",
+        "characteristic": "QRS电交替"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1010,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "急性心包炎",
+        "definition": "心包脏层和壁层的急性炎症性疾病。"
+      }
+    },
+    "r": {
+      "identity": 1087,
+      "start": 1010,
+      "end": 1054,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1054,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "急性心包炎",
+        "characteristic": "颈部、左肩、左臂、上腹部放射痛"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1010,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "急性心包炎",
+        "definition": "心包脏层和壁层的急性炎症性疾病。"
+      }
+    },
+    "r": {
+      "identity": 1099,
+      "start": 1010,
+      "end": 1066,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1066,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "急性心包炎",
+        "characteristic": "心包摩擦音，呈抓刮样粗糙的高频音"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1010,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "急性心包炎",
+        "definition": "心包脏层和壁层的急性炎症性疾病。"
+      }
+    },
+    "r": {
+      "identity": 1104,
+      "start": 1010,
+      "end": 1071,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1071,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "急性心包炎",
+        "examination": "心电图",
+        "characteristic": "aVR及V1导联ST段压低"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1010,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "急性心包炎",
+        "definition": "心包脏层和壁层的急性炎症性疾病。"
+      }
+    },
+    "r": {
+      "identity": 1096,
+      "start": 1010,
+      "end": 1063,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1063,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "急性心包炎",
+        "examination": "血清学检查",
+        "comment": "感染性心包炎",
+        "characteristic": "红细胞沉降率增快"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1010,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "急性心包炎",
+        "definition": "心包脏层和壁层的急性炎症性疾病。"
+      }
+    },
+    "r": {
+      "identity": 1091,
+      "start": 1010,
+      "end": 1058,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1058,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "急性心包炎",
+        "comment": "感染性心包炎",
+        "characteristic": "发热"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1010,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "急性心包炎",
+        "definition": "心包脏层和壁层的急性炎症性疾病。"
+      }
+    },
+    "r": {
+      "identity": 1108,
+      "start": 1010,
+      "end": 1075,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1075,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "急性心包炎",
+        "examination": "胸部X线/超声心动图",
+        "characteristic": "心包渗出后心包积液"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1010,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "急性心包炎",
+        "definition": "心包脏层和壁层的急性炎症性疾病。"
+      }
+    },
+    "r": {
+      "identity": 1100,
+      "start": 1010,
+      "end": 1067,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1067,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "急性心包炎",
+        "characteristic": "三相摩擦音"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1010,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "急性心包炎",
+        "definition": "心包脏层和壁层的急性炎症性疾病。"
+      }
+    },
+    "r": {
+      "identity": 1107,
+      "start": 1010,
+      "end": 1074,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1074,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "急性心包炎",
+        "examination": "胸部X线",
+        "comment": "心包积液较多",
+        "characteristic": "心影增大"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1010,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "急性心包炎",
+        "definition": "心包脏层和壁层的急性炎症性疾病。"
+      }
+    },
+    "r": {
+      "identity": 1097,
+      "start": 1010,
+      "end": 1064,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1064,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "急性心包炎",
+        "examination": "血清学检查",
+        "comment": "自身免疫病引起心包炎",
+        "characteristic": "免疫指标阳性"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1010,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "急性心包炎",
+        "definition": "心包脏层和壁层的急性炎症性疾病。"
+      }
+    },
+    "r": {
+      "identity": 1089,
+      "start": 1010,
+      "end": 1056,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1056,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "急性心包炎",
+        "characteristic": "呼吸困难"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1010,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "急性心包炎",
+        "definition": "心包脏层和壁层的急性炎症性疾病。"
+      }
+    },
+    "r": {
+      "identity": 1095,
+      "start": 1010,
+      "end": 1062,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1062,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "急性心包炎",
+        "examination": "血清学检查",
+        "comment": "感染性心包炎",
+        "characteristic": "C反应蛋白增高"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1010,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "急性心包炎",
+        "definition": "心包脏层和壁层的急性炎症性疾病。"
+      }
+    },
+    "r": {
+      "identity": 1101,
+      "start": 1010,
+      "end": 1068,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1068,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "急性心包炎",
+        "examination": "心电图",
+        "characteristic": "心电图异常"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1010,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "急性心包炎",
+        "definition": "心包脏层和壁层的急性炎症性疾病。"
+      }
+    },
+    "r": {
+      "identity": 1282,
+      "start": 1010,
+      "end": 1249,
+      "type": "disease_drug",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1249,
+      "labels": [
+        "drug"
+      ],
+      "properties": {
+        "dosage": "2~4g/d",
+        "disease": "急性心包炎",
+        "aim": "缓解疼痛",
+        "name": "阿司匹林",
+        "indication": "疼痛"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1010,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "急性心包炎",
+        "definition": "心包脏层和壁层的急性炎症性疾病。"
+      }
+    },
+    "r": {
+      "identity": 1283,
+      "start": 1010,
+      "end": 1250,
+      "type": "disease_drug",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1250,
+      "labels": [
+        "drug"
+      ],
+      "properties": {
+        "dosage": "400~600mg",
+        "disease": "急性心包炎",
+        "aim": "缓解疼痛",
+        "name": "布洛芬",
+        "indication": "疼痛、阿司匹林效果不佳",
+        "frequency": "一日3次"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1010,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "急性心包炎",
+        "definition": "心包脏层和壁层的急性炎症性疾病。"
+      }
+    },
+    "r": {
+      "identity": 1286,
+      "start": 1010,
+      "end": 1253,
+      "type": "disease_drug",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1253,
+      "labels": [
+        "drug"
+      ],
+      "properties": {
+        "disease": "急性心包炎",
+        "name": "吗啡"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1010,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "急性心包炎",
+        "definition": "心包脏层和壁层的急性炎症性疾病。"
+      }
+    },
+    "r": {
+      "identity": 1287,
+      "start": 1010,
+      "end": 1254,
+      "type": "disease_drug",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1254,
+      "labels": [
+        "drug"
+      ],
+      "properties": {
+        "dosage": "40~80mg/d",
+        "disease": "急性心包炎",
+        "name": "泼尼松"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1010,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "急性心包炎",
+        "definition": "心包脏层和壁层的急性炎症性疾病。"
+      }
+    },
+    "r": {
+      "identity": 1284,
+      "start": 1010,
+      "end": 1251,
+      "type": "disease_drug",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1251,
+      "labels": [
+        "drug"
+      ],
+      "properties": {
+        "dosage": "20~50mg",
+        "disease": "急性心包炎",
+        "aim": "缓解疼痛",
+        "name": "吲哚美辛",
+        "indication": "疼痛、阿司匹林效果不佳",
+        "frequency": "一日3次"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1010,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "急性心包炎",
+        "definition": "心包脏层和壁层的急性炎症性疾病。"
+      }
+    },
+    "r": {
+      "identity": 1285,
+      "start": 1010,
+      "end": 1252,
+      "type": "disease_drug",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1252,
+      "labels": [
+        "drug"
+      ],
+      "properties": {
+        "dosage": "0.6mg",
+        "disease": "急性心包炎",
+        "aim": "缓解疼痛",
+        "name": "秋水仙",
+        "indication": "疼痛、阿司匹林效果不佳",
+        "frequency": "一日2次"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1010,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "急性心包炎",
+        "definition": "心包脏层和壁层的急性炎症性疾病。"
+      }
+    },
+    "r": {
+      "identity": 1290,
+      "start": 1010,
+      "end": 1257,
+      "type": "disease_treatment",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1257,
+      "labels": [
+        "treatment"
+      ],
+      "properties": {
+        "disease": "急性心包炎",
+        "name": "外科心包切除术",
+        "indication": "顽固性复发性心包炎病程超过2年/心包积液反复穿刺引流无法缓解/激素无法控制/伴严重胸痛"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1010,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "急性心包炎",
+        "definition": "心包脏层和壁层的急性炎症性疾病。"
+      }
+    },
+    "r": {
+      "identity": 1289,
+      "start": 1010,
+      "end": 1256,
+      "type": "disease_treatment",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1256,
+      "labels": [
+        "treatment"
+      ],
+      "properties": {
+        "disease": "急性心包炎",
+        "name": "心包穿刺引流",
+        "indication": "心包积液多引起急性心脏压塞"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1010,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "急性心包炎",
+        "definition": "心包脏层和壁层的急性炎症性疾病。"
+      }
+    },
+    "r": {
+      "identity": 1288,
+      "start": 1010,
+      "end": 1255,
+      "type": "disease_treatment",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1255,
+      "labels": [
+        "treatment"
+      ],
+      "properties": {
+        "disease": "急性心包炎",
+        "name": "卧床休息"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1010,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "急性心包炎",
+        "definition": "心包脏层和壁层的急性炎症性疾病。"
+      }
+    },
+    "r": {
+      "identity": 1239,
+      "start": 1010,
+      "end": 1206,
+      "type": "disease_examination",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1206,
+      "labels": [
+        "examination"
+      ],
+      "properties": {
+        "disease": "急性心包炎",
+        "name": "心电图",
+        "information": "心电图改变"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1010,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "急性心包炎",
+        "definition": "心包脏层和壁层的急性炎症性疾病。"
+      }
+    },
+    "r": {
+      "identity": 1243,
+      "start": 1010,
+      "end": 1210,
+      "type": "disease_examination",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1210,
+      "labels": [
+        "examination"
+      ],
+      "properties": {
+        "disease": "急性心包炎",
+        "name": "心包穿刺",
+        "information": "心脏压塞"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1010,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "急性心包炎",
+        "definition": "心包脏层和壁层的急性炎症性疾病。"
+      }
+    },
+    "r": {
+      "identity": 1238,
+      "start": 1010,
+      "end": 1205,
+      "type": "disease_examination",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1205,
+      "labels": [
+        "examination"
+      ],
+      "properties": {
+        "disease": "急性心包炎",
+        "name": "血清学检查",
+        "information": "白细胞计数/中性粒细胞/C反应蛋白/红细胞/免疫指标/肌酐"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1010,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "急性心包炎",
+        "definition": "心包脏层和壁层的急性炎症性疾病。"
+      }
+    },
+    "r": {
+      "identity": 1241,
+      "start": 1010,
+      "end": 1208,
+      "type": "disease_examination",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1208,
+      "labels": [
+        "examination"
+      ],
+      "properties": {
+        "disease": "急性心包炎",
+        "name": "超声心动图",
+        "information": "靴型心/肺淤血/肺水肿"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1010,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "急性心包炎",
+        "definition": "心包脏层和壁层的急性炎症性疾病。"
+      }
+    },
+    "r": {
+      "identity": 1240,
+      "start": 1010,
+      "end": 1207,
+      "type": "disease_examination",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1207,
+      "labels": [
+        "examination"
+      ],
+      "properties": {
+        "disease": "急性心包炎",
+        "name": "胸部X线",
+        "information": "心包积液情况"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1010,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "急性心包炎",
+        "definition": "心包脏层和壁层的急性炎症性疾病。"
+      }
+    },
+    "r": {
+      "identity": 1242,
+      "start": 1010,
+      "end": 1209,
+      "type": "disease_examination",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1209,
+      "labels": [
+        "examination"
+      ],
+      "properties": {
+        "disease": "急性心包炎",
+        "name": "心脏磁共振成像",
+        "information": "心包积液的容量和分布情况/心包厚度",
+        "english_name": "MRI"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1010,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "急性心包炎",
+        "definition": "心包脏层和壁层的急性炎症性疾病。"
+      }
+    },
+    "r": {
+      "identity": 1262,
+      "start": 1010,
+      "end": 1229,
+      "type": "disease_differential_diagnosis",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1229,
+      "labels": [
+        "differential_diagnosis"
+      ],
+      "properties": {
+        "symptom": "高血压史、胸痛",
+        "disease": "急性心包炎",
+        "name": "主动脉夹层动脉瘤破裂"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1010,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "急性心包炎",
+        "definition": "心包脏层和壁层的急性炎症性疾病。"
+      }
+    },
+    "r": {
+      "identity": 1261,
+      "start": 1010,
+      "end": 1228,
+      "type": "disease_differential_diagnosis",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1228,
+      "labels": [
+        "differential_diagnosis"
+      ],
+      "properties": {
+        "symptom": "胸痛伴心电图ST段抬高",
+        "disease": "急性心包炎",
+        "name": "急性心肌梗死"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1010,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "急性心包炎",
+        "definition": "心包脏层和壁层的急性炎症性疾病。"
+      }
+    },
+    "r": {
+      "identity": 1263,
+      "start": 1010,
+      "end": 1230,
+      "type": "disease_differential_diagnosis",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1230,
+      "labels": [
+        "differential_diagnosis"
+      ],
+      "properties": {
+        "symptom": "胸痛/胸闷/晕厥",
+        "disease": "急性心包炎",
+        "name": "肺栓塞"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1057,
+      "start": 1012,
+      "end": 1024,
+      "type": "disease_cause",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1024,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "name": "肿瘤"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1065,
+      "start": 1012,
+      "end": 1032,
+      "type": "disease_cause",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1032,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "name": "介入操作造成的冠状动脉穿孔"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1061,
+      "start": 1012,
+      "end": 1028,
+      "type": "disease_cause",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1028,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "name": "严重体循环瘀血"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1064,
+      "start": 1012,
+      "end": 1031,
+      "type": "disease_cause",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1031,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "name": "心胸外科手术"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1058,
+      "start": 1012,
+      "end": 1025,
+      "type": "disease_cause",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1025,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "name": "特发性心包炎"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1059,
+      "start": 1012,
+      "end": 1026,
+      "type": "disease_cause",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1026,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "name": "感染性心包炎"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1060,
+      "start": 1012,
+      "end": 1027,
+      "type": "disease_cause",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1027,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "name": "结核性心包炎"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1062,
+      "start": 1012,
+      "end": 1029,
+      "type": "disease_cause",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1029,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "name": "穿刺伤"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1063,
+      "start": 1012,
+      "end": 1030,
+      "type": "disease_cause",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1030,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "name": "心室破裂"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1128,
+      "start": 1012,
+      "end": 1095,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1095,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "characteristic": "心包积液征（Ewart征）"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1129,
+      "start": 1012,
+      "end": 1096,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1096,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "characteristic": "胸骨左缘第3、4肋间闻及心包叩击音"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1110,
+      "start": 1012,
+      "end": 1077,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1077,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "characteristic": "端坐呼吸"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1137,
+      "start": 1012,
+      "end": 1104,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1104,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "examination": "心电图",
+        "characteristic": "QRS波"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1125,
+      "start": 1012,
+      "end": 1092,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1092,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "characteristic": "心音低而遥远"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1120,
+      "start": 1012,
+      "end": 1087,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1087,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "characteristic": "胸腔积液"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1115,
+      "start": 1012,
+      "end": 1082,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1082,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "characteristic": "声音嘶哑"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1148,
+      "start": 1012,
+      "end": 1115,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1115,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "examination": "超声心动图",
+        "characteristic": "吸气时室间隔左移"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1117,
+      "start": 1012,
+      "end": 1084,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1084,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "characteristic": "上腹部疼痛"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1113,
+      "start": 1012,
+      "end": 1080,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1080,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "characteristic": "发绀"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1140,
+      "start": 1012,
+      "end": 1107,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1107,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "examination": "X线检查",
+        "characteristic": "肺野清晰"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1127,
+      "start": 1012,
+      "end": 1094,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1094,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "characteristic": "支气管呼吸音"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1145,
+      "start": 1012,
+      "end": 1112,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1112,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "examination": "超声心动图",
+        "characteristic": "舒张早期右心室游离壁塌陷"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1136,
+      "start": 1012,
+      "end": 1103,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1103,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "examination": "心电图",
+        "characteristic": "P波"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1135,
+      "start": 1012,
+      "end": 1102,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1102,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "examination": "心电图",
+        "characteristic": "肢体导联QRS低电压"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1112,
+      "start": 1012,
+      "end": 1079,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1079,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "characteristic": "面色苍白"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1126,
+      "start": 1012,
+      "end": 1093,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1093,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "characteristic": "左肩胛骨下出现叩浊音"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1146,
+      "start": 1012,
+      "end": 1113,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1113,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "examination": "超声心动图",
+        "characteristic": "吸气时右心室内径增大"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1116,
+      "start": 1012,
+      "end": 1083,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1083,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "characteristic": "吞咽困难"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1114,
+      "start": 1012,
+      "end": 1081,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1081,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "characteristic": "干咳"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1144,
+      "start": 1012,
+      "end": 1111,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1111,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "examination": "超声心动图",
+        "characteristic": "舒张末期右心房塌陷"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1131,
+      "start": 1012,
+      "end": 1098,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1098,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "characteristic": "体循环瘀血"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1134,
+      "start": 1012,
+      "end": 1101,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1101,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "characteristic": "下肢水肿"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1109,
+      "start": 1012,
+      "end": 1076,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1076,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "characteristic": "呼吸困难"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1130,
+      "start": 1012,
+      "end": 1097,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1097,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "characteristic": "奇脉"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1139,
+      "start": 1012,
+      "end": 1106,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1106,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "examination": "心电图",
+        "characteristic": "窦性心动过速"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1119,
+      "start": 1012,
+      "end": 1086,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1086,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "characteristic": "全身水肿"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1138,
+      "start": 1012,
+      "end": 1105,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1105,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "examination": "心电图",
+        "characteristic": "T波电交替"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1111,
+      "start": 1012,
+      "end": 1078,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1078,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "characteristic": "身体前倾"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1124,
+      "start": 1012,
+      "end": 1091,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1091,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "characteristic": "心脏浊音界向两侧增大"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1141,
+      "start": 1012,
+      "end": 1108,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1108,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "examination": "X线检查",
+        "characteristic": "心影显著增大"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1118,
+      "start": 1012,
+      "end": 1085,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1085,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "characteristic": "肝大"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1143,
+      "start": 1012,
+      "end": 1110,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1110,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "examination": "超声心动图",
+        "characteristic": "游泳心"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1123,
+      "start": 1012,
+      "end": 1090,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1090,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "characteristic": "心尖搏动减弱"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1121,
+      "start": 1012,
+      "end": 1088,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1088,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "characteristic": "腹腔积液"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1132,
+      "start": 1012,
+      "end": 1099,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1099,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "characteristic": "颈静脉怒张"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1133,
+      "start": 1012,
+      "end": 1100,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1100,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "characteristic": "肝颈静脉回流征"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1122,
+      "start": 1012,
+      "end": 1089,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1089,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "characteristic": "休克"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1142,
+      "start": 1012,
+      "end": 1109,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1109,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "examination": "超声心动图",
+        "characteristic": "整个心动周期可见脏层心包与壁层心包之间存在积液"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1147,
+      "start": 1012,
+      "end": 1114,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1114,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "examination": "超声心动图",
+        "characteristic": "吸气时左心室内径减小"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1292,
+      "start": 1012,
+      "end": 1259,
+      "type": "disease_treatment",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1259,
+      "labels": [
+        "treatment"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "name": "扩容、升压治疗",
+        "indication": "伴休克"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1291,
+      "start": 1012,
+      "end": 1258,
+      "type": "disease_treatment",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1258,
+      "labels": [
+        "treatment"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "name": "心包穿刺引流"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1247,
+      "start": 1012,
+      "end": 1214,
+      "type": "disease_examination",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1214,
+      "labels": [
+        "examination"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "name": "心脏磁共振成像",
+        "information": "心包积液的位置、范围和容量/心包积液的性质/心包膜的增厚/心包腔内肿瘤"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1245,
+      "start": 1012,
+      "end": 1212,
+      "type": "disease_examination",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1212,
+      "labels": [
+        "examination"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "name": "心电图",
+        "information": "QRS波/P波/T波/窦性心动过速"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1244,
+      "start": 1012,
+      "end": 1211,
+      "type": "disease_examination",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1211,
+      "labels": [
+        "examination"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "name": "X线检查",
+        "information": "心影增大"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1248,
+      "start": 1012,
+      "end": 1215,
+      "type": "disease_examination",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1215,
+      "labels": [
+        "examination"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "name": "心包穿刺",
+        "information": "心包积液的性质"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1246,
+      "start": 1012,
+      "end": 1213,
+      "type": "disease_examination",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1213,
+      "labels": [
+        "examination"
+      ],
+      "properties": {
+        "disease": "心包积液",
+        "name": "超声心电图",
+        "information": "心包积液定量、定位"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1267,
+      "start": 1012,
+      "end": 1234,
+      "type": "disease_differential_diagnosis",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1234,
+      "labels": [
+        "differential_diagnosis"
+      ],
+      "properties": {
+        "symptom": "呼吸困难",
+        "disease": "心包积液",
+        "name": "瓣膜病"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1269,
+      "start": 1012,
+      "end": 1236,
+      "type": "disease_differential_diagnosis",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1236,
+      "labels": [
+        "differential_diagnosis"
+      ],
+      "properties": {
+        "symptom": "呼吸困难",
+        "disease": "心包积液",
+        "name": "心肌病"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1264,
+      "start": 1012,
+      "end": 1231,
+      "type": "disease_differential_diagnosis",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1231,
+      "labels": [
+        "differential_diagnosis"
+      ],
+      "properties": {
+        "symptom": "呼吸困难",
+        "disease": "心包积液",
+        "name": "心力衰竭"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1268,
+      "start": 1012,
+      "end": 1235,
+      "type": "disease_differential_diagnosis",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1235,
+      "labels": [
+        "differential_diagnosis"
+      ],
+      "properties": {
+        "symptom": "呼吸困难",
+        "disease": "心包积液",
+        "name": "先天性心脏病"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1266,
+      "start": 1012,
+      "end": 1233,
+      "type": "disease_differential_diagnosis",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1233,
+      "labels": [
+        "differential_diagnosis"
+      ],
+      "properties": {
+        "symptom": "呼吸困难",
+        "disease": "心包积液",
+        "name": "高血压"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1012,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心包积液",
+        "definition": "心包疾病或其他病因累及心包可造成心包渗出和心包积液。"
+      }
+    },
+    "r": {
+      "identity": 1265,
+      "start": 1012,
+      "end": 1232,
+      "type": "disease_differential_diagnosis",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1232,
+      "labels": [
+        "differential_diagnosis"
+      ],
+      "properties": {
+        "symptom": "呼吸困难",
+        "disease": "心包积液",
+        "name": "冠心病"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1066,
+      "start": 1013,
+      "end": 1033,
+      "type": "disease_cause",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1033,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "name": "肿瘤"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1067,
+      "start": 1013,
+      "end": 1034,
+      "type": "disease_cause",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1034,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "name": "特发性心包炎"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1073,
+      "start": 1013,
+      "end": 1040,
+      "type": "disease_cause",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1040,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "name": "心胸外科手术"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1072,
+      "start": 1013,
+      "end": 1039,
+      "type": "disease_cause",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1039,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "name": "心室破裂"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1074,
+      "start": 1013,
+      "end": 1041,
+      "type": "disease_cause",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1041,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "name": "介入操作造成的冠状动脉穿孔"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1071,
+      "start": 1013,
+      "end": 1038,
+      "type": "disease_cause",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1038,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "name": "穿刺伤"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1068,
+      "start": 1013,
+      "end": 1035,
+      "type": "disease_cause",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1035,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "name": "感染性心包炎"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1070,
+      "start": 1013,
+      "end": 1037,
+      "type": "disease_cause",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1037,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "name": "严重体循环瘀血"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1069,
+      "start": 1013,
+      "end": 1036,
+      "type": "disease_cause",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1036,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "name": "结核性心包炎"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1187,
+      "start": 1013,
+      "end": 1154,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1154,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "examination": "心电图",
+        "characteristic": "窦性心动过速"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1163,
+      "start": 1013,
+      "end": 1130,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1130,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "characteristic": "心尖搏动减弱"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1181,
+      "start": 1013,
+      "end": 1148,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1148,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "characteristic": "Kussmaul征"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1161,
+      "start": 1013,
+      "end": 1128,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1128,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "characteristic": "腹腔积液"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1168,
+      "start": 1013,
+      "end": 1135,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1135,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "characteristic": "心包积液征（Ewart征）"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1162,
+      "start": 1013,
+      "end": 1129,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1129,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "characteristic": "休克"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1188,
+      "start": 1013,
+      "end": 1155,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1155,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "examination": "X线检查",
+        "characteristic": "肺野清晰"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1183,
+      "start": 1013,
+      "end": 1150,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1150,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "examination": "心电图",
+        "characteristic": "肢体导联QRS低电压"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1192,
+      "start": 1013,
+      "end": 1159,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1159,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "examination": "超声心动图",
+        "characteristic": "舒张末期右心房塌陷"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1164,
+      "start": 1013,
+      "end": 1131,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1131,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "characteristic": "心脏浊音界向两侧增大"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1191,
+      "start": 1013,
+      "end": 1158,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1158,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "examination": "超声心动图",
+        "characteristic": "游泳心"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1177,
+      "start": 1013,
+      "end": 1144,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1144,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "characteristic": "脉压变小"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1189,
+      "start": 1013,
+      "end": 1156,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1156,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "examination": "X线检查",
+        "characteristic": "心影显著增大"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1176,
+      "start": 1013,
+      "end": 1143,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1143,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "characteristic": "血压下降"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1152,
+      "start": 1013,
+      "end": 1119,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1119,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "characteristic": "面色苍白"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1158,
+      "start": 1013,
+      "end": 1125,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1125,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "characteristic": "肝大"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1159,
+      "start": 1013,
+      "end": 1126,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1126,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "characteristic": "全身水肿"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1169,
+      "start": 1013,
+      "end": 1136,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1136,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "characteristic": "胸骨左缘第3、4肋间闻及心包叩击音"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1151,
+      "start": 1013,
+      "end": 1118,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1118,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "characteristic": "身体前倾"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1165,
+      "start": 1013,
+      "end": 1132,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1132,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "characteristic": "心音低而遥远"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1185,
+      "start": 1013,
+      "end": 1152,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1152,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "examination": "心电图",
+        "characteristic": "QRS波"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1156,
+      "start": 1013,
+      "end": 1123,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1123,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "characteristic": "吞咽困难"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1160,
+      "start": 1013,
+      "end": 1127,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1127,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "characteristic": "胸腔积液"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1180,
+      "start": 1013,
+      "end": 1147,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1147,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "characteristic": "休克"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1179,
+      "start": 1013,
+      "end": 1146,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1146,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "characteristic": "急性循环衰竭"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1173,
+      "start": 1013,
+      "end": 1140,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1140,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "characteristic": "肝颈静脉回流征"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1155,
+      "start": 1013,
+      "end": 1122,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1122,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "characteristic": "声音嘶哑"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1157,
+      "start": 1013,
+      "end": 1124,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1124,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "characteristic": "上腹部疼痛"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1150,
+      "start": 1013,
+      "end": 1117,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1117,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "characteristic": "端坐呼吸"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1182,
+      "start": 1013,
+      "end": 1149,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1149,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "characteristic": "为挠动脉搏动呈吸气性显著减弱或消失"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1193,
+      "start": 1013,
+      "end": 1160,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1160,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "examination": "超声心动图",
+        "characteristic": "舒张早期右心室游离壁塌陷"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1172,
+      "start": 1013,
+      "end": 1139,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1139,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "characteristic": "颈静脉怒张"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1167,
+      "start": 1013,
+      "end": 1134,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1134,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "characteristic": "支气管呼吸音"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1170,
+      "start": 1013,
+      "end": 1137,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1137,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "characteristic": "奇脉"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1184,
+      "start": 1013,
+      "end": 1151,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1151,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "examination": "心电图",
+        "characteristic": "P波"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1178,
+      "start": 1013,
+      "end": 1145,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1145,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "characteristic": "静脉压明显升高"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1186,
+      "start": 1013,
+      "end": 1153,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1153,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "examination": "心电图",
+        "characteristic": "T波电交替"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1174,
+      "start": 1013,
+      "end": 1141,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1141,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "characteristic": "下肢水肿"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1175,
+      "start": 1013,
+      "end": 1142,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1142,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "characteristic": "窦性心动过速"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1196,
+      "start": 1013,
+      "end": 1163,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1163,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "examination": "超声心动图",
+        "characteristic": "吸气时室间隔左移"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1153,
+      "start": 1013,
+      "end": 1120,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1120,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "characteristic": "发绀"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1166,
+      "start": 1013,
+      "end": 1133,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1133,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "characteristic": "左肩胛骨下出现叩浊音"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1171,
+      "start": 1013,
+      "end": 1138,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1138,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "characteristic": "体循环瘀血"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1194,
+      "start": 1013,
+      "end": 1161,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1161,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "examination": "超声心动图",
+        "characteristic": "吸气时右心室内径增大"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1154,
+      "start": 1013,
+      "end": 1121,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1121,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "characteristic": "干咳"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1195,
+      "start": 1013,
+      "end": 1162,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1162,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "examination": "超声心动图",
+        "characteristic": "吸气时左心室内径减小"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1149,
+      "start": 1013,
+      "end": 1116,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1116,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "characteristic": "呼吸困难"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1190,
+      "start": 1013,
+      "end": 1157,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1157,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "examination": "超声心动图",
+        "characteristic": "整个心动周期可见脏层心包与壁层心包之间存在积液"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1293,
+      "start": 1013,
+      "end": 1260,
+      "type": "disease_treatment",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1260,
+      "labels": [
+        "treatment"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "name": "心包穿刺引流"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1294,
+      "start": 1013,
+      "end": 1261,
+      "type": "disease_treatment",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1261,
+      "labels": [
+        "treatment"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "name": "扩容、升压治疗",
+        "indication": "伴休克"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1252,
+      "start": 1013,
+      "end": 1219,
+      "type": "disease_examination",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1219,
+      "labels": [
+        "examination"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "name": "心脏磁共振成像",
+        "information": "心包积液的位置、范围和容量/心包积液的性质/心包膜的增厚/心包腔内肿瘤"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1253,
+      "start": 1013,
+      "end": 1220,
+      "type": "disease_examination",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1220,
+      "labels": [
+        "examination"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "name": "心包穿刺",
+        "information": "心包积液的性质"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1249,
+      "start": 1013,
+      "end": 1216,
+      "type": "disease_examination",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1216,
+      "labels": [
+        "examination"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "name": "X线检查",
+        "information": "心影增大"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1250,
+      "start": 1013,
+      "end": 1217,
+      "type": "disease_examination",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1217,
+      "labels": [
+        "examination"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "name": "心电图",
+        "information": "QRS波/P波/T波/窦性心动过速"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1251,
+      "start": 1013,
+      "end": 1218,
+      "type": "disease_examination",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1218,
+      "labels": [
+        "examination"
+      ],
+      "properties": {
+        "disease": "心脏压塞",
+        "name": "超声心电图",
+        "information": "心包积液定量、定位"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1272,
+      "start": 1013,
+      "end": 1239,
+      "type": "disease_differential_diagnosis",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1239,
+      "labels": [
+        "differential_diagnosis"
+      ],
+      "properties": {
+        "symptom": "呼吸困难",
+        "disease": "心脏压塞",
+        "name": "高血压"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1275,
+      "start": 1013,
+      "end": 1242,
+      "type": "disease_differential_diagnosis",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1242,
+      "labels": [
+        "differential_diagnosis"
+      ],
+      "properties": {
+        "symptom": "呼吸困难",
+        "disease": "心脏压塞",
+        "name": "心肌病"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1273,
+      "start": 1013,
+      "end": 1240,
+      "type": "disease_differential_diagnosis",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1240,
+      "labels": [
+        "differential_diagnosis"
+      ],
+      "properties": {
+        "symptom": "呼吸困难",
+        "disease": "心脏压塞",
+        "name": "瓣膜病"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1270,
+      "start": 1013,
+      "end": 1237,
+      "type": "disease_differential_diagnosis",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1237,
+      "labels": [
+        "differential_diagnosis"
+      ],
+      "properties": {
+        "symptom": "呼吸困难",
+        "disease": "心脏压塞",
+        "name": "心力衰竭"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1271,
+      "start": 1013,
+      "end": 1238,
+      "type": "disease_differential_diagnosis",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1238,
+      "labels": [
+        "differential_diagnosis"
+      ],
+      "properties": {
+        "symptom": "呼吸困难",
+        "disease": "心脏压塞",
+        "name": "冠心病"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1013,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心脏压塞",
+        "definition": "心包积液量达到一定程度时，造成心输出量和回心血量明显下降而产生的临床症状。"
+      }
+    },
+    "r": {
+      "identity": 1274,
+      "start": 1013,
+      "end": 1241,
+      "type": "disease_differential_diagnosis",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1241,
+      "labels": [
+        "differential_diagnosis"
+      ],
+      "properties": {
+        "symptom": "呼吸困难",
+        "disease": "心脏压塞",
+        "name": "先天性心脏病"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1083,
+      "start": 1014,
+      "end": 1050,
+      "type": "disease_cause",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1050,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "name": "尿毒症"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1081,
+      "start": 1014,
+      "end": 1048,
+      "type": "disease_cause",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1048,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "name": "自身免疫性疾病"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1084,
+      "start": 1014,
+      "end": 1051,
+      "type": "disease_cause",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1051,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "name": "药物"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1080,
+      "start": 1014,
+      "end": 1047,
+      "type": "disease_cause",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1047,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "name": "心脏直视手术"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1078,
+      "start": 1014,
+      "end": 1045,
+      "type": "disease_cause",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1045,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "name": "创伤性心包炎"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1079,
+      "start": 1014,
+      "end": 1046,
+      "type": "disease_cause",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1046,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "name": "放射性心包炎"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1075,
+      "start": 1014,
+      "end": 1042,
+      "type": "disease_cause",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1042,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "name": "结核性心包炎"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1077,
+      "start": 1014,
+      "end": 1044,
+      "type": "disease_cause",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1044,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "name": "化脓性心包炎"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1082,
+      "start": 1014,
+      "end": 1049,
+      "type": "disease_cause",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1049,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "name": "恶性肿瘤"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1076,
+      "start": 1014,
+      "end": 1043,
+      "type": "disease_cause",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1043,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "name": "非特异性心包炎"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1212,
+      "start": 1014,
+      "end": 1179,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1179,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "characteristic": "无心脏杂音"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1233,
+      "start": 1014,
+      "end": 1200,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1200,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "examination": "超声心动图",
+        "characteristic": "心包增厚、粘连"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1223,
+      "start": 1014,
+      "end": 1190,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1190,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "examination": "X线检查",
+        "characteristic": "心包钙化"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1208,
+      "start": 1014,
+      "end": 1175,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1175,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "characteristic": "心尖搏动减弱或消失"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1200,
+      "start": 1014,
+      "end": 1167,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1167,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "comment": "体循环瘀血",
+        "characteristic": "活动耐量下降"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1204,
+      "start": 1014,
+      "end": 1171,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1171,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "comment": "体循环瘀血",
+        "characteristic": "胸腔积液"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1199,
+      "start": 1014,
+      "end": 1166,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1166,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "comment": "体循环瘀血",
+        "characteristic": "劳力性呼吸困难"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1231,
+      "start": 1014,
+      "end": 1198,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1198,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "examination": "右心导管检查",
+        "comment": "病程长/高龄病人",
+        "characteristic": "右心室收缩压轻度升高，呈舒张早期下陷及高原形曲线"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1236,
+      "start": 1014,
+      "end": 1203,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1203,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "examination": "超声心动图",
+        "characteristic": "室间隔舒张期矛盾运动（室间隔抖动症）"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1219,
+      "start": 1014,
+      "end": 1186,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1186,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "comment": "晚期",
+        "characteristic": "肌肉萎缩"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1224,
+      "start": 1014,
+      "end": 1191,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1191,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "examination": "心电图",
+        "characteristic": "心动过速"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1213,
+      "start": 1014,
+      "end": 1180,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1180,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "characteristic": "心浊音界正常或稍增大"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1229,
+      "start": 1014,
+      "end": 1196,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1196,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "examination": "右心导管检查",
+        "comment": "病程长/高龄病人",
+        "characteristic": "肺毛细血管压力/肺动脉舒张压力/右心室舒张末期压力/右心房压力/腔静脉压力均显著升高且趋于同一水平"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1201,
+      "start": 1014,
+      "end": 1168,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1168,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "comment": "体循环瘀血",
+        "characteristic": "疲乏"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1237,
+      "start": 1014,
+      "end": 1204,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1204,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "examination": "超声心动图",
+        "characteristic": "下腔静脉增宽且不随呼吸变化"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1216,
+      "start": 1014,
+      "end": 1183,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1183,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "characteristic": "窦性/房性/室性心律"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1230,
+      "start": 1014,
+      "end": 1197,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1197,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "examination": "右心导管检查",
+        "comment": "病程长/高龄病人",
+        "characteristic": "右心房压力曲线呈M或W波形"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1203,
+      "start": 1014,
+      "end": 1170,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1170,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "comment": "体循环瘀血",
+        "characteristic": "腹腔积液"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1227,
+      "start": 1014,
+      "end": 1194,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1194,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "examination": "心电图",
+        "characteristic": "P波增宽有切迹"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1218,
+      "start": 1014,
+      "end": 1185,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1185,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "characteristic": "Kussmaul征"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1220,
+      "start": 1014,
+      "end": 1187,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1187,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "comment": "晚期",
+        "characteristic": "恶病质"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1197,
+      "start": 1014,
+      "end": 1164,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1164,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "characteristic": "心包炎/心包积液/恶性肿瘤/胸部放射性治疗/胸心外科手术病史"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1235,
+      "start": 1014,
+      "end": 1202,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1202,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "examination": "超声心动图",
+        "characteristic": "室壁活动减弱"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1206,
+      "start": 1014,
+      "end": 1173,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1173,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "characteristic": "颈静脉压升高"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1214,
+      "start": 1014,
+      "end": 1181,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1181,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "characteristic": "胸骨左缘第3~4肋间可闻及心包叩击音"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1210,
+      "start": 1014,
+      "end": 1177,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1177,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "characteristic": "心浊音界正常或稍增大"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1198,
+      "start": 1014,
+      "end": 1165,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1165,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "comment": "体循环瘀血",
+        "characteristic": "心悸"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1232,
+      "start": 1014,
+      "end": 1199,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1199,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "examination": "右心导管检查",
+        "comment": "病程长/高龄病人",
+        "characteristic": "呼吸时左、 压力曲线变化呈矛盾性"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1207,
+      "start": 1014,
+      "end": 1174,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1174,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "characteristic": "脉压变小"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1234,
+      "start": 1014,
+      "end": 1201,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1201,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "examination": "超声心动图",
+        "characteristic": "心脏变形"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1209,
+      "start": 1014,
+      "end": 1176,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1176,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "characteristic": "收缩期心尖呈负性搏动"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1217,
+      "start": 1014,
+      "end": 1184,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1184,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "characteristic": "期前收缩"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1211,
+      "start": 1014,
+      "end": 1178,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1178,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "characteristic": "心音轻而远"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1225,
+      "start": 1014,
+      "end": 1192,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1192,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "examination": "心电图",
+        "characteristic": "QRS低电压"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1215,
+      "start": 1014,
+      "end": 1182,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1182,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "characteristic": "心率较快"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1205,
+      "start": 1014,
+      "end": 1172,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1172,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "comment": "体循环瘀血",
+        "characteristic": "下肢水肿"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1202,
+      "start": 1014,
+      "end": 1169,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1169,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "comment": "体循环瘀血",
+        "characteristic": "肝大"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1221,
+      "start": 1014,
+      "end": 1188,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1188,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "comment": "晚期",
+        "characteristic": "严重水肿"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1222,
+      "start": 1014,
+      "end": 1189,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1189,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "examination": "X线检查",
+        "characteristic": "心影轻度增大"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1228,
+      "start": 1014,
+      "end": 1195,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1195,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "examination": "心电图",
+        "comment": "病程长/高龄病人",
+        "characteristic": "心房颤动"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1226,
+      "start": 1014,
+      "end": 1193,
+      "type": "disease_symtom",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1193,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "examination": "心电图",
+        "characteristic": "T波低平或倒置"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1295,
+      "start": 1014,
+      "end": 1262,
+      "type": "disease_treatment",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1262,
+      "labels": [
+        "treatment"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "name": "心包切除术",
+        "indication": "发展为慢性窄缩性心包炎"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1297,
+      "start": 1014,
+      "end": 1264,
+      "type": "disease_treatment",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1264,
+      "labels": [
+        "treatment"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "name": "抗结核治疗",
+        "indication": "结核性心包炎"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1296,
+      "start": 1014,
+      "end": 1263,
+      "type": "disease_treatment",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1263,
+      "labels": [
+        "treatment"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "name": "抗炎治疗",
+        "indication": "近期诊断且病情稳定的病人，无心源性恶病质、心源性肝硬化、心肌萎缩等并发症"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1260,
+      "start": 1014,
+      "end": 1227,
+      "type": "disease_examination",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1227,
+      "labels": [
+        "examination"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "name": "心包腔纤维内镜",
+        "information": "病因"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1254,
+      "start": 1014,
+      "end": 1221,
+      "type": "disease_examination",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1221,
+      "labels": [
+        "examination"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "name": "X线检查",
+        "information": "心影增大/心包钙化"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1257,
+      "start": 1014,
+      "end": 1224,
+      "type": "disease_examination",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1224,
+      "labels": [
+        "examination"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "name": "心脏CT",
+        "information": "心包的受累范围和程度/心包钙化/心包厚度"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1255,
+      "start": 1014,
+      "end": 1222,
+      "type": "disease_examination",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1222,
+      "labels": [
+        "examination"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "name": "心电图",
+        "information": "心动过速/QRS低电压/T波低平或倒置/P波增宽有切迹/心房颤动"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1256,
+      "start": 1014,
+      "end": 1223,
+      "type": "disease_examination",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1223,
+      "labels": [
+        "examination"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "name": "超声心电图",
+        "information": "心包增厚粘连/心脏变形/室壁活动减弱减弱/室间隔抖动症/下腔静脉增宽"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1258,
+      "start": 1014,
+      "end": 1225,
+      "type": "disease_examination",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1225,
+      "labels": [
+        "examination"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "name": "心脏MRI",
+        "information": "心包的受累范围和程度/心包钙化/心包厚度/心包渗出/心包粘连/心包炎症"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1259,
+      "start": 1014,
+      "end": 1226,
+      "type": "disease_examination",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1226,
+      "labels": [
+        "examination"
+      ],
+      "properties": {
+        "disease": "窄缩性心包炎",
+        "name": "右心导管检查",
+        "information": "肺毛细血管压力、肺动脉舒张压力、右心室舒张末期压力、右心房压力和腔静脉压均显著升高且趋于同一水平/右心房压力曲线呈M或W波形/右心室收缩压轻度升高，呈舒张早期下陷及高原形曲线/呼吸时左、右压力曲线变化呈矛盾性//"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1281,
+      "start": 1014,
+      "end": 1248,
+      "type": "disease_differential_diagnosis",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1248,
+      "labels": [
+        "differential_diagnosis"
+      ],
+      "properties": {
+        "symptom": "腹腔积液",
+        "disease": "窄缩性心包炎",
+        "name": "结核性腹膜炎"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1280,
+      "start": 1014,
+      "end": 1247,
+      "type": "disease_differential_diagnosis",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1247,
+      "labels": [
+        "differential_diagnosis"
+      ],
+      "properties": {
+        "symptom": "腹腔积液",
+        "disease": "窄缩性心包炎",
+        "name": "肝硬化"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1278,
+      "start": 1014,
+      "end": 1245,
+      "type": "disease_differential_diagnosis",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1245,
+      "labels": [
+        "differential_diagnosis"
+      ],
+      "properties": {
+        "symptom": "心脏增大/心力衰竭",
+        "disease": "窄缩性心包炎",
+        "name": "高血压性心脏病"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1277,
+      "start": 1014,
+      "end": 1244,
+      "type": "disease_differential_diagnosis",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1244,
+      "labels": [
+        "differential_diagnosis"
+      ],
+      "properties": {
+        "symptom": "心脏增大/心力衰竭",
+        "disease": "窄缩性心包炎",
+        "name": "心肌炎"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1276,
+      "start": 1014,
+      "end": 1243,
+      "type": "disease_differential_diagnosis",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1243,
+      "labels": [
+        "differential_diagnosis"
+      ],
+      "properties": {
+        "symptom": "心脏增大/心力衰竭",
+        "disease": "窄缩性心包炎",
+        "name": "限制型心肌病"
+      }
+    }
+  },
+  {
+    "n1": {
+      "identity": 1014,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "窄缩性心包炎",
+        "definition": "是指心脏被致密增厚的纤维化或钙化心包所包围，使心室舒张期充盈受限而产生一系列循环障碍的疾病。"
+      }
+    },
+    "r": {
+      "identity": 1279,
+      "start": 1014,
+      "end": 1246,
+      "type": "disease_differential_diagnosis",
+      "properties": {
+        "reference": "内科学第九版"
+      }
+    },
+    "n2": {
+      "identity": 1246,
+      "labels": [
+        "differential_diagnosis"
+      ],
+      "properties": {
+        "symptom": "心脏增大/心力衰竭",
+        "disease": "窄缩性心包炎",
+        "name": "内分泌病性心脏病"
+      }
+    }
+  }
+]

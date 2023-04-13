@@ -1,0 +1,4521 @@
+﻿[
+  {
+    "n": {
+      "identity": 196,
+      "labels": [
+        "drug"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "aim": "治疗心力衰竭",
+        "name": "琥珀酸美托洛尔",
+        "indication": "LVEF<40%的心力衰竭病人"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 197,
+      "labels": [
+        "drug"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "aim": "治疗心力衰竭",
+        "name": "比索洛尔",
+        "indication": "LVEF<40%的心力衰竭病人"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 198,
+      "labels": [
+        "drug"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "aim": "治疗心力衰竭",
+        "name": "依普利酮",
+        "indication": " ACEI和β受体拈抗剂基础上仍有症状且无肾功能严重受损的病人"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 199,
+      "labels": [
+        "drug"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "aim": "治疗心力衰竭",
+        "name": "螺内酯",
+        "indication": " ACEI和β受体拈抗剂基础上仍有症状且无肾功能严重受损的病人",
+        "side_effect": "引起少数男性病人乳房发育"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 200,
+      "labels": [
+        "drug"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "aim": "治疗心力衰竭",
+        "name": "肼屈嗪和二硝酸异山梨酯",
+        "indication": "ACEI和ARB不能耐受病人"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 201,
+      "labels": [
+        "drug"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "aim": "治疗心力衰竭",
+        "name": "伊伐布雷定",
+        "indication": "LVEF≤30%，窦性心率仍≥70次/分的病人，不能耐受β受体括抗剂或有使用禁忌"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 202,
+      "labels": [
+        "drug"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "aim": "治疗心力衰竭",
+        "name": "血管紧张素受体脑啡肤酶抑制剂",
+        "indication": "射血分数减低的心衰病人经过ACEI、β受体拮抗剂和醛固酮拮抗剂充分治疗后病人仍有症状",
+        "english_name": "ARNI"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 203,
+      "labels": [
+        "drug"
+      ],
+      "properties": {
+        "dosage": "每日20mg",
+        "disease": "扩张型心肌病",
+        "aim": "治疗心力衰竭",
+        "name": "呋塞米"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 204,
+      "labels": [
+        "drug"
+      ],
+      "properties": {
+        "dosage": "每日25mg",
+        "disease": "扩张型心肌病",
+        "aim": "治疗心力衰竭",
+        "name": "氢氧噻嗪"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 205,
+      "labels": [
+        "drug"
+      ],
+      "properties": {
+        "dosage": "每日25mg",
+        "disease": "扩张型心肌病",
+        "aim": "治疗心力衰竭",
+        "name": "洋地黄",
+        "indication": "ACE（ARB）受体桔抗剂、MRA治疗后仍有症状，或者不能耐受β受体拮抗剂的病人"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 206,
+      "labels": [
+        "drug"
+      ],
+      "properties": {
+        "dosage": "每日25mg",
+        "disease": "扩张型心肌病",
+        "aim": "治疗心力衰竭",
+        "name": "洋地黄",
+        "indication": "ACE（ARB）受体桔抗剂、MRA治疗后仍有症状，或者不能耐受β受体拮抗剂的病人"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 207,
+      "labels": [
+        "drug"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "aim": "抗凝治疗",
+        "name": "华法林",
+        "indication": "有房颤或已经有附壁血栓形成或有血栓栓塞病史的病人"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 208,
+      "labels": [
+        "drug"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "aim": "抗凝治疗",
+        "name": "新型口服抗凝药物",
+        "indication": "有房颤或已经有附壁血栓形成或有血栓栓塞病史的病人"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 209,
+      "labels": [
+        "drug"
+      ],
+      "properties": {
+        "name": "ACEI、ARB、MRA合用",
+        "prohibit_disease": "扩张型心肌病"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 210,
+      "labels": [
+        "drug"
+      ],
+      "properties": {
+        "name": "噻唑烷二酮类",
+        "prohibit_disease": "扩张型心肌病",
+        "side_effect": "加重心力衰竭"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 211,
+      "labels": [
+        "drug"
+      ],
+      "properties": {
+        "name": "格列酮类",
+        "prohibit_disease": "扩张型心肌病",
+        "side_effect": "加重心力衰竭"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 212,
+      "labels": [
+        "drug"
+      ],
+      "properties": {
+        "name": "NSAIDs",
+        "prohibit_disease": "扩张型心肌病",
+        "side_effect": "水钠潴留"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 213,
+      "labels": [
+        "drug"
+      ],
+      "properties": {
+        "name": "COX-2抑制剂",
+        "prohibit_disease": "扩张型心肌病",
+        "side_effect": "水钠潴留"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 214,
+      "labels": [
+        "drug"
+      ],
+      "properties": {
+        "name": "地尔硫䓬",
+        "prohibit_disease": "扩张型心肌病",
+        "side_effect": "负性肌力"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 215,
+      "labels": [
+        "drug"
+      ],
+      "properties": {
+        "name": "维拉帕米",
+        "prohibit_disease": "扩张型心肌病",
+        "side_effect": "负性肌力"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 216,
+      "labels": [
+        "drug"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "aim": "减轻左心室流出道梗阻",
+        "name": "β受体拮抗剂",
+        "indication": "梗阻性HCM"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 217,
+      "labels": [
+        "drug"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "aim": "减轻左心室流出道梗阻",
+        "name": "非二氢吡啶类钙通道阻滞剂",
+        "indication": "梗阻性HCM，不能耐受β受体桔抗剂"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 218,
+      "labels": [
+        "drug"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "aim": "减轻左心室流出道梗阻",
+        "name": "丙吡胺",
+        "indication": "梗阻性HCM",
+        "side_effect": "口干、眼干、便秘等心脏外副作用"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 219,
+      "labels": [
+        "drug"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "aim": "治疗心力衰竭",
+        "name": "ACEI",
+        "indication": "左心室扩大/左心室收缩功能减低/慢性心功能不全"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 220,
+      "labels": [
+        "drug"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "aim": "治疗心力衰竭",
+        "name": "ARB",
+        "indication": "左心室扩大/左心室收缩功能减低/慢性心功能不全"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 221,
+      "labels": [
+        "drug"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "aim": "治疗心力衰竭",
+        "name": "β受体拮抗剂",
+        "indication": "左心室扩大/左心室收缩功能减低/慢性心功能不全"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 222,
+      "labels": [
+        "drug"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "aim": "治疗心力衰竭",
+        "name": "利尿剂",
+        "indication": "左心室扩大/左心室收缩功能减低/慢性心功能不全"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 223,
+      "labels": [
+        "drug"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "aim": "治疗心力衰竭",
+        "name": "螺内酯",
+        "indication": "左心室扩大/左心室收缩功能减低/慢性心功能不全"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 224,
+      "labels": [
+        "drug"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "aim": "治疗心力衰竭",
+        "name": "地高辛",
+        "indication": "左心室扩大/左心室收缩功能减低/慢性心功能不全"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 225,
+      "labels": [
+        "drug"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "aim": "能减少阵发性房颤发作",
+        "name": "胺碘酮",
+        "indication": "阵发性房颤"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 226,
+      "labels": [
+        "drug"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "aim": "控制心室率",
+        "name": "β受体拮抗剂",
+        "indication": "持续性房颤"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 227,
+      "labels": [
+        "drug"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "aim": "房颤治疗",
+        "name": "抗凝药",
+        "indication": "房颤"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 228,
+      "labels": [
+        "drug"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "name": "利尿剂",
+        "indication": "出现心力衰竭"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 229,
+      "labels": [
+        "drug"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "name": "血管扩张剂",
+        "indication": "出现心力衰竭"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 230,
+      "labels": [
+        "drug"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "name": "ACEI",
+        "indication": "出现心力衰竭"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 231,
+      "labels": [
+        "drug"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "name": "抗心律失常药物",
+        "indication": "出现快速型心律失常"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 232,
+      "labels": [
+        "drug"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "aim": "促进心肌代谢",
+        "name": "腺苷三磷酸"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 233,
+      "labels": [
+        "drug"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "aim": "促进心肌代谢",
+        "name": "辅酶A"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 234,
+      "labels": [
+        "drug"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "aim": "促进心肌代谢",
+        "name": "环腺苷酸"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 235,
+      "labels": [
+        "treatment"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "name": "心力衰竭的心脏再同步化治疗",
+        "indication": "心力衰竭病人",
+        "english_name": "CRT"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 236,
+      "labels": [
+        "treatment"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "name": "心脏移植",
+        "indication": "严重心力衰竭内科治疗无效",
+        "english_name": "CRT"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 237,
+      "labels": [
+        "treatment"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "aim": "改善循环",
+        "name": "左心机械辅助循环",
+        "indication": "心脏移植等待期"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 238,
+      "labels": [
+        "treatment"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "aim": "减轻反流、改善心功能",
+        "name": "左心室成形术",
+        "indication": "心脏移植等待期"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 239,
+      "labels": [
+        "treatment"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "aim": "预防心脏猝死",
+        "name": "植入型心律转复除颤器",
+        "indication": "有持续性室速/有室速、室颤导致的心跳骤停史/LVEF≤35%，NYHA心功能评分Ⅱ~Ⅲ级，预期生存时间＞1年，且有一定生活质量",
+        "english_name": "ICD"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 240,
+      "labels": [
+        "treatment"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "name": "室间隔切除术",
+        "indication": "药物治疗无效，心功能不全（NYHA Ⅲ~Ⅳ级）病人，存在严重流出道梗阻（静息或运动时流出道压力阶差大于50mmg） "
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 241,
+      "labels": [
+        "treatment"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "aim": "改善心力衰竭",
+        "name": "酒精室间隔消融术",
+        "indication": "药物治疗无效，心功能不全（NYHA Ⅲ~Ⅳ级）病人，存在严重流出道梗阻（静息或运动时流出道压力阶差大于50mmg） "
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 242,
+      "labels": [
+        "treatment"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "aim": "减轻左心室流出道梗阻",
+        "name": "右心室心尖起搏",
+        "indication": "其他病因有双腔起搏置入适应证的病人"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 243,
+      "labels": [
+        "treatment"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "name": "双腔起搏",
+        "indication": "药物治疗效果差而又不太适合手术或消融的病人"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 244,
+      "labels": [
+        "treatment"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "name": "猝死风险评估和ICD预防",
+        "indication": "青年和运动员"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 245,
+      "labels": [
+        "treatment"
+      ],
+      "properties": {
+        "disease": "限制型心肌病",
+        "name": "避免劳累、呼吸道感染等心力衰竭的诱因",
+        "indication": "原发性RCM"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 246,
+      "labels": [
+        "treatment"
+      ],
+      "properties": {
+        "disease": "限制型心肌病",
+        "name": "针对病因的特异性治疗",
+        "indication": "继发性RCM"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 247,
+      "labels": [
+        "treatment"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "name": "避免劳累，适当休息"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 248,
+      "labels": [
+        "treatment"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "name": "临时心脏起搏器",
+        "indication": "高度房室传导阻滞或窦房结功能损害而出现晕厥或明显低血压"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 249,
+      "labels": [
+        "treatment"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "name": "特异性抗病毒治疗"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1265,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心肌疾病",
+        "definition": "有不同病因（遗传性病因较多见）引起的心肌病变导致心肌机械和（或）心电功能障碍"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1266,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "扩张型心肌病",
+        "definition": "以左心室或双心室扩大伴收缩功能障碍为特征的心肌病",
+        "english_name": "DCM"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1267,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "肥厚型心肌病",
+        "definition": "以心室非对称性肥厚为特点的遗传性的心肌病",
+        "english_name": "HCM"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1268,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "限制型心肌病",
+        "definition": "以心室壁僵硬度增加、舒张功能降低、充盈受限而产生临床右心衰症状为特征的一类心肌病",
+        "english_name": "RCM"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1269,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "心肌炎",
+        "definition": "心肌的炎症性疾病"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1270,
+      "labels": [
+        "disease"
+      ],
+      "properties": {
+        "name": "病毒性心肌炎"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1271,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "name": "柯萨奇病毒B"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1272,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "name": "ECHO病毒"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1273,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "name": "细小病毒B-19"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1274,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "name": "人疱疹病毒6型"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1275,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "name": "脊髓灰质炎病毒"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1276,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "name": "流感病毒"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1277,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "name": "腺病毒"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1278,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "name": "巨细胞病毒"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1279,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "name": "单纯疱疹病毒"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1280,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "name": "EB病毒"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1281,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "name": "人免疫缺陷病毒"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1282,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "name": "结节病"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1283,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "name": "巨细胞性"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1284,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "name": "过敏"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1285,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "name": "多发性肌炎"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1286,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "name": "皮炎"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1287,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "name": "系统性血管炎"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1288,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "name": "系统性红斑狼疮"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1289,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "name": "嗜酒"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1290,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "name": "蔥环类抗癌药物"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1291,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "name": "锂制剂"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1292,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "name": "依米丁"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1293,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "name": "克山病"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1294,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "name": "嗜铬细胞瘤"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1295,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "name": "甲状腺疾病"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1296,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "name": "遗传"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1297,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "name": "围生期"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1298,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "name": "Duchenne型肌营养不良"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1299,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "name": "Backer型肌营养不良"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1300,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "限制型心肌病",
+        "name": "淀粉样变性"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1301,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "限制型心肌病",
+        "name": "结节病"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1302,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "限制型心肌病",
+        "name": "血色病"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1303,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "限制型心肌病",
+        "name": "糖原贮积症"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1304,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "限制型心肌病",
+        "name": "戈谢病"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1305,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "限制型心肌病",
+        "name": "Fabry病"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1306,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "限制型心肌病",
+        "name": "硬皮病"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1307,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "限制型心肌病",
+        "name": "糖尿病心肌病"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1308,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "限制型心肌病",
+        "name": "心内膜弹力纤维增生症"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1309,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "限制型心肌病",
+        "name": "高嗜酸性粒细胞综合征"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1310,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "限制型心肌病",
+        "name": "放射"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1311,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "限制型心肌病",
+        "name": "蔥环类抗生素"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1312,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "限制型心肌病",
+        "name": "癌样心脏病"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1313,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "限制型心肌病",
+        "name": "转移性癌"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1314,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "心肌炎",
+        "name": "病毒感染"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1315,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "心肌炎",
+        "name": "真菌感染"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1316,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "心肌炎",
+        "name": "螺旋体感染"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1317,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "心肌炎",
+        "name": "立克次氏体感染"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1318,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "心肌炎",
+        "name": "原虫感染"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1319,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "心肌炎",
+        "name": "蠕虫感染"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1320,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "心肌炎",
+        "name": "药物"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1321,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "心肌炎",
+        "name": "毒物"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1322,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "心肌炎",
+        "name": "放射"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1323,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "心肌炎",
+        "name": "结缔组织病"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1324,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "心肌炎",
+        "name": "血管炎"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1325,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "心肌炎",
+        "name": "巨细胞心肌炎"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1326,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "心肌炎",
+        "name": "结节病"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1327,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "name": "柯萨奇B组病毒"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1328,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "name": "细小病毒B-19"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1329,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "name": "孤儿（Echo）病毒"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1330,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "name": "脊髓灰质炎病毒"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1331,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "name": "人类腺病毒"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1332,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "name": "流感"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1333,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "name": "风疹"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1334,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "name": "单纯疱疹"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1335,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "name": "脑炎"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1336,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "name": "肝炎（A、B、C型）病毒"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1337,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "name": "EB病毒"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1338,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "name": "巨细胞病毒"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1339,
+      "labels": [
+        "cause"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "name": "人类免疫缺陷（HIV）病毒"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1340,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "characteristic": "呼吸困难"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1341,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "characteristic": "活动耐量下降"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1342,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "comment": "左心功能不全",
+        "characteristic": "夜间阵发性呼吸困难"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1343,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "comment": "左心功能不全",
+        "characteristic": "端坐呼吸"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1344,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "comment": "右心功能不全",
+        "characteristic": "食欲下降"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1345,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "comment": "右心功能不全",
+        "characteristic": "腹胀"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1346,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "comment": "右心功能不全",
+        "characteristic": "下肢水肿"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1347,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "comment": "合并心律失常",
+        "characteristic": "心悸"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1348,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "comment": "合并心律失常",
+        "characteristic": "头晕"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1349,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "comment": "合并心律失常",
+        "characteristic": "黑矇"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1350,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "comment": "合并心律失常",
+        "characteristic": "猝死"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1351,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "comment": "DCM终末期",
+        "characteristic": "持续顽固低血压"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1352,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "comment": "相应脏器受累",
+        "characteristic": "栓塞"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1353,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "characteristic": "心界扩大"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1354,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "characteristic": "心音减弱"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1355,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "characteristic": "第三心音"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1356,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "characteristic": "第四心音"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1357,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "characteristic": "心率快时呈奔马律"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1358,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "characteristic": "心尖部闻及收缩期杂音"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1359,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "characteristic": "肺部湿啰音"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1360,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "comment": "心衰加重/急性左心衰竭",
+        "characteristic": "哮鸣音"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1361,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "comment": "右心衰竭",
+        "characteristic": "颈静脉怒张"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1362,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "comment": "右心衰竭",
+        "characteristic": "肝大"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1363,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "comment": "右心衰竭",
+        "characteristic": "外周水肿"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1364,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "comment": "长期肝瘀血",
+        "characteristic": "肝硬化"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1365,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "comment": "长期肝瘀血",
+        "characteristic": "胆汁淤积"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1366,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "comment": "长期肝瘀血",
+        "characteristic": "黄疸"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1367,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "characteristic": "皮肤湿冷"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1368,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "examination": "胸部X线检查",
+        "characteristic": "心影增大"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1369,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "examination": "胸部X线检查",
+        "characteristic": "心胸比>50%"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1370,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "examination": "胸部X线检查",
+        "characteristic": "肺瘀血"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1371,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "examination": "胸部X线检查",
+        "characteristic": "肺水肿"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1372,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "examination": "胸部X线检查",
+        "characteristic": "肺动脉压力增高"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1373,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "examination": "胸部X线检查",
+        "characteristic": "胸腔积液"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1374,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "examination": "心电图",
+        "characteristic": "R波递增不良"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1375,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "examination": "心电图",
+        "characteristic": "室内传导阻滞"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1376,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "examination": "心电图",
+        "characteristic": "左束支传导阻滞"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1377,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "examination": "心电图",
+        "comment": "预后不良",
+        "characteristic": "QRS波增宽"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1378,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "examination": "心电图",
+        "comment": "严重的左心室纤维化",
+        "characteristic": "病理性Q波"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1379,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "examination": "心电图",
+        "characteristic": "ST段压低"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1380,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "examination": "心电图",
+        "characteristic": "T波倒置"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1381,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "examination": "心电图",
+        "characteristic": "期前收缩"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1382,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "examination": "心电图",
+        "characteristic": "非持续性室速"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1383,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "examination": "心电图",
+        "characteristic": "房颤"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1384,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "examination": "心电图",
+        "characteristic": "心律失常"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1385,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "examination": "超声心动图",
+        "characteristic": "左心室扩大"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1386,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "examination": "超声心动图",
+        "characteristic": "各心腔均扩大"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1387,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "examination": "超声心动图",
+        "characteristic": "室壁运动减弱"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1388,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "examination": "超声心动图",
+        "characteristic": "心肌收缩功能下降"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1389,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "examination": "超声心动图",
+        "characteristic": "左心室射血分数显著降低 "
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1390,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "examination": "超声心动图",
+        "characteristic": "瓣膜关闭不全"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1391,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "examination": "核素血池扫描",
+        "characteristic": "舒张末期和收缩末期左心室容积增大"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1392,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "examination": "核素血池扫描",
+        "characteristic": "左心室射血分数降低"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1393,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "examination": "CTA",
+        "characteristic": "冠状动脉狭窄病变"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1394,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "examination": "血液和血清学检查",
+        "characteristic": "脑钠肽（BNP）升高"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1395,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "examination": "血液和血清学检查",
+        "characteristic": "N末端脑钠肽前体升高（NT-proBNP）"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1396,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "examination": "血液和血清学检查",
+        "characteristic": "心肌肌钙蛋白I轻度升高"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1397,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "examination": "心导管检查",
+        "characteristic": "左、右舒张末期压增高"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1398,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "examination": "心导管检查",
+        "characteristic": "左心房压增高"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1399,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "examination": "心导管检查",
+        "characteristic": "肺毛细血管楔压增高"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1400,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "characteristic": "劳力性呼吸困难"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1401,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "characteristic": "乏力"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1402,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "characteristic": "夜间阵发性呼吸困难"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1403,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "characteristic": "劳力性胸痛"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1404,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "characteristic": "房颤"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1405,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "comment": "室性快速型心动过速",
+        "characteristic": "晕厥"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1406,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "characteristic": "心脏轻度增大"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1407,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "characteristic": "第四心音"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1408,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "characteristic": "心脏轻度增大"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1409,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "comment": "流出道梗阻",
+        "characteristic": "胸骨左缘第3~4肋间闻及较粗糙的喷射性收缩期杂音"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1410,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "comment": "二尖瓣关闭不全",
+        "characteristic": "收缩期杂音"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1411,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "examination": "胸部X线检查",
+        "characteristic": "心影正常或左心室增大"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1412,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "examination": "心电图",
+        "characteristic": "QRS波左心室高电压"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1413,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "examination": "心电图",
+        "characteristic": "倒置T波"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1414,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "examination": "心电图",
+        "characteristic": "异常q波"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1415,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "examination": "心电图",
+        "characteristic": "QRS波左心室高电压"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1416,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "examination": "心电图",
+        "characteristic": "宽而不深的病理性Q波"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1417,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "examination": "心电图",
+        "characteristic": "室内传导阻滞"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1418,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "examination": "心电图",
+        "characteristic": "心律失常"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1419,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "examination": "超声心动图",
+        "characteristic": "心室不对称肥厚"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1420,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "examination": "超声心动图",
+        "characteristic": "无心室腔增大"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1421,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "examination": "超声心动图",
+        "comment": "伴有流出道梗阻",
+        "characteristic": "室间隔流出道部分向左心室内突出"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1422,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "examination": "超声心动图",
+        "comment": "伴有流出道梗阻",
+        "characteristic": "二尖瓣前叶在收缩期前移"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1423,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "examination": "超声心动图",
+        "comment": "伴有流出道梗阻",
+        "characteristic": "左心室舒张功能障碍"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1424,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "examination": "心脏磁共振",
+        "characteristic": "心室壁局限性或普遍性增厚"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1425,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "examination": "同位素轧延迟增强扫描",
+        "characteristic": "心肌呈片状强化"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1426,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "examination": "心脏磁共振",
+        "comment": "梗阻性HCM",
+        "characteristic": "左心室流出道狭窄"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1427,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "examination": "心脏磁共振",
+        "comment": "梗阻性HCM",
+        "characteristic": "SAM征"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1428,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "examination": "心脏磁共振",
+        "comment": "梗阻性HCM",
+        "characteristic": "二尖瓣关闭不全"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1429,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "examination": "心导管检查",
+        "characteristic": "左心室舒张末期压力增高"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1430,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "examination": "心导管检查",
+        "comment": "左心室流出道狭窄",
+        "characteristic": "心室腔与流出道之间存在收缩期压力阶差"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1431,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "examination": "心室造影",
+        "characteristic": "左心室变形"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1432,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "examination": "心导管检查",
+        "comment": "冠状动脉造影",
+        "characteristic": "冠状动脉造影无异常"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1433,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "examination": "心内膜心肌活检",
+        "characteristic": "心肌细胞肥大"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1434,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "examination": "心内膜心肌活检",
+        "characteristic": "心肌细胞排列紊乱"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1435,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "examination": "心内膜心肌活检",
+        "characteristic": "心肌细胞局限性"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1436,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "examination": "心内膜心肌活检",
+        "characteristic": "心肌细胞弥散性间质纤维化"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1437,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "限制型心肌病",
+        "characteristic": "活动耐力下降"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1438,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "限制型心肌病",
+        "characteristic": "乏力"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1439,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "限制型心肌病",
+        "characteristic": "呼吸困难"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1440,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "限制型心肌病",
+        "characteristic": "肝大"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1441,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "限制型心肌病",
+        "characteristic": "腹腔积液"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1442,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "限制型心肌病",
+        "characteristic": "全身水肿"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1443,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "限制型心肌病",
+        "characteristic": "右心衰较重"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1444,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "限制型心肌病",
+        "characteristic": "颈静脉怒张"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1445,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "限制型心肌病",
+        "characteristic": "奔马律"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1446,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "限制型心肌病",
+        "comment": "预后不良",
+        "characteristic": "血压低"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1447,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "限制型心肌病",
+        "characteristic": "移动性浊音浑浊"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1448,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "限制型心肌病",
+        "characteristic": "下肢凹陷性水肿"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1449,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "限制型心肌病",
+        "comment": "淀粉样变性",
+        "characteristic": "尿本周蛋白"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1450,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "限制型心肌病",
+        "characteristic": "BNP升高"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1451,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "限制型心肌病",
+        "comment": "心肌淀粉样变",
+        "characteristic": "低电压"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1452,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "限制型心肌病",
+        "characteristic": "QRS波异常"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1453,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "限制型心肌病",
+        "characteristic": "ST-T改变"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1454,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "限制型心肌病",
+        "examination": "超声心动图",
+        "characteristic": "双心房扩大"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1455,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "限制型心肌病",
+        "examination": "超声心动图",
+        "characteristic": "心室肥厚"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1456,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "限制型心肌病",
+        "examination": "超声心动图",
+        "comment": "心肌淀粉样变",
+        "characteristic": "心肌呈磨玻璃样改变"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1457,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "限制型心肌病",
+        "characteristic": "ST-T改变"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1458,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "限制型心肌病",
+        "examination": "X线胸片",
+        "characteristic": "心包钙化"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1459,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "限制型心肌病",
+        "examination": "X线胸片",
+        "characteristic": "心包钙化"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1460,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "characteristic": "猝死"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1461,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "comment": "前驱症状",
+        "characteristic": "发热"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1462,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "comment": "前驱症状",
+        "characteristic": "全身倦怠感"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1463,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "comment": "前驱症状",
+        "characteristic": "肌肉酸痛"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1464,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "comment": "前驱症状",
+        "characteristic": "恶心"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1465,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "comment": "前驱症状",
+        "characteristic": "呕吐"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1466,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "characteristic": "心悸"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1467,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "characteristic": "胸痛"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1468,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "characteristic": "呼吸困难"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1469,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "characteristic": "水肿"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1470,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "characteristic": "晕厥"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1471,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "characteristic": "心律失常"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1472,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "characteristic": "阿斯综合征"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1473,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "characteristic": "房性期前收缩"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1474,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "characteristic": "室性期前收缩"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1475,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "characteristic": "房室传导阻滞"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1476,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "characteristic": "心律增快，与体温不相称"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1477,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "characteristic": "第三心音"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1478,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "characteristic": "第四心音"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1479,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "characteristic": "奔马律"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1480,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "characteristic": "心尖部闻及收缩期吹风样杂音"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1481,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "comment": "心衰",
+        "characteristic": "颈静脉怒张"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1482,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "comment": "心衰",
+        "characteristic": "肺部湿啰音"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1483,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "comment": "心衰",
+        "characteristic": "肝大"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1484,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "comment": "重症",
+        "characteristic": "血压降低"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1485,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "comment": "重症",
+        "characteristic": "四肢湿冷"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1486,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "comment": "重症",
+        "characteristic": "心源性休克"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1487,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "examination": "胸部X线检查",
+        "characteristic": "心影增大"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1488,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "examination": "胸部X线检查",
+        "comment": "有心包积液",
+        "characteristic": "烧瓶样改变"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1489,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "examination": "心电图",
+        "characteristic": "ST-T改变"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1490,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "examination": "心电图",
+        "characteristic": "ST轻度移位"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1491,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "examination": "心电图",
+        "characteristic": "T波倒置"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1492,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "examination": "心电图",
+        "characteristic": "aVR导联以外的ST段广泛抬高"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1493,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "examination": "心电图",
+        "characteristic": "病理性Q波"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1494,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "examination": "心电图",
+        "characteristic": "室性心律失常"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1495,
+      "labels": [
+        "symptom"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "examination": "心电图",
+        "characteristic": "房室传导阻滞"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1496,
+      "labels": [
+        "examination"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "name": "胸部X线检查",
+        "information": "心影/肺淤血/肺水肿/肺动脉压力增高/胸腔积液"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1497,
+      "labels": [
+        "examination"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "name": "心电图",
+        "information": "R波递增不良/室内传导阻滞/左束支传导阻滞"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1498,
+      "labels": [
+        "examination"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "name": "超声心动图",
+        "information": "左心室扩大"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1499,
+      "labels": [
+        "examination"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "name": "心脏磁共振",
+        "information": "鉴别浸润性心肌病、致心律失常型右心室心肌病、心肌致密化不全、心肌炎、结节病等疾病",
+        "english_name": "CMR"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1500,
+      "labels": [
+        "examination"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "name": "运动或药物负荷心肌显像",
+        "information": "除外冠状动脉疾病引起的缺血性心肌病"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1501,
+      "labels": [
+        "examination"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "name": "核素血池扫描",
+        "information": "舒张末期和收缩末期左心室容积增大，左心室射血分数降低"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1502,
+      "labels": [
+        "examination"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "name": "冠状动脉CT检查",
+        "enlish_name": "CTA",
+        "information": "冠状动脉狭窄等病变"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1503,
+      "labels": [
+        "examination"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "name": "冠状动脉造影",
+        "information": "除外冠状动脉性心脏病"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1504,
+      "labels": [
+        "examination"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "name": "心导管检查"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1505,
+      "labels": [
+        "examination"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "name": "心内膜心肌活检",
+        "information": "爆发性淋巴细胞心肌炎/巨噬细胞心肌炎",
+        "english_name": "EMB"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1506,
+      "labels": [
+        "laboratory_test"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "name": "脑钠肽",
+        "information": "脑钠肽升高",
+        "english_name": "BNP"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1507,
+      "labels": [
+        "laboratory_test"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "name": "N末端脑钠肽前体",
+        "information": "脑钠肽升高",
+        "english_name": "NT-proBNP"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1508,
+      "labels": [
+        "laboratory_test"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "name": "心肌肌钙蛋白I",
+        "information": "心肌肌钙蛋白I轻度升高"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1509,
+      "labels": [
+        "laboratory_test"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "name": "血常规",
+        "information": "贫血"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1510,
+      "labels": [
+        "laboratory_test"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "name": "电解质",
+        "information": "电解质失衡"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1511,
+      "labels": [
+        "laboratory_test"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "name": "肝肾功能",
+        "information": "肝硬化及肾功能不全"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1512,
+      "labels": [
+        "examination"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "name": "胸部X线检查",
+        "information": "心影正常大小/左心室增大"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1513,
+      "labels": [
+        "examination"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "name": "心电图",
+        "information": "QRS波左心室高电压/导致T波/异常q波"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1514,
+      "labels": [
+        "examination"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "name": "超声心动图",
+        "information": "心室不对称肥厚而无心室腔增大"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1515,
+      "labels": [
+        "examination"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "name": "心脏磁共振",
+        "information": "心室壁局限性或普遍性增厚",
+        "english_name": "CMR"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1516,
+      "labels": [
+        "examination"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "name": "同位素轧延迟增强扫描",
+        "information": "心肌呈片状强化/梗阻性HCM可见左心室流出道狭窄/SAM征/二尖瓣关闭不全"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1517,
+      "labels": [
+        "examination"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "name": "心导管检查",
+        "information": "左心室舒张末期压力增高"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1518,
+      "labels": [
+        "examination"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "name": "冠状动脉造影",
+        "information": "除外疑似心绞痛症状和心动图ST-T改变的病人"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1519,
+      "labels": [
+        "examination"
+      ],
+      "properties": {
+        "disease": "肥厚型心肌病",
+        "name": "心内膜心肌活检",
+        "information": "心肌细胞肥大、排列紊乱、局限性或弥散性间质纤维化"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1520,
+      "labels": [
+        "laboratory_test"
+      ],
+      "properties": {
+        "disease": "限制型心肌病",
+        "name": "尿本周蛋白",
+        "information": "淀粉样变性"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1521,
+      "labels": [
+        "laboratory_test"
+      ],
+      "properties": {
+        "disease": "限制型心肌病",
+        "name": "脑钠肽",
+        "information": "BNP明显增高",
+        "english_name": "BNP"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1522,
+      "labels": [
+        "examination"
+      ],
+      "properties": {
+        "disease": "限制型心肌病",
+        "name": "心电图",
+        "information": "低电压/QRS波异常/ST-T改变"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1523,
+      "labels": [
+        "examination"
+      ],
+      "properties": {
+        "disease": "限制型心肌病",
+        "name": "超声心动图",
+        "information": "双心房扩大/心室肥厚/心肌磨玻璃样改变"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1524,
+      "labels": [
+        "examination"
+      ],
+      "properties": {
+        "disease": "限制型心肌病",
+        "name": "X线胸片",
+        "information": "心包钙化"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1525,
+      "labels": [
+        "examination"
+      ],
+      "properties": {
+        "disease": "限制型心肌病",
+        "name": "CTA",
+        "information": "冠状动脉狭窄"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1526,
+      "labels": [
+        "examination"
+      ],
+      "properties": {
+        "disease": "限制型心肌病",
+        "name": "CMR",
+        "information": "心肌内呈颗粒样的轧延迟显像"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1527,
+      "labels": [
+        "examination"
+      ],
+      "properties": {
+        "disease": "限制型心肌病",
+        "name": "心导管检查",
+        "information": "肺动脉压明显增高（常>50mmHg）/舒张压变化较大/右心室舒张压相对较低"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1528,
+      "labels": [
+        "examination"
+      ],
+      "properties": {
+        "disease": "限制型心肌病",
+        "name": "心内膜心肌活检",
+        "information": "心肌淀粉样变性/高嗜酸性粒细胞综合征"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1529,
+      "labels": [
+        "examination"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "name": "胸部X线检查",
+        "information": "心影扩大/有心包积液烧瓶样改变"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1530,
+      "labels": [
+        "examination"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "name": "心电图",
+        "information": "ST-T改变"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1531,
+      "labels": [
+        "examination"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "name": "超声心动图",
+        "information": "左心室正常或增大/室壁运动减低/左心室收缩功能减低/附壁血栓/心包积液"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1532,
+      "labels": [
+        "examination"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "name": "心脏磁共振",
+        "information": "水肿/心肌充血/心外膜下或心肌中层片状强化"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1533,
+      "labels": [
+        "examination"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "name": "心内膜心肌活检",
+        "english_name": "EMB"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1534,
+      "labels": [
+        "laboratory_test"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "name": "心肌肌酸激酶",
+        "information": "心肌损伤标志物",
+        "english_name": "CK-MB"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1535,
+      "labels": [
+        "laboratory_test"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "name": "肌酐蛋白T或I",
+        "information": "心肌损伤标志物"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1536,
+      "labels": [
+        "laboratory_test"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "name": "非特异性炎症指标检测",
+        "information": "红细胞沉降率增快/C反应蛋白等非特异性炎症指标升高"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1537,
+      "labels": [
+        "laboratory_test"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "name": "病毒血清学检测",
+        "information": "心内膜、心肌或心包组织内病毒、病毒抗原、病毒基因片段或病毒蛋白"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1538,
+      "labels": [
+        "differential_diagnosis"
+      ],
+      "properties": {
+        "symptom": "心脏扩大/收缩功能减低",
+        "disease": "扩张型心肌病",
+        "name": "心脏瓣膜病"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1539,
+      "labels": [
+        "differential_diagnosis"
+      ],
+      "properties": {
+        "symptom": "心脏扩大/收缩功能减低",
+        "disease": "扩张型心肌病",
+        "name": "高血压性心脏病"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1540,
+      "labels": [
+        "differential_diagnosis"
+      ],
+      "properties": {
+        "symptom": "心脏扩大/收缩功能减低",
+        "disease": "扩张型心肌病",
+        "name": "冠心病"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1541,
+      "labels": [
+        "differential_diagnosis"
+      ],
+      "properties": {
+        "symptom": "心脏扩大/收缩功能减低",
+        "disease": "扩张型心肌病",
+        "name": "先天性心脏病"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1542,
+      "labels": [
+        "differential_diagnosis"
+      ],
+      "properties": {
+        "symptom": "心室肥厚",
+        "disease": "肥厚型心肌病",
+        "name": "高血压性心脏病"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1543,
+      "labels": [
+        "differential_diagnosis"
+      ],
+      "properties": {
+        "symptom": "心室肥厚",
+        "disease": "肥厚型心肌病",
+        "name": "主动脉瓣狭窄"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1544,
+      "labels": [
+        "differential_diagnosis"
+      ],
+      "properties": {
+        "symptom": "心室肥厚",
+        "disease": "肥厚型心肌病",
+        "name": "先天性心脏病"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1545,
+      "labels": [
+        "differential_diagnosis"
+      ],
+      "properties": {
+        "symptom": "心肌肥厚",
+        "disease": "肥厚型心肌病",
+        "name": "淀粉样变"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1546,
+      "labels": [
+        "differential_diagnosis"
+      ],
+      "properties": {
+        "symptom": "心肌肥厚",
+        "disease": "肥厚型心肌病",
+        "name": "糖原贮积症"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1547,
+      "labels": [
+        "differential_diagnosis"
+      ],
+      "properties": {
+        "symptom": "心肌肥厚",
+        "disease": "肥厚型心肌病",
+        "name": "嗜铬细胞瘤"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1548,
+      "labels": [
+        "differential_diagnosis"
+      ],
+      "properties": {
+        "symptom": "心肌肥厚",
+        "disease": "肥厚型心肌病",
+        "name": "Fabry病"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1549,
+      "labels": [
+        "differential_diagnosis"
+      ],
+      "properties": {
+        "symptom": "心肌肥厚",
+        "disease": "肥厚型心肌病",
+        "name": "血色病"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1550,
+      "labels": [
+        "differential_diagnosis"
+      ],
+      "properties": {
+        "symptom": "心肌肥厚",
+        "disease": "肥厚型心肌病",
+        "name": "心面综合征"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1551,
+      "labels": [
+        "differential_diagnosis"
+      ],
+      "properties": {
+        "symptom": "心肌肥厚",
+        "disease": "肥厚型心肌病",
+        "name": "线粒体肌病"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1552,
+      "labels": [
+        "differential_diagnosis"
+      ],
+      "properties": {
+        "symptom": "心肌肥厚",
+        "disease": "肥厚型心肌病",
+        "name": "Danon病"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1553,
+      "labels": [
+        "differential_diagnosis"
+      ],
+      "properties": {
+        "symptom": "心肌肥厚",
+        "disease": "肥厚型心肌病",
+        "name": "遗传性共济失调"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1554,
+      "labels": [
+        "differential_diagnosis"
+      ],
+      "properties": {
+        "symptom": "心肌肥厚",
+        "disease": "肥厚型心肌病",
+        "name": "遗传性代谢性疾病"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1555,
+      "labels": [
+        "differential_diagnosis"
+      ],
+      "properties": {
+        "symptom": "临床表现/血流动力学改变",
+        "disease": "限制型心肌病",
+        "name": "缩窄性心包炎"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1556,
+      "labels": [
+        "differential_diagnosis"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "name": "甲状腺功能亢进"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1557,
+      "labels": [
+        "differential_diagnosis"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "name": "二尖瓣脱垂综合征"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1558,
+      "labels": [
+        "differential_diagnosis"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "name": "结缔组织病"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1559,
+      "labels": [
+        "differential_diagnosis"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "name": "血管炎"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1560,
+      "labels": [
+        "differential_diagnosis"
+      ],
+      "properties": {
+        "disease": "病毒性心肌炎",
+        "name": "药物及毒物引起的心肌炎"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1561,
+      "labels": [
+        "drug"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "aim": "治疗心力衰竭",
+        "name": "ACEI",
+        "indication": "LVEF<40%的心力衰竭病人"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1562,
+      "labels": [
+        "drug"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "aim": "治疗心力衰竭",
+        "name": "ARB",
+        "indication": "LVEF<40%的心力衰竭病人，ACEI不耐受"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 1563,
+      "labels": [
+        "drug"
+      ],
+      "properties": {
+        "disease": "扩张型心肌病",
+        "aim": "治疗心力衰竭",
+        "name": "卡维地洛",
+        "indication": "LVEF<40%的心力衰竭病人"
+      }
+    }
+  }
+]
